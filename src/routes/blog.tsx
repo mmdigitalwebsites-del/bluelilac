@@ -9,9 +9,17 @@ export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
       { title: "Travel Blog & Safari Tips — Bluelilac Tours" },
-      { name: "description", content: "Read our latest safari guides, destination deep-dives and travel tips for Kenya, Tanzania, Uganda and Rwanda." },
+      {
+        name: "description",
+        content:
+          "Read our latest safari guides, destination deep-dives and travel tips for Kenya, Tanzania, Uganda and Rwanda.",
+      },
       { property: "og:title", content: "Travel Blog — Bluelilac Tours" },
-      { property: "og:description", content: "Safari guides, destination deep-dives and travel tips from East Africa's specialists." },
+      {
+        property: "og:description",
+        content:
+          "Safari guides, destination deep-dives and travel tips from East Africa's specialists.",
+      },
     ],
   }),
   component: BlogIndex,
@@ -33,7 +41,8 @@ function BlogIndex() {
             Safari guides &amp; travel tips
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/85">
-            Destination deep-dives, conservation stories, and practical advice from the people who plan East Africa's best safaris.
+            Destination deep-dives, conservation stories, and practical advice from the people who
+            plan East Africa's best safaris.
           </p>
         </div>
       </section>
@@ -42,10 +51,18 @@ function BlogIndex() {
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {BLOG_POSTS.map((p) => (
-              <article key={p.slug} className="group overflow-hidden rounded-3xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-md">
+              <article
+                key={p.slug}
+                className="group overflow-hidden rounded-3xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-md"
+              >
                 <Link to="/blog/$slug" params={{ slug: p.slug }} className="block">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img src={p.img} alt={p.title} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
                     <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium backdrop-blur-md">
                       {p.category}
                     </span>
@@ -53,8 +70,12 @@ function BlogIndex() {
                 </Link>
                 <div className="p-6">
                   <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
-                    <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" /> {p.date}</span>
-                    <span className="inline-flex items-center gap-1.5"><User className="h-3.5 w-3.5" /> {p.author}</span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Calendar className="h-3.5 w-3.5" /> {p.date}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <User className="h-3.5 w-3.5" /> {p.author}
+                    </span>
                   </div>
                   <h2 className="mt-3 font-display text-xl leading-snug">
                     <Link to="/blog/$slug" params={{ slug: p.slug }} className="hover:text-primary">
@@ -62,7 +83,11 @@ function BlogIndex() {
                     </Link>
                   </h2>
                   <p className="mt-3 text-sm text-black">{p.excerpt}</p>
-                  <Link to="/blog/$slug" params={{ slug: p.slug }} className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary">
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: p.slug }}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary"
+                  >
                     Read more <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>

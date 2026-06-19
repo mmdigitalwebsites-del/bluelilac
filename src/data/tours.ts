@@ -85,15 +85,103 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Arrival in Nairobi", bullets: ["Arrival at Jomo Kenyatta International Airport.", "Meet & greet by Bluelilac representative and transfer to hotel.", "Optional city excursion depending on arrival time.", "Dinner & overnight in Nairobi."], stay: "Nairobi" },
-      { day: "Day 2–3", title: "Nairobi → Masai Mara", bullets: ["Scenic drive to Masai Mara via the Great Rift Valley.", "Afternoon game drive upon arrival.", "Full-day game drives on Day 3.", "Optional hot air balloon safari.", "Opportunity to witness the Big Five and seasonal Great Migration.", "Optional Maasai village visit."], stay: "2 nights in Masai Mara" },
-      { day: "Day 4", title: "Masai Mara → Lake Naivasha", bullets: ["Morning game drive.", "Drive to Lake Naivasha.", "Afternoon boat safari (hippos & birdlife).", "Optional walking safari at Crescent Island."], stay: "1 night in Naivasha" },
-      { day: "Day 5–6", title: "Naivasha → Amboseli", bullets: ["Drive to Amboseli National Park.", "Afternoon game drive.", "Full-day wildlife viewing on Day 6.", "Spectacular views of Mount Kilimanjaro.", "Famous for large elephant herds."], stay: "2 nights in Amboseli" },
-      { day: "Day 7", title: "Amboseli → Arusha (Tanzania)", bullets: ["Breakfast and transfer to Namanga border.", "Immigration formalities.", "Continue to Arusha.", "Relaxed evening at lodge."], stay: "1 night in Arusha" },
-      { day: "Day 8–9", title: "Arusha → Ngorongoro", bullets: ["Drive to Ngorongoro Highlands.", "Full crater descent safari.", "Spot black rhino, lions, buffalo and flamingos.", "Scenic crater rim lodge stay."], stay: "2 nights in Ngorongoro" },
-      { day: "Day 10–11", title: "Ngorongoro → Serengeti", bullets: ["Scenic drive into Serengeti.", "Game drive en route.", "Full-day safari on Day 11.", "Excellent predator sightings.", "Optional balloon safari."], stay: "2 nights in Serengeti" },
-      { day: "Day 12", title: "Serengeti → Nairobi", bullets: ["Early departure.", "Cross-border transfer via Namanga.", "Arrive in Nairobi late afternoon.", "Farewell dinner (optional)."], stay: "1 night in Nairobi" },
-      { day: "Day 13", title: "Departure", bullets: ["Breakfast at hotel.", "Transfer to airport.", "End of safari."] },
+      {
+        day: "Day 1",
+        title: "Arrival in Nairobi",
+        bullets: [
+          "Arrival at Jomo Kenyatta International Airport.",
+          "Meet & greet by Bluelilac representative and transfer to hotel.",
+          "Optional city excursion depending on arrival time.",
+          "Dinner & overnight in Nairobi.",
+        ],
+        stay: "Nairobi",
+      },
+      {
+        day: "Day 2–3",
+        title: "Nairobi → Masai Mara",
+        bullets: [
+          "Scenic drive to Masai Mara via the Great Rift Valley.",
+          "Afternoon game drive upon arrival.",
+          "Full-day game drives on Day 3.",
+          "Optional hot air balloon safari.",
+          "Opportunity to witness the Big Five and seasonal Great Migration.",
+          "Optional Maasai village visit.",
+        ],
+        stay: "2 nights in Masai Mara",
+      },
+      {
+        day: "Day 4",
+        title: "Masai Mara → Lake Naivasha",
+        bullets: [
+          "Morning game drive.",
+          "Drive to Lake Naivasha.",
+          "Afternoon boat safari (hippos & birdlife).",
+          "Optional walking safari at Crescent Island.",
+        ],
+        stay: "1 night in Naivasha",
+      },
+      {
+        day: "Day 5–6",
+        title: "Naivasha → Amboseli",
+        bullets: [
+          "Drive to Amboseli National Park.",
+          "Afternoon game drive.",
+          "Full-day wildlife viewing on Day 6.",
+          "Spectacular views of Mount Kilimanjaro.",
+          "Famous for large elephant herds.",
+        ],
+        stay: "2 nights in Amboseli",
+      },
+      {
+        day: "Day 7",
+        title: "Amboseli → Arusha (Tanzania)",
+        bullets: [
+          "Breakfast and transfer to Namanga border.",
+          "Immigration formalities.",
+          "Continue to Arusha.",
+          "Relaxed evening at lodge.",
+        ],
+        stay: "1 night in Arusha",
+      },
+      {
+        day: "Day 8–9",
+        title: "Arusha → Ngorongoro",
+        bullets: [
+          "Drive to Ngorongoro Highlands.",
+          "Full crater descent safari.",
+          "Spot black rhino, lions, buffalo and flamingos.",
+          "Scenic crater rim lodge stay.",
+        ],
+        stay: "2 nights in Ngorongoro",
+      },
+      {
+        day: "Day 10–11",
+        title: "Ngorongoro → Serengeti",
+        bullets: [
+          "Scenic drive into Serengeti.",
+          "Game drive en route.",
+          "Full-day safari on Day 11.",
+          "Excellent predator sightings.",
+          "Optional balloon safari.",
+        ],
+        stay: "2 nights in Serengeti",
+      },
+      {
+        day: "Day 12",
+        title: "Serengeti → Nairobi",
+        bullets: [
+          "Early departure.",
+          "Cross-border transfer via Namanga.",
+          "Arrive in Nairobi late afternoon.",
+          "Farewell dinner (optional).",
+        ],
+        stay: "1 night in Nairobi",
+      },
+      {
+        day: "Day 13",
+        title: "Departure",
+        bullets: ["Breakfast at hotel.", "Transfer to airport.", "End of safari."],
+      },
     ],
   },
   {
@@ -115,15 +203,94 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Arrival in Nairobi", bullets: ["Airport pickup and transfer to hotel.", "Pre-safari briefing.", "Dinner and overnight."], stay: "Nairobi" },
-      { day: "Day 2", title: "Nairobi → Amboseli", bullets: ["Morning drive to Amboseli National Park.", "Picnic lunch en route.", "Afternoon game drive with Kilimanjaro views."], stay: "Amboseli" },
-      { day: "Day 3", title: "Amboseli full day", bullets: ["Morning and afternoon game drives.", "Large elephant herds, lions, cheetah and buffalo.", "Optional Maasai cultural visit."], stay: "Amboseli" },
-      { day: "Day 4", title: "Amboseli → Arusha (Tanzania)", bullets: ["Breakfast and depart for Namanga border.", "Immigration formalities and change of vehicle.", "Continue to Arusha for an early arrival."], stay: "Arusha" },
-      { day: "Day 5", title: "Arusha → Tarangire", bullets: ["Drive to Tarangire National Park.", "Full afternoon game drive.", "Famous for baobab trees and huge elephant herds."], stay: "Tarangire / Karatu" },
-      { day: "Day 6", title: "Tarangire → Serengeti", bullets: ["Drive through the Ngorongoro Conservation Area.", "Descend into the Serengeti plains.", "Afternoon game drive en route."], stay: "Central Serengeti" },
-      { day: "Day 7", title: "Serengeti full day", bullets: ["Full day exploring the Seronera Valley.", "Predator hotspot — lion, leopard, cheetah.", "Optional hot air balloon safari at sunrise."], stay: "Central Serengeti" },
-      { day: "Day 8", title: "Serengeti → Ngorongoro Crater", bullets: ["Morning game drive in Serengeti.", "Descend into Ngorongoro Crater for a half-day safari.", "Spot the rare black rhino and the Big Five."], stay: "Ngorongoro / Karatu" },
-      { day: "Day 9", title: "Ngorongoro → Arusha → Departure", bullets: ["Drive back to Arusha.", "Lunch and transfer to Kilimanjaro Airport or back to Nairobi."] },
+      {
+        day: "Day 1",
+        title: "Arrival in Nairobi",
+        bullets: [
+          "Airport pickup and transfer to hotel.",
+          "Pre-safari briefing.",
+          "Dinner and overnight.",
+        ],
+        stay: "Nairobi",
+      },
+      {
+        day: "Day 2",
+        title: "Nairobi → Amboseli",
+        bullets: [
+          "Morning drive to Amboseli National Park.",
+          "Picnic lunch en route.",
+          "Afternoon game drive with Kilimanjaro views.",
+        ],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 3",
+        title: "Amboseli full day",
+        bullets: [
+          "Morning and afternoon game drives.",
+          "Large elephant herds, lions, cheetah and buffalo.",
+          "Optional Maasai cultural visit.",
+        ],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 4",
+        title: "Amboseli → Arusha (Tanzania)",
+        bullets: [
+          "Breakfast and depart for Namanga border.",
+          "Immigration formalities and change of vehicle.",
+          "Continue to Arusha for an early arrival.",
+        ],
+        stay: "Arusha",
+      },
+      {
+        day: "Day 5",
+        title: "Arusha → Tarangire",
+        bullets: [
+          "Drive to Tarangire National Park.",
+          "Full afternoon game drive.",
+          "Famous for baobab trees and huge elephant herds.",
+        ],
+        stay: "Tarangire / Karatu",
+      },
+      {
+        day: "Day 6",
+        title: "Tarangire → Serengeti",
+        bullets: [
+          "Drive through the Ngorongoro Conservation Area.",
+          "Descend into the Serengeti plains.",
+          "Afternoon game drive en route.",
+        ],
+        stay: "Central Serengeti",
+      },
+      {
+        day: "Day 7",
+        title: "Serengeti full day",
+        bullets: [
+          "Full day exploring the Seronera Valley.",
+          "Predator hotspot — lion, leopard, cheetah.",
+          "Optional hot air balloon safari at sunrise.",
+        ],
+        stay: "Central Serengeti",
+      },
+      {
+        day: "Day 8",
+        title: "Serengeti → Ngorongoro Crater",
+        bullets: [
+          "Morning game drive in Serengeti.",
+          "Descend into Ngorongoro Crater for a half-day safari.",
+          "Spot the rare black rhino and the Big Five.",
+        ],
+        stay: "Ngorongoro / Karatu",
+      },
+      {
+        day: "Day 9",
+        title: "Ngorongoro → Arusha → Departure",
+        bullets: [
+          "Drive back to Arusha.",
+          "Lunch and transfer to Kilimanjaro Airport or back to Nairobi.",
+        ],
+      },
     ],
   },
   {
@@ -145,13 +312,71 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Arrival in Arusha", bullets: ["Arrival at Kilimanjaro International Airport.", "Transfer to Arusha for a pre-safari briefing.", "Dinner and overnight."], stay: "Arusha" },
-      { day: "Day 2", title: "Arusha → Tarangire", bullets: ["Morning drive to Tarangire National Park.", "Full afternoon game drive among baobabs and elephants."], stay: "Tarangire" },
-      { day: "Day 3", title: "Tarangire → Lake Manyara → Karatu", bullets: ["Half-day game drive in Lake Manyara — famous for tree-climbing lions and flamingos.", "Continue to Karatu in the highlands."], stay: "Karatu" },
-      { day: "Day 4", title: "Karatu → Serengeti", bullets: ["Drive into the Serengeti via the Ngorongoro highlands.", "Afternoon game drive in central Serengeti."], stay: "Serengeti" },
-      { day: "Day 5", title: "Serengeti full day", bullets: ["Full day game viewing.", "Optional hot air balloon safari at dawn.", "Search for the Big Five and migration herds."], stay: "Serengeti" },
-      { day: "Day 6", title: "Serengeti → Ngorongoro Crater", bullets: ["Morning game drive.", "Descend into Ngorongoro Crater for a half-day safari.", "Drive up to the crater rim for sunset."], stay: "Ngorongoro / Karatu" },
-      { day: "Day 7", title: "Ngorongoro → Arusha → Departure", bullets: ["Return drive to Arusha.", "Transfer to Kilimanjaro Airport for your flight home."] },
+      {
+        day: "Day 1",
+        title: "Arrival in Arusha",
+        bullets: [
+          "Arrival at Kilimanjaro International Airport.",
+          "Transfer to Arusha for a pre-safari briefing.",
+          "Dinner and overnight.",
+        ],
+        stay: "Arusha",
+      },
+      {
+        day: "Day 2",
+        title: "Arusha → Tarangire",
+        bullets: [
+          "Morning drive to Tarangire National Park.",
+          "Full afternoon game drive among baobabs and elephants.",
+        ],
+        stay: "Tarangire",
+      },
+      {
+        day: "Day 3",
+        title: "Tarangire → Lake Manyara → Karatu",
+        bullets: [
+          "Half-day game drive in Lake Manyara — famous for tree-climbing lions and flamingos.",
+          "Continue to Karatu in the highlands.",
+        ],
+        stay: "Karatu",
+      },
+      {
+        day: "Day 4",
+        title: "Karatu → Serengeti",
+        bullets: [
+          "Drive into the Serengeti via the Ngorongoro highlands.",
+          "Afternoon game drive in central Serengeti.",
+        ],
+        stay: "Serengeti",
+      },
+      {
+        day: "Day 5",
+        title: "Serengeti full day",
+        bullets: [
+          "Full day game viewing.",
+          "Optional hot air balloon safari at dawn.",
+          "Search for the Big Five and migration herds.",
+        ],
+        stay: "Serengeti",
+      },
+      {
+        day: "Day 6",
+        title: "Serengeti → Ngorongoro Crater",
+        bullets: [
+          "Morning game drive.",
+          "Descend into Ngorongoro Crater for a half-day safari.",
+          "Drive up to the crater rim for sunset.",
+        ],
+        stay: "Ngorongoro / Karatu",
+      },
+      {
+        day: "Day 7",
+        title: "Ngorongoro → Arusha → Departure",
+        bullets: [
+          "Return drive to Arusha.",
+          "Transfer to Kilimanjaro Airport for your flight home.",
+        ],
+      },
     ],
   },
   {
@@ -173,11 +398,48 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Arrival in Arusha", bullets: ["Kilimanjaro Airport pickup.", "Transfer to Arusha lodge for briefing and overnight."], stay: "Arusha" },
-      { day: "Day 2", title: "Arusha → Serengeti", bullets: ["Scenic drive via the Ngorongoro highlands into the Serengeti.", "Afternoon game drive in central Serengeti."], stay: "Serengeti" },
-      { day: "Day 3", title: "Serengeti full day", bullets: ["Full day exploring the Seronera Valley.", "Predator-rich plains and big cat sightings."], stay: "Serengeti" },
-      { day: "Day 4", title: "Serengeti → Ngorongoro Crater", bullets: ["Morning game drive in Serengeti.", "Crater descent safari in the afternoon.", "Big Five viewing on the crater floor."], stay: "Karatu" },
-      { day: "Day 5", title: "Ngorongoro → Arusha → Departure", bullets: ["Breakfast and drive back to Arusha.", "Transfer to airport for departure."] },
+      {
+        day: "Day 1",
+        title: "Arrival in Arusha",
+        bullets: [
+          "Kilimanjaro Airport pickup.",
+          "Transfer to Arusha lodge for briefing and overnight.",
+        ],
+        stay: "Arusha",
+      },
+      {
+        day: "Day 2",
+        title: "Arusha → Serengeti",
+        bullets: [
+          "Scenic drive via the Ngorongoro highlands into the Serengeti.",
+          "Afternoon game drive in central Serengeti.",
+        ],
+        stay: "Serengeti",
+      },
+      {
+        day: "Day 3",
+        title: "Serengeti full day",
+        bullets: [
+          "Full day exploring the Seronera Valley.",
+          "Predator-rich plains and big cat sightings.",
+        ],
+        stay: "Serengeti",
+      },
+      {
+        day: "Day 4",
+        title: "Serengeti → Ngorongoro Crater",
+        bullets: [
+          "Morning game drive in Serengeti.",
+          "Crater descent safari in the afternoon.",
+          "Big Five viewing on the crater floor.",
+        ],
+        stay: "Karatu",
+      },
+      {
+        day: "Day 5",
+        title: "Ngorongoro → Arusha → Departure",
+        bullets: ["Breakfast and drive back to Arusha.", "Transfer to airport for departure."],
+      },
     ],
   },
   {
@@ -199,16 +461,81 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Arrival in Nairobi", bullets: ["Airport pickup.", "Transfer to hotel and pre-safari briefing."], stay: "Nairobi" },
-      { day: "Day 2", title: "Nairobi → Masai Mara", bullets: ["Drive via the Great Rift Valley.", "Afternoon game drive on arrival."], stay: "Masai Mara" },
-      { day: "Day 3", title: "Masai Mara full day", bullets: ["Full-day game drives in the Mara.", "Big Five and (seasonal) wildebeest crossings."], stay: "Masai Mara" },
-      { day: "Day 4", title: "Masai Mara → Lake Naivasha", bullets: ["Morning game drive.", "Drive to Naivasha for an afternoon boat safari."], stay: "Naivasha" },
-      { day: "Day 5", title: "Naivasha → Amboseli", bullets: ["Scenic drive to Amboseli.", "Afternoon game drive with Mount Kilimanjaro views."], stay: "Amboseli" },
-      { day: "Day 6", title: "Amboseli full day", bullets: ["Morning and afternoon game drives.", "Massive elephant herds and Maasai culture."], stay: "Amboseli" },
-      { day: "Day 7", title: "Amboseli → Diani Beach", bullets: ["Transfer to Mombasa / Ukunda by road or flight.", "Continue to Diani Beach for check-in.", "Sunset on the Indian Ocean."], stay: "Diani Beach" },
-      { day: "Day 8", title: "Diani Beach", bullets: ["Day at leisure on the beach.", "Optional snorkelling, dhow cruise or kite-surfing."], stay: "Diani Beach" },
-      { day: "Day 9", title: "Diani Beach", bullets: ["Full beach day.", "Optional Wasini Island & Kisite Marine Park excursion."], stay: "Diani Beach" },
-      { day: "Day 10", title: "Diani → Departure", bullets: ["Transfer to Mombasa or Ukunda Airport for onward flight."] },
+      {
+        day: "Day 1",
+        title: "Arrival in Nairobi",
+        bullets: ["Airport pickup.", "Transfer to hotel and pre-safari briefing."],
+        stay: "Nairobi",
+      },
+      {
+        day: "Day 2",
+        title: "Nairobi → Masai Mara",
+        bullets: ["Drive via the Great Rift Valley.", "Afternoon game drive on arrival."],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 3",
+        title: "Masai Mara full day",
+        bullets: [
+          "Full-day game drives in the Mara.",
+          "Big Five and (seasonal) wildebeest crossings.",
+        ],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 4",
+        title: "Masai Mara → Lake Naivasha",
+        bullets: ["Morning game drive.", "Drive to Naivasha for an afternoon boat safari."],
+        stay: "Naivasha",
+      },
+      {
+        day: "Day 5",
+        title: "Naivasha → Amboseli",
+        bullets: [
+          "Scenic drive to Amboseli.",
+          "Afternoon game drive with Mount Kilimanjaro views.",
+        ],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 6",
+        title: "Amboseli full day",
+        bullets: [
+          "Morning and afternoon game drives.",
+          "Massive elephant herds and Maasai culture.",
+        ],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 7",
+        title: "Amboseli → Diani Beach",
+        bullets: [
+          "Transfer to Mombasa / Ukunda by road or flight.",
+          "Continue to Diani Beach for check-in.",
+          "Sunset on the Indian Ocean.",
+        ],
+        stay: "Diani Beach",
+      },
+      {
+        day: "Day 8",
+        title: "Diani Beach",
+        bullets: [
+          "Day at leisure on the beach.",
+          "Optional snorkelling, dhow cruise or kite-surfing.",
+        ],
+        stay: "Diani Beach",
+      },
+      {
+        day: "Day 9",
+        title: "Diani Beach",
+        bullets: ["Full beach day.", "Optional Wasini Island & Kisite Marine Park excursion."],
+        stay: "Diani Beach",
+      },
+      {
+        day: "Day 10",
+        title: "Diani → Departure",
+        bullets: ["Transfer to Mombasa or Ukunda Airport for onward flight."],
+      },
     ],
   },
   {
@@ -230,16 +557,78 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Arrival in Nairobi", bullets: ["Airport pickup and transfer to hotel.", "Safari briefing and dinner."], stay: "Nairobi" },
-      { day: "Day 2", title: "Nairobi → Masai Mara", bullets: ["Drive to Masai Mara.", "Afternoon game drive."], stay: "Masai Mara" },
-      { day: "Day 3", title: "Masai Mara full day", bullets: ["Morning and afternoon game drives.", "Optional Maasai village visit."], stay: "Masai Mara" },
-      { day: "Day 4", title: "Masai Mara → Lake Nakuru", bullets: ["Drive to Lake Nakuru.", "Afternoon game drive — rhino, flamingo, Rothschild's giraffe."], stay: "Lake Nakuru" },
-      { day: "Day 5", title: "Nakuru → Naivasha", bullets: ["Short transfer to Lake Naivasha.", "Afternoon boat ride and optional Crescent Island walk."], stay: "Naivasha" },
-      { day: "Day 6", title: "Naivasha → Amboseli", bullets: ["Long drive to Amboseli.", "Late afternoon game drive."], stay: "Amboseli" },
-      { day: "Day 7", title: "Amboseli → Salt Lick (Taita Hills)", bullets: ["Morning game drive.", "Transfer to Salt Lick Lodge.", "Stilted lodge with floodlit waterhole game viewing."], stay: "Salt Lick" },
-      { day: "Day 8", title: "Salt Lick → Tsavo East", bullets: ["Drive into Tsavo East National Park.", "Afternoon game drive — the red elephants of Tsavo."], stay: "Tsavo East" },
-      { day: "Day 9", title: "Tsavo East full day", bullets: ["Full-day game drives.", "Aruba Dam, Mudanda Rock and Yatta Plateau."], stay: "Tsavo East" },
-      { day: "Day 10", title: "Tsavo East → Nairobi/Mombasa", bullets: ["Morning game drive en route.", "Transfer to Nairobi or Mombasa for departure."] },
+      {
+        day: "Day 1",
+        title: "Arrival in Nairobi",
+        bullets: ["Airport pickup and transfer to hotel.", "Safari briefing and dinner."],
+        stay: "Nairobi",
+      },
+      {
+        day: "Day 2",
+        title: "Nairobi → Masai Mara",
+        bullets: ["Drive to Masai Mara.", "Afternoon game drive."],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 3",
+        title: "Masai Mara full day",
+        bullets: ["Morning and afternoon game drives.", "Optional Maasai village visit."],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 4",
+        title: "Masai Mara → Lake Nakuru",
+        bullets: [
+          "Drive to Lake Nakuru.",
+          "Afternoon game drive — rhino, flamingo, Rothschild's giraffe.",
+        ],
+        stay: "Lake Nakuru",
+      },
+      {
+        day: "Day 5",
+        title: "Nakuru → Naivasha",
+        bullets: [
+          "Short transfer to Lake Naivasha.",
+          "Afternoon boat ride and optional Crescent Island walk.",
+        ],
+        stay: "Naivasha",
+      },
+      {
+        day: "Day 6",
+        title: "Naivasha → Amboseli",
+        bullets: ["Long drive to Amboseli.", "Late afternoon game drive."],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 7",
+        title: "Amboseli → Salt Lick (Taita Hills)",
+        bullets: [
+          "Morning game drive.",
+          "Transfer to Salt Lick Lodge.",
+          "Stilted lodge with floodlit waterhole game viewing.",
+        ],
+        stay: "Salt Lick",
+      },
+      {
+        day: "Day 8",
+        title: "Salt Lick → Tsavo East",
+        bullets: [
+          "Drive into Tsavo East National Park.",
+          "Afternoon game drive — the red elephants of Tsavo.",
+        ],
+        stay: "Tsavo East",
+      },
+      {
+        day: "Day 9",
+        title: "Tsavo East full day",
+        bullets: ["Full-day game drives.", "Aruba Dam, Mudanda Rock and Yatta Plateau."],
+        stay: "Tsavo East",
+      },
+      {
+        day: "Day 10",
+        title: "Tsavo East → Nairobi/Mombasa",
+        bullets: ["Morning game drive en route.", "Transfer to Nairobi or Mombasa for departure."],
+      },
     ],
   },
   {
@@ -261,15 +650,76 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Arrival in Nairobi", bullets: ["Airport pickup.", "Transfer to hotel for briefing."], stay: "Nairobi" },
-      { day: "Day 2", title: "Nairobi → Samburu", bullets: ["Drive north past Mount Kenya.", "Afternoon game drive in Samburu National Reserve."], stay: "Samburu" },
-      { day: "Day 3", title: "Samburu full day", bullets: ["Morning and afternoon game drives.", "Track the Samburu Special Five — gerenuk, reticulated giraffe, Grevy's zebra, beisa oryx, Somali ostrich."], stay: "Samburu" },
-      { day: "Day 4", title: "Samburu → Sweetwaters (Ol Pejeta)", bullets: ["Transfer to Ol Pejeta Conservancy.", "Visit the chimpanzee sanctuary and the last northern white rhinos.", "Afternoon game drive."], stay: "Sweetwaters" },
-      { day: "Day 5", title: "Sweetwaters → Lake Nakuru", bullets: ["Drive to Lake Nakuru.", "Afternoon game drive — rhino, flamingo, Rothschild giraffe."], stay: "Lake Nakuru" },
-      { day: "Day 6", title: "Nakuru → Masai Mara", bullets: ["Scenic drive to the Mara.", "Afternoon game drive."], stay: "Masai Mara" },
-      { day: "Day 7", title: "Masai Mara full day", bullets: ["Full-day game drive with picnic lunch.", "Optional hot air balloon safari."], stay: "Masai Mara" },
-      { day: "Day 8", title: "Masai Mara full day", bullets: ["Morning game drive.", "Optional Maasai cultural visit.", "Afternoon game drive."], stay: "Masai Mara" },
-      { day: "Day 9", title: "Masai Mara → Nairobi → Departure", bullets: ["Morning drive back to Nairobi.", "Transfer to JKIA for your flight home."] },
+      {
+        day: "Day 1",
+        title: "Arrival in Nairobi",
+        bullets: ["Airport pickup.", "Transfer to hotel for briefing."],
+        stay: "Nairobi",
+      },
+      {
+        day: "Day 2",
+        title: "Nairobi → Samburu",
+        bullets: [
+          "Drive north past Mount Kenya.",
+          "Afternoon game drive in Samburu National Reserve.",
+        ],
+        stay: "Samburu",
+      },
+      {
+        day: "Day 3",
+        title: "Samburu full day",
+        bullets: [
+          "Morning and afternoon game drives.",
+          "Track the Samburu Special Five — gerenuk, reticulated giraffe, Grevy's zebra, beisa oryx, Somali ostrich.",
+        ],
+        stay: "Samburu",
+      },
+      {
+        day: "Day 4",
+        title: "Samburu → Sweetwaters (Ol Pejeta)",
+        bullets: [
+          "Transfer to Ol Pejeta Conservancy.",
+          "Visit the chimpanzee sanctuary and the last northern white rhinos.",
+          "Afternoon game drive.",
+        ],
+        stay: "Sweetwaters",
+      },
+      {
+        day: "Day 5",
+        title: "Sweetwaters → Lake Nakuru",
+        bullets: [
+          "Drive to Lake Nakuru.",
+          "Afternoon game drive — rhino, flamingo, Rothschild giraffe.",
+        ],
+        stay: "Lake Nakuru",
+      },
+      {
+        day: "Day 6",
+        title: "Nakuru → Masai Mara",
+        bullets: ["Scenic drive to the Mara.", "Afternoon game drive."],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 7",
+        title: "Masai Mara full day",
+        bullets: ["Full-day game drive with picnic lunch.", "Optional hot air balloon safari."],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 8",
+        title: "Masai Mara full day",
+        bullets: [
+          "Morning game drive.",
+          "Optional Maasai cultural visit.",
+          "Afternoon game drive.",
+        ],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 9",
+        title: "Masai Mara → Nairobi → Departure",
+        bullets: ["Morning drive back to Nairobi.", "Transfer to JKIA for your flight home."],
+      },
     ],
   },
   {
@@ -291,14 +741,53 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Arrival in Nairobi", bullets: ["Airport pickup and transfer to hotel.", "Dinner and overnight."], stay: "Nairobi" },
-      { day: "Day 2", title: "Nairobi → Masai Mara", bullets: ["Drive via the Great Rift Valley.", "Afternoon game drive."], stay: "Masai Mara" },
-      { day: "Day 3", title: "Masai Mara full day", bullets: ["Morning and afternoon game drives.", "Optional balloon safari."], stay: "Masai Mara" },
-      { day: "Day 4", title: "Masai Mara → Lake Nakuru", bullets: ["Drive to Lake Nakuru.", "Afternoon game drive — rhino and flamingo."], stay: "Lake Nakuru" },
-      { day: "Day 5", title: "Nakuru → Lake Naivasha", bullets: ["Transfer to Naivasha.", "Boat ride and Crescent Island walk."], stay: "Naivasha" },
-      { day: "Day 6", title: "Naivasha → Amboseli", bullets: ["Drive to Amboseli National Park.", "Afternoon game drive."], stay: "Amboseli" },
-      { day: "Day 7", title: "Amboseli full day", bullets: ["Morning and afternoon game drives.", "Kilimanjaro views and elephant herds."], stay: "Amboseli" },
-      { day: "Day 8", title: "Amboseli → Nairobi → Departure", bullets: ["Morning drive to Nairobi.", "Airport transfer."] },
+      {
+        day: "Day 1",
+        title: "Arrival in Nairobi",
+        bullets: ["Airport pickup and transfer to hotel.", "Dinner and overnight."],
+        stay: "Nairobi",
+      },
+      {
+        day: "Day 2",
+        title: "Nairobi → Masai Mara",
+        bullets: ["Drive via the Great Rift Valley.", "Afternoon game drive."],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 3",
+        title: "Masai Mara full day",
+        bullets: ["Morning and afternoon game drives.", "Optional balloon safari."],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 4",
+        title: "Masai Mara → Lake Nakuru",
+        bullets: ["Drive to Lake Nakuru.", "Afternoon game drive — rhino and flamingo."],
+        stay: "Lake Nakuru",
+      },
+      {
+        day: "Day 5",
+        title: "Nakuru → Lake Naivasha",
+        bullets: ["Transfer to Naivasha.", "Boat ride and Crescent Island walk."],
+        stay: "Naivasha",
+      },
+      {
+        day: "Day 6",
+        title: "Naivasha → Amboseli",
+        bullets: ["Drive to Amboseli National Park.", "Afternoon game drive."],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 7",
+        title: "Amboseli full day",
+        bullets: ["Morning and afternoon game drives.", "Kilimanjaro views and elephant herds."],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 8",
+        title: "Amboseli → Nairobi → Departure",
+        bullets: ["Morning drive to Nairobi.", "Airport transfer."],
+      },
     ],
   },
   {
@@ -320,13 +809,47 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Arrival in Nairobi", bullets: ["Airport pickup and transfer.", "Briefing and overnight."], stay: "Nairobi" },
-      { day: "Day 2", title: "Nairobi → Amboseli", bullets: ["Drive to Amboseli.", "Afternoon game drive."], stay: "Amboseli" },
-      { day: "Day 3", title: "Amboseli full day", bullets: ["Morning and afternoon game drives with Kilimanjaro views."], stay: "Amboseli" },
-      { day: "Day 4", title: "Amboseli → Lake Nakuru", bullets: ["Long scenic drive via Nairobi.", "Late afternoon game drive in Nakuru."], stay: "Lake Nakuru" },
-      { day: "Day 5", title: "Nakuru → Masai Mara", bullets: ["Drive to Masai Mara.", "Afternoon game drive."], stay: "Masai Mara" },
-      { day: "Day 6", title: "Masai Mara full day", bullets: ["Full-day game drive with picnic lunch.", "Optional Maasai village visit."], stay: "Masai Mara" },
-      { day: "Day 7", title: "Masai Mara → Nairobi → Departure", bullets: ["Morning drive back to Nairobi.", "Airport drop-off."] },
+      {
+        day: "Day 1",
+        title: "Arrival in Nairobi",
+        bullets: ["Airport pickup and transfer.", "Briefing and overnight."],
+        stay: "Nairobi",
+      },
+      {
+        day: "Day 2",
+        title: "Nairobi → Amboseli",
+        bullets: ["Drive to Amboseli.", "Afternoon game drive."],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 3",
+        title: "Amboseli full day",
+        bullets: ["Morning and afternoon game drives with Kilimanjaro views."],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 4",
+        title: "Amboseli → Lake Nakuru",
+        bullets: ["Long scenic drive via Nairobi.", "Late afternoon game drive in Nakuru."],
+        stay: "Lake Nakuru",
+      },
+      {
+        day: "Day 5",
+        title: "Nakuru → Masai Mara",
+        bullets: ["Drive to Masai Mara.", "Afternoon game drive."],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 6",
+        title: "Masai Mara full day",
+        bullets: ["Full-day game drive with picnic lunch.", "Optional Maasai village visit."],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 7",
+        title: "Masai Mara → Nairobi → Departure",
+        bullets: ["Morning drive back to Nairobi.", "Airport drop-off."],
+      },
     ],
   },
   {
@@ -349,10 +872,41 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Nairobi → Masai Mara", bullets: ["Morning pickup in Nairobi.", "Scenic drive via the Great Rift Valley.", "Afternoon game drive in the Masai Mara."], stay: "Masai Mara" },
-      { day: "Day 2", title: "Masai Mara full day", bullets: ["Full-day game drive with picnic lunch.", "Optional Maasai village visit.", "Optional hot air balloon safari."], stay: "Masai Mara" },
-      { day: "Day 3", title: "Masai Mara → Lake Nakuru", bullets: ["Morning game drive in the Mara.", "Drive to Lake Nakuru National Park.", "Afternoon game drive — flamingos, rhino and Rothschild's giraffe."], stay: "Lake Nakuru" },
-      { day: "Day 4", title: "Lake Nakuru → Nairobi", bullets: ["Morning game drive.", "Drive back to Nairobi, arriving late afternoon."] },
+      {
+        day: "Day 1",
+        title: "Nairobi → Masai Mara",
+        bullets: [
+          "Morning pickup in Nairobi.",
+          "Scenic drive via the Great Rift Valley.",
+          "Afternoon game drive in the Masai Mara.",
+        ],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 2",
+        title: "Masai Mara full day",
+        bullets: [
+          "Full-day game drive with picnic lunch.",
+          "Optional Maasai village visit.",
+          "Optional hot air balloon safari.",
+        ],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 3",
+        title: "Masai Mara → Lake Nakuru",
+        bullets: [
+          "Morning game drive in the Mara.",
+          "Drive to Lake Nakuru National Park.",
+          "Afternoon game drive — flamingos, rhino and Rothschild's giraffe.",
+        ],
+        stay: "Lake Nakuru",
+      },
+      {
+        day: "Day 4",
+        title: "Lake Nakuru → Nairobi",
+        bullets: ["Morning game drive.", "Drive back to Nairobi, arriving late afternoon."],
+      },
     ],
   },
   {
@@ -374,9 +928,37 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Nairobi → Amboseli", bullets: ["Morning pickup in Nairobi.", "Scenic drive to Amboseli (≈4 hrs).", "Lunch at lodge.", "Afternoon game drive with views of Kilimanjaro."], stay: "Amboseli" },
-      { day: "Day 2", title: "Amboseli full day", bullets: ["Sunrise game drive.", "Breakfast and rest at lodge.", "Afternoon game drive at Observation Hill.", "Optional Maasai cultural visit."], stay: "Amboseli" },
-      { day: "Day 3", title: "Amboseli → Nairobi", bullets: ["Morning game drive en route.", "Brunch at lodge.", "Drive back to Nairobi, arriving late afternoon."] },
+      {
+        day: "Day 1",
+        title: "Nairobi → Amboseli",
+        bullets: [
+          "Morning pickup in Nairobi.",
+          "Scenic drive to Amboseli (≈4 hrs).",
+          "Lunch at lodge.",
+          "Afternoon game drive with views of Kilimanjaro.",
+        ],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 2",
+        title: "Amboseli full day",
+        bullets: [
+          "Sunrise game drive.",
+          "Breakfast and rest at lodge.",
+          "Afternoon game drive at Observation Hill.",
+          "Optional Maasai cultural visit.",
+        ],
+        stay: "Amboseli",
+      },
+      {
+        day: "Day 3",
+        title: "Amboseli → Nairobi",
+        bullets: [
+          "Morning game drive en route.",
+          "Brunch at lodge.",
+          "Drive back to Nairobi, arriving late afternoon.",
+        ],
+      },
     ],
   },
   {
@@ -398,9 +980,37 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Nairobi → Masai Mara", bullets: ["Morning departure from Nairobi.", "Drive via the Great Rift Valley viewpoint.", "Lunch at lodge.", "Afternoon game drive in the Mara."], stay: "Masai Mara" },
-      { day: "Day 2", title: "Masai Mara full day", bullets: ["Full day in the reserve with picnic lunch.", "Track lions, cheetah, leopard and elephant herds.", "Optional balloon safari at sunrise.", "Optional Maasai village visit."], stay: "Masai Mara" },
-      { day: "Day 3", title: "Masai Mara → Nairobi", bullets: ["Early morning game drive.", "Breakfast and check-out.", "Drive back to Nairobi, arriving late afternoon."] },
+      {
+        day: "Day 1",
+        title: "Nairobi → Masai Mara",
+        bullets: [
+          "Morning departure from Nairobi.",
+          "Drive via the Great Rift Valley viewpoint.",
+          "Lunch at lodge.",
+          "Afternoon game drive in the Mara.",
+        ],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 2",
+        title: "Masai Mara full day",
+        bullets: [
+          "Full day in the reserve with picnic lunch.",
+          "Track lions, cheetah, leopard and elephant herds.",
+          "Optional balloon safari at sunrise.",
+          "Optional Maasai village visit.",
+        ],
+        stay: "Masai Mara",
+      },
+      {
+        day: "Day 3",
+        title: "Masai Mara → Nairobi",
+        bullets: [
+          "Early morning game drive.",
+          "Breakfast and check-out.",
+          "Drive back to Nairobi, arriving late afternoon.",
+        ],
+      },
     ],
   },
   {
@@ -422,7 +1032,18 @@ export const TOURS: Tour[] = [
     included: DAY_TRIP_INCLUDED.concat(["Picnic lunch and bottled water"]),
     excluded: DAY_TRIP_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Nairobi → Amboseli → Nairobi", bullets: ["Pickup from Nairobi hotel at 05:30.", "Drive to Amboseli (≈4 hrs).", "Morning game drive.", "Picnic lunch at park.", "Afternoon game drive with Kilimanjaro backdrop.", "Drive back to Nairobi, arriving late evening."] },
+      {
+        day: "Day 1",
+        title: "Nairobi → Amboseli → Nairobi",
+        bullets: [
+          "Pickup from Nairobi hotel at 05:30.",
+          "Drive to Amboseli (≈4 hrs).",
+          "Morning game drive.",
+          "Picnic lunch at park.",
+          "Afternoon game drive with Kilimanjaro backdrop.",
+          "Drive back to Nairobi, arriving late evening.",
+        ],
+      },
     ],
   },
   {
@@ -444,7 +1065,19 @@ export const TOURS: Tour[] = [
     included: DAY_TRIP_INCLUDED.concat(["Picnic lunch and bottled water"]),
     excluded: DAY_TRIP_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Nairobi → Lake Nakuru → Nairobi", bullets: ["Pickup from Nairobi hotel at 06:30.", "Drive via the Great Rift Valley viewpoint.", "Arrive at Lake Nakuru by mid-morning.", "Game drive — flamingos, both black & white rhino, Rothschild's giraffe.", "Picnic lunch at Baboon Cliff.", "Afternoon game drive.", "Return to Nairobi by early evening."] },
+      {
+        day: "Day 1",
+        title: "Nairobi → Lake Nakuru → Nairobi",
+        bullets: [
+          "Pickup from Nairobi hotel at 06:30.",
+          "Drive via the Great Rift Valley viewpoint.",
+          "Arrive at Lake Nakuru by mid-morning.",
+          "Game drive — flamingos, both black & white rhino, Rothschild's giraffe.",
+          "Picnic lunch at Baboon Cliff.",
+          "Afternoon game drive.",
+          "Return to Nairobi by early evening.",
+        ],
+      },
     ],
   },
   {
@@ -463,10 +1096,24 @@ export const TOURS: Tour[] = [
     overview: [
       "The same iconic Lake Nakuru day-trip, upgraded to a private 4x4 Landcruiser with a pop-up roof — perfect for photographers, families, and groups who want the park to themselves.",
     ],
-    included: DAY_TRIP_INCLUDED.concat(["Private 4x4 Landcruiser with pop-up roof", "Picnic lunch and bottled water"]),
+    included: DAY_TRIP_INCLUDED.concat([
+      "Private 4x4 Landcruiser with pop-up roof",
+      "Picnic lunch and bottled water",
+    ]),
     excluded: DAY_TRIP_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Nairobi → Lake Nakuru → Nairobi", bullets: ["Private pickup from your Nairobi hotel at 06:30.", "Scenic drive past the Rift Valley.", "Full game drive in Lake Nakuru NP.", "Picnic lunch with views.", "Afternoon birding & rhino tracking.", "Return to Nairobi in the evening."] },
+      {
+        day: "Day 1",
+        title: "Nairobi → Lake Nakuru → Nairobi",
+        bullets: [
+          "Private pickup from your Nairobi hotel at 06:30.",
+          "Scenic drive past the Rift Valley.",
+          "Full game drive in Lake Nakuru NP.",
+          "Picnic lunch with views.",
+          "Afternoon birding & rhino tracking.",
+          "Return to Nairobi in the evening.",
+        ],
+      },
     ],
   },
   {
@@ -485,10 +1132,30 @@ export const TOURS: Tour[] = [
     overview: [
       "A full-day private tour of Zanzibar's highlights — the alleys of Stone Town, a spice plantation, a north-coast beach for sunset, and a fresh seafood BBQ to finish.",
     ],
-    included: ["English-speaking guide", "Private air-conditioned vehicle", "Hotel pickup and drop-off", "Stone Town walking tour", "Spice farm entrance & tasting", "Seafood BBQ dinner"],
+    included: [
+      "English-speaking guide",
+      "Private air-conditioned vehicle",
+      "Hotel pickup and drop-off",
+      "Stone Town walking tour",
+      "Spice farm entrance & tasting",
+      "Seafood BBQ dinner",
+    ],
     excluded: ["Drinks", "Tips", "Personal expenses"],
     itinerary: [
-      { day: "Day 1", title: "Stone Town · Spices · Sunset", bullets: ["Morning hotel pickup.", "Guided walking tour of Stone Town — House of Wonders, Old Fort, former slave market.", "Drive to a working spice plantation for a tasting tour.", "Lunch break.", "Transfer to a north-coast beach (Kendwa or Nungwi).", "Sunset on the beach.", "Fresh seafood BBQ dinner.", "Return transfer to your hotel."] },
+      {
+        day: "Day 1",
+        title: "Stone Town · Spices · Sunset",
+        bullets: [
+          "Morning hotel pickup.",
+          "Guided walking tour of Stone Town — House of Wonders, Old Fort, former slave market.",
+          "Drive to a working spice plantation for a tasting tour.",
+          "Lunch break.",
+          "Transfer to a north-coast beach (Kendwa or Nungwi).",
+          "Sunset on the beach.",
+          "Fresh seafood BBQ dinner.",
+          "Return transfer to your hotel.",
+        ],
+      },
     ],
   },
   {
@@ -510,7 +1177,17 @@ export const TOURS: Tour[] = [
     included: DAY_TRIP_INCLUDED,
     excluded: DAY_TRIP_EXCLUDED,
     itinerary: [
-      { day: "Half day", title: "Nairobi National Park game drive", bullets: ["Hotel pickup at 06:00 (morning) or 13:00 (afternoon).", "Drive to the main gate (≈30 min).", "3–4 hour game drive.", "Look for lion, rhino, buffalo, giraffe, zebra and over 400 bird species.", "Return to your hotel."] },
+      {
+        day: "Half day",
+        title: "Nairobi National Park game drive",
+        bullets: [
+          "Hotel pickup at 06:00 (morning) or 13:00 (afternoon).",
+          "Drive to the main gate (≈30 min).",
+          "3–4 hour game drive.",
+          "Look for lion, rhino, buffalo, giraffe, zebra and over 400 bird species.",
+          "Return to your hotel.",
+        ],
+      },
     ],
   },
   {
@@ -529,10 +1206,26 @@ export const TOURS: Tour[] = [
     overview: [
       "A half-day, ethical wildlife experience that includes a visit to the David Sheldrick Wildlife Trust's elephant orphanage, where rescued elephant calves are rehabilitated and returned to the wild.",
     ],
-    included: ["Hotel pickup and drop-off", "Private vehicle", "English-speaking guide", "Sanctuary entrance fees", "Lunch at a local restaurant"],
+    included: [
+      "Hotel pickup and drop-off",
+      "Private vehicle",
+      "English-speaking guide",
+      "Sanctuary entrance fees",
+      "Lunch at a local restaurant",
+    ],
     excluded: ["Drinks", "Tips", "Personal expenses"],
     itinerary: [
-      { day: "Half day", title: "Elephant Sanctuary & lunch", bullets: ["Pickup from your Nairobi hotel at 10:00.", "Drive to the Sheldrick elephant orphanage.", "11:00 visit — feeding & conservation talk.", "Lunch at a nearby restaurant.", "Return to your hotel by mid-afternoon."] },
+      {
+        day: "Half day",
+        title: "Elephant Sanctuary & lunch",
+        bullets: [
+          "Pickup from your Nairobi hotel at 10:00.",
+          "Drive to the Sheldrick elephant orphanage.",
+          "11:00 visit — feeding & conservation talk.",
+          "Lunch at a nearby restaurant.",
+          "Return to your hotel by mid-afternoon.",
+        ],
+      },
     ],
   },
   {
@@ -554,7 +1247,18 @@ export const TOURS: Tour[] = [
     included: DAY_TRIP_INCLUDED.concat(["All entrance fees (Sheldrick Trust, Giraffe Centre)"]),
     excluded: DAY_TRIP_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Park · Elephants · Giraffes", bullets: ["06:00 pickup from your hotel.", "Morning game drive in Nairobi National Park.", "11:00 Sheldrick Elephant Orphanage visit.", "Lunch at the Carnivore Restaurant or similar (own cost).", "Afternoon visit to the AFEW Giraffe Centre — hand-feed the Rothschild's giraffes.", "Return to your hotel."] },
+      {
+        day: "Day 1",
+        title: "Park · Elephants · Giraffes",
+        bullets: [
+          "06:00 pickup from your hotel.",
+          "Morning game drive in Nairobi National Park.",
+          "11:00 Sheldrick Elephant Orphanage visit.",
+          "Lunch at the Carnivore Restaurant or similar (own cost).",
+          "Afternoon visit to the AFEW Giraffe Centre — hand-feed the Rothschild's giraffes.",
+          "Return to your hotel.",
+        ],
+      },
     ],
   },
   {
@@ -576,7 +1280,18 @@ export const TOURS: Tour[] = [
     included: DAY_TRIP_INCLUDED.concat(["Picnic lunch and bottled water"]),
     excluded: DAY_TRIP_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Nairobi → Amboseli → Nairobi", bullets: ["05:30 pickup from your hotel in a shared safari van.", "Drive to Amboseli (≈4 hrs).", "Morning game drive.", "Picnic lunch.", "Afternoon game drive with Kilimanjaro views.", "Return to Nairobi by late evening."] },
+      {
+        day: "Day 1",
+        title: "Nairobi → Amboseli → Nairobi",
+        bullets: [
+          "05:30 pickup from your hotel in a shared safari van.",
+          "Drive to Amboseli (≈4 hrs).",
+          "Morning game drive.",
+          "Picnic lunch.",
+          "Afternoon game drive with Kilimanjaro views.",
+          "Return to Nairobi by late evening.",
+        ],
+      },
     ],
   },
   {
@@ -598,9 +1313,38 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED.concat(["Two-way scheduled flight Nairobi (Wilson) ↔ Masai Mara"]),
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Nairobi → Masai Mara (fly)", bullets: ["Morning transfer to Wilson Airport.", "Scheduled flight to the Mara.", "Camp pickup and lunch.", "Afternoon game drive."], stay: "Governor's Camp" },
-      { day: "Day 2", title: "Masai Mara full day", bullets: ["Full day in the reserve.", "Optional sunrise hot-air balloon safari with champagne breakfast.", "Riverside lunch.", "Afternoon game drive."], stay: "Governor's Camp" },
-      { day: "Day 3", title: "Masai Mara → Nairobi (fly)", bullets: ["Early morning game drive.", "Brunch at camp.", "Airstrip transfer.", "Flight back to Nairobi."] },
+      {
+        day: "Day 1",
+        title: "Nairobi → Masai Mara (fly)",
+        bullets: [
+          "Morning transfer to Wilson Airport.",
+          "Scheduled flight to the Mara.",
+          "Camp pickup and lunch.",
+          "Afternoon game drive.",
+        ],
+        stay: "Governor's Camp",
+      },
+      {
+        day: "Day 2",
+        title: "Masai Mara full day",
+        bullets: [
+          "Full day in the reserve.",
+          "Optional sunrise hot-air balloon safari with champagne breakfast.",
+          "Riverside lunch.",
+          "Afternoon game drive.",
+        ],
+        stay: "Governor's Camp",
+      },
+      {
+        day: "Day 3",
+        title: "Masai Mara → Nairobi (fly)",
+        bullets: [
+          "Early morning game drive.",
+          "Brunch at camp.",
+          "Airstrip transfer.",
+          "Flight back to Nairobi.",
+        ],
+      },
     ],
   },
   {
@@ -622,9 +1366,37 @@ export const TOURS: Tour[] = [
     included: DEFAULT_INCLUDED,
     excluded: DEFAULT_EXCLUDED,
     itinerary: [
-      { day: "Day 1", title: "Nairobi → Masai Mara", bullets: ["08:00 pickup from your Nairobi hotel.", "Drive via the Great Rift Valley.", "Lunch at lodge.", "Afternoon game drive."], stay: "Masai Mara mid-range lodge" },
-      { day: "Day 2", title: "Masai Mara full day", bullets: ["Sunrise game drive.", "Breakfast and rest.", "Optional Maasai village visit (additional cost).", "Afternoon game drive."], stay: "Masai Mara mid-range lodge" },
-      { day: "Day 3", title: "Masai Mara → Nairobi", bullets: ["Morning game drive.", "Breakfast and check-out.", "Drive back to Nairobi, arriving by late afternoon."] },
+      {
+        day: "Day 1",
+        title: "Nairobi → Masai Mara",
+        bullets: [
+          "08:00 pickup from your Nairobi hotel.",
+          "Drive via the Great Rift Valley.",
+          "Lunch at lodge.",
+          "Afternoon game drive.",
+        ],
+        stay: "Masai Mara mid-range lodge",
+      },
+      {
+        day: "Day 2",
+        title: "Masai Mara full day",
+        bullets: [
+          "Sunrise game drive.",
+          "Breakfast and rest.",
+          "Optional Maasai village visit (additional cost).",
+          "Afternoon game drive.",
+        ],
+        stay: "Masai Mara mid-range lodge",
+      },
+      {
+        day: "Day 3",
+        title: "Masai Mara → Nairobi",
+        bullets: [
+          "Morning game drive.",
+          "Breakfast and check-out.",
+          "Drive back to Nairobi, arriving by late afternoon.",
+        ],
+      },
     ],
   },
   {
@@ -643,10 +1415,26 @@ export const TOURS: Tour[] = [
     overview: [
       "An evening sightseeing combo in Singapore — a bumboat cruise along the Singapore River, the Garden Rhapsody light show at Gardens by the Bay, and the Spectra water show at Marina Bay Sands.",
     ],
-    included: ["River cruise ticket", "Local guide", "Garden Rhapsody admission", "Hotel pickup (selected hotels)"],
+    included: [
+      "River cruise ticket",
+      "Local guide",
+      "Garden Rhapsody admission",
+      "Hotel pickup (selected hotels)",
+    ],
     excluded: ["Meals and drinks", "Personal expenses", "Tips"],
     itinerary: [
-      { day: "Evening", title: "Singapore by night", bullets: ["Hotel pickup at 18:00.", "Bumboat river cruise — Clarke Quay → Marina Bay.", "Walk through Gardens by the Bay.", "19:45 Garden Rhapsody light show at the Supertree Grove.", "20:00 Spectra water and laser show at Marina Bay Sands.", "Return transfer to your hotel."] },
+      {
+        day: "Evening",
+        title: "Singapore by night",
+        bullets: [
+          "Hotel pickup at 18:00.",
+          "Bumboat river cruise — Clarke Quay → Marina Bay.",
+          "Walk through Gardens by the Bay.",
+          "19:45 Garden Rhapsody light show at the Supertree Grove.",
+          "20:00 Spectra water and laser show at Marina Bay Sands.",
+          "Return transfer to your hotel.",
+        ],
+      },
     ],
   },
   {
@@ -665,10 +1453,24 @@ export const TOURS: Tour[] = [
     overview: [
       "Explore Johannesburg at your own pace with a hop-on hop-off bus that loops the city's main sights, plus an optional add-on tour through Soweto — including Vilakazi Street and the Hector Pieterson Memorial.",
     ],
-    included: ["1-day hop-on hop-off bus pass", "Multilingual audio commentary", "Optional Soweto extension tour"],
+    included: [
+      "1-day hop-on hop-off bus pass",
+      "Multilingual audio commentary",
+      "Optional Soweto extension tour",
+    ],
     excluded: ["Meals", "Attraction entrance fees", "Tips", "Hotel transfers"],
     itinerary: [
-      { day: "Day 1", title: "Joburg + Soweto", bullets: ["Start at any HOHO stop.", "Loop the city — Constitution Hill, Gold Reef City, Apartheid Museum, Newtown.", "Optional afternoon Soweto add-on.", "Visit Mandela House, Hector Pieterson Memorial, Vilakazi Street.", "Return to your start point."] },
+      {
+        day: "Day 1",
+        title: "Joburg + Soweto",
+        bullets: [
+          "Start at any HOHO stop.",
+          "Loop the city — Constitution Hill, Gold Reef City, Apartheid Museum, Newtown.",
+          "Optional afternoon Soweto add-on.",
+          "Visit Mandela House, Hector Pieterson Memorial, Vilakazi Street.",
+          "Return to your start point.",
+        ],
+      },
     ],
   },
   {
@@ -687,10 +1489,24 @@ export const TOURS: Tour[] = [
     overview: [
       "A fully customisable private sightseeing day in Singapore with your own English-speaking driver and air-conditioned vehicle — see exactly what you want, at your own pace.",
     ],
-    included: ["Private English-speaking driver", "Air-conditioned vehicle", "Bottled water", "Hotel pickup and drop-off"],
+    included: [
+      "Private English-speaking driver",
+      "Air-conditioned vehicle",
+      "Bottled water",
+      "Hotel pickup and drop-off",
+    ],
     excluded: ["Attraction tickets", "Meals", "Tips"],
     itinerary: [
-      { day: "Half day", title: "Your Singapore, your way", bullets: ["Pickup from your hotel at the time you choose.", "Suggested route: Marina Bay → Gardens by the Bay → Chinatown → Little India → Orchard Road → Sentosa.", "Stop wherever you like for photos, food or shopping.", "Drop-off at your hotel."] },
+      {
+        day: "Half day",
+        title: "Your Singapore, your way",
+        bullets: [
+          "Pickup from your hotel at the time you choose.",
+          "Suggested route: Marina Bay → Gardens by the Bay → Chinatown → Little India → Orchard Road → Sentosa.",
+          "Stop wherever you like for photos, food or shopping.",
+          "Drop-off at your hotel.",
+        ],
+      },
     ],
   },
 ];

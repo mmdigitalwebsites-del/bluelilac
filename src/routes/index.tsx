@@ -1,5 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Phone, Mail, MapPin, Star, Compass, Shield, Heart, Award, Menu, Play, Plus, Calendar, User } from "lucide-react";
+import {
+  ArrowRight,
+  Phone,
+  Mail,
+  MapPin,
+  Star,
+  Compass,
+  Shield,
+  Heart,
+  Award,
+  Menu,
+  Play,
+  Plus,
+  Calendar,
+  User,
+} from "lucide-react";
 import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -15,19 +30,50 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Bluelilac Tours — East Africa Safari Specialists" },
-      { name: "description", content: "Premier safaris across Kenya, Tanzania, Uganda & Rwanda. Witness the Great Migration, track the Big Five, sleep under African skies." },
+      {
+        name: "description",
+        content:
+          "Premier safaris across Kenya, Tanzania, Uganda & Rwanda. Witness the Great Migration, track the Big Five, sleep under African skies.",
+      },
       { property: "og:title", content: "Bluelilac Tours — East Africa Safari Specialists" },
-      { property: "og:description", content: "Premier safaris across Kenya, Tanzania, Uganda & Rwanda." },
+      {
+        property: "og:description",
+        content: "Premier safaris across Kenya, Tanzania, Uganda & Rwanda.",
+      },
     ],
   }),
   component: Index,
 });
 
 const tours = [
-  { img: tourSerengeti, title: "13 Days Kenya & Tanzania Classic", country: "Kenya · Tanzania", days: "13 Days", price: "$4,250" },
-  { img: tourGorilla, title: "Gorilla Trekking in Bwindi", country: "Uganda", days: "5 Days", price: "$2,800" },
-  { img: tourLodge, title: "Luxury Serengeti Under the Stars", country: "Tanzania", days: "7 Days", price: "$3,600" },
-  { img: tourZanzibar, title: "Safari & Zanzibar Beach Escape", country: "Tanzania · Zanzibar", days: "10 Days", price: "$3,950" },
+  {
+    img: tourSerengeti,
+    title: "13 Days Kenya & Tanzania Classic",
+    country: "Kenya · Tanzania",
+    days: "13 Days",
+    price: "$4,250",
+  },
+  {
+    img: tourGorilla,
+    title: "Gorilla Trekking in Bwindi",
+    country: "Uganda",
+    days: "5 Days",
+    price: "$2,800",
+  },
+  {
+    img: tourLodge,
+    title: "Luxury Serengeti Under the Stars",
+    country: "Tanzania",
+    days: "7 Days",
+    price: "$3,600",
+  },
+  {
+    img: tourZanzibar,
+    title: "Safari & Zanzibar Beach Escape",
+    country: "Tanzania · Zanzibar",
+    days: "10 Days",
+    price: "$3,950",
+  },
 ];
 
 const destinations = [
@@ -85,7 +131,10 @@ function Header() {
   return (
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <a href="#" className="flex items-center font-display text-2xl font-semibold text-white md:text-3xl">
+        <a
+          href="#"
+          className="flex items-center font-display text-2xl font-semibold text-white md:text-3xl"
+        >
           Bluelilac
         </a>
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
@@ -115,7 +164,10 @@ function Header() {
         >
           <Phone className="h-5 w-5" />
         </a>
-        <button className="rounded-full bg-white/10 p-2 text-white backdrop-blur-md lg:hidden" aria-label="Menu">
+        <button
+          className="rounded-full bg-white/10 p-2 text-white backdrop-blur-md lg:hidden"
+          aria-label="Menu"
+        >
           <Menu className="h-6 w-6" />
         </button>
       </div>
@@ -134,10 +186,10 @@ function Hero() {
           allowFullScreen
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
           style={{
-            width: '177.78vh',
-            height: '100vh',
-            minWidth: '100vw',
-            minHeight: '56.25vw',
+            width: "177.78vh",
+            height: "100vh",
+            minWidth: "100vw",
+            minHeight: "56.25vw",
             border: 0,
           }}
         />
@@ -149,10 +201,13 @@ function Hero() {
           Feel The Experience
         </span>
         <h1 className="max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl lg:text-[5.5rem]">
-          Discover East Africa's<br />Wild Beauty
+          Discover East Africa's
+          <br />
+          Wild Beauty
         </h1>
         <p className="mt-6 max-w-xl text-lg text-white/85">
-          Witness the Great Migration. Track the Big Five. Sleep under African skies — with the people who know this land best.
+          Witness the Great Migration. Track the Big Five. Sleep under African skies — with the
+          people who know this land best.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <a
@@ -172,7 +227,11 @@ function Hero() {
         {[
           { label: "F", href: "https://www.facebook.com/bluelilactours/", title: "Facebook" },
           { label: "X", href: "https://x.com/bluelilactours", title: "Twitter / X" },
-          { label: "I", href: "https://www.instagram.com/bluelilactourstravel/", title: "Instagram" },
+          {
+            label: "I",
+            href: "https://www.instagram.com/bluelilactourstravel/",
+            title: "Instagram",
+          },
         ].map((s) => (
           <a
             key={s.label}
@@ -212,10 +271,26 @@ function Trust() {
 
 function WhyUs() {
   const items = [
-    { icon: Compass, title: "Crafted by locals", text: "Every itinerary is shaped by guides who grew up tracking these landscapes." },
-    { icon: Shield, title: "Safety first", text: "Vetted vehicles, certified guides, 24/7 ground support on every journey." },
-    { icon: Heart, title: "Conservation-led", text: "A share of every booking funds community and wildlife initiatives." },
-    { icon: Award, title: "Award-winning", text: "Recognized by travel publications for excellence in East African safari design." },
+    {
+      icon: Compass,
+      title: "Crafted by locals",
+      text: "Every itinerary is shaped by guides who grew up tracking these landscapes.",
+    },
+    {
+      icon: Shield,
+      title: "Safety first",
+      text: "Vetted vehicles, certified guides, 24/7 ground support on every journey.",
+    },
+    {
+      icon: Heart,
+      title: "Conservation-led",
+      text: "A share of every booking funds community and wildlife initiatives.",
+    },
+    {
+      icon: Award,
+      title: "Award-winning",
+      text: "Recognized by travel publications for excellence in East African safari design.",
+    },
   ];
   return (
     <section id="about" className="bg-background py-24 md:py-32">
@@ -227,20 +302,31 @@ function WhyUs() {
               Journeys that connect you deeply with Africa.
             </h2>
             <p className="mt-6 max-w-lg text-black">
-              Bluelilac Tours is a premier East African safari specialist creating unforgettable wildlife and luxury travel experiences across Kenya, Tanzania, Uganda and Rwanda — from the vast plains of the Maasai Mara to the white beaches of Zanzibar.
+              Bluelilac Tours is a premier East African safari specialist creating unforgettable
+              wildlife and luxury travel experiences across Kenya, Tanzania, Uganda and Rwanda —
+              from the vast plains of the Maasai Mara to the white beaches of Zanzibar.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="mailto:info@bluelilactours.com" className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90">
+              <a
+                href="mailto:info@bluelilactours.com"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
+              >
                 <Mail className="h-4 w-4" /> Contact us
               </a>
-              <a href="tel:+254715405641" className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition hover:bg-secondary">
+              <a
+                href="tel:+254715405641"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition hover:bg-secondary"
+              >
                 <Phone className="h-4 w-4" /> +254 715 405641
               </a>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {items.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="rounded-3xl border border-border bg-card p-6 transition hover:border-primary/40 hover:shadow-sm">
+              <div
+                key={title}
+                className="rounded-3xl border border-border bg-card p-6 transition hover:border-primary/40 hover:shadow-sm"
+              >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <Icon className="h-6 w-6" />
                 </div>
@@ -262,16 +348,24 @@ function FeaturedTours() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-primary">Hand-picked</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">Our best-selling tours</h2>
+            <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
+              Our best-selling tours
+            </h2>
           </div>
-          <a href="/tours" className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary">
+          <a
+            href="/tours"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary"
+          >
             View all trips <ArrowRight className="h-4 w-4" />
           </a>
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {tours.map((t) => (
-            <article key={t.title} className="group overflow-hidden rounded-3xl bg-card transition hover:-translate-y-1">
+            <article
+              key={t.title}
+              className="group overflow-hidden rounded-3xl bg-card transition hover:-translate-y-1"
+            >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={t.img}
@@ -312,14 +406,25 @@ function Destinations() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Where we go</p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">Five countries. One continent of wonder.</h2>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
+            Five countries. One continent of wonder.
+          </h2>
         </div>
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {destinations.map((d, i) => {
             const imgs = [tourSerengeti, tourLodge, tourGorilla, tourZanzibar];
             return (
-              <a key={d.name} href="/destinations" className="group relative block aspect-[3/4] overflow-hidden rounded-3xl">
-                <img src={imgs[i]} alt={d.name} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+              <a
+                key={d.name}
+                href="/destinations"
+                className="group relative block aspect-[3/4] overflow-hidden rounded-3xl"
+              >
+                <img
+                  src={imgs[i]}
+                  alt={d.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="font-display text-3xl text-white">{d.name}</h3>
@@ -340,7 +445,12 @@ function Destinations() {
 function CtaBalloon() {
   return (
     <section className="relative overflow-hidden">
-      <img src={ctaBalloon} alt="Hot air balloon over Serengeti at sunrise" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+      <img
+        src={ctaBalloon}
+        alt="Hot air balloon over Serengeti at sunrise"
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
       <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 py-28 md:px-10 md:py-40">
         <span className="rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-white backdrop-blur-md">
@@ -350,9 +460,13 @@ function CtaBalloon() {
           Float above the migration at sunrise.
         </h2>
         <p className="max-w-xl text-white/85">
-          Add a sunrise hot-air-balloon flight over the Serengeti to any Tanzania itinerary — bookings open for the 2026 season.
+          Add a sunrise hot-air-balloon flight over the Serengeti to any Tanzania itinerary —
+          bookings open for the 2026 season.
         </p>
-        <a href="/contact" className="group inline-flex items-center gap-3 rounded-full bg-accent py-4 pl-7 pr-3 text-sm font-medium text-accent-foreground transition hover:bg-secondary hover:text-secondary-foreground">
+        <a
+          href="/contact"
+          className="group inline-flex items-center gap-3 rounded-full bg-accent py-4 pl-7 pr-3 text-sm font-medium text-accent-foreground transition hover:bg-secondary hover:text-secondary-foreground"
+        >
           Plan my trip
           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-foreground text-accent transition group-hover:bg-secondary-foreground group-hover:text-secondary">
             <ArrowRight className="h-4 w-4" />
@@ -365,16 +479,30 @@ function CtaBalloon() {
 
 function Testimonials() {
   const t = [
-    { name: "Amelia R.", from: "London, UK", text: "From the moment we landed in Nairobi to our last sunset in Zanzibar, every detail was perfect. The guides spotted things we'd never have seen on our own." },
-    { name: "David & Marta", from: "Madrid, ES", text: "The migration in the Mara was life-changing — and Bluelilac's team made the whole 12-day trip feel effortless and personal." },
-    { name: "Hiroshi T.", from: "Tokyo, JP", text: "Gorilla trekking in Bwindi was the experience of a lifetime. Excellent planning, exceptional people." },
+    {
+      name: "Amelia R.",
+      from: "London, UK",
+      text: "From the moment we landed in Nairobi to our last sunset in Zanzibar, every detail was perfect. The guides spotted things we'd never have seen on our own.",
+    },
+    {
+      name: "David & Marta",
+      from: "Madrid, ES",
+      text: "The migration in the Mara was life-changing — and Bluelilac's team made the whole 12-day trip feel effortless and personal.",
+    },
+    {
+      name: "Hiroshi T.",
+      from: "Tokyo, JP",
+      text: "Gorilla trekking in Bwindi was the experience of a lifetime. Excellent planning, exceptional people.",
+    },
   ];
   return (
     <section className="bg-secondary/50 py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Traveler stories</p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">Memories worth keeping.</h2>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
+            Memories worth keeping.
+          </h2>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {t.map((q) => (
@@ -456,7 +584,8 @@ function Faq() {
               Enjoy Our Best Quality Tour &amp; Experience
             </h2>
             <p className="mt-6 max-w-md text-black">
-              Everything you wanted to know before stepping into the wild. Still curious? Reach out — we love a good travel question.
+              Everything you wanted to know before stepping into the wild. Still curious? Reach out
+              — we love a good travel question.
             </p>
             <a
               href="mailto:info@bluelilactours.com"
@@ -488,16 +617,16 @@ function Faq() {
                     <span className="font-display text-lg md:text-xl">{f.q}</span>
                     <span
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition ${
-                        isOpen ? "rotate-45 bg-primary text-primary-foreground" : "bg-secondary text-foreground"
+                        isOpen
+                          ? "rotate-45 bg-primary text-primary-foreground"
+                          : "bg-secondary text-foreground"
                       }`}
                     >
                       <Plus className="h-4 w-4" />
                     </span>
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-6 text-sm leading-relaxed text-black">
-                      {f.a}
-                    </div>
+                    <div className="px-6 pb-6 text-sm leading-relaxed text-black">{f.a}</div>
                   )}
                 </div>
               );
@@ -520,14 +649,20 @@ function Blog() {
               Read Our Latest Travel Blog &amp; Tips Here
             </h2>
           </div>
-          <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary"
+          >
             View all posts <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {blogPosts.map((p) => (
-            <article key={p.slug} className="group overflow-hidden rounded-3xl bg-card transition hover:-translate-y-1 hover:shadow-md">
+            <article
+              key={p.slug}
+              className="group overflow-hidden rounded-3xl bg-card transition hover:-translate-y-1 hover:shadow-md"
+            >
               <Link to="/blog/$slug" params={{ slug: p.slug }} className="block">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -540,14 +675,24 @@ function Blog() {
               </Link>
               <div className="p-6">
                 <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
-                  <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" /> {p.date}</span>
-                  <span className="inline-flex items-center gap-1.5"><User className="h-3.5 w-3.5" /> {p.author}</span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Calendar className="h-3.5 w-3.5" /> {p.date}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <User className="h-3.5 w-3.5" /> {p.author}
+                  </span>
                 </div>
                 <h3 className="mt-3 font-display text-xl leading-snug group-hover:text-primary">
-                  <Link to="/blog/$slug" params={{ slug: p.slug }}>{p.title}</Link>
+                  <Link to="/blog/$slug" params={{ slug: p.slug }}>
+                    {p.title}
+                  </Link>
                 </h3>
                 <p className="mt-3 text-sm text-black">{p.excerpt}</p>
-                <Link to="/blog/$slug" params={{ slug: p.slug }} className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary">
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: p.slug }}
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary"
+                >
                   Read more <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

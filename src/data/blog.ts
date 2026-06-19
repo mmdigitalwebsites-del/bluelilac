@@ -20,7 +20,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "lake-naivasha-safari-guide",
     title: "Lake Naivasha Safari Guide: Hippos, Boat Safaris & Crescent Island",
-    excerpt: "Lake Naivasha delivers Kenya's most serene safari experience — hippos at close range, walking safaris on Crescent Island and Rift Valley sunsets.",
+    excerpt:
+      "Lake Naivasha delivers Kenya's most serene safari experience — hippos at close range, walking safaris on Crescent Island and Rift Valley sunsets.",
     category: "Destination Guides",
     date: "March 14, 2026",
     author: "Bluelilac Team",
@@ -35,7 +36,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "tsavo-national-park-guide",
     title: "Tsavo National Park Guide: Kenya's Wild, Red-Elephant Wilderness",
-    excerpt: "Tsavo is Kenya's largest protected wilderness — home to the famous red elephants, Mzima Springs, and a raw, uncrowded safari feel.",
+    excerpt:
+      "Tsavo is Kenya's largest protected wilderness — home to the famous red elephants, Mzima Springs, and a raw, uncrowded safari feel.",
     category: "Destination Guides",
     date: "March 7, 2026",
     author: "Bluelilac Team",
@@ -49,8 +51,10 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "ol-pejeta-conservancy-guide",
-    title: "Ol Pejeta Conservancy Guide: Rhinos, Chimps & the World's Last Two Northern White Rhinos",
-    excerpt: "Ol Pejeta is home to the world's rarest animals — the last two northern white rhinos on Earth — plus chimps, rhinos and the Big Five.",
+    title:
+      "Ol Pejeta Conservancy Guide: Rhinos, Chimps & the World's Last Two Northern White Rhinos",
+    excerpt:
+      "Ol Pejeta is home to the world's rarest animals — the last two northern white rhinos on Earth — plus chimps, rhinos and the Big Five.",
     category: "Conservation",
     date: "February 28, 2026",
     author: "James K.",
@@ -65,7 +69,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "samburu-national-reserve-guide",
     title: "Samburu National Reserve: A Deep-Dive into Kenya's Northern Wildlife",
-    excerpt: "Samburu is northern Kenya's greatest secret — home to the Special Five and a wilder, drier landscape than the southern parks.",
+    excerpt:
+      "Samburu is northern Kenya's greatest secret — home to the Special Five and a wilder, drier landscape than the southern parks.",
     category: "Destination Guides",
     date: "February 19, 2026",
     author: "Amina O.",
@@ -80,7 +85,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "diani-beach-kenya-guide",
     title: "Diani Beach Kenya Guide: Africa's Most Beautiful Beach for Safari Travellers",
-    excerpt: "Diani Beach is Africa's finest safari-beach combination — 17 km of white sand, warm Indian Ocean water, and easy access from Nairobi.",
+    excerpt:
+      "Diani Beach is Africa's finest safari-beach combination — 17 km of white sand, warm Indian Ocean water, and easy access from Nairobi.",
     category: "Beach & Coast",
     date: "February 10, 2026",
     author: "Bluelilac Team",
@@ -95,7 +101,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "nairobi-city-guide-for-safari-travellers",
     title: "Nairobi City Guide for Safari Travellers: Elephants, Giraffes & Great Restaurants",
-    excerpt: "Nairobi is far more than a transit stop — it's a city with elephants, giraffes, world-class food and a creative cultural scene.",
+    excerpt:
+      "Nairobi is far more than a transit stop — it's a city with elephants, giraffes, world-class food and a creative cultural scene.",
     category: "Destination Guides",
     date: "January 28, 2026",
     author: "Bluelilac Team",
@@ -110,7 +117,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "solo-safari-kenya-guide",
     title: "Solo Safari Kenya: The Complete Guide to Travelling Alone in the Bush",
-    excerpt: "A solo Kenya safari gives you a private guide, flexible itinerary and the freedom to make the trip entirely your own.",
+    excerpt:
+      "A solo Kenya safari gives you a private guide, flexible itinerary and the freedom to make the trip entirely your own.",
     category: "Safari Planning",
     date: "January 19, 2026",
     author: "Amina O.",
@@ -125,7 +133,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "kenya-safari-budget-guide",
     title: "Kenya Safari Budget Guide: How Much Does a Kenya Safari Cost?",
-    excerpt: "Kenya safari costs range from $250 to $1,500+ per person per night. Here's how to plan a trip that fits your budget without compromising the experience.",
+    excerpt:
+      "Kenya safari costs range from $250 to $1,500+ per person per night. Here's how to plan a trip that fits your budget without compromising the experience.",
     category: "Safari Planning",
     date: "January 6, 2026",
     author: "Bluelilac Team",
@@ -140,7 +149,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "kenya-wildlife-conservation-guide",
     title: "Kenya Wildlife Conservation: The Stories Behind the Safaris",
-    excerpt: "Kenya's wildlife didn't survive by accident — it survived because of extraordinary conservation work led by communities, rangers, and conservancies.",
+    excerpt:
+      "Kenya's wildlife didn't survive by accident — it survived because of extraordinary conservation work led by communities, rangers, and conservancies.",
     category: "Conservation",
     date: "December 18, 2025",
     author: "James K.",
@@ -155,7 +165,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "kenya-vs-tanzania-safari",
     title: "Kenya vs Tanzania Safari: Which Country Should You Choose?",
-    excerpt: "Kenya vs Tanzania — an honest comparison of East Africa's two greatest safari countries, from the Mara to the Serengeti.",
+    excerpt:
+      "Kenya vs Tanzania — an honest comparison of East Africa's two greatest safari countries, from the Mara to the Serengeti.",
     category: "Safari Planning",
     date: "December 5, 2025",
     author: "Bluelilac Team",
@@ -170,7 +181,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "masai-mara-great-migration-guide",
     title: "Masai Mara Great Migration: When, Where & How to Witness It",
-    excerpt: "The Great Migration is the greatest wildlife spectacle on Earth. Here's exactly when to go, where to stay, and how to see a river crossing.",
+    excerpt:
+      "The Great Migration is the greatest wildlife spectacle on Earth. Here's exactly when to go, where to stay, and how to see a river crossing.",
     category: "Safari Planning",
     date: "November 22, 2025",
     author: "Bluelilac Team",
@@ -185,7 +197,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "what-to-pack-for-a-kenya-safari",
     title: "What to Pack for a Kenya Safari: The Complete Checklist",
-    excerpt: "Forget the safari-suit cliché. Here's the practical, tested packing list our guests actually use on Kenya safaris — clothes, gear, and the small things people forget.",
+    excerpt:
+      "Forget the safari-suit cliché. Here's the practical, tested packing list our guests actually use on Kenya safaris — clothes, gear, and the small things people forget.",
     category: "Safari Planning",
     date: "November 8, 2025",
     author: "Amina O.",

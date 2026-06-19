@@ -1,5 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Phone, Mail, MapPin, Menu, Clock, Send, MessageCircle, Globe, CheckCircle } from "lucide-react";
+import {
+  ArrowRight,
+  Phone,
+  Mail,
+  MapPin,
+  Menu,
+  Clock,
+  Send,
+  MessageCircle,
+  Globe,
+  CheckCircle,
+} from "lucide-react";
 import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import heroSafari from "@/assets/hero-safari.jpg";
@@ -10,9 +21,17 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Us — Bluelilac Tours & Travel" },
-      { name: "description", content: "Get in touch with Bluelilac Tours. Plan your East African safari, ask questions, or request a tailor-made itinerary. We're here 24/7." },
+      {
+        name: "description",
+        content:
+          "Get in touch with Bluelilac Tours. Plan your East African safari, ask questions, or request a tailor-made itinerary. We're here 24/7.",
+      },
       { property: "og:title", content: "Contact Bluelilac Tours" },
-      { property: "og:description", content: "Plan your East African safari with our team. Contact us for tailor-made itineraries and expert advice." },
+      {
+        property: "og:description",
+        content:
+          "Plan your East African safari with our team. Contact us for tailor-made itineraries and expert advice.",
+      },
       { property: "og:image", content: heroSafari },
     ],
   }),
@@ -37,7 +56,9 @@ function TopBar() {
   return (
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <a href="/" className="font-display text-2xl font-semibold text-white md:text-3xl">Bluelilac</a>
+        <a href="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
+          Bluelilac
+        </a>
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {[
             { label: "Home", href: "/" },
@@ -51,7 +72,9 @@ function TopBar() {
               key={item.label}
               href={item.href}
               className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                item.label === "Contact Us" ? "bg-white text-foreground" : "text-white/90 hover:bg-white/10"
+                item.label === "Contact Us"
+                  ? "bg-white text-foreground"
+                  : "text-white/90 hover:bg-white/10"
               }`}
             >
               {item.label}
@@ -65,7 +88,10 @@ function TopBar() {
         >
           <Phone className="h-5 w-5" />
         </a>
-        <button className="rounded-full bg-white/10 p-2 text-white backdrop-blur-md lg:hidden" aria-label="Menu">
+        <button
+          className="rounded-full bg-white/10 p-2 text-white backdrop-blur-md lg:hidden"
+          aria-label="Menu"
+        >
           <Menu className="h-6 w-6" />
         </button>
       </div>
@@ -76,7 +102,11 @@ function TopBar() {
 function Hero() {
   return (
     <section className="relative flex h-[60vh] min-h-[480px] w-full items-center overflow-hidden">
-      <img src={heroSafari} alt="Sunset over the East African savannah" className="absolute inset-0 h-full w-full object-cover" />
+      <img
+        src={heroSafari}
+        alt="Sunset over the East African savannah"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
         <span className="mb-6 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
@@ -86,7 +116,8 @@ function Hero() {
           Let's plan your African adventure.
         </h1>
         <p className="mt-6 max-w-xl text-lg text-white/85">
-          Have a question, a dream destination, or just curious about safaris? Our team is here to help — reach out any time.
+          Have a question, a dream destination, or just curious about safaris? Our team is here to
+          help — reach out any time.
         </p>
       </div>
     </section>
@@ -128,12 +159,16 @@ function ContactCards() {
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Reach out</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl">We're here to help.</h2>
           <p className="mt-4 text-black">
-            Whether you're ready to book or just exploring ideas, our safari designers are available across phone, email and WhatsApp.
+            Whether you're ready to book or just exploring ideas, our safari designers are available
+            across phone, email and WhatsApp.
           </p>
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {CONTACT_DETAILS.map((c) => (
-            <div key={c.title} className="rounded-3xl bg-card p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div
+              key={c.title}
+              className="rounded-3xl bg-card p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#A40A09]/10 text-[#A40A09]">
                 <c.icon className="h-6 w-6" />
               </div>
@@ -172,7 +207,9 @@ function ContactFormSection() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
@@ -188,9 +225,12 @@ function ContactFormSection() {
         <div className="space-y-8">
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-primary">Send an enquiry</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl">Tell us about your dream trip.</h2>
+            <h2 className="mt-4 font-display text-4xl md:text-5xl">
+              Tell us about your dream trip.
+            </h2>
             <p className="mt-4 text-black">
-              Fill in the form and one of our safari designers will reply within 24 hours with a tailor-made proposal.
+              Fill in the form and one of our safari designers will reply within 24 hours with a
+              tailor-made proposal.
             </p>
           </div>
           <div className="space-y-4">
@@ -200,7 +240,9 @@ function ContactFormSection() {
               </div>
               <div>
                 <h4 className="font-medium">Free itinerary design</h4>
-                <p className="mt-1 text-sm text-black">No obligation — we craft a bespoke plan based on your dates and interests.</p>
+                <p className="mt-1 text-sm text-black">
+                  No obligation — we craft a bespoke plan based on your dates and interests.
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -209,7 +251,9 @@ function ContactFormSection() {
               </div>
               <div>
                 <h4 className="font-medium">Expert advice within 24 hours</h4>
-                <p className="mt-1 text-sm text-black">Our Nairobi-based team knows every park, lodge and seasonal secret.</p>
+                <p className="mt-1 text-sm text-black">
+                  Our Nairobi-based team knows every park, lodge and seasonal secret.
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -218,12 +262,18 @@ function ContactFormSection() {
               </div>
               <div>
                 <h4 className="font-medium">Flexible booking & support</h4>
-                <p className="mt-1 text-sm text-black">We adjust dates, camps and routes until it's perfect for you.</p>
+                <p className="mt-1 text-sm text-black">
+                  We adjust dates, camps and routes until it's perfect for you.
+                </p>
               </div>
             </div>
           </div>
           <div className="overflow-hidden rounded-3xl">
-            <img src={tourLodge} alt="Safari lodge in East Africa" className="h-72 w-full object-cover" />
+            <img
+              src={tourLodge}
+              alt="Safari lodge in East Africa"
+              className="h-72 w-full object-cover"
+            />
           </div>
         </div>
 
@@ -234,13 +284,17 @@ function ContactFormSection() {
                 <CheckCircle className="h-8 w-8" />
               </div>
               <h3 className="mt-6 font-display text-2xl">Message sent!</h3>
-              <p className="mt-2 text-black">Thank you for reaching out. We'll be in touch within 24 hours.</p>
+              <p className="mt-2 text-black">
+                Thank you for reaching out. We'll be in touch within 24 hours.
+              </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground">Full name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground">
+                    Full name
+                  </label>
                   <input
                     id="name"
                     name="name"
@@ -253,7 +307,9 @@ function ContactFormSection() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground">Email address</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground">
+                    Email address
+                  </label>
                   <input
                     id="email"
                     name="email"
@@ -268,7 +324,9 @@ function ContactFormSection() {
               </div>
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground">Phone number</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground">
+                    Phone number
+                  </label>
                   <input
                     id="phone"
                     name="phone"
@@ -280,7 +338,9 @@ function ContactFormSection() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="travelDate" className="block text-sm font-medium text-foreground">Preferred travel date</label>
+                  <label htmlFor="travelDate" className="block text-sm font-medium text-foreground">
+                    Preferred travel date
+                  </label>
                   <input
                     id="travelDate"
                     name="travelDate"
@@ -292,7 +352,9 @@ function ContactFormSection() {
                 </div>
               </div>
               <div>
-                <label htmlFor="travellers" className="block text-sm font-medium text-foreground">Number of travellers</label>
+                <label htmlFor="travellers" className="block text-sm font-medium text-foreground">
+                  Number of travellers
+                </label>
                 <select
                   id="travellers"
                   name="travellers"
@@ -309,7 +371,9 @@ function ContactFormSection() {
                 </select>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground">Your message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground">
+                  Your message
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -346,7 +410,8 @@ function Location() {
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Find us</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl">Our home is Nairobi.</h2>
           <p className="mt-4 text-black">
-            Drop by our office at Rosslyn Square Mall, or simply reach out — we work with travellers from every corner of the world.
+            Drop by our office at Rosslyn Square Mall, or simply reach out — we work with travellers
+            from every corner of the world.
           </p>
         </div>
         <div className="mt-14 overflow-hidden rounded-3xl border border-border shadow-sm">
@@ -366,17 +431,26 @@ function Location() {
           <div className="rounded-2xl bg-card p-6 text-center shadow-sm">
             <Globe className="mx-auto h-6 w-6 text-primary" />
             <h4 className="mt-4 font-display text-lg">Based in Nairobi</h4>
-            <p className="mt-2 text-sm text-black">At the heart of East Africa, with teams on the ground in Kenya, Tanzania, Uganda and Rwanda.</p>
+            <p className="mt-2 text-sm text-black">
+              At the heart of East Africa, with teams on the ground in Kenya, Tanzania, Uganda and
+              Rwanda.
+            </p>
           </div>
           <div className="rounded-2xl bg-card p-6 text-center shadow-sm">
             <MessageCircle className="mx-auto h-6 w-6 text-primary" />
             <h4 className="mt-4 font-display text-lg">WhatsApp Support</h4>
-            <p className="mt-2 text-sm text-black">Message us anytime on WhatsApp for quick questions, itinerary tweaks or last-minute bookings.</p>
+            <p className="mt-2 text-sm text-black">
+              Message us anytime on WhatsApp for quick questions, itinerary tweaks or last-minute
+              bookings.
+            </p>
           </div>
           <div className="rounded-2xl bg-card p-6 text-center shadow-sm">
             <Phone className="mx-auto h-6 w-6 text-primary" />
             <h4 className="mt-4 font-display text-lg">24/7 On-Trip Support</h4>
-            <p className="mt-2 text-sm text-black">A dedicated support line for every traveller, from the moment you land to your departure.</p>
+            <p className="mt-2 text-sm text-black">
+              A dedicated support line for every traveller, from the moment you land to your
+              departure.
+            </p>
           </div>
         </div>
       </div>
@@ -386,10 +460,22 @@ function Location() {
 
 function QuickHelp() {
   const items = [
-    { q: "How quickly will you respond?", a: "We reply to all enquiries within 24 hours — usually much sooner. For urgent requests, call or WhatsApp us directly." },
-    { q: "Do I need to pay anything to get a proposal?", a: "No. Your first itinerary is completely free and comes with no obligation to book." },
-    { q: "Can you design a trip for a large group?", a: "Absolutely. We regularly organise safaris for families, corporate groups, and friends travelling together." },
-    { q: "What if I need to change my dates later?", a: "We offer flexible booking terms and will work with camps and lodges to reschedule where possible." },
+    {
+      q: "How quickly will you respond?",
+      a: "We reply to all enquiries within 24 hours — usually much sooner. For urgent requests, call or WhatsApp us directly.",
+    },
+    {
+      q: "Do I need to pay anything to get a proposal?",
+      a: "No. Your first itinerary is completely free and comes with no obligation to book.",
+    },
+    {
+      q: "Can you design a trip for a large group?",
+      a: "Absolutely. We regularly organise safaris for families, corporate groups, and friends travelling together.",
+    },
+    {
+      q: "What if I need to change my dates later?",
+      a: "We offer flexible booking terms and will work with camps and lodges to reschedule where possible.",
+    },
   ];
 
   return (
@@ -397,7 +483,9 @@ function QuickHelp() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.25em] text-[#0C5DFF]">Quick help</p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-foreground">Common questions.</h2>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl text-foreground">
+            Common questions.
+          </h2>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {items.map((item) => (

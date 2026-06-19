@@ -67,20 +67,20 @@
   --radius: 1rem;
   /* Bluelilac brand: deep red headings, royal blue actions, navy depth, soft blue tint */
   --background: oklch(0.99 0.005 250);
-  --foreground: oklch(0.20 0.18 270);            /* #030464 navy */
+  --foreground: oklch(0.2 0.18 270); /* #030464 navy */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.20 0.18 270);
+  --card-foreground: oklch(0.2 0.18 270);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.20 0.18 270);
-  --primary: oklch(0.45 0.20 28);                /* #A40A09 deep red */
+  --popover-foreground: oklch(0.2 0.18 270);
+  --primary: oklch(0.45 0.2 28); /* #A40A09 deep red */
   --primary-foreground: oklch(0.99 0.005 250);
-  --secondary: oklch(0.92 0.04 250);             /* #D0E0FF soft blue */
-  --secondary-foreground: oklch(0.20 0.18 270);
+  --secondary: oklch(0.92 0.04 250); /* #D0E0FF soft blue */
+  --secondary-foreground: oklch(0.2 0.18 270);
   --muted: oklch(0.92 0.04 250);
-  --muted-foreground: oklch(0.40 0.10 265);
-  --accent: oklch(0.55 0.24 264);                /* #0C5DFF royal blue */
+  --muted-foreground: oklch(0.4 0.1 265);
+  --accent: oklch(0.55 0.24 264); /* #0C5DFF royal blue */
   --accent-foreground: oklch(0.99 0.005 250);
-  --destructive: oklch(0.45 0.20 28);
+  --destructive: oklch(0.45 0.2 28);
   --destructive-foreground: oklch(0.99 0.005 250);
   --border: oklch(0.88 0.05 250);
   --input: oklch(0.88 0.05 250);
@@ -147,7 +147,10 @@
     font-feature-settings: "ss01", "cv11";
   }
 
-  h1, h2, h3, .font-display {
+  h1,
+  h2,
+  h3,
+  .font-display {
     font-family: var(--font-display);
     font-weight: 500;
     letter-spacing: -0.01em;

@@ -14,14 +14,24 @@ export function SiteFooter() {
           <div className="md:col-span-2">
             <span className="font-display text-3xl font-semibold">Bluelilac</span>
             <p className="mt-4 max-w-sm text-sm text-background/70">
-              East African safari specialists crafting unforgettable wildlife and luxury travel experiences.
+              East African safari specialists crafting unforgettable wildlife and luxury travel
+              experiences.
             </p>
             <div className="mt-6 space-y-2 text-sm text-background/80">
-              <div className="flex items-center gap-2"><Mail className="h-4 w-4" /> info@bluelilactours.com</div>
-              <div className="flex items-center gap-2"><Phone className="h-4 w-4" /> +254 715 405641</div>
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4" /> info@bluelilactours.com
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4" /> +254 715 405641
+              </div>
               <div className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                <a href="https://maps.app.goo.gl/apxoEcNJwKD7K1ECA" target="_blank" rel="noopener noreferrer" className="hover:text-background">
+                <a
+                  href="https://maps.app.goo.gl/apxoEcNJwKD7K1ECA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-background"
+                >
                   Rosslyn Square Mall, Redhill Road, Nairobi, Kenya
                 </a>
               </div>
@@ -31,10 +41,26 @@ export function SiteFooter() {
           <div>
             <h4 className="font-display text-lg">Explore</h4>
             <ul className="mt-4 space-y-2 text-sm text-background/70">
-              <li><a href="/tours" className="hover:text-background">Trips</a></li>
-              <li><a href="/destinations" className="hover:text-background">Destinations</a></li>
-              <li><a href="/about" className="hover:text-background">About Us</a></li>
-              <li><a href="/contact" className="hover:text-background">Contact Us</a></li>
+              <li>
+                <a href="/tours" className="hover:text-background">
+                  Trips
+                </a>
+              </li>
+              <li>
+                <a href="/destinations" className="hover:text-background">
+                  Destinations
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="hover:text-background">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-background">
+                  Contact Us
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -59,10 +85,18 @@ export function SiteFooter() {
 
           <div>
             <h4 className="font-display text-lg">Newsletter</h4>
-            <p className="mt-4 text-sm text-background/70">Field notes from East Africa, twice a month.</p>
+            <p className="mt-4 text-sm text-background/70">
+              Field notes from East Africa, twice a month.
+            </p>
             <form className="mt-4 flex overflow-hidden rounded-full border border-background/20">
-              <input type="email" placeholder="Your email" className="w-full bg-transparent px-4 py-3 text-sm placeholder:text-background/50 focus:outline-none" />
-              <button className="bg-primary px-5 text-sm font-medium text-primary-foreground hover:opacity-90">Join</button>
+              <input
+                type="email"
+                placeholder="Your email"
+                className="w-full bg-transparent px-4 py-3 text-sm placeholder:text-background/50 focus:outline-none"
+              />
+              <button className="bg-primary px-5 text-sm font-medium text-primary-foreground hover:opacity-90">
+                Join
+              </button>
             </form>
           </div>
         </div>

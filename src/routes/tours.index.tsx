@@ -1,6 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { ArrowRight, Clock, Users, MapPin, Search, Phone, Mail, Menu, Star, Heart } from "lucide-react";
+import {
+  ArrowRight,
+  Clock,
+  Users,
+  MapPin,
+  Search,
+  Phone,
+  Mail,
+  Menu,
+  Star,
+  Heart,
+} from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import ctaBalloon from "@/assets/cta-balloon.jpg";
@@ -10,9 +21,16 @@ export const Route = createFileRoute("/tours/")({
   head: () => ({
     meta: [
       { title: "Tours & Safaris — Bluelilac Tours" },
-      { name: "description", content: "Browse 27+ curated East African safaris across Kenya, Tanzania, Uganda, Rwanda and beyond. Bush, beach, gorillas and the Great Migration." },
+      {
+        name: "description",
+        content:
+          "Browse 27+ curated East African safaris across Kenya, Tanzania, Uganda, Rwanda and beyond. Bush, beach, gorillas and the Great Migration.",
+      },
       { property: "og:title", content: "Tours & Safaris — Bluelilac Tours" },
-      { property: "og:description", content: "Browse curated East African safaris — Kenya, Tanzania, Uganda, Rwanda & beyond." },
+      {
+        property: "og:description",
+        content: "Browse curated East African safaris — Kenya, Tanzania, Uganda, Rwanda & beyond.",
+      },
     ],
   }),
   component: ToursPage,
@@ -56,9 +74,11 @@ function ToursPage() {
 
   const list = useMemo(() => {
     return TOURS.filter((t) => {
-      const matchesFilter = filter === "All" || t.destination.toLowerCase().includes(filter.toLowerCase());
+      const matchesFilter =
+        filter === "All" || t.destination.toLowerCase().includes(filter.toLowerCase());
       const q = query.trim().toLowerCase();
-      const matchesQuery = !q || t.title.toLowerCase().includes(q) || t.highlights.toLowerCase().includes(q);
+      const matchesQuery =
+        !q || t.title.toLowerCase().includes(q) || t.highlights.toLowerCase().includes(q);
       const matchesPrice = t.price <= maxPrice;
       const matchesType = selectedTypes.length === 0 || selectedTypes.includes(t.type);
       const matchesDuration =
@@ -76,11 +96,12 @@ function ToursPage() {
   const paged = list.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
   // Reset to page 1 whenever filters change
-  useEffect(() => { setPage(1); }, [filter, query, maxPrice, selectedTypes, selectedDurations]);
+  useEffect(() => {
+    setPage(1);
+  }, [filter, query, maxPrice, selectedTypes, selectedDurations]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-
       <SiteHeader />
       <Hero query={query} setQuery={setQuery} />
 
@@ -103,11 +124,15 @@ function ToursPage() {
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <label className="text-xs text-black/60">Min. price</label>
-                      <div className="mt-1 rounded-lg border border-border bg-background px-3 py-2 text-sm text-black">$ 0</div>
+                      <div className="mt-1 rounded-lg border border-border bg-background px-3 py-2 text-sm text-black">
+                        $ 0
+                      </div>
                     </div>
                     <div>
                       <label className="text-xs text-black/60">Max. price</label>
-                      <div className="mt-1 rounded-lg border border-border bg-background px-3 py-2 text-sm text-black">$ {maxPrice.toLocaleString()}</div>
+                      <div className="mt-1 rounded-lg border border-border bg-background px-3 py-2 text-sm text-black">
+                        $ {maxPrice.toLocaleString()}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -179,7 +204,10 @@ function ToursPage() {
                 {paged.map((t) => {
                   const fav = favorites.has(t.title);
                   return (
-                    <article key={t.title} className="group w-full overflow-hidden rounded-3xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-md">
+                    <article
+                      key={t.title}
+                      className="group w-full overflow-hidden rounded-3xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-md"
+                    >
                       <div className="relative aspect-[4/3] overflow-hidden">
                         <img
                           src={t.img}
@@ -214,7 +242,11 @@ function ToursPage() {
                           </span>
                         </div>
                         <h3 className="mt-2 font-display text-xl leading-snug">
-                          <Link to="/tours/$slug" params={{ slug: t.slug }} className="hover:text-primary">
+                          <Link
+                            to="/tours/$slug"
+                            params={{ slug: t.slug }}
+                            className="hover:text-primary"
+                          >
                             {t.title}
                           </Link>
                         </h3>
@@ -223,12 +255,18 @@ function ToursPage() {
                           {t.highlights}
                         </p>
                         <div className="mt-5 flex flex-wrap items-center gap-4 border-t border-border pt-4 text-sm text-black">
-                          <span className="inline-flex items-center gap-1.5"><Clock className="h-4 w-4" /> {t.duration}</span>
-                          <span className="inline-flex items-center gap-1.5"><Users className="h-4 w-4" /> {t.group}</span>
+                          <span className="inline-flex items-center gap-1.5">
+                            <Clock className="h-4 w-4" /> {t.duration}
+                          </span>
+                          <span className="inline-flex items-center gap-1.5">
+                            <Users className="h-4 w-4" /> {t.group}
+                          </span>
                         </div>
                         <div className="mt-4 flex items-baseline gap-1">
                           <span className="text-xs text-black/60">from</span>
-                          <span className="font-display text-2xl text-primary">${t.price.toLocaleString()}</span>
+                          <span className="font-display text-2xl text-primary">
+                            ${t.price.toLocaleString()}
+                          </span>
                           <span className="text-xs text-black/60">/person</span>
                         </div>
                         <a
@@ -249,12 +287,17 @@ function ToursPage() {
               {list.length === 0 && (
                 <div className="mt-16 rounded-3xl border border-dashed border-border bg-card p-12 text-center">
                   <p className="font-display text-2xl">No tours match your search</p>
-                  <p className="mt-2 text-sm text-black">Try a different destination or clear the filters.</p>
+                  <p className="mt-2 text-sm text-black">
+                    Try a different destination or clear the filters.
+                  </p>
                 </div>
               )}
 
               {totalPages > 1 && (
-                <nav className="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
+                <nav
+                  className="mt-12 flex items-center justify-center gap-2"
+                  aria-label="Pagination"
+                >
                   <button
                     type="button"
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
@@ -297,7 +340,6 @@ function ToursPage() {
         </div>
       </section>
 
-
       <CtaPlan />
       <Footer />
     </div>
@@ -313,7 +355,15 @@ function FilterBlock({ title, children }: { title: string; children: ReactNode }
   );
 }
 
-function CheckRow({ label, checked, onChange }: { label: string; checked: boolean; onChange: () => void }) {
+function CheckRow({
+  label,
+  checked,
+  onChange,
+}: {
+  label: string;
+  checked: boolean;
+  onChange: () => void;
+}) {
   return (
     <label className="flex cursor-pointer items-center gap-3 text-sm text-black">
       <input
@@ -331,7 +381,9 @@ function TopBar() {
   return (
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <a href="/" className="font-display text-2xl font-semibold text-white md:text-3xl">Bluelilac</a>
+        <a href="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
+          Bluelilac
+        </a>
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {[
             { label: "Home", href: "/" },
@@ -345,7 +397,9 @@ function TopBar() {
               key={item.label}
               href={item.href}
               className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                item.label === "Trips" ? "bg-white text-foreground" : "text-white/90 hover:bg-white/10"
+                item.label === "Trips"
+                  ? "bg-white text-foreground"
+                  : "text-white/90 hover:bg-white/10"
               }`}
             >
               {item.label}
@@ -359,7 +413,10 @@ function TopBar() {
         >
           <Phone className="h-5 w-5" />
         </a>
-        <button className="rounded-full bg-white/10 p-2 text-white backdrop-blur-md lg:hidden" aria-label="Menu">
+        <button
+          className="rounded-full bg-white/10 p-2 text-white backdrop-blur-md lg:hidden"
+          aria-label="Menu"
+        >
           <Menu className="h-6 w-6" />
         </button>
       </div>
@@ -409,16 +466,27 @@ function CtaPlan() {
   return (
     <section className="bg-secondary/50 py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-6 text-center md:px-10">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary">Can't find what you're looking for?</p>
-        <h2 className="mt-4 font-display text-4xl md:text-5xl">Let's design a private safari just for you.</h2>
+        <p className="text-xs uppercase tracking-[0.25em] text-primary">
+          Can't find what you're looking for?
+        </p>
+        <h2 className="mt-4 font-display text-4xl md:text-5xl">
+          Let's design a private safari just for you.
+        </h2>
         <p className="mx-auto mt-6 max-w-2xl text-black">
-          Every Bluelilac itinerary is bespoke. Share your dates, interests and budget — we'll craft something only yours.
+          Every Bluelilac itinerary is bespoke. Share your dates, interests and budget — we'll craft
+          something only yours.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <a href="mailto:info@bluelilactours.com" className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition hover:bg-[#A40A09] hover:text-white">
+          <a
+            href="mailto:info@bluelilactours.com"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition hover:bg-[#A40A09] hover:text-white"
+          >
             <Mail className="h-4 w-4" /> info@bluelilactours.com
           </a>
-          <a href="tel:+254715405641" className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition hover:bg-[#D0E0FF] hover:text-[#0C5DFF]">
+          <a
+            href="tel:+254715405641"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
+          >
             <Phone className="h-4 w-4" /> +254 715 405641
           </a>
         </div>

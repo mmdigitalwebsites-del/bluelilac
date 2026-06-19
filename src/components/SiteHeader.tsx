@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
+// import logo from "@/assets/logo.png";
 
 const NAV = [
   { label: "Home", href: "/" },
@@ -21,8 +22,11 @@ export function SiteHeader() {
   return (
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
+        {/* <Link to="/" className="flex items-center">
+          <img src={logo} alt="Blue Lilac Tours" className="h-5 w-14 md:h-12" />
+        </Link> */}
         <Link to="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
-          Bluelilac
+          Blue Lilac
         </Link>
 
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
@@ -31,9 +35,7 @@ export function SiteHeader() {
               key={item.label}
               to={item.href}
               className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                isActive(item.href)
-                  ? "bg-white text-foreground"
-                  : "text-white/90 hover:bg-white/10"
+                isActive(item.href) ? "bg-white text-foreground" : "text-white/90 hover:bg-white/10"
               }`}
             >
               {item.label}

@@ -78,14 +78,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Bluelilac Tours — East Africa Safari Specialists" },
+      {
+        name: "description",
+        content:
+          "Bluelilac Tours designs private safaris across Kenya, Tanzania, Uganda, Rwanda and Zanzibar — Great Migration, Big Five, gorilla trekking and beach escapes.",
+      },
+      { name: "author", content: "Bluelilac Tours" },
+      {
+        name: "keywords",
+        content:
+          "Kenya safari, Tanzania safari, Masai Mara, Serengeti, gorilla trekking Uganda, Rwanda safari, Zanzibar beach holiday, East Africa tours, Great Migration safari, Bluelilac Tours",
+      },
+      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:site_name", content: "Bluelilac Tours" },
+      { property: "og:title", content: "Bluelilac Tours — East Africa Safari Specialists" },
+      {
+        property: "og:description",
+        content:
+          "Private safaris across Kenya, Tanzania, Uganda, Rwanda & Zanzibar. Great Migration, Big Five and gorilla trekking — curated by Bluelilac.",
+      },
+      { property: "og:locale", content: "en_US" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Bluelilac Tours — East Africa Safari Specialists" },
+      {
+        name: "twitter:description",
+        content: "Private safaris across Kenya, Tanzania, Uganda, Rwanda & Zanzibar.",
+      },
     ],
     links: [
       {
@@ -97,6 +117,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TravelAgency",
+          name: "Bluelilac Tours",
+          description:
+            "East Africa safari specialists offering private tours across Kenya, Tanzania, Uganda, Rwanda and Zanzibar.",
+          url: "/",
+          telephone: "+254715405641",
+          email: "info@bluelilactours.com",
+          areaServed: ["Kenya", "Tanzania", "Uganda", "Rwanda", "Zanzibar"],
+          sameAs: [
+            "https://www.facebook.com/bluelilactours",
+            "https://www.instagram.com/bluelilactours",
+          ],
+        }),
       },
     ],
   }),
