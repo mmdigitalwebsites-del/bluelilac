@@ -112,7 +112,7 @@ function DestinationsPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
               <p className="text-xs uppercase tracking-[0.25em] text-primary">Where we go</p>
-              <h2 className="mt-4 font-display text-4xl md:text-5xl">Six countries. One continent of wonder.</h2>
+              <h2 className="mt-4 font-display text-4xl md:text-5xl">Five countries. One continent of wonder.</h2>
               <p className="mt-6 text-black">
                 From the wildebeest-thundered plains of the Serengeti to the misty gorilla forests of Bwindi, we craft journeys across East Africa's most extraordinary places — and the Indian Ocean and Arabian add-ons that pair beautifully with them.
               </p>

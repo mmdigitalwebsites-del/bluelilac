@@ -215,7 +215,7 @@ function ExploreOurToursPage() {
               to="/tours"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-6 py-3 text-sm font-medium text-foreground transition hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
             >
-              See all 27+ trips <ArrowRight className="h-4 w-4" />
+              See all 25+ trips <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
