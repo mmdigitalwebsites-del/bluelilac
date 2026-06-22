@@ -1,9 +1,15 @@
-import tourSerengeti from "@/assets/tour-serengeti.jpg";
-import tourGorilla from "@/assets/tour-gorilla.jpg";
-import tourLodge from "@/assets/tour-lodge.jpg";
-import tourZanzibar from "@/assets/tour-zanzibar.jpg";
-import ctaBalloon from "@/assets/cta-balloon.jpg";
-import heroSafari from "@/assets/hero-safari.jpg";
+import naivasha from "@/assets/blt 7.jpg";
+import tsavo from "@/assets/blt 16.jpg";
+import olpejeta from "@/assets/rhino.jpg";
+import samburu from "@/assets/tour-serengeti.jpg";
+import diani from "@/assets/beach.png";
+import nairobi from "@/assets/blt 15.jpg";
+import travel from "@/assets/view.jpg";
+import guide from "@/assets/game drive.jpg";
+import wildlife from "@/assets/blt 8.jpg";
+import comparison from "@/assets/blt 3.jpg";
+import maasaiMara from "@/assets/wilderbeast.png";
+import KenyaSafari from "@/assets/kenya.png";
 
 export type BlogPost = {
   slug: string;
@@ -25,7 +31,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Destination Guides",
     date: "March 14, 2026",
     author: "Bluelilac Team",
-    img: tourLodge,
+    img: naivasha,
     content: [
       "Lake Naivasha sits high in Kenya's Great Rift Valley and is one of the most relaxed stops on any classic Kenyan safari. Unlike the open plains of the Mara, Naivasha rewards travellers with water-based wildlife — pods of hippos, fish eagles diving for tilapia, and endless flocks of pelicans drifting across the lake.",
       "A boat safari is the headline experience. Most guests head out in the late afternoon when the light softens and hippos surface to feed. Expect to glide within metres of them, with your guide narrating their behaviour and pointing out kingfishers, cormorants, and herons along the shoreline.",
@@ -41,7 +47,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Destination Guides",
     date: "March 7, 2026",
     author: "Bluelilac Team",
-    img: tourSerengeti,
+    img: tsavo,
     content: [
       "Tsavo National Park is split into Tsavo East and Tsavo West and together they form Kenya's largest protected wilderness — over 22,000 square kilometres of bush, lava flows, and palm-fringed rivers.",
       "The park's signature sight is its red elephants — coloured by the iron-rich dust they bathe in. Tsavo East offers open savannah perfect for spotting big herds, while Tsavo West is more rugged with volcanic landscapes, the crystal-clear Mzima Springs, and the Shetani lava flows.",
@@ -58,7 +64,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Conservation",
     date: "February 28, 2026",
     author: "James K.",
-    img: tourGorilla,
+    img: olpejeta,
     content: [
       "Ol Pejeta Conservancy is one of the most important conservation stories on the planet. Set on the Laikipia plateau in the shadow of Mount Kenya, it protects the last two northern white rhinos on Earth — Najin and Fatu — under 24-hour armed guard.",
       "Beyond the rhinos, Ol Pejeta has the highest density of wildlife in Kenya, the only chimpanzee sanctuary in the country (Sweetwaters), and excellent Big Five viewing.",
@@ -74,7 +80,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Destination Guides",
     date: "February 19, 2026",
     author: "Amina O.",
-    img: tourZanzibar,
+    img: samburu,
     content: [
       "Samburu National Reserve lies in Kenya's hot, arid north — a landscape of doum palms, the muddy Ewaso Ng'iro river, and rugged hills. The wildlife here is unlike anywhere else in Kenya.",
       "Samburu is famous for the 'Special Five' — Grevy's zebra, reticulated giraffe, Beisa oryx, gerenuk, and Somali ostrich — species you won't find further south. Leopards, lions, and elephants are common along the river.",
@@ -90,7 +96,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Beach & Coast",
     date: "February 10, 2026",
     author: "Bluelilac Team",
-    img: tourZanzibar,
+    img: diani,
     content: [
       "Diani Beach stretches for 17 kilometres along Kenya's south coast — talcum-white sand, palm trees, and water in every shade of turquoise. It's been voted Africa's leading beach destination multiple times.",
       "For safari travellers, Diani is the perfect way to end a trip. After a week tracking wildlife in the Mara or Tsavo, a few nights here means snorkelling the reef, kite-surfing, sunset dhow cruises, and excellent seafood.",
@@ -106,7 +112,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Destination Guides",
     date: "January 28, 2026",
     author: "Bluelilac Team",
-    img: heroSafari,
+    img: nairobi,
     content: [
       "Nairobi is one of the only capital cities in the world with a national park inside it. Nairobi National Park sits a 20-minute drive from the city centre and offers genuine Big Five game viewing against a skyline backdrop.",
       "Beyond the park, the David Sheldrick Wildlife Trust lets you meet orphaned elephants during the daily public feeding hour, while the Giraffe Centre in Karen lets you hand-feed endangered Rothschild's giraffes.",
@@ -122,7 +128,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Safari Planning",
     date: "January 19, 2026",
     author: "Amina O.",
-    img: tourSerengeti,
+    img: travel,
     content: [
       "A solo safari in Kenya is one of the most rewarding ways to travel. With a private guide and vehicle, you set the pace — early starts, long lunches, or as many leopard stake-outs as you want.",
       "Safety on a guided safari is excellent. You're never alone in the bush, and the lodges and camps we use are designed with single travellers in mind.",
@@ -138,7 +144,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Safari Planning",
     date: "January 6, 2026",
     author: "Bluelilac Team",
-    img: tourLodge,
+    img: guide,
     content: [
       "A Kenya safari can cost anywhere from $250 per person per night for a mid-range mobile camping trip to over $1,500 for an ultra-luxury private conservancy stay. Most travellers land between $400 and $700 per night for a high-quality mid-range to upper-mid-range experience.",
       "The biggest cost drivers are the parks you visit, the type of accommodation, and whether you fly between destinations or drive. Park fees alone are $100–$200 per person per day in the Mara and conservancies.",
@@ -154,7 +160,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Conservation",
     date: "December 18, 2025",
     author: "James K.",
-    img: tourGorilla,
+    img: wildlife,
     content: [
       "Every safari traveller arriving in Kenya is, knowingly or not, supporting one of the most ambitious conservation experiments on Earth. Community conservancies — land owned and managed by local Maasai, Samburu, and Laikipia communities — now protect more wildlife area than the national parks themselves.",
       "Organisations like the Northern Rangelands Trust, Ol Pejeta Conservancy, and the Mara Conservancies have shown that protecting wildlife only works when local people benefit directly.",
@@ -170,7 +176,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Safari Planning",
     date: "December 5, 2025",
     author: "Bluelilac Team",
-    img: ctaBalloon,
+    img: comparison,
     content: [
       "Both Kenya and Tanzania protect parts of the same Mara-Serengeti ecosystem and both deliver world-class safaris. The right choice depends on the experience you're after.",
       "Choose Kenya if: you want easier logistics, lower costs, more variety in a short trip (Mara, Amboseli, Samburu, the coast), and conservancy-style safaris with walking and night drives.",
@@ -186,7 +192,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Safari Planning",
     date: "November 22, 2025",
     author: "Bluelilac Team",
-    img: tourSerengeti,
+    img: maasaiMara,
     content: [
       "The Great Migration is a year-round movement of over 1.5 million wildebeest, 300,000 zebras, and hundreds of thousands of gazelles between Tanzania's Serengeti and Kenya's Masai Mara — chasing the rain and the fresh grass.",
       "In the Masai Mara, the peak window is July through October. The herds cross the Mara River in dramatic, crocodile-filled spectacles — typically between mid-July and early September, though exact timing shifts every year with the rains.",
@@ -202,7 +208,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Safari Planning",
     date: "November 8, 2025",
     author: "Amina O.",
-    img: tourLodge,
+    img: KenyaSafari,
     content: [
       "Safari packing is all about layers, neutral colours and travelling light — most light-aircraft transfers limit you to 15 kg in a soft duffel bag.",
       "Clothing: 3–4 lightweight long-sleeve shirts (khaki, olive, beige — avoid bright white, dark blue and black), 2 pairs of zip-off trousers, a fleece for dawn drives, a wind/waterproof shell, a wide-brim hat, and comfortable closed-toe shoes. Most camps offer same-day laundry.",

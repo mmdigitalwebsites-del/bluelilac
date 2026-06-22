@@ -14,15 +14,22 @@ import {
   Plus,
   Calendar,
   User,
+  Facebook,
+  Instagram,
+  Twitter,
 } from "lucide-react";
 import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroImg from "@/assets/hero-safari.jpg";
 import tourSerengeti from "@/assets/tour-serengeti.jpg";
-import tourGorilla from "@/assets/tour-gorilla.jpg";
-import tourLodge from "@/assets/tour-lodge.jpg";
-import tourZanzibar from "@/assets/tour-zanzibar.jpg";
+import tourKenya from "@/assets/kenya.png";
+import tourTanzania from "@/assets/blt 18.jpg";
+import tourUganda from "@/assets/blt 2.jpg";
+import tourRwanda from "@/assets/giraffe.jpg";
+import buffalo from "@/assets/buffalo.png";
+import underStars from "@/assets/understars.png";
+import tourBeach from "@/assets/beach.png";
 import ctaBalloon from "@/assets/cta-balloon.jpg";
 import { BLOG_POSTS } from "@/data/blog";
 
@@ -54,26 +61,32 @@ const tours = [
     price: "$4,250",
   },
   {
-    img: tourGorilla,
-    title: "Gorilla Trekking in Bwindi",
-    country: "Uganda",
+    img: buffalo,
+    title: "7 Days Tanzania Signature Safari",
+    country: "Tanzania",
     days: "5 Days",
-    price: "$2,800",
+    price: "$3,950",
   },
   {
-    img: tourLodge,
+    img: underStars,
     title: "Luxury Serengeti Under the Stars",
     country: "Tanzania",
     days: "7 Days",
     price: "$3,600",
   },
   {
-    img: tourZanzibar,
+    img: tourBeach,
     title: "Safari & Zanzibar Beach Escape",
     country: "Tanzania · Zanzibar",
     days: "10 Days",
     price: "$3,950",
   },
+];
+
+const socials = [
+  { Icon: Facebook, href: "https://www.facebook.com/bluelilactours/", title: "Facebook" },
+  { Icon: Instagram, href: "https://www.instagram.com/bluelilactourstravel/", title: "Instagram" },
+  { Icon: Twitter, href: "https://x.com/bluelilactours", title: "Twitter" },
 ];
 
 const destinations = [
@@ -224,25 +237,17 @@ function Hero() {
 
       {/* social rail */}
       <div className="absolute right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-3 md:flex">
-        {[
-          { label: "F", href: "https://www.facebook.com/bluelilactours/", title: "Facebook" },
-          { label: "X", href: "https://x.com/bluelilactours", title: "Twitter / X" },
-          {
-            label: "I",
-            href: "https://www.instagram.com/bluelilactourstravel/",
-            title: "Instagram",
-          },
-        ].map((s) => (
+        {socials.map((s) => (
           <a
-            key={s.label}
+            key={s.title}
             href={s.href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={s.title}
             title={s.title}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-sm text-white backdrop-blur-md transition hover:bg-white hover:text-foreground"
+            aria-label={s.title}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/60 text-white transition hover:bg-white/10"
           >
-            {s.label}
+            <s.Icon className="h-4 w-4" />
           </a>
         ))}
       </div>
@@ -412,7 +417,7 @@ function Destinations() {
         </div>
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {destinations.map((d, i) => {
-            const imgs = [tourSerengeti, tourLodge, tourGorilla, tourZanzibar];
+            const imgs = [tourKenya, tourTanzania, tourUganda, tourRwanda];
             return (
               <a
                 key={d.name}
@@ -492,7 +497,7 @@ function Testimonials() {
     {
       name: "Hiroshi T.",
       from: "Tokyo, JP",
-      text: "Gorilla trekking in Bwindi was the experience of a lifetime. Excellent planning, exceptional people.",
+      text: "7 Days Tanzania Signature Safari was the experience of a lifetime. Excellent planning, exceptional people.",
     },
   ];
   return (

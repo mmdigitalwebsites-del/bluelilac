@@ -65,6 +65,17 @@ const TOURS: Tour[] = [
     reviews: 24,
   },
   {
+    title: "7 Days Tanzania Signature Safari",
+    destination: "Tanzania",
+    duration: "7 Days",
+    category: "Wildlife",
+    img: tourSerengeti,
+    highlights: "Arusha · Tarangire · Serengeti · Ngorongoro",
+    price: 2950,
+    rating: 5,
+    reviews: 31,
+  },
+  {
     title: "Gorilla Trekking in Bwindi",
     destination: "Uganda",
     duration: "5 Days",
@@ -107,17 +118,6 @@ const TOURS: Tour[] = [
     price: 3850,
     rating: 5,
     reviews: 27,
-  },
-  {
-    title: "7 Days Tanzania Signature Safari",
-    destination: "Tanzania",
-    duration: "7 Days",
-    category: "Wildlife",
-    img: tourSerengeti,
-    highlights: "Arusha · Tarangire · Serengeti · Ngorongoro",
-    price: 2950,
-    rating: 5,
-    reviews: 31,
   },
 ];
 

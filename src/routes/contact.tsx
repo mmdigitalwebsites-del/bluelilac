@@ -13,8 +13,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
-import heroSafari from "@/assets/hero-safari.jpg";
-import tourLodge from "@/assets/tour-lodge.jpg";
+import heroSafari from "@/assets/Experiences.jpg";
+import tourLodge from "@/assets/understars.png";
 import SiteFooter from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/contact")({

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
-// import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.png";
 
 const NAV = [
   { label: "Home", href: "/" },
@@ -21,13 +21,17 @@ export function SiteHeader() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-30">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        {/* <Link to="/" className="flex items-center">
-          <img src={logo} alt="Blue Lilac Tours" className="h-5 w-14 md:h-12" />
-        </Link> */}
-        <Link to="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
-          Blue Lilac
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:py-9 xl:py-0 md:px-10">
+        <Link to="/" className="flex items-center">
+          <img
+            src={logo}
+            alt="Blue Lilac Tours"
+            className="h-60 w-auto sm:h-8 md:h-10 lg:h-28 xl:h-56"
+          />
         </Link>
+        {/* <Link to="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
+          Blue Lilac
+        </Link> */}
 
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {NAV.map((item) => (

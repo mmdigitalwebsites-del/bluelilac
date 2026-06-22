@@ -13,11 +13,11 @@ import {
   Star,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
-import heroSafari from "@/assets/hero-safari.jpg";
+import heroSafari from "@/assets/IMG_8283.jpg";
 import tourSerengeti from "@/assets/tour-serengeti.jpg";
-import tourLodge from "@/assets/tour-lodge.jpg";
-import tourGorilla from "@/assets/tour-gorilla.jpg";
-import ctaBalloon from "@/assets/cta-balloon.jpg";
+import tourLodge from "@/assets/understars.png";
+import tourGorilla from "@/assets/buffalo.png";
+import ctaBalloon from "@/assets/hotballon.png";
 import SiteFooter from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/about")({

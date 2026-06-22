@@ -9,6 +9,26 @@ import tourGorilla from "@/assets/tour-gorilla.jpg";
 import tourLodge from "@/assets/tour-lodge.jpg";
 import tourZanzibar from "@/assets/tour-zanzibar.jpg";
 import ctaBalloon from "@/assets/cta-balloon.jpg";
+import maasaiMara from "@/assets/wilderbeast.png";
+import amboseli from "@/assets/blt 13.jpg";
+import nakuru from "@/assets/blt 7.jpg";
+import naivasha from "@/assets/naivasha.png";
+import samburu from "@/assets/tour-serengeti.jpg";
+import olpejeta from "@/assets/rhino.jpg";
+import tsavo from "@/assets/blt 16.jpg";
+import diani from "@/assets/beach.png";
+import nairobi from "@/assets/blt 15.jpg";
+import serengeti from "@/assets/blt 18.jpg";
+import crator from "@/assets/crater.png";
+import tourPark from "@/assets/nationalpark.png";
+import tourLake from "@/assets/lake.png";
+import arusha from "@/assets/arusha.png";
+import tourForest from "@/assets/forest.png";
+import tourElizabeth from "@/assets/queen.png";
+import tourBunyonyi from "@/assets/blt 16.jpg";
+import tourVolcano from "@/assets/blt 2.jpg";
+import kigali from "@/assets/blt 6.jpg";
+import stoneTown from "@/assets/stonetown.png";
 
 export const Route = createFileRoute("/destinations")({
   head: () => ({
@@ -72,7 +92,7 @@ const DESTINATIONS: Destination[] = [
       "Maasai cultural visits",
     ],
     bestTime: "Jul – Oct",
-    img: tourSerengeti,
+    img: maasaiMara,
     featured: true,
   },
   {
@@ -83,7 +103,7 @@ const DESTINATIONS: Destination[] = [
       "Iconic views of Mt. Kilimanjaro framing some of Africa's largest elephant herds, set across swamps and dusty plains.",
     highlights: ["Tusker elephants", "Kilimanjaro backdrop", "Birdlife in the swamps"],
     bestTime: "Jun – Oct, Jan – Feb",
-    img: tourLodge,
+    img: amboseli,
   },
   {
     name: "Lake Nakuru National Park",
@@ -93,7 +113,7 @@ const DESTINATIONS: Destination[] = [
       "A compact Rift Valley park famed for flamingos, white and black rhino, Rothschild's giraffe and leopard along yellow-fever forests.",
     highlights: ["Black & white rhino", "Pelicans & flamingos", "Baboon Cliff viewpoint"],
     bestTime: "Year-round",
-    img: tourSerengeti,
+    img: nakuru,
   },
   {
     name: "Lake Naivasha",
@@ -103,7 +123,7 @@ const DESTINATIONS: Destination[] = [
       "A serene freshwater lake of hippos, fish eagles and acacia woodlands — perfect for boat rides and walking safaris at Crescent Island.",
     highlights: ["Boat safaris", "Hells Gate cycling", "Crescent Island walks"],
     bestTime: "Year-round",
-    img: tourLodge,
+    img: naivasha,
   },
   {
     name: "Samburu National Reserve",
@@ -113,7 +133,7 @@ const DESTINATIONS: Destination[] = [
       "Rugged semi-arid landscapes home to the 'Samburu Special Five' — reticulated giraffe, Grevy's zebra, Somali ostrich, gerenuk and beisa oryx.",
     highlights: ["Samburu Special Five", "Ewaso Nyiro river", "Samburu culture"],
     bestTime: "Jun – Oct",
-    img: tourSerengeti,
+    img: samburu,
   },
   {
     name: "Ol Pejeta Conservancy",
@@ -123,7 +143,7 @@ const DESTINATIONS: Destination[] = [
       "East Africa's largest black rhino sanctuary and home of the world's last two northern white rhinos. Big Five plus a chimpanzee sanctuary.",
     highlights: ["Last northern white rhinos", "Chimp sanctuary", "Night game drives"],
     bestTime: "Year-round",
-    img: tourLodge,
+    img: olpejeta,
   },
   {
     name: "Tsavo East & West",
@@ -133,7 +153,7 @@ const DESTINATIONS: Destination[] = [
       "Kenya's largest protected wilderness — Tsavo's red-dust elephants, Mzima Springs and the Yatta Plateau across two vast parks.",
     highlights: ["Red elephants", "Mzima Springs", "Lugard's Falls"],
     bestTime: "Jun – Oct, Jan – Feb",
-    img: tourSerengeti,
+    img: tsavo,
   },
   {
     name: "Diani Beach",
@@ -143,7 +163,7 @@ const DESTINATIONS: Destination[] = [
       "Kenya's most beautiful stretch of coast — coral reefs, kite-surf swells and colobus monkeys in the coastal forest.",
     highlights: ["Snorkel & dive", "Kitesurfing", "Colobus monkey trails"],
     bestTime: "Dec – Mar, Jul – Oct",
-    img: tourZanzibar,
+    img: diani,
   },
   {
     name: "Nairobi",
@@ -158,7 +178,7 @@ const DESTINATIONS: Destination[] = [
       "Karen Blixen Museum",
     ],
     bestTime: "Year-round",
-    img: tourLodge,
+    img: nairobi,
   },
 
   // Tanzania
@@ -175,7 +195,7 @@ const DESTINATIONS: Destination[] = [
       "Hot-air balloon",
     ],
     bestTime: "Year-round (Migration varies)",
-    img: tourSerengeti,
+    img: serengeti,
     featured: true,
   },
   {
@@ -186,7 +206,7 @@ const DESTINATIONS: Destination[] = [
       "A collapsed volcanic caldera teeming with 25,000+ large animals — the most reliable Big Five sighting on the continent.",
     highlights: ["Big Five in one day", "Black rhino", "Maasai homesteads"],
     bestTime: "Year-round",
-    img: tourLodge,
+    img: crator,
   },
   {
     name: "Tarangire National Park",
@@ -196,7 +216,7 @@ const DESTINATIONS: Destination[] = [
       "Massive elephant herds, ancient baobab trees and the Tarangire River — a dry-season magnet for wildlife.",
     highlights: ["Huge elephant herds", "Baobab forests", "Tree-climbing pythons"],
     bestTime: "Jun – Oct",
-    img: tourSerengeti,
+    img: tourPark,
   },
   {
     name: "Lake Manyara",
@@ -206,7 +226,7 @@ const DESTINATIONS: Destination[] = [
       "Groundwater forest, flamingo-pink shores and famously tree-climbing lions tucked beneath the Rift escarpment.",
     highlights: ["Tree-climbing lions", "Flamingos", "Forest walks"],
     bestTime: "Jul – Oct",
-    img: tourLodge,
+    img: tourLake,
   },
   {
     name: "Arusha",
@@ -216,7 +236,7 @@ const DESTINATIONS: Destination[] = [
       "Tanzania's safari capital nestled below Mt. Meru — your start and finish point for the northern parks.",
     highlights: ["Mt. Meru views", "Coffee tours", "Cultural villages"],
     bestTime: "Year-round",
-    img: tourSerengeti,
+    img: arusha,
   },
 
   // Uganda
@@ -232,7 +252,7 @@ const DESTINATIONS: Destination[] = [
       "100+ butterfly species",
     ],
     bestTime: "Jun – Aug, Dec – Feb",
-    img: tourGorilla,
+    img: tourForest,
     featured: true,
   },
   {
@@ -243,7 +263,7 @@ const DESTINATIONS: Destination[] = [
       "Savannah, crater lakes and the Kazinga Channel — plus the famous tree-climbing lions of the Ishasha sector.",
     highlights: ["Kazinga boat cruise", "Tree-climbing lions", "Chimpanzee tracking"],
     bestTime: "Jan – Feb, Jun – Sep",
-    img: tourLodge,
+    img: tourElizabeth,
   },
   {
     name: "Lake Bunyonyi",
@@ -253,7 +273,7 @@ const DESTINATIONS: Destination[] = [
       "29 emerald islands on a deep crater lake — the perfect unwind after gorilla trekking.",
     highlights: ["Island canoeing", "Birding", "Terraced hill views"],
     bestTime: "Year-round",
-    img: tourZanzibar,
+    img: tourBunyonyi,
   },
 
   // Rwanda
@@ -265,7 +285,7 @@ const DESTINATIONS: Destination[] = [
       "Trek mountain gorillas through the Virunga volcanoes — Rwanda's flagship experience, made famous by Dian Fossey.",
     highlights: ["Gorilla trekking", "Golden monkeys", "Dian Fossey hike"],
     bestTime: "Jun – Sep, Dec – Feb",
-    img: tourGorilla,
+    img: tourVolcano,
   },
   {
     name: "Kigali",
@@ -275,7 +295,7 @@ const DESTINATIONS: Destination[] = [
       "One of Africa's cleanest and safest cities — moving genocide memorial, vibrant arts and excellent coffee.",
     highlights: ["Kigali Genocide Memorial", "Café culture", "Inema Arts Center"],
     bestTime: "Year-round",
-    img: tourLodge,
+    img: kigali,
   },
 
   // Zanzibar
@@ -287,7 +307,7 @@ const DESTINATIONS: Destination[] = [
       "A labyrinth of Swahili-Arab heritage — carved doors, spice markets and the freshly grilled seafood of Forodhani Gardens.",
     highlights: ["UNESCO old town", "Spice tour", "Prison Island turtles"],
     bestTime: "Jun – Oct, Dec – Feb",
-    img: tourZanzibar,
+    img: stoneTown,
   },
   {
     name: "Nungwi & Kendwa",
@@ -297,7 +317,7 @@ const DESTINATIONS: Destination[] = [
       "The island's most picture-perfect beaches — long white sands, sunset dhows and excellent diving on the northern reefs.",
     highlights: ["Dhow sunset sails", "Snorkel & dive", "Mnemba Atoll"],
     bestTime: "Jun – Oct, Dec – Mar",
-    img: tourZanzibar,
+    img: diani,
     featured: true,
   },
 ];
