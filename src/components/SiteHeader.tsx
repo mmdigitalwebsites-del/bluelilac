@@ -29,9 +29,6 @@ export function SiteHeader() {
             className="h-60 w-auto sm:h-8 md:h-10 lg:h-28 xl:h-56"
           />
         </Link>
-        {/* <Link to="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
-          Blue Lilac
-        </Link> */}
 
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {NAV.map((item) => (

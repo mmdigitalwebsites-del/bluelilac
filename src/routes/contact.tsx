@@ -213,8 +213,13 @@ function ContactFormSection() {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await fetch("https://formspree.io/f/mdarkgvy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
   };

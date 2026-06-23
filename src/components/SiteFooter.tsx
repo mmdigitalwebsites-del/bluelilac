@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const SOCIALS = [
   { label: "Facebook", href: "https://www.facebook.com/bluelilactours/", Icon: Facebook },
@@ -12,7 +13,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
         <div className="grid gap-12 md:grid-cols-4 lg:grid-cols-5">
           <div className="md:col-span-2">
-            <span className="font-display text-3xl font-semibold">Bluelilac</span>
+            <img src={logo} alt="Bluelilac Tours" className="h-52 w-auto brightness-0 invert mt-[-16%]" />
             <p className="mt-4 max-w-sm text-sm text-background/70">
               East African safari specialists crafting unforgettable wildlife and luxury travel
               experiences.

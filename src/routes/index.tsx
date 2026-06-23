@@ -550,26 +550,14 @@ function VideoSection() {
         </div>
 
         <div className="relative mx-auto mt-14 aspect-video w-full max-w-5xl overflow-hidden rounded-3xl border border-border bg-secondary shadow-lg">
-          {/* Replace the <img> + overlay with a <video> tag or YouTube/Vimeo iframe when ready */}
-          <img
-            src={balloon}
-            alt="Video placeholder — replace with your own footage"
-            className="absolute inset-0 h-full w-full object-cover"
-            loading="lazy"
+          <iframe
+            src="https://www.youtube.com/embed/mbqCXpmo15A"
+            title="East Africa Safari — Bluelilac Tours"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 h-full w-full"
+            style={{ border: 0 }}
           />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <button
-              type="button"
-              aria-label="Play video"
-              className="group flex h-20 w-20 items-center justify-center rounded-full bg-white/90 text-foreground shadow-2xl transition hover:scale-105 hover:bg-white md:h-24 md:w-24"
-            >
-              <Play className="h-8 w-8 translate-x-0.5 fill-current md:h-10 md:w-10" />
-            </button>
-            <p className="mt-6 text-sm uppercase tracking-[0.25em] text-white/80">
-              Video placeholder — add yours here
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -711,5 +699,3 @@ function Blog() {
 function _Footer() {
   return <SiteFooter />;
 }
-
-
