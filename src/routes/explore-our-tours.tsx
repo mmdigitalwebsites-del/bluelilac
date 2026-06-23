@@ -17,7 +17,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import heroImg from "@/assets/blt 17.jpg";
 import ctaBalloon from "@/assets/hotballon.png";
 import safari from "@/assets/blt 12.jpg";
-import tanzania from "@/assets/giraffes.jpg";
+import tanzania from "@/assets/giraffe.JPG";
 import tourUganda from "@/assets/forest.png";
 import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach.png";
