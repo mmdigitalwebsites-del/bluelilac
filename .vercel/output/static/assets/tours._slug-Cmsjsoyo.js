@@ -1,1 +1,0 @@
-import{j as e}from"./index-DOKSAu-3.js";const o=({error:r})=>e.jsx("div",{className:"min-h-screen bg-background p-12 text-center",children:e.jsxs("p",{children:["Something went wrong: ",r.message]})});export{o as errorComponent};

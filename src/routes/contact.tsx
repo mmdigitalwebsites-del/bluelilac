@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
-import heroSafari from "@/assets/IMG_8283.jpg";
+import heroSafari from "@/assets/Experiences.jpg";
 import tourLodge from "@/assets/understars.png";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -109,7 +109,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
-        <span className="mb-6 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
+        <span className="mb-6 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 mt-44 text-sm text-white backdrop-blur-md">
           Contact Us
         </span>
         <h1 className="max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl">
@@ -128,7 +128,7 @@ const CONTACT_DETAILS = [
   {
     icon: Phone,
     title: "Call us",
-    lines: ["+254 715 405641", "+254 722 876543"],
+    lines: ["+254 715 405641", "+254 719 234041"],
     action: { label: "Call now", href: "tel:+254715405641" },
   },
   {

@@ -9,7 +9,7 @@ import guide from "@/assets/game drive.jpg";
 import wildlife from "@/assets/blt 8.jpg";
 import comparison from "@/assets/blt 3.jpg";
 import maasaiMara from "@/assets/wilderbeast.png";
-import KenyaSafari from "@/assets/kenya.png";
+import kenyaSafari from "@/assets/kenya.png";
 
 export type BlogPost = {
   slug: string;
@@ -208,7 +208,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Safari Planning",
     date: "November 8, 2025",
     author: "Amina O.",
-    img: KenyaSafari,
+    img: kenyaSafari,
     content: [
       "Safari packing is all about layers, neutral colours and travelling light — most light-aircraft transfers limit you to 15 kg in a soft duffel bag.",
       "Clothing: 3–4 lightweight long-sleeve shirts (khaki, olive, beige — avoid bright white, dark blue and black), 2 pairs of zip-off trousers, a fleece for dawn drives, a wind/waterproof shell, a wide-brim hat, and comfortable closed-toe shoes. Most camps offer same-day laundry.",

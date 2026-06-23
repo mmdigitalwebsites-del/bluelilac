@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import ctaBalloon from "@/assets/cta-balloon.jpg";
+import background from "@/assets/blt 1.jpg";
 import { TOURS } from "@/data/tours";
 
 export const Route = createFileRoute("/tours/")({
@@ -427,10 +427,10 @@ function TopBar() {
 function Hero({ query, setQuery }: { query: string; setQuery: (v: string) => void }) {
   return (
     <section className="relative flex h-[70vh] min-h-[520px] w-full items-center overflow-hidden">
-      <img src={ctaBalloon} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={background} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
-        <span className="mb-6 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
+        <span className="mb-6 mt-32 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
           27 curated journeys
         </span>
         <h1 className="max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl">

@@ -14,12 +14,13 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
-import heroImg from "@/assets/hero-safari.jpg";
-import tourSerengeti from "@/assets/tour-serengeti.jpg";
-import tourGorilla from "@/assets/tour-gorilla.jpg";
-import tourLodge from "@/assets/tour-lodge.jpg";
-import tourZanzibar from "@/assets/tour-zanzibar.jpg";
-import ctaBalloon from "@/assets/cta-balloon.jpg";
+import heroImg from "@/assets/blt 17.jpg";
+import ctaBalloon from "@/assets/hotballon.png";
+import safari from "@/assets/blt 12.jpg";
+import tanzania from "@/assets/giraffe.jpg";
+import tourUganda from "@/assets/forest.png";
+import underStars from "@/assets/understars.png";
+import tourBeach from "@/assets/beach.png";
 
 export const Route = createFileRoute("/explore-our-tours")({
   head: () => ({
@@ -58,7 +59,7 @@ const TOURS: Tour[] = [
     destination: "Kenya · Tanzania",
     duration: "13 Days",
     category: "Wildlife",
-    img: tourSerengeti,
+    img: safari,
     highlights: "Masai Mara · Serengeti · Ngorongoro · Amboseli",
     price: 4850,
     rating: 5,
@@ -69,7 +70,7 @@ const TOURS: Tour[] = [
     destination: "Tanzania",
     duration: "7 Days",
     category: "Wildlife",
-    img: tourSerengeti,
+    img: tanzania,
     highlights: "Arusha · Tarangire · Serengeti · Ngorongoro",
     price: 2950,
     rating: 5,
@@ -80,7 +81,7 @@ const TOURS: Tour[] = [
     destination: "Uganda",
     duration: "5 Days",
     category: "Adventure",
-    img: tourGorilla,
+    img: tourUganda,
     highlights: "Entebbe · Bwindi Impenetrable Forest · Lake Bunyonyi",
     price: 3950,
     rating: 5,
@@ -91,7 +92,7 @@ const TOURS: Tour[] = [
     destination: "Tanzania",
     duration: "7 Days",
     category: "Luxury",
-    img: tourLodge,
+    img: underStars,
     highlights: "Tented camps · Hot air balloon · Private guides",
     price: 3600,
     rating: 5,
@@ -102,7 +103,7 @@ const TOURS: Tour[] = [
     destination: "Zanzibar",
     duration: "6 Days",
     category: "Beach",
-    img: tourZanzibar,
+    img: tourBeach,
     highlights: "Stone Town · Nungwi · Spice Tour · Snorkeling",
     price: 1850,
     rating: 5,
@@ -113,7 +114,7 @@ const TOURS: Tour[] = [
     destination: "Kenya",
     duration: "10 Days",
     category: "Beach",
-    img: tourZanzibar,
+    img: tourBeach,
     highlights: "Masai Mara · Amboseli · Diani Beach",
     price: 3850,
     rating: 5,
@@ -162,7 +163,7 @@ function ExploreOurToursPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
-          <span className="mb-6 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
+          <span className="mb-6 mt-32 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
             Handcrafted journeys
           </span>
           <h1 className="max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl">

@@ -21,7 +21,6 @@ import {
 import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroImg from "@/assets/hero-safari.jpg";
 import tourSerengeti from "@/assets/tour-serengeti.jpg";
 import tourKenya from "@/assets/kenya.png";
 import tourTanzania from "@/assets/blt 18.jpg";
@@ -30,7 +29,7 @@ import tourRwanda from "@/assets/giraffe.jpg";
 import buffalo from "@/assets/buffalo.png";
 import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach.png";
-import ctaBalloon from "@/assets/cta-balloon.jpg";
+import ctaBalloon from "@/assets/hotballon.png";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/")({
@@ -412,7 +411,7 @@ function Destinations() {
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Where we go</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
-            Five countries. One continent of wonder.
+            Four countries. One continent of wonder.
           </h2>
         </div>
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

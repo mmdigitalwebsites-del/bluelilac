@@ -1,7 +1,22 @@
-import tourSerengeti from "@/assets/tour-serengeti.jpg";
-import tourGorilla from "@/assets/tour-gorilla.jpg";
-import tourLodge from "@/assets/tour-lodge.jpg";
-import tourZanzibar from "@/assets/tour-zanzibar.jpg";
+import naivasha from "@/assets/blt 7.jpg";
+import tsavo from "@/assets/blt 16.jpg";
+import olpejeta from "@/assets/rhino.jpg";
+import samburu from "@/assets/tour-serengeti.jpg";
+import diani from "@/assets/beach.png";
+import nairobi from "@/assets/blt 15.jpg";
+import travel from "@/assets/view.jpg";
+import guide from "@/assets/game drive.jpg";
+import wildlife from "@/assets/blt 8.jpg";
+import comparison from "@/assets/blt 3.jpg";
+import maasaiMara from "@/assets/wilderbeast.png";
+import kenyaSafari from "@/assets/kenya.png";
+import johannesburge from "@/assets/johannesburge.png";
+import singapore from "@/assets/singapore.png";
+import tourKenya from "@/assets/kenya.png";
+import underStars from "@/assets/understars.png";
+import buffalo from "@/assets/buffalo.png";
+import tourLake from "@/assets/lake.png";
+import arusha from "@/assets/arusha.png";
 
 export type ItineraryDay = {
   day: string;
@@ -73,7 +88,7 @@ export const TOURS: Tour[] = [
     durationDays: 13,
     group: "0–15",
     type: "Package tour",
-    img: tourSerengeti,
+    img: comparison,
     highlights: "Nairobi · Masai Mara · Naivasha · Amboseli · Arusha · Ngorongoro · Serengeti",
     price: 4850,
     rating: 5,
@@ -192,7 +207,7 @@ export const TOURS: Tour[] = [
     durationDays: 9,
     group: "0–15",
     type: "Package tour",
-    img: tourLodge,
+    img: kenyaSafari,
     highlights: "Nairobi · Amboseli · Arusha · Tarangire · Serengeti · Ngorongoro",
     price: 3450,
     rating: 5,
@@ -301,7 +316,7 @@ export const TOURS: Tour[] = [
     durationDays: 7,
     group: "0–15",
     type: "Package tour",
-    img: tourSerengeti,
+    img: samburu,
     highlights: "Arusha · Tarangire · Serengeti · Ngorongoro",
     price: 2950,
     rating: 5,
@@ -387,7 +402,7 @@ export const TOURS: Tour[] = [
     durationDays: 5,
     group: "0–15",
     type: "Package tour",
-    img: tourLodge,
+    img: samburu,
     highlights: "Arusha · Ngorongoro · Serengeti",
     price: 2150,
     rating: 4,
@@ -450,7 +465,7 @@ export const TOURS: Tour[] = [
     durationDays: 10,
     group: "0–15",
     type: "Package tour",
-    img: tourZanzibar,
+    img: diani,
     highlights: "Nairobi · Masai Mara · Naivasha · Amboseli · Diani Beach",
     price: 3850,
     rating: 5,
@@ -546,7 +561,7 @@ export const TOURS: Tour[] = [
     durationDays: 10,
     group: "0–15",
     type: "Package tour",
-    img: tourSerengeti,
+    img: buffalo,
     highlights: "Nairobi · Masai Mara · Nakuru · Naivasha · Amboseli · Salt Lick · Tsavo East",
     price: 3650,
     rating: 5,
@@ -639,7 +654,7 @@ export const TOURS: Tour[] = [
     durationDays: 9,
     group: "0–15",
     type: "Package tour",
-    img: tourLodge,
+    img: olpejeta,
     highlights: "Nairobi · Samburu · Sweetwaters (Ol Pejeta) · Lake Nakuru · Masai Mara",
     price: 3250,
     rating: 5,
@@ -730,7 +745,7 @@ export const TOURS: Tour[] = [
     durationDays: 8,
     group: "0–15",
     type: "Package tour",
-    img: tourSerengeti,
+    img: naivasha,
     highlights: "Nairobi · Masai Mara · Lake Nakuru · Naivasha · Amboseli",
     price: 2850,
     rating: 4,
@@ -798,7 +813,7 @@ export const TOURS: Tour[] = [
     durationDays: 7,
     group: "0–15",
     type: "Package tour",
-    img: tourLodge,
+    img: tourKenya,
     highlights: "Nairobi · Amboseli · Nakuru · Masai Mara",
     price: 2450,
     rating: 5,
@@ -860,7 +875,7 @@ export const TOURS: Tour[] = [
     durationDays: 4,
     group: "0–30",
     type: "Group tour",
-    img: tourSerengeti,
+    img: tsavo,
     highlights: "Masai Mara · Lake Nakuru",
     price: 1450,
     rating: 4,
@@ -917,7 +932,7 @@ export const TOURS: Tour[] = [
     durationDays: 3,
     group: "0–30",
     type: "Group tour",
-    img: tourLodge,
+    img: wildlife,
     highlights: "Amboseli · Mount Kilimanjaro · Elephant herds",
     price: 650,
     rating: 5,
@@ -969,7 +984,7 @@ export const TOURS: Tour[] = [
     durationDays: 3,
     group: "0–30",
     type: "Group tour",
-    img: tourSerengeti,
+    img: maasaiMara,
     highlights: "Masai Mara · Big Five · Great Migration",
     price: 720,
     rating: 5,
@@ -1021,7 +1036,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–30",
     type: "Daily tour",
-    img: tourLodge,
+    img: wildlife,
     highlights: "Amboseli · Elephants · Kilimanjaro views",
     price: 220,
     rating: 5,
@@ -1054,7 +1069,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–30",
     type: "Daily tour",
-    img: tourSerengeti,
+    img: travel,
     highlights: "Lake Nakuru · Flamingos · Rhino sanctuary",
     price: 180,
     rating: 5,
@@ -1088,7 +1103,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–30",
     type: "Private tour",
-    img: tourSerengeti,
+    img: tourLake,
     highlights: "Private 4x4 · Lake Nakuru · Birding · Rhino tracking",
     price: 250,
     rating: 5,
@@ -1124,7 +1139,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–20",
     type: "Private tour",
-    img: tourZanzibar,
+    img: diani,
     highlights: "Stone Town · Spice tour · Sunset beach · Seafood BBQ",
     price: 95,
     rating: 5,
@@ -1166,7 +1181,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–15",
     type: "Private tour",
-    img: tourLodge,
+    img: nairobi,
     highlights: "Nairobi National Park · Big-city skyline backdrop · Lion & rhino",
     price: 100,
     rating: 5,
@@ -1198,7 +1213,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–12",
     type: "Daily tour",
-    img: tourGorilla,
+    img: guide,
     highlights: "Sheldrick Elephant Orphanage · Conservation · Lunch",
     price: 120,
     rating: 5,
@@ -1236,7 +1251,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–15",
     type: "Daily tour",
-    img: tourLodge,
+    img: nairobi,
     highlights: "Nairobi NP · Sheldrick Orphanage · Giraffe Centre",
     price: 140,
     rating: 5,
@@ -1269,7 +1284,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–24",
     type: "Group tour",
-    img: tourLodge,
+    img: arusha,
     highlights: "Amboseli · Elephants · Group safari van",
     price: 190,
     rating: 4,
@@ -1302,7 +1317,7 @@ export const TOURS: Tour[] = [
     durationDays: 3,
     group: "0–7",
     type: "Private tour",
-    img: tourSerengeti,
+    img: maasaiMara,
     highlights: "Governor's Camp · Riverside luxury · Big Five",
     price: 1850,
     rating: 5,
@@ -1355,7 +1370,7 @@ export const TOURS: Tour[] = [
     durationDays: 3,
     group: "0–5",
     type: "Private tour",
-    img: tourSerengeti,
+    img: underStars,
     highlights: "Masai Mara · Private 4x4 · Mid-range lodge",
     price: 850,
     rating: 5,
@@ -1407,7 +1422,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–12",
     type: "Daily tour",
-    img: tourZanzibar,
+    img: singapore,
     highlights: "Singapore River Cruise · Garden Rhapsody · Spectra light show",
     price: 99,
     rating: 5,
@@ -1445,7 +1460,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–7",
     type: "Daily tour",
-    img: tourLodge,
+    img: johannesburge,
     highlights: "Joburg city loop · Apartheid Museum · Soweto add-on",
     price: 218,
     rating: 4,
@@ -1481,7 +1496,7 @@ export const TOURS: Tour[] = [
     durationDays: 1,
     group: "0–7",
     type: "Private tour",
-    img: tourLodge,
+    img: singapore,
     highlights: "Private driver · Custom itinerary · Hotel pickup",
     price: 200,
     rating: 5,
