@@ -25,7 +25,7 @@ import tourSerengeti from "@/assets/tour-serengeti.jpg";
 import tourKenya from "@/assets/kenya.png";
 import tourTanzania from "@/assets/blt 18.jpg";
 import tourUganda from "@/assets/blt 2.jpg";
-import tourRwanda from "@/assets/giraffe.JPG";
+import tourRwanda from "@/assets/giraffes.jpg";
 import buffalo from "@/assets/buffalo.png";
 import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach.png";

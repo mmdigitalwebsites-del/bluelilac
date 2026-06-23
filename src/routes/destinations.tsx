@@ -10,7 +10,7 @@ import amboseli from "@/assets/blt 13.jpg";
 import nakuru from "@/assets/blt 7.jpg";
 import naivasha from "@/assets/naivasha.png";
 import samburu from "@/assets/tour-serengeti.jpg";
-import olpejeta from "@/assets/rhino.JPG";
+import olpejeta from "@/assets/rhino.jpg";
 import tsavo from "@/assets/blt 16.jpg";
 import diani from "@/assets/beach.png";
 import nairobi from "@/assets/blt 15.jpg";
