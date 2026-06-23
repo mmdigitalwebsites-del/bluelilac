@@ -5,7 +5,7 @@ import samburu from "@/assets/tour-serengeti.jpg";
 import diani from "@/assets/beach.png";
 import nairobi from "@/assets/blt 15.jpg";
 import travel from "@/assets/view.jpg";
-import guide from "@/assets/game drive.jpg";
+import guide from "@/assets/game-drive.jpg";
 import wildlife from "@/assets/blt 8.jpg";
 import comparison from "@/assets/blt 3.jpg";
 import maasaiMara from "@/assets/wilderbeast.png";
