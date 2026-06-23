@@ -29,7 +29,7 @@ import tourRwanda from "@/assets/giraffe.jpg";
 import buffalo from "@/assets/buffalo.png";
 import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach.png";
-import ctaBalloon from "@/assets/background.png";
+import balloon from "@/assets/background.png";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/")({
@@ -450,7 +450,7 @@ function CtaBalloon() {
   return (
     <section className="relative overflow-hidden">
       <img
-        src={ctaBalloon}
+        src={balloon}
         alt="Hot air balloon over Serengeti at sunrise"
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
@@ -552,7 +552,7 @@ function VideoSection() {
         <div className="relative mx-auto mt-14 aspect-video w-full max-w-5xl overflow-hidden rounded-3xl border border-border bg-secondary shadow-lg">
           {/* Replace the <img> + overlay with a <video> tag or YouTube/Vimeo iframe when ready */}
           <img
-            src={ctaBalloon}
+            src={balloon}
             alt="Video placeholder — replace with your own footage"
             className="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
