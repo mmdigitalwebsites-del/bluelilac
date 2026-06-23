@@ -29,7 +29,7 @@ import tourRwanda from "@/assets/giraffe.jpg";
 import buffalo from "@/assets/buffalo.png";
 import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach.png";
-import ctaBalloon from "@/assets/hotballon.png";
+import ctaBalloon from "@/assets/background.png";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/")({
