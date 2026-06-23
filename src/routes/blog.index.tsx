@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import ctaBalloon from "@/assets/cta-balloon.jpg";
 import { BLOG_POSTS } from "@/data/blog";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Travel Blog & Safari Tips — Bluelilac Tours" },
