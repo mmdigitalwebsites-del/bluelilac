@@ -7,5 +7,5 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 export default defineConfig({
   tanstackStart: { server: { entry: "server" } },
-  nitro: { preset: "netlify" }, // add this
+  nitro: { preset: "vercel" }, // add this
 });
