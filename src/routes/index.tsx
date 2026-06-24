@@ -544,9 +544,6 @@ function VideoSection() {
           <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
             See East Africa in motion.
           </h2>
-          <p className="mt-4 text-black">
-            A short film from the field — replace with your own video whenever you're ready.
-          </p>
         </div>
 
         <div className="relative mx-auto mt-14 aspect-video w-full max-w-5xl overflow-hidden rounded-3xl border border-border bg-secondary shadow-lg">
