@@ -3,14 +3,12 @@ import {
   ArrowRight,
   Mail,
   Phone,
-  MapPin,
   Menu,
   Compass,
   ShieldCheck,
   Heart,
   Leaf,
   Users,
-  Star,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import heroSafari from "@/assets/img.jpg";
@@ -307,43 +305,17 @@ function Team() {
 }
 
 function Testimonials() {
-  const quotes = [
-    {
-      name: "Hannah & Mark",
-      trip: "Kenya & Tanzania, 13 days",
-      body: "Bluelilac took the stress out of planning. Every camp was a dream, every guide a storyteller. We're already planning our return.",
-    },
-    {
-      name: "Priya S.",
-      trip: "Bwindi Gorilla Trek",
-      body: "Standing metres from a silverback was life-changing. The team thought of every detail — even the surprise picnic on the rim.",
-    },
-    {
-      name: "The Chen family",
-      trip: "Bush & Beach, 10 days",
-      body: "Travelling with two kids in Africa felt impossible until Bluelilac. They turned it into the trip of a lifetime.",
-    },
-  ];
   return (
     <section className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <p className="text-xs uppercase tracking-[0.25em] text-primary">Loved by travellers</p>
         <h2 className="mt-4 font-display text-4xl md:text-5xl">Stories from the bush.</h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {quotes.map((q) => (
-            <figure key={q.name} className="rounded-3xl bg-card p-8 shadow-sm">
-              <div className="flex gap-1 text-primary">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <blockquote className="mt-6 text-base text-black">"{q.body}"</blockquote>
-              <figcaption className="mt-6 text-sm">
-                <div className="font-medium">{q.name}</div>
-                <div className="text-muted-foreground">{q.trip}</div>
-              </figcaption>
-            </figure>
-          ))}
+        <div className="mt-12">
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div
+            className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66"
+            data-elfsight-app-lazy
+          />
         </div>
       </div>
     </section>

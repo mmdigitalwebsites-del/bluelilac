@@ -482,23 +482,6 @@ function CtaBalloon() {
 }
 
 function Testimonials() {
-  const t = [
-    {
-      name: "Amelia R.",
-      from: "London, UK",
-      text: "From the moment we landed in Nairobi to our last sunset in Zanzibar, every detail was perfect. The guides spotted things we'd never have seen on our own.",
-    },
-    {
-      name: "David & Marta",
-      from: "Madrid, ES",
-      text: "The migration in the Mara was life-changing — and Bluelilac's team made the whole 12-day trip feel effortless and personal.",
-    },
-    {
-      name: "Hiroshi T.",
-      from: "Tokyo, JP",
-      text: "7 Days Tanzania Signature Safari was the experience of a lifetime. Excellent planning, exceptional people.",
-    },
-  ];
   return (
     <section className="bg-secondary/50 py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
@@ -508,23 +491,12 @@ function Testimonials() {
             Memories worth keeping.
           </h2>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {t.map((q) => (
-            <figure key={q.name} className="rounded-3xl border border-border bg-card p-8">
-              <div className="flex gap-1 text-primary">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <blockquote className="mt-4 font-display text-xl leading-snug text-black">
-                "{q.text}"
-              </blockquote>
-              <figcaption className="mt-6 border-t border-border pt-4">
-                <div className="font-medium text-black">{q.name}</div>
-                <div className="text-sm text-black/70">{q.from}</div>
-              </figcaption>
-            </figure>
-          ))}
+        <div className="mt-14">
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div
+            className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66"
+            data-elfsight-app-lazy
+          />
         </div>
       </div>
     </section>
