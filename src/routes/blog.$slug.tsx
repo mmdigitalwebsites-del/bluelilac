@@ -82,9 +82,9 @@ function BlogPostPage() {
             to="/blog"
             className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white"
           >
-            <ArrowLeft className="h-4 w-4" /> All posts
+            <ArrowLeft className="h-4 w-4" /> All Posts
           </Link>
-          <span className="mt-6 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-white backdrop-blur-md">
+          <span className="mt-6 ml-10 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-white backdrop-blur-md">
             {post.category}
           </span>
           <h1 className="mt-5 font-display text-4xl leading-tight text-white md:text-6xl">
@@ -103,10 +103,10 @@ function BlogPostPage() {
 
       <section className="bg-background py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-6 md:px-10">
-          <p className="font-display text-xl leading-relaxed text-black md:text-2xl">
+          <p className="font-display text-xl font-bold leading-relaxed text-orange-700 md:text-2xl">
             {post.excerpt}
           </p>
-          <div className="mt-10 space-y-6 text-base leading-relaxed text-black md:text-lg">
+          <div className="mt-10 xl:text-md space-y-6 text-base leading-relaxed text-black md:text-lg">
             {post.content.map((paragraph: string, i: number) => (
               <p key={i}>{paragraph}</p>
             ))}

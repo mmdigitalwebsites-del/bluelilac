@@ -26,7 +26,7 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="Blue Lilac Tours"
-            className="h-60 w-auto sm:h-8 md:h-10 lg:h-28 xl:h-56"
+            className="max-h-44 w-auto sm:h-8 md:h-56 lg:h-28 xl:h-50"
           />
         </Link>
 

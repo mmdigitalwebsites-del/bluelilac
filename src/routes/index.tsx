@@ -209,7 +209,7 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/60" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 md:px-10">
-        <span className="mb-6 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
+        <span className="mb-6 mt-32 xl:mt-0 md:mt-0 lg:mt-36 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
           Feel The Experience
         </span>
         <h1 className="max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl lg:text-[5.5rem]">
