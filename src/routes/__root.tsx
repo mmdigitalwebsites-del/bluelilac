@@ -106,6 +106,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "twitter:description",
         content: "Private safaris across Kenya, Tanzania, Uganda, Rwanda & Zanzibar.",
       },
+      { property: "og:image", content: "https://bluelilac-i6ko.vercel.app/og-image.jpg" },
+      { name: "twitter:image", content: "https://bluelilac-i6ko.vercel.app/og-image.jpg" },
     ],
     links: [
       {
@@ -131,6 +133,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           url: "/",
           telephone: "+254715405641",
           email: "info@bluelilactours.com",
+          priceRange: "$$$",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Rosslyn Square Mall, Redhill Road",
+            addressLocality: "Nairobi",
+            addressCountry: "KE",
+          },
           areaServed: ["Kenya", "Tanzania", "Uganda", "Rwanda", "Zanzibar"],
           sameAs: [
             "https://www.facebook.com/bluelilactours",
