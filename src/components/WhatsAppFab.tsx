@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WHATSAPP_NUMBER = "254715405641";
-const WHATSAPP_TEXT = "Hello Bluelilac Tours, I'd like to enquire about a safari.";
+const WHATSAPP_TEXT = "Hello Blue Lilac Tours, I'd like to enquire about a safari.";
 
 export function WhatsAppFab() {
   const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_TEXT)}`;

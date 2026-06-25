@@ -8,13 +8,13 @@ import { BLOG_POSTS } from "@/data/blog";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Travel Blog & Safari Tips — Bluelilac Tours" },
+      { title: "Travel Blog & Safari Tips — Blue Lilac Tours" },
       {
         name: "description",
         content:
           "Read our latest safari guides, destination deep-dives and travel tips for Kenya, Tanzania, Uganda and Rwanda.",
       },
-      { property: "og:title", content: "Travel Blog — Bluelilac Tours" },
+      { property: "og:title", content: "Travel Blog — Blue Lilac Tours" },
       {
         property: "og:description",
         content:

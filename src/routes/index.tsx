@@ -125,7 +125,7 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <Hero />
-      <Trust />
+      {/* <Trust /> */}
       <WhyUs />
       <VideoSection />
       <FeaturedTours />
@@ -254,24 +254,24 @@ function Hero() {
   );
 }
 
-function Trust() {
-  return (
-    <section className="border-b border-border bg-background py-10">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <p className="text-center text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          Trusted by global travelers · Featured in
-        </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 font-display text-2xl text-muted-foreground/70">
-          <span>Condé Nast</span>
-          <span>National Geographic</span>
-          <span>Travel + Leisure</span>
-          <span>Lonely Planet</span>
-          <span>AFAR</span>
-        </div>
-      </div>
-    </section>
-  );
-}
+// function Trust() {
+//   return (
+//     <section className="border-b border-border bg-background py-10">
+//       <div className="mx-auto max-w-7xl px-6 md:px-10">
+//         <p className="text-center text-xs uppercase tracking-[0.25em] text-muted-foreground">
+//           Trusted by global travelers · Featured in
+//         </p>
+//         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 font-display text-2xl text-muted-foreground/70">
+//           <span>Condé Nast</span>
+//           <span>National Geographic</span>
+//           <span>Travel + Leisure</span>
+//           <span>Lonely Planet</span>
+//           <span>AFAR</span>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 function WhyUs() {
   const items = [
@@ -301,12 +301,12 @@ function WhyUs() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-primary">Why Bluelilac</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-primary">Why Blue Lilac</p>
             <h2 className="mt-4 font-display text-4xl leading-tight md:text-5xl lg:text-6xl">
               Journeys that connect you deeply with Africa.
             </h2>
             <p className="mt-6 max-w-lg text-black">
-              Bluelilac Tours is a premier East African safari specialist creating unforgettable
+              Blue Lilac Tours is a premier East African safari specialist creating unforgettable
               wildlife and luxury travel experiences across Kenya, Tanzania, Uganda and Rwanda —
               from the vast plains of the Maasai Mara to the white beaches of Zanzibar.
             </p>

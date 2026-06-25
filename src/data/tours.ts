@@ -105,7 +105,7 @@ export const TOURS: Tour[] = [
         title: "Arrival in Nairobi",
         bullets: [
           "Arrival at Jomo Kenyatta International Airport.",
-          "Meet & greet by Bluelilac representative and transfer to hotel.",
+          "Meet & greet by Blue Lilac representative and transfer to hotel.",
           "Optional city excursion depending on arrival time.",
           "Dinner & overnight in Nairobi.",
         ],

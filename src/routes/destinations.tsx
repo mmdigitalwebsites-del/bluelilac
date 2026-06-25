@@ -398,7 +398,7 @@ function DestinationsPage() {
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-primary">
-                Bluelilac favourites
+                Blue Lilac favourites
               </p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl">Iconic experiences</h2>
             </div>

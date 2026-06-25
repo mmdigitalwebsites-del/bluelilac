@@ -5,7 +5,7 @@ import logo from "@/assets/logo.png";
 
 const NAV = [
   { label: "Home", href: "/" },
-  { label: "Explore", href: "/destinations" },
+  { label: "Destinations", href: "/destinations" },
   { label: "Trips", href: "/tours" },
   { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "/contact" },
@@ -26,7 +26,7 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="Blue Lilac Tours"
-            className="max-h-44 w-auto sm:h-8 md:h-56 lg:h-28 xl:h-50"
+            className="max-h-44 w-auto sm:h-8 md:h-56 lg:h-32 xl:h-56 brightness-0 invert"
           />
         </Link>
 

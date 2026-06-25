@@ -30,7 +30,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Lake Naivasha delivers Kenya's most serene safari experience — hippos at close range, walking safaris on Crescent Island and Rift Valley sunsets.",
     category: "Destination Guides",
     date: "March 14, 2026",
-    author: "Bluelilac Team",
+    author: "Blue Lilac Team",
     img: naivasha,
     content: [
       "Lake Naivasha sits high in Kenya's Great Rift Valley and is one of the most relaxed stops on any classic Kenyan safari. Unlike the open plains of the Mara, Naivasha rewards travellers with water-based wildlife — pods of hippos, fish eagles diving for tilapia, and endless flocks of pelicans drifting across the lake.",
@@ -46,7 +46,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Tsavo is Kenya's largest protected wilderness — home to the famous red elephants, Mzima Springs, and a raw, uncrowded safari feel.",
     category: "Destination Guides",
     date: "March 7, 2026",
-    author: "Bluelilac Team",
+    author: "Blue Lilac Team",
     img: tsavo,
     content: [
       "Tsavo National Park is split into Tsavo East and Tsavo West and together they form Kenya's largest protected wilderness — over 22,000 square kilometres of bush, lava flows, and palm-fringed rivers.",
@@ -95,7 +95,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Diani Beach is Africa's finest safari-beach combination — 17 km of white sand, warm Indian Ocean water, and easy access from Nairobi.",
     category: "Beach & Coast",
     date: "February 10, 2026",
-    author: "Bluelilac Team",
+    author: "Blue Lilac Team",
     img: diani,
     content: [
       "Diani Beach stretches for 17 kilometres along Kenya's south coast — talcum-white sand, palm trees, and water in every shade of turquoise. It's been voted Africa's leading beach destination multiple times.",
@@ -111,7 +111,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Nairobi is far more than a transit stop — it's a city with elephants, giraffes, world-class food and a creative cultural scene.",
     category: "Destination Guides",
     date: "January 28, 2026",
-    author: "Bluelilac Team",
+    author: "Blue Lilac Team",
     img: nairobi,
     content: [
       "Nairobi is one of the only capital cities in the world with a national park inside it. Nairobi National Park sits a 20-minute drive from the city centre and offers genuine Big Five game viewing against a skyline backdrop.",
@@ -143,7 +143,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Kenya safari costs range from $250 to $1,500+ per person per night. Here's how to plan a trip that fits your budget without compromising the experience.",
     category: "Safari Planning",
     date: "January 6, 2026",
-    author: "Bluelilac Team",
+    author: "Blue Lilac Team",
     img: guide,
     content: [
       "A Kenya safari can cost anywhere from $250 per person per night for a mid-range mobile camping trip to over $1,500 for an ultra-luxury private conservancy stay. Most travellers land between $400 and $700 per night for a high-quality mid-range to upper-mid-range experience.",
@@ -175,7 +175,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Kenya vs Tanzania — an honest comparison of East Africa's two greatest safari countries, from the Mara to the Serengeti.",
     category: "Safari Planning",
     date: "December 5, 2025",
-    author: "Bluelilac Team",
+    author: "Blue Lilac Team",
     img: comparison,
     content: [
       "Both Kenya and Tanzania protect parts of the same Mara-Serengeti ecosystem and both deliver world-class safaris. The right choice depends on the experience you're after.",
@@ -191,7 +191,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "The Great Migration is the greatest wildlife spectacle on Earth. Here's exactly when to go, where to stay, and how to see a river crossing.",
     category: "Safari Planning",
     date: "November 22, 2025",
-    author: "Bluelilac Team",
+    author: "Blue Lilac Team",
     img: maasaiMara,
     content: [
       "The Great Migration is a year-round movement of over 1.5 million wildebeest, 300,000 zebras, and hundreds of thousands of gazelles between Tanzania's Serengeti and Kenya's Masai Mara — chasing the rain and the fresh grass.",

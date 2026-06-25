@@ -20,13 +20,13 @@ import SiteFooter from "@/components/SiteFooter";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Bluelilac Tours & Travel" },
+      { title: "Contact Us — Blue Lilac Tours & Travel" },
       {
         name: "description",
         content:
-          "Get in touch with Bluelilac Tours. Plan your East African safari, ask questions, or request a tailor-made itinerary. We're here 24/7.",
+          "Get in touch with Blue Lilac Tours. Plan your East African safari, ask questions, or request a tailor-made itinerary. We're here 24/7.",
       },
-      { property: "og:title", content: "Contact Bluelilac Tours" },
+      { property: "og:title", content: "Contact Blue Lilac Tours" },
       {
         property: "og:description",
         content:
@@ -421,7 +421,7 @@ function Location() {
         </div>
         <div className="mt-14 overflow-hidden rounded-3xl border border-border shadow-sm">
           <iframe
-            title="Bluelilac Tours Office Location"
+            title="Blue Lilac Tours Office Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19891906813!2d36.7208769!3d-1.3028613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11724b53d399%3A0xe442cfdb1fdb8d2c!2sRosslyn%20Square%20Mall!5e0!3m2!1sen!2ske!4v1718880000000!5m2!1sen!2ske"
             width="100%"
             height="450"

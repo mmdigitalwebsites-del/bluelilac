@@ -103,7 +103,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-background/10 pt-8 text-xs text-background/60 sm:flex-row sm:items-center">
-          <span>© {new Date().getFullYear()} Bluelilac Tours. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Blue Lilac Tours. All rights reserved.</span>
           <span>Made with care in Nairobi.</span>
         </div>
       </div>

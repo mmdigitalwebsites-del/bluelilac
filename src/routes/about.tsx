@@ -21,17 +21,17 @@ import SiteFooter from "@/components/SiteFooter";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Bluelilac Tours & Travel" },
+      { title: "About Us — Blue Lilac Tours & Travel" },
       {
         name: "description",
         content:
-          "Bluelilac Tours is a premier East African safari specialist crafting unforgettable wildlife and luxury travel experiences across Kenya, Tanzania, Uganda and Rwanda.",
+          "Blue Lilac Tours is a premier East African safari specialist crafting unforgettable wildlife and luxury travel experiences across Kenya, Tanzania, Uganda and Rwanda.",
       },
-      { property: "og:title", content: "About Bluelilac Tours" },
+      { property: "og:title", content: "About Blue Lilac Tours" },
       {
         property: "og:description",
         content:
-          "Meet the East African safari specialists behind Bluelilac — handcrafted journeys, expert guides, and responsible travel.",
+          "Meet the East African safari specialists behind Blue Lilac — handcrafted journeys, expert guides, and responsible travel.",
       },
       { property: "og:image", content: heroSafari },
     ],
@@ -60,7 +60,7 @@ function TopBar() {
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
         <a href="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
-          Bluelilac
+          Blue Lilac
         </a>
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {[
@@ -113,7 +113,7 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
         <span className="mb-6 mt-32 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
-          About Bluelilac Tours
+          About Blue Lilac Tours
         </span>
         <h1 className="max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl">
           East Africa, the way it was meant to be travelled.
@@ -135,7 +135,7 @@ function Story() {
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Our story</p>
           <h2 className="font-display text-4xl md:text-5xl">Born of the bush, built on trust.</h2>
           <p className="text-black">
-            Bluelilac Tours and Travel is a premier East African safari specialist creating
+            Blue Lilac Tours and Travel is a premier East African safari specialist creating
             unforgettable wildlife and luxury travel experiences across Kenya, Tanzania, Uganda and
             Rwanda. From the vast plains of the Maasai Mara to the white beaches of Zanzibar, we
             design journeys that connect you deeply with Africa.
@@ -190,7 +190,7 @@ const VALUES = [
   {
     icon: Compass,
     title: "Tailor-made by experts",
-    body: "Every Bluelilac journey is bespoke — built around your pace, interests and dream sightings.",
+    body: "Every Blue Lilac journey is bespoke — built around your pace, interests and dream sightings.",
   },
   {
     icon: ShieldCheck,
@@ -215,7 +215,7 @@ function Values() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.25em] text-primary">
-            Why book with Bluelilac
+            Why book with Blue Lilac
           </p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl">
             A different kind of safari company.
