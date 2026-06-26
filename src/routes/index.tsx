@@ -364,7 +364,7 @@ function FeaturedTours() {
           </a>
         </div>
 
-   <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {tours.map((t) => (
             <article
               key={t.title}
@@ -391,9 +391,7 @@ function FeaturedTours() {
                     ))}
                     <span className="ml-1 text-xs text-black">(24)</span>
                   </div>
-                  <h3 className="mt-2 font-display text-xl leading-snug text-black">
-                    {t.title}
-                  </h3>
+                  <h3 className="mt-2 font-display text-xl leading-snug text-black">{t.title}</h3>
                   <div className="mt-4 flex items-center justify-between border-t border-border pt-4 text-sm">
                     <span className="text-black">{t.days}</span>
                     <span className="font-display text-lg text-primary">{t.price}</span>
@@ -574,7 +572,7 @@ function Testimonials() {
         </div>
 
         <div className="mt-10 text-center">
-<a
+          <a
             href="https://www.safaribookings.com/p6340"
             target="_blank"
             rel="noopener noreferrer"

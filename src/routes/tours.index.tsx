@@ -262,13 +262,13 @@ function ToursPage() {
                             <Users className="h-4 w-4" /> {t.group}
                           </span>
                         </div>
-                        <div className="mt-4 flex items-baseline gap-1">
+                        {/* <div className="mt-4 flex items-baseline gap-1">
                           <span className="text-xs text-black/60">from</span>
                           <span className="font-display text-2xl text-primary">
                             ${t.price.toLocaleString()}
                           </span>
                           <span className="text-xs text-black/60">/person</span>
-                        </div>
+                        </div> */}
                         <a
                           href="mailto:info@bluelilactours.com?subject=Tour%20enquiry"
                           className="mt-5 inline-flex w-full items-center justify-between gap-3 rounded-full bg-accent py-3 pl-5 pr-2 text-sm font-medium text-accent-foreground transition hover:bg-[#A40A09] hover:text-white"
@@ -473,8 +473,8 @@ function CtaPlan() {
           Let's design a private safari just for you.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-black">
-          Every Blue Lilac itinerary is bespoke. Share your dates, interests and budget — we'll craft
-          something only yours.
+          Every Blue Lilac itinerary is bespoke. Share your dates, interests and budget — we'll
+          craft something only yours.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <a

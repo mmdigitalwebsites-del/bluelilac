@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import ctaBalloon from "@/assets/cta-balloon.jpg";
+import cta from "@/assets/queen.png";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/blog/")({
@@ -31,7 +31,7 @@ function BlogIndex() {
       <SiteHeader />
 
       <section className="relative flex h-[50vh] min-h-[380px] w-full items-center overflow-hidden">
-        <img src={ctaBalloon} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={cta} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
           <span className="mb-6 mt-32 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">

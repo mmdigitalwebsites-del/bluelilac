@@ -380,6 +380,3 @@ function ExploreOurToursPage() {
     </div>
   );
 }
-
-
-

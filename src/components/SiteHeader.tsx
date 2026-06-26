@@ -22,18 +22,13 @@ export function SiteHeader() {
   return (
     <header className="absolute top-12 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:py-9 xl:py-0 md:px-10">
-     <Link
-  to="/"
-  aria-label="Blue Lilac Tours — Home"
-  className="flex items-center justify-center rounded-[18px] bg-white/30 backdrop-blur-xl shadow-md hover:bg-white/40 transition h-24 w-48 overflow-hidden"
->
-  <img
-    src={logo}
-    alt="Blue Lilac Tours"
-    className="h-54 w-72"
-  />
-</Link>
-
+        <Link
+          to="/"
+          aria-label="Blue Lilac Tours — Home"
+          className="flex items-center justify-center rounded-[18px] bg-white/30 backdrop-blur-xl shadow-md hover:bg-white/40 transition h-24 w-48 overflow-hidden"
+        >
+          <img src={logo} alt="Blue Lilac Tours" className="h-54 w-72" />
+        </Link>
 
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {NAV.map((item) => (
