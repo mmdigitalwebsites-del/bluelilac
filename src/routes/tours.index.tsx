@@ -388,7 +388,7 @@ function TopBar() {
           {[
             { label: "Home", href: "/" },
             { label: "Explore", href: "/destinations" },
-            { label: "Trips", href: "/tours" },
+            { label: "Tours", href: "/tours" },
             { label: "About Us", href: "/about" },
             { label: "Contact Us", href: "/contact" },
             { label: "Explore Our Tours", href: "/tours" },
@@ -397,7 +397,7 @@ function TopBar() {
               key={item.label}
               href={item.href}
               className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                item.label === "Trips"
+                item.label === "Tours"
                   ? "bg-white text-foreground"
                   : "text-white/90 hover:bg-white/10"
               }`}
@@ -473,7 +473,7 @@ function CtaPlan() {
           Let's design a private safari just for you.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-black">
-          Every Bluelilac itinerary is bespoke. Share your dates, interests and budget — we'll craft
+          Every Blue Lilac itinerary is bespoke. Share your dates, interests and budget — we'll craft
           something only yours.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">

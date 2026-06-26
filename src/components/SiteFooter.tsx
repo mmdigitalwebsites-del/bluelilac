@@ -14,7 +14,7 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-4 lg:grid-cols-5">
           <div className="md:col-span-2">
             <img src={logo} alt="Bluelilac Tours" className="h-52 w-auto brightness-0 invert mt-[-16%]" />
-            <p className="mt-4 max-w-sm text-sm text-background/70">
+            <p className="mt-0 max-w-sm text-sm text-background/70">
               East African safari specialists crafting unforgettable wildlife and luxury travel
               experiences.
             </p>
@@ -44,7 +44,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2 text-sm text-background/70">
               <li>
                 <a href="/tours" className="hover:text-background">
-                  Trips
+                  Tours
                 </a>
               </li>
               <li>
@@ -103,7 +103,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-background/10 pt-8 text-xs text-background/60 sm:flex-row sm:items-center">
-          <span>© {new Date().getFullYear()} Bluelilac Tours. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Blue Lilac Tours. All rights reserved.</span>
           <span>Made with care in Nairobi.</span>
         </div>
       </div>

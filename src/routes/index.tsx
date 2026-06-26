@@ -58,13 +58,15 @@ const tours = [
     country: "Kenya · Tanzania",
     days: "13 Days",
     price: "$4,250",
+    slug: "13-days-kenya-tanzania-safari",
   },
   {
     img: buffalo,
     title: "7 Days Tanzania Signature Safari",
     country: "Tanzania",
-    days: "5 Days",
+    days: "7 Days",
     price: "$3,950",
+    slug: "7-days-tanzania-signature-safari",
   },
   {
     img: underStars,
@@ -72,6 +74,7 @@ const tours = [
     country: "Tanzania",
     days: "7 Days",
     price: "$3,600",
+    slug: "5-days-tanzania-classic-safari",
   },
   {
     img: tourBeach,
@@ -79,6 +82,7 @@ const tours = [
     country: "Tanzania · Zanzibar",
     days: "10 Days",
     price: "$3,950",
+    slug: "10-days-bush-and-beach-kenya",
   },
 ];
 
@@ -147,13 +151,13 @@ function Header() {
           href="#"
           className="flex items-center font-display text-2xl font-semibold text-white md:text-3xl"
         >
-          Bluelilac
+          Blue Lilac
         </a>
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {[
             { label: "Home", href: "#" },
-            { label: "Explore", href: "/destinations" },
-            { label: "Trips", href: "/tours" },
+            { label: "Destinations", href: "/destinations" },
+            { label: "Tours", href: "/tours" },
             { label: "About Us", href: "/about" },
             { label: "Contact Us", href: "/contact" },
             { label: "Explore Our Tours", href: "/tours" },
@@ -259,14 +263,10 @@ function Trust() {
     <section className="border-b border-border bg-background py-10">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <p className="text-center text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          Trusted by global travelers · Featured in
+          Trusted by travelers · Awards won
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 font-display text-2xl text-muted-foreground/70">
-          <span>Condé Nast</span>
-          <span>National Geographic</span>
-          <span>Travel + Leisure</span>
-          <span>Lonely Planet</span>
-          <span>AFAR</span>
+          <span>Travellers' Choice Awards 2024 (Trip Advisor)</span>
         </div>
       </div>
     </section>
@@ -301,12 +301,12 @@ function WhyUs() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-primary">Why Bluelilac</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-primary">Why Blue lilac</p>
             <h2 className="mt-4 font-display text-4xl leading-tight md:text-5xl lg:text-6xl">
               Journeys that connect you deeply with Africa.
             </h2>
             <p className="mt-6 max-w-lg text-black">
-              Bluelilac Tours is a premier East African safari specialist creating unforgettable
+              Blue Lilac Tours is a premier East African safari specialist creating unforgettable
               wildlife and luxury travel experiences across Kenya, Tanzania, Uganda and Rwanda —
               from the vast plains of the Maasai Mara to the white beaches of Zanzibar.
             </p>
@@ -364,38 +364,45 @@ function FeaturedTours() {
           </a>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+   <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {tours.map((t) => (
             <article
               key={t.title}
               className="group overflow-hidden rounded-3xl bg-card transition hover:-translate-y-1"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={t.img}
-                  alt={t.title}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-                <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium backdrop-blur-md">
-                  {t.country}
-                </span>
-              </div>
-              <div className="p-5">
-                <div className="flex items-center gap-1 text-primary">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                  ))}
-                  <span className="ml-1 text-xs text-black">(24)</span>
+              <a href={`/tours/${t.slug}`} className="block">
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <img
+                    src={t.img}
+                    alt={t.title}
+                    loading="lazy"
+                    width={1024}
+                    height={1280}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium backdrop-blur-md">
+                    {t.country}
+                  </span>
                 </div>
-                <h3 className="mt-2 font-display text-xl leading-snug text-black">{t.title}</h3>
-                <div className="mt-4 flex items-center justify-between border-t border-border pt-4 text-sm">
-                  <span className="text-black">{t.days}</span>
-                  <span className="font-display text-lg text-primary">{t.price}</span>
+                <div className="p-5">
+                  <div className="flex items-center gap-1 text-primary">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                    ))}
+                    <span className="ml-1 text-xs text-black">(24)</span>
+                  </div>
+                  <h3 className="mt-2 font-display text-xl leading-snug text-black">
+                    {t.title}
+                  </h3>
+                  <div className="mt-4 flex items-center justify-between border-t border-border pt-4 text-sm">
+                    <span className="text-black">{t.days}</span>
+                    <span className="font-display text-lg text-primary">{t.price}</span>
+                  </div>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                    View tour <ArrowRight className="h-4 w-4" />
+                  </span>
                 </div>
-              </div>
+              </a>
             </article>
           ))}
         </div>
@@ -482,21 +489,99 @@ function CtaBalloon() {
 }
 
 function Testimonials() {
+  const reviews = [
+    {
+      name: "Marco",
+      country: "🇳🇱 Netherlands",
+      stars: 4,
+      tour: "Lake Nakuru & Lake Naivasha Tour",
+      date: "May 10, 2026",
+      text: "I can really recommend Blue Lilac Tours. We were picked up in Nairobi and went on a tour to Lake Nakuru and Lake Naivasha. It was great to have a personal guide and a car, they were available during the whole period. Great gamedrive, sightseeing and biking tour.",
+    },
+    {
+      name: "Chaida",
+      country: "🇸🇳 Senegal",
+      stars: 5,
+      tour: "East Africa Safari",
+      date: "Apr 6, 2026",
+      text: "I had an amazing experience with Blue Lilac Tours and Travel. The service was 100% excellent from start to finish. The team was very attentive, responsive, and always ready to help with anything we needed. Everything was well organized, and I felt safe and well taken care of throughout the trip. I highly recommend this agency to anyone looking for a smooth, enjoyable, and memorable safari experience.",
+    },
+    {
+      name: "Melanie R",
+      country: "🇺🇸 United States",
+      stars: 5,
+      tour: "6 Night / 7 Day Private Safari",
+      date: "Feb 22, 2026",
+      text: "We just returned from a 6 night / 7 day private safari with Blue Lilac Tours, and the entire experience exceeded our expectations from start to finish. From the very first email, Edna was responsive, professional, and so easy to work with. Our guide Boniface was knowledgeable, warm, and truly exceptional at spotting wildlife. He went the extra mile to help us track down the Big Five.",
+    },
+    {
+      name: "HANYONG LEE",
+      country: "🇰🇷 South Korea",
+      stars: 5,
+      tour: "Kenya Safari",
+      date: "Feb 19, 2026",
+      text: "Blue Lilac Tours and Travel is a reliable, well-organized tour operator that provides professional service, smooth coordination, and a warm, customer-focused travel experience from start to finish.",
+    },
+  ];
+
   return (
     <section className="bg-secondary/50 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.25em] text-primary">Traveler stories</p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
-            Memories worth keeping.
-          </h2>
+      <div className="mx-auto max-w-9xl px-6 md:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-primary">Traveler stories</p>
+            <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
+              Our Happy Traveller
+            </h2>
+          </div>
+          <a
+            href="https://www.safaribookings.com/p6340"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary"
+          >
+            Read all reviews <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
-        <div className="mt-14">
-          <script src="https://elfsightcdn.com/platform.js" async></script>
-          <div
-            className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66"
-            data-elfsight-app-lazy
-          />
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {reviews.map((r) => (
+            <figure
+              key={r.name}
+              className="flex flex-col rounded-3xl border border-border bg-card p-8 shadow-sm"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex gap-1 text-primary">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`h-4 w-4 ${i < r.stars ? "fill-current" : "opacity-30"}`}
+                    />
+                  ))}
+                </div>
+                <span className="text-xs text-black/50">{r.date}</span>
+              </div>
+              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-black">
+                "{r.text}"
+              </blockquote>
+              <figcaption className="mt-6 border-t border-border pt-4">
+                <div className="font-medium text-black">{r.name}</div>
+                <div className="text-xs text-black/60">{r.country}</div>
+                <div className="mt-1 text-xs text-primary">{r.tour}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+<a
+            href="https://www.safaribookings.com/p6340"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition hover:bg-primary hover:text-primary-foreground"
+          >
+            Read all 16 reviews on SafariBookings <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>

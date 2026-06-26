@@ -398,7 +398,7 @@ function DestinationsPage() {
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-primary">
-                Bluelilac favourites
+                Blue Lilac favourites
               </p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl">Iconic experiences</h2>
             </div>
@@ -526,13 +526,13 @@ function TopBar() {
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
         <a href="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
-          Bluelilac
+          Blue Lilac
         </a>
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {[
             { label: "Home", href: "/" },
             { label: "Explore", href: "/destinations" },
-            { label: "Trips", href: "/tours" },
+            { label: "Tours", href: "/tours" },
             { label: "About Us", href: "/about" },
             { label: "Contact Us", href: "/contact" },
             { label: "Explore Our Tours", href: "/tours" },
