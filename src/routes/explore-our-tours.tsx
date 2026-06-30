@@ -14,7 +14,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
-import heroImg from "@/assets/blt 17.jpg";
+import heroImg from "@/assets/shortsafari2.png";
 import ctaBalloon from "@/assets/hotballon.png";
 import safari from "@/assets/blt 12.jpg";
 import tanzania from "@/assets/giraffes.jpg";

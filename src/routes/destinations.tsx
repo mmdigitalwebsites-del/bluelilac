@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { ArrowRight, MapPin, Phone, Mail, Menu, Search, Compass, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroSafari from "@/assets/blt 2.jpg";
+import heroSafari from "@/assets/tours.png";
 import ctaBalloon from "@/assets/cta-balloon.jpg";
 import maasaiMara from "@/assets/wilderbeast.png";
 import amboseli from "@/assets/blt 13.jpg";
@@ -383,9 +383,11 @@ function DestinationsPage() {
                   <h3 className="font-display text-2xl">{c.name}</h3>
                 </div>
                 <p className="mt-4 text-sm text-black">{c.blurb}</p>
-                <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition group-hover:opacity-100">
-                  Explore {c.name} <ArrowRight className="h-4 w-4" />
-                </span>
+                <a href={`/tours?filter=${c.name}`}>
+                  <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition group-hover:opacity-100">
+                    Explore {c.name} <ArrowRight className="h-4 w-4" />
+                  </span>
+                </a>
               </button>
             ))}
           </div>

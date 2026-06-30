@@ -439,7 +439,7 @@ function BookingCard({ tour }: { tour: any }) {
         <button
           onClick={() => setTab("book")}
           className={`py-3 text-sm font-medium transition ${
-            tab === "book" ? "bg-primary text-accent-foreground" : "hover:bg-destructive/30"
+            tab === "book" ? "bg-accent text-accent-foreground" : "hover:bg-accent/30"
           }`}
         >
           BOOK
@@ -447,7 +447,7 @@ function BookingCard({ tour }: { tour: any }) {
         <button
           onClick={() => setTab("enquiry")}
           className={`py-3 text-sm font-medium transition ${
-            tab === "enquiry" ? "bg-primary text-accent-foreground" : "hover:bg-destructive/30"
+            tab === "enquiry" ? "bg-accent text-accent-foreground" : "hover:bg-accent/30"
           }`}
         >
           ENQUIRY
@@ -479,7 +479,7 @@ function BookingCard({ tour }: { tour: any }) {
             href={`mailto:info@bluelilactours.com?subject=Booking:%20${encodeURIComponent(
               tour.title,
             )}&body=Date:%20${date}%0AAdults:%20${adults}%0AChildren:%20${children}%0AInfants:%20${infants}`}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
           >
             Book now <ArrowRight className="h-4 w-4" />
           </a>
@@ -525,7 +525,7 @@ function BookingCard({ tour }: { tour: any }) {
           />
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
           >
             <Mail className="h-4 w-4" /> Send enquiry
           </button>
@@ -535,7 +535,7 @@ function BookingCard({ tour }: { tour: any }) {
       <div className="px-6 pb-6">
         <a
           href="tel:+254715405641"
-          className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+          className="flex items-center justify-center gap-2 text-sm text-primary hover:text-foreground"
         >
           <Phone className="h-4 w-4" /> +254 715 405641
         </a>

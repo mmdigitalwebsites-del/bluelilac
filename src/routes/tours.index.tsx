@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import background from "@/assets/blt 1.jpg";
+import background from "@/assets/destinations.png";
 import { TOURS } from "@/data/tours";
 
 export const Route = createFileRoute("/tours/")({
