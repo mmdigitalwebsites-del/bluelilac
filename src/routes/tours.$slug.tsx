@@ -392,6 +392,8 @@ function BookingCard({ tour }: { tour: any }) {
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
   const [infants, setInfants] = useState(0);
+  const [booked, setBooked] = useState(false);
+  const [enquirySent, setEnquirySent] = useState(false);
 
   const Counter = ({
     label,
@@ -474,28 +476,49 @@ function BookingCard({ tour }: { tour: any }) {
             <Counter label="Children" sub="Age 2–12" value={children} setValue={setChildren} />
             <Counter label="Infants" sub="Under 2" value={infants} setValue={setInfants} />
           </div>
-
-          <a
-            href={`mailto:info@bluelilactours.com?subject=Booking:%20${encodeURIComponent(
-              tour.title,
-            )}&body=Date:%20${date}%0AAdults:%20${adults}%0AChildren:%20${children}%0AInfants:%20${infants}`}
+          <button
+            type="button"
+            onClick={async () => {
+              await fetch("https://formspree.io/f/mdarkgvy", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  formType: "Booking",
+                  tour: tour.title,
+                  date,
+                  adults,
+                  children,
+                  infants,
+                }),
+              });
+              setBooked(true);
+              setTimeout(() => setBooked(false), 5000);
+            }}
             className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
           >
-            Book now <ArrowRight className="h-4 w-4" />
-          </a>
+            {booked ? "Request sent!" : "Book now"} <ArrowRight className="h-4 w-4" />
+          </button>
         </div>
       ) : (
         <form
           className="p-6 space-y-3"
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
             const fd = new FormData(e.currentTarget);
-            const name = fd.get("name");
-            const email = fd.get("email");
-            const message = fd.get("message");
-            window.location.href = `mailto:info@bluelilactours.com?subject=Enquiry:%20${encodeURIComponent(
-              tour.title,
-            )}&body=Name:%20${name}%0AEmail:%20${email}%0A%0A${message}`;
+            await fetch("https://formspree.io/f/mdarkgvy", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                formType: "Enquiry",
+                tour: tour.title,
+                name: fd.get("name"),
+                email: fd.get("email"),
+                phone: fd.get("phone"),
+                message: fd.get("message"),
+              }),
+            });
+            setEnquirySent(true);
+            setTimeout(() => setEnquirySent(false), 5000);
           }}
         >
           <input
@@ -527,7 +550,7 @@ function BookingCard({ tour }: { tour: any }) {
             type="submit"
             className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
           >
-            <Mail className="h-4 w-4" /> Send enquiry
+            <Mail className="h-4 w-4" /> {enquirySent ? "Sent!" : "Send enquiry"}
           </button>
         </form>
       )}
