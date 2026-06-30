@@ -4,13 +4,13 @@ import { Menu, Phone, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const TOUR_SUBMENU = [
-  { label: "Luxury Safaris", href: "/tours?type=Private+tour" },
-  { label: "Group Tours", href: "/tours?type=Group+tour" },
-  { label: "Short Safaris", href: "/tours?duration=1%E2%80%933+days" },
-  { label: "Bird Watchers", href: "/tours?q=bird" },
-  { label: "Honeymoon Packages", href: "/tours?q=honeymoon" },
-  { label: "Bush & Beach", href: "/tours?q=beach" },
-  { label: "Tailormade Safari", href: "/contact" },
+  { label: "Luxury Safaris", href: "/luxury-safaris" },
+  { label: "Group Tours", href: "/group-tours" },
+  { label: "Short Safaris", href: "/short-safaris" },
+  { label: "Bird Watchers", href: "/bird-watchers" },
+  { label: "Honeymoon Packages", href: "/honeymoon-packages" },
+  { label: "Bush & Beach", href: "/bush-and-beach" },
+  { label: "Tailormade Safari", href: "/tailormade-safari" },
 ];
 
 const NAV = [

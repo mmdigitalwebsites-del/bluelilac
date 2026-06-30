@@ -9,10 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TailormadeSafariRouteImport } from './routes/tailormade-safari'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ShortSafarisRouteImport } from './routes/short-safaris'
+import { Route as LuxurySafarisRouteImport } from './routes/luxury-safaris'
+import { Route as HoneymoonPackagesRouteImport } from './routes/honeymoon-packages'
+import { Route as GroupToursRouteImport } from './routes/group-tours'
 import { Route as ExploreOurToursRouteImport } from './routes/explore-our-tours'
 import { Route as DestinationsRouteImport } from './routes/destinations'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BushAndBeachRouteImport } from './routes/bush-and-beach'
+import { Route as BirdWatchersRouteImport } from './routes/bird-watchers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToursIndexRouteImport } from './routes/tours.index'
@@ -20,9 +27,34 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ToursSlugRouteImport } from './routes/tours.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const TailormadeSafariRoute = TailormadeSafariRouteImport.update({
+  id: '/tailormade-safari',
+  path: '/tailormade-safari',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShortSafarisRoute = ShortSafarisRouteImport.update({
+  id: '/short-safaris',
+  path: '/short-safaris',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LuxurySafarisRoute = LuxurySafarisRouteImport.update({
+  id: '/luxury-safaris',
+  path: '/luxury-safaris',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HoneymoonPackagesRoute = HoneymoonPackagesRouteImport.update({
+  id: '/honeymoon-packages',
+  path: '/honeymoon-packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GroupToursRoute = GroupToursRouteImport.update({
+  id: '/group-tours',
+  path: '/group-tours',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExploreOurToursRoute = ExploreOurToursRouteImport.update({
@@ -38,6 +70,16 @@ const DestinationsRoute = DestinationsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BushAndBeachRoute = BushAndBeachRouteImport.update({
+  id: '/bush-and-beach',
+  path: '/bush-and-beach',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BirdWatchersRoute = BirdWatchersRouteImport.update({
+  id: '/bird-watchers',
+  path: '/bird-watchers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -74,10 +116,17 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bird-watchers': typeof BirdWatchersRoute
+  '/bush-and-beach': typeof BushAndBeachRoute
   '/contact': typeof ContactRoute
   '/destinations': typeof DestinationsRoute
   '/explore-our-tours': typeof ExploreOurToursRoute
+  '/group-tours': typeof GroupToursRoute
+  '/honeymoon-packages': typeof HoneymoonPackagesRoute
+  '/luxury-safaris': typeof LuxurySafarisRoute
+  '/short-safaris': typeof ShortSafarisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/tailormade-safari': typeof TailormadeSafariRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -86,10 +135,17 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bird-watchers': typeof BirdWatchersRoute
+  '/bush-and-beach': typeof BushAndBeachRoute
   '/contact': typeof ContactRoute
   '/destinations': typeof DestinationsRoute
   '/explore-our-tours': typeof ExploreOurToursRoute
+  '/group-tours': typeof GroupToursRoute
+  '/honeymoon-packages': typeof HoneymoonPackagesRoute
+  '/luxury-safaris': typeof LuxurySafarisRoute
+  '/short-safaris': typeof ShortSafarisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/tailormade-safari': typeof TailormadeSafariRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -99,10 +155,17 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bird-watchers': typeof BirdWatchersRoute
+  '/bush-and-beach': typeof BushAndBeachRoute
   '/contact': typeof ContactRoute
   '/destinations': typeof DestinationsRoute
   '/explore-our-tours': typeof ExploreOurToursRoute
+  '/group-tours': typeof GroupToursRoute
+  '/honeymoon-packages': typeof HoneymoonPackagesRoute
+  '/luxury-safaris': typeof LuxurySafarisRoute
+  '/short-safaris': typeof ShortSafarisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/tailormade-safari': typeof TailormadeSafariRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -113,10 +176,17 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/bird-watchers'
+    | '/bush-and-beach'
     | '/contact'
     | '/destinations'
     | '/explore-our-tours'
+    | '/group-tours'
+    | '/honeymoon-packages'
+    | '/luxury-safaris'
+    | '/short-safaris'
     | '/sitemap.xml'
+    | '/tailormade-safari'
     | '/blog/$slug'
     | '/tours/$slug'
     | '/blog/'
@@ -125,10 +195,17 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/bird-watchers'
+    | '/bush-and-beach'
     | '/contact'
     | '/destinations'
     | '/explore-our-tours'
+    | '/group-tours'
+    | '/honeymoon-packages'
+    | '/luxury-safaris'
+    | '/short-safaris'
     | '/sitemap.xml'
+    | '/tailormade-safari'
     | '/blog/$slug'
     | '/tours/$slug'
     | '/blog'
@@ -137,10 +214,17 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/bird-watchers'
+    | '/bush-and-beach'
     | '/contact'
     | '/destinations'
     | '/explore-our-tours'
+    | '/group-tours'
+    | '/honeymoon-packages'
+    | '/luxury-safaris'
+    | '/short-safaris'
     | '/sitemap.xml'
+    | '/tailormade-safari'
     | '/blog/$slug'
     | '/tours/$slug'
     | '/blog/'
@@ -150,10 +234,17 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BirdWatchersRoute: typeof BirdWatchersRoute
+  BushAndBeachRoute: typeof BushAndBeachRoute
   ContactRoute: typeof ContactRoute
   DestinationsRoute: typeof DestinationsRoute
   ExploreOurToursRoute: typeof ExploreOurToursRoute
+  GroupToursRoute: typeof GroupToursRoute
+  HoneymoonPackagesRoute: typeof HoneymoonPackagesRoute
+  LuxurySafarisRoute: typeof LuxurySafarisRoute
+  ShortSafarisRoute: typeof ShortSafarisRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TailormadeSafariRoute: typeof TailormadeSafariRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ToursSlugRoute: typeof ToursSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -162,11 +253,46 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tailormade-safari': {
+      id: '/tailormade-safari'
+      path: '/tailormade-safari'
+      fullPath: '/tailormade-safari'
+      preLoaderRoute: typeof TailormadeSafariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/short-safaris': {
+      id: '/short-safaris'
+      path: '/short-safaris'
+      fullPath: '/short-safaris'
+      preLoaderRoute: typeof ShortSafarisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/luxury-safaris': {
+      id: '/luxury-safaris'
+      path: '/luxury-safaris'
+      fullPath: '/luxury-safaris'
+      preLoaderRoute: typeof LuxurySafarisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/honeymoon-packages': {
+      id: '/honeymoon-packages'
+      path: '/honeymoon-packages'
+      fullPath: '/honeymoon-packages'
+      preLoaderRoute: typeof HoneymoonPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/group-tours': {
+      id: '/group-tours'
+      path: '/group-tours'
+      fullPath: '/group-tours'
+      preLoaderRoute: typeof GroupToursRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/explore-our-tours': {
@@ -188,6 +314,20 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bush-and-beach': {
+      id: '/bush-and-beach'
+      path: '/bush-and-beach'
+      fullPath: '/bush-and-beach'
+      preLoaderRoute: typeof BushAndBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bird-watchers': {
+      id: '/bird-watchers'
+      path: '/bird-watchers'
+      fullPath: '/bird-watchers'
+      preLoaderRoute: typeof BirdWatchersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -238,10 +378,17 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BirdWatchersRoute: BirdWatchersRoute,
+  BushAndBeachRoute: BushAndBeachRoute,
   ContactRoute: ContactRoute,
   DestinationsRoute: DestinationsRoute,
   ExploreOurToursRoute: ExploreOurToursRoute,
+  GroupToursRoute: GroupToursRoute,
+  HoneymoonPackagesRoute: HoneymoonPackagesRoute,
+  LuxurySafarisRoute: LuxurySafarisRoute,
+  ShortSafarisRoute: ShortSafarisRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TailormadeSafariRoute: TailormadeSafariRoute,
   BlogSlugRoute: BlogSlugRoute,
   ToursSlugRoute: ToursSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
