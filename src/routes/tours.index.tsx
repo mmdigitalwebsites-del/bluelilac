@@ -15,6 +15,7 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import background from "@/assets/destinations.png";
+import bird from "@/assets/bird3.png";
 import { TOURS } from "@/data/tours";
 
 export const Route = createFileRoute("/tours/")({
@@ -206,7 +207,7 @@ function ToursPage() {
                   return (
                     <article
                       key={t.title}
-                      className="group w-full overflow-hidden rounded-3xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-md"
+                      className="group w-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                     >
                       <div className="relative aspect-[4/3] overflow-hidden">
                         <img
@@ -222,61 +223,51 @@ function ToursPage() {
                           type="button"
                           onClick={() => toggleFavorite(t.title)}
                           aria-label={fav ? "Remove from favourites" : "Add to favourites"}
-                          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-md transition hover:scale-110 hover:bg-[#A40A09] hover:text-white"
+                          className="absolute right-4 top-2 flex h-9 w-9 items-center justify-center rounded-full bg-white/70 backdrop-blur-md transition hover:bg-white/80"
                         >
                           <Heart
-                            className={`h-4 w-4 transition ${fav ? "fill-primary text-primary" : "text-foreground"}`}
+                            className={`h-6 w-5 transition ${fav ? "fill-primary text-primary" : "text-secondary-foreground"}`}
                           />
                         </button>
                       </div>
-                      <div className="p-6">
-                        <div className="flex items-center gap-1 text-primary">
-                          {Array.from({ length: 5 }).map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`h-3.5 w-3.5 ${i < t.rating ? "fill-current" : "opacity-30"}`}
-                            />
-                          ))}
-                          <span className="ml-1 text-xs text-black">
-                            {t.rating}.0 ({t.reviews})
-                          </span>
-                        </div>
-                        <h3 className="mt-2 font-display text-xl leading-snug">
+                      <div className="p-5">
+                        <h3 className="mt-2 font-bold text-lg uppercase tracking-wide text-primary">
                           <Link
                             to="/tours/$slug"
                             params={{ slug: t.slug }}
-                            className="hover:text-primary"
+                            className="hover:text-secondary-foreground transition"
                           >
                             {t.title}
                           </Link>
                         </h3>
-                        <p className="mt-2 flex items-start gap-2 text-sm text-black">
-                          <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        <p className="mt-1.5 flex items-start gap-1.5 text-[11px] uppercase tracking-wide text-black/70">
+                          <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
                           {t.highlights}
                         </p>
-                        <div className="mt-5 flex flex-wrap items-center gap-4 border-t border-border pt-4 text-sm text-black">
+                        <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-black/80">
+                          {t.overview[0]}
+                        </p>
+
+                        <div className="mt-5 flex flex-wrap items-center gap-4 border-t border-border pt-4 text-xs uppercase tracking-wide text-black/70">
                           <span className="inline-flex items-center gap-1.5">
-                            <Clock className="h-4 w-4" /> {t.duration}
+                            <Clock className="h-3.5 w-3.5" /> {t.duration}
                           </span>
                           <span className="inline-flex items-center gap-1.5">
-                            <Users className="h-4 w-4" /> {t.group}
+                            <Users className="h-3.5 w-3.5" /> {t.group}
                           </span>
                         </div>
-                        {/* <div className="mt-4 flex items-baseline gap-1">
-                          <span className="text-xs text-black/60">from</span>
-                          <span className="font-display text-2xl text-primary">
+                        <div className="mt-4 flex items-baseline gap-1">
+                          <span className="text-xs text-black/90">from</span>
+                          <span className="font-display text-2xl text-foreground">
                             ${t.price.toLocaleString()}
                           </span>
-                          <span className="text-xs text-black/60">/person</span>
-                        </div> */}
+                          <span className="text-xs text-black/90">/person</span>
+                        </div>
                         <a
                           href="mailto:info@bluelilactours.com?subject=Tour%20enquiry"
-                          className="mt-5 inline-flex w-full items-center justify-between gap-3 rounded-full bg-accent py-3 pl-5 pr-2 text-sm font-medium text-accent-foreground transition hover:bg-[#A40A09] hover:text-white"
+                          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-secondary-foreground/80 px-5 py-3 text-xs font-medium uppercase tracking-[0.15em] text-secondary-foreground transition group-hover:bg-secondary-foreground group-hover:text-white"
                         >
-                          Enquire now
-                          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-foreground transition group-hover/inner:bg-[#0C5DFF] group-hover/inner:text-white">
-                            <ArrowRight className="h-4 w-4" />
-                          </span>
+                          Enquire now <ArrowRight className="h-4 w-4" />
                         </a>
                       </div>
                     </article>
@@ -464,15 +455,17 @@ function Hero({ query, setQuery }: { query: string; setQuery: (v: string) => voi
 
 function CtaPlan() {
   return (
-    <section className="bg-secondary/50 py-20 md:py-28">
-      <div className="mx-auto max-w-5xl px-6 text-center md:px-10">
+    <section className="relative overflow-hidden py-20 md:py-28">
+      <img src={bird} alt="balloon" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0 bg-black/70" />
+      <div className="relative mx-auto max-w-5xl px-6 text-center md:px-10">
         <p className="text-xs uppercase tracking-[0.25em] text-primary">
           Can't find what you're looking for?
         </p>
-        <h2 className="mt-4 font-display text-4xl md:text-5xl">
+        <h2 className="mt-4 font-display text-4xl text-white md:text-5xl">
           Let's design a private safari just for you.
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-black">
+        <p className="mx-auto mt-6 max-w-2xl text-white/80">
           Every Blue Lilac itinerary is bespoke. Share your dates, interests and budget — we'll
           craft something only yours.
         </p>
@@ -485,7 +478,7 @@ function CtaPlan() {
           </a>
           <a
             href="tel:+254715405641"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
           >
             <Phone className="h-4 w-4" /> +254 715 405641
           </a>

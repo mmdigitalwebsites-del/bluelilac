@@ -2,28 +2,95 @@ import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
+import maasaiMara from "@/assets/wilderbeast.png";
+import serengeti from "@/assets/blt 18.jpg";
+import tourForest from "@/assets/forest.png";
+import tourVolcano from "@/assets/blt 2.jpg";
+import stoneTown from "@/assets/stonetown.png";
+import luxurySafari from "@/assets/understars.png";
+import honeymoonSafari from "@/assets/beach.png";
+import weddingSafari from "@/assets/tour-serengeti.jpg";
+import birdWatchers from "@/assets/blt 7.jpg";
+import ultraLuxury from "@/assets/buffalo.png";
 
 const TOUR_SUBMENU = [
-  { label: "Luxury Safaris", href: "/luxury-safaris" },
-  { label: "Group Tours", href: "/group-tours" },
-  { label: "Short Safaris", href: "/short-safaris" },
-  { label: "Bird Watchers", href: "/bird-watchers" },
-  { label: "Honeymoon Packages", href: "/honeymoon-packages" },
-  { label: "Bush & Beach", href: "/bush-and-beach" },
-  { label: "Tailormade Safari", href: "/tailormade-safari" },
+  {
+    label: "Luxury Safaris",
+    href: "/luxury-safaris",
+    img: luxurySafari,
+    subtitle: "Boutique camps · Private guides",
+  },
+  {
+    label: "Romantic Honeymoon Safari",
+    href: "/group-tours",
+    img: honeymoonSafari,
+    subtitle: "Sunset dinners · Secluded lodges",
+  },
+  {
+    label: "Wedding Anniversaries",
+    href: "/short-safaris",
+    img: weddingSafari,
+    subtitle: "Celebrate under African skies",
+  },
+  {
+    label: "Bird Watchers",
+    href: "/bird-watchers",
+    img: birdWatchers,
+    subtitle: "400+ species · Expert guides",
+  },
+  {
+    label: "Ultra Luxury Experiences",
+    href: "/honeymoon-packages",
+    img: ultraLuxury,
+    subtitle: "The finest camps in East Africa",
+  },
+];
+
+const DESTINATIONS_SUBMENU = [
+  {
+    label: "Kenya",
+    href: "/destinations?filter=Kenya",
+    img: maasaiMara,
+    subtitle: "Maasai Mara · Amboseli · Samburu",
+  },
+  {
+    label: "Tanzania",
+    href: "/destinations?filter=Tanzania",
+    img: serengeti,
+    subtitle: "Serengeti · Ngorongoro · Tarangire",
+  },
+  {
+    label: "Uganda",
+    href: "/destinations?filter=Uganda",
+    img: tourForest,
+    subtitle: "Bwindi · Queen Elizabeth NP",
+  },
+  {
+    label: "Rwanda",
+    href: "/destinations?filter=Rwanda",
+    img: tourVolcano,
+    subtitle: "Volcanoes NP · Kigali",
+  },
+  {
+    label: "Zanzibar",
+    href: "/destinations?filter=Zanzibar",
+    img: stoneTown,
+    subtitle: "Stone Town · Nungwi Beaches",
+  },
 ];
 
 const NAV = [
-  { label: "Home", href: "/", submenu: null },
-  { label: "Destinations", href: "/destinations", submenu: null },
+  { label: "Home", href: "/", submenu: null, type: null },
+  { label: "Destinations", href: "/destinations", submenu: DESTINATIONS_SUBMENU, type: "mega" },
+  { label: "Our Safaris", href: "/tours", submenu: null, type: null },
+  { label: "About Us", href: "/about", submenu: null, type: null },
+  { label: "Contact Us", href: "/contact", submenu: null, type: null },
   {
-    label: "Tours",
-    href: "/tours",
-    submenu: null,
+    label: "Curated Experiences",
+    href: "/explore-our-tours",
+    submenu: TOUR_SUBMENU,
+    type: "mega",
   },
-  { label: "About Us", href: "/about", submenu: null },
-  { label: "Contact Us", href: "/contact", submenu: null },
-  { label: "Explore Our Tours", href: "/explore-our-tours", submenu: TOUR_SUBMENU },
 ] as const;
 
 export function SiteHeader() {
@@ -72,18 +139,71 @@ export function SiteHeader() {
                 )}
               </Link>
 
-              {item.submenu && openSubmenu === item.label && (
-                <div className="absolute left-0 top-full pt-2 z-50">
-                  <div className="min-w-[200px] rounded-2xl border border-border bg-white shadow-xl overflow-hidden">
+              {item.submenu && openSubmenu === item.label && item.type === "list" && (
+                <div className="absolute left-0 top-full z-50 pt-2">
+                  <div className="min-w-[200px] overflow-hidden rounded-2xl border border-border bg-white shadow-xl">
                     {item.submenu.map((sub) => (
                       <a
                         key={sub.label}
                         href={sub.href}
-                        className="block px-5 py-3 text-sm text-foreground hover:bg-[#D0E0FF] hover:text-[#0C5DFF] transition"
+                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
                       >
                         {sub.label}
                       </a>
                     ))}
+                  </div>
+                </div>
+              )}
+
+              {item.submenu && openSubmenu === item.label && item.type === "mega" && (
+                <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-2">
+                  <div className="w-[900px] rounded-2xl border border-border bg-white p-6 shadow-2xl">
+                    <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                      Explore East Africa
+                    </p>
+                    <div className="mt-4 grid grid-cols-5 gap-3">
+                      {item.submenu.map((d) => (
+                        <a
+                          key={d.label}
+                          href={d.href}
+                          className="group relative block aspect-[4/5] overflow-hidden rounded-xl"
+                        >
+                          <img
+                            src={d.img}
+                            alt={d.label}
+                            loading="lazy"
+                            className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                          {item.label !== "Curated Experiences" && (
+                            <span className="absolute left-2 top-2 rounded-full bg-white/90 px-2 py-0.5 text-[8px] font-medium uppercase tracking-wide text-foreground">
+                              East Africa
+                            </span>
+                          )}
+                          <div className="absolute bottom-0 left-0 right-0 p-2.5">
+                            <p className="font-display text-sm font-semibold leading-tight text-white">
+                              {d.label}
+                            </p>
+                            <p className="mt-0.5 text-[8px] uppercase leading-tight tracking-wide text-white/75">
+                              {d.subtitle}
+                            </p>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                    {item.label !== "Curated Experiences" && (
+                      <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+                        <Link
+                          to="/destinations"
+                          className="text-xs font-medium uppercase tracking-wide text-primary hover:text-foreground"
+                        >
+                          All destinations →
+                        </Link>
+                        <span className="text-xs text-muted-foreground">
+                          Bespoke itineraries across East Africa
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
@@ -116,7 +236,7 @@ export function SiteHeader() {
             className="fixed inset-0 top-0 z-40 bg-black/40 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <nav className="fixed left-4 right-4 top-20 z-50 rounded-3xl border border-border bg-white p-4 shadow-2xl">
+          <nav className="fixed left-4 right-4 top-20 z-50 max-h-[80vh] overflow-y-auto rounded-3xl border border-border bg-white p-4 shadow-2xl">
             <ul className="flex flex-col gap-1">
               {NAV.map((item) => (
                 <li key={item.label}>
@@ -140,7 +260,30 @@ export function SiteHeader() {
                           }`}
                         />
                       </button>
-                      {openMobileSubmenu === item.label && (
+                      {openMobileSubmenu === item.label && item.type === "mega" && (
+                        <div className="mt-1 ml-2 grid grid-cols-3 gap-2 pb-2">
+                          {item.submenu.map((d) => (
+                            <a
+                              key={d.label}
+                              href={d.href}
+                              onClick={() => setOpen(false)}
+                              className="group relative block aspect-[3/4] overflow-hidden rounded-xl"
+                            >
+                              <img
+                                src={d.img}
+                                alt={d.label}
+                                loading="lazy"
+                                className="h-full w-full object-cover"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                              <span className="absolute bottom-1.5 left-1.5 text-xs font-semibold text-white">
+                                {d.label}
+                              </span>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                      {openMobileSubmenu === item.label && item.type === "list" && (
                         <ul className="mt-1 ml-4 flex flex-col gap-1">
                           {item.submenu.map((sub) => (
                             <li key={sub.label}>
