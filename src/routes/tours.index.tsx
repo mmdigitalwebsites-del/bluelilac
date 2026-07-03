@@ -15,7 +15,7 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import background from "@/assets/destinations.png";
-import bird from "@/assets/bird3.png";
+import bird from "@/assets/bird3.jpg";
 import { TOURS } from "@/data/tours";
 
 export const Route = createFileRoute("/tours/")({

@@ -18,7 +18,7 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import tourSerengeti from "@/assets/tour-serengeti.jpg";
@@ -29,9 +29,18 @@ import tourRwanda from "@/assets/giraffes.jpg";
 import buffalo from "@/assets/buffalo.png";
 import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach.png";
-import balloon from "@/assets/background.png";
+import balloon from "@/assets/romance2.jpg";
 import maasaiMara from "@/assets/wilderbeast.png";
-import destination from "@/assets/destinations.png";
+import homepage from "@/assets/home.jpg";
+import homepageOne from "@/assets/homepage8.jpg";
+import homepageTwo from "@/assets/homepage5.jpg";
+import homepageThree from "@/assets/home2.jpg";
+import homepageFour from "@/assets/home3.jpg";
+import homepageFive from "@/assets/home6.jpg";
+import homepageSix from "@/assets/home7.jpg";
+import homepageSeven from "@/assets/homepage1.jpg";
+import homepageEight from "@/assets/home2.jpg";
+import homepageNine from "@/assets/homepage4.jpg";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/")({
@@ -115,6 +124,8 @@ const tours = [
       "A premium Mara experience based at the legendary Governor's Camp on the Mara River, with an optional sunrise balloon safari over the plains.",
   },
 ];
+
+const heroSlides = [homepage, homepageOne, homepageTwo, homepageThree, homepageFour];
 
 const socials = [
   { Icon: Facebook, href: "https://www.facebook.com/bluelilactours/", title: "Facebook" },
@@ -222,23 +233,28 @@ function Header() {
 }
 
 function Hero() {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlide((s) => (s + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative h-screen min-h-[720px] w-full overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
-        <iframe
-          src="https://www.youtube.com/embed/t6JDLYZxHzM?autoplay=1&mute=1&loop=1&playlist=t6JDLYZxHzM&controls=0&rel=0&playsinline=1"
-          title="Hero video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{
-            width: "177.78vh",
-            height: "100vh",
-            minWidth: "100vw",
-            minHeight: "56.25vw",
-            border: 0,
-          }}
-        />
+        {heroSlides.map((img, i) => (
+          <img
+            key={img}
+            src={img}
+            alt=""
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+              i === slide ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/60" />
 
@@ -339,22 +355,22 @@ function Trust() {
 function WhyUs() {
   const items = [
     {
-      img: tourSerengeti,
+      img: homepageFive,
       title: "Crafted by locals",
       text: "Every itinerary is shaped by guides who grew up tracking these landscapes.",
     },
     {
-      img: buffalo,
+      img: homepageSix,
       title: "Safety first",
       text: "Vetted vehicles, certified guides, 24/7 ground support on every journey.",
     },
     {
-      img: underStars,
+      img: homepageSeven,
       title: "Conservation-led",
       text: "A share of every booking funds community and wildlife initiatives.",
     },
     {
-      img: tourBeach,
+      img: homepageEight,
       title: "Award-winning",
       text: "Recognized by travel publications for excellence in East African safari design.",
     },
@@ -616,14 +632,14 @@ function Testimonials() {
   return (
     <section
       className="relative bg-cover bg-center bg-fixed py-24 md:py-32"
-      style={{ backgroundImage: `url(${destination})` }}
+      style={{ backgroundImage: `url(${homepageNine})` }}
     >
       <div className="absolute inset-0 bg-background/10" />
       <div className="relative mx-auto max-w-9xl px-6 md:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.25em] text-primary">Traveler stories</p>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-white">Traveler stories</p>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl text-primary">
               Our Happy Traveller
             </h2>
           </div>
@@ -717,17 +733,17 @@ function Faq() {
     <section
       id="faq"
       className="relative bg-cover bg-center bg-fixed py-24 md:py-32"
-      style={{ backgroundImage: `url(${destination})` }}
+      style={{ backgroundImage: `url(${homepageNine})` }}
     >
       <div className="absolute inset-0 bg-background/10" />
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-primary">FAQ</p>
-            <h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl lg:text-5xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-white">FAQ</p>
+            <h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl lg:text-5xl text-primary">
               Enjoy Our Best Quality Tour &amp; Experience
             </h2>
-            <p className="mt-6 max-w-md text-black">
+            <p className="mt-6 max-w-md text-white">
               Everything you wanted to know before stepping into the wild. Still curious? Reach out
               — we love a good travel question.
             </p>
@@ -787,14 +803,14 @@ function Blog() {
     <section
       id="blog"
       className="relative bg-cover bg-center bg-fixed py-24 md:py-32"
-      style={{ backgroundImage: `url(${destination})` }}
+      style={{ backgroundImage: `url(${homepageNine})` }}
     >
       <div className="absolute inset-0 bg-background/10" />
       <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.25em] text-primary">From the journal</p>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-white">From the journal</p>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl text-primary">
               Read Our Latest Travel Blog &amp; Tips Here
             </h2>
           </div>
