@@ -336,17 +336,6 @@ function Trust() {
             </div>
           ))}
         </div>
-
-        <div className="mx-auto mt-6 h-px w-16 bg-border" />
-
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
-          <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70">
-            Awards include
-          </span>
-          <span className="rounded-full border border-border px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
-            Trip Advisor(2024)
-          </span>
-        </div>
       </div>
     </section>
   );

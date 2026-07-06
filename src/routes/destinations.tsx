@@ -3,28 +3,31 @@ import { useMemo, useState } from "react";
 import { ArrowRight, MapPin, Phone, Mail, Menu, Search, Compass, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroSafari from "@/assets/tours.png";
+import heroSafari from "@/assets/home3.jpg";
 import ctaBalloon from "@/assets/cta-balloon.jpg";
 import maasaiMara from "@/assets/wilderbeast.png";
 import amboseli from "@/assets/blt 13.jpg";
 import nakuru from "@/assets/blt 7.jpg";
-import naivasha from "@/assets/naivasha.png";
+import naivasha from "@/assets/naivasha.jpg";
 import samburu from "@/assets/tour-serengeti.jpg";
 import olpejeta from "@/assets/rhino.jpg";
 import tsavo from "@/assets/blt 16.jpg";
-import diani from "@/assets/beach.png";
+import diani from "@/assets/home4.jpg";
 import nairobi from "@/assets/blt 15.jpg";
 import serengeti from "@/assets/blt 18.jpg";
 import crator from "@/assets/crater.png";
 import tourPark from "@/assets/homepage9.jpg";
 import tourLake from "@/assets/lake.png";
 import arusha from "@/assets/arusha.png";
-import tourForest from "@/assets/forest.png";
+import tourForest from "@/assets/gorrila.jpg";
 import tourElizabeth from "@/assets/queen.png";
 import tourBunyonyi from "@/assets/blt 16.jpg";
 import tourVolcano from "@/assets/blt 2.jpg";
 import kigali from "@/assets/blt 6.jpg";
 import stoneTown from "@/assets/stonetown.png";
+import stone from "@/assets/kenya.png";
+import town from "@/assets/homepage3.jpg";
+import ston from "@/assets/shortsafari.png";
 
 export const Route = createFileRoute("/destinations")({
   head: () => ({
@@ -59,18 +62,32 @@ type Destination = {
 
 type Country = "Kenya" | "Tanzania" | "Uganda" | "Rwanda" | "Zanzibar";
 
-const COUNTRIES: { name: Country; blurb: string }[] = [
+const COUNTRIES: { name: Country; blurb: string; img: string }[] = [
   {
     name: "Kenya",
     blurb: "Birthplace of the safari — the Mara, the Rift Valley and ancient coastlines.",
+    img: stone,
   },
   {
     name: "Tanzania",
     blurb: "Endless Serengeti plains, Ngorongoro's crater and Kilimanjaro's snows.",
+    img: ston,
   },
-  { name: "Uganda", blurb: "Mountain gorillas, chimpanzees and the source of the Nile." },
-  { name: "Rwanda", blurb: "Land of a thousand hills and golden monkeys in volcanic forests." },
-  { name: "Zanzibar", blurb: "Spice-scented Stone Town and turquoise Indian Ocean shores." },
+  {
+    name: "Uganda",
+    blurb: "Mountain gorillas, chimpanzees and the source of the Nile.",
+    img: tourForest,
+  },
+  {
+    name: "Rwanda",
+    blurb: "Land of a thousand hills and golden monkeys in volcanic forests.",
+    img: tourElizabeth,
+  },
+  {
+    name: "Zanzibar",
+    blurb: "Spice-scented Stone Town and turquoise Indian Ocean shores.",
+    img: town,
+  },
 ];
 
 const DESTINATIONS: Destination[] = [
@@ -374,20 +391,28 @@ function DestinationsPage() {
               <button
                 key={c.name}
                 onClick={() => setFilter(c.name)}
-                className="group rounded-3xl border border-border bg-card p-8 text-left transition hover:-translate-y-1 hover:border-primary hover:shadow-xl"
+                className="group relative overflow-hidden rounded-3xl text-left transition hover:-translate-y-1"
               >
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <Compass className="h-5 w-5" />
-                  </span>
-                  <h3 className="font-display text-2xl">{c.name}</h3>
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={c.img}
+                    alt={c.name}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
                 </div>
-                <p className="mt-4 text-sm text-black">{c.blurb}</p>
-                <a href={`/tours?filter=${c.name}`}>
-                  <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition group-hover:opacity-100">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+                <div className="absolute inset-0 flex flex-col justify-end p-8">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-md">
+                      <Compass className="h-5 w-5" />
+                    </span>
+                    <h3 className="font-display text-2xl text-white">{c.name}</h3>
+                  </div>
+                  <p className="mt-4 text-sm text-white/85">{c.blurb}</p>
+                  <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-white opacity-0 transition group-hover:opacity-100">
                     Explore {c.name} <ArrowRight className="h-4 w-4" />
                   </span>
-                </a>
+                </div>
               </button>
             ))}
           </div>

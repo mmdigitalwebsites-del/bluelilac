@@ -334,16 +334,16 @@ import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
-import maasaiMara from "@/assets/wilderbeast.png";
-import serengeti from "@/assets/blt 18.jpg";
-import tourForest from "@/assets/forest.png";
-import tourVolcano from "@/assets/blt 2.jpg";
-import stoneTown from "@/assets/stonetown.png";
-import luxurySafari from "@/assets/understars.png";
-import honeymoonSafari from "@/assets/beach.png";
-import weddingSafari from "@/assets/tour-serengeti.jpg";
-import birdWatchers from "@/assets/blt 7.jpg";
-import ultraLuxury from "@/assets/buffalo.png";
+import luxurySafari from "@/assets/luxury.jpg";
+import honeymoonSafari from "@/assets/romance.jpg";
+import weddingSafari from "@/assets/shortsafari.png";
+import birdWatchers from "@/assets/bird5.jpg";
+import ultraLuxury from "@/assets/ultra1.jpg";
+import ken from "@/assets/kenya1.jpg";
+import tanz from "@/assets/tanzania.jpg";
+import rwanda from "@/assets/rwanda.jpg";
+import uganda from "@/assets/uganda.jpg";
+import zanzibar from "@/assets/zanzibar.jpg";
 
 const TOUR_SUBMENU = [
   {
@@ -381,39 +381,44 @@ const TOUR_SUBMENU = [
 const DESTINATIONS_SUBMENU = [
   {
     label: "Kenya",
-    href: "/destinations?filter=Kenya",
-    img: maasaiMara,
+    href: "/destinations/kenya",
+    img: ken,
     subtitle: "Maasai Mara · Amboseli · Samburu",
   },
   {
     label: "Tanzania",
-    href: "/destinations?filter=Tanzania",
-    img: serengeti,
+    href: "/destinations/tanzania",
+    img: tanz,
     subtitle: "Serengeti · Ngorongoro · Tarangire",
   },
   {
     label: "Uganda",
-    href: "/destinations?filter=Uganda",
-    img: tourForest,
+    href: "/destinations/uganda",
+    img: uganda,
     subtitle: "Bwindi · Queen Elizabeth NP",
   },
   {
     label: "Rwanda",
-    href: "/destinations?filter=Rwanda",
-    img: tourVolcano,
+    href: "/destinations/rwanda",
+    img: rwanda,
     subtitle: "Volcanoes NP · Kigali",
   },
   {
     label: "Zanzibar",
-    href: "/destinations?filter=Zanzibar",
-    img: stoneTown,
+    href: "/destinations/zanzibar",
+    img: zanzibar,
     subtitle: "Stone Town · Nungwi Beaches",
   },
 ];
 
 const NAV = [
   { label: "Home", href: "/", submenu: null, type: null },
-  { label: "Destinations", href: "/destinations", submenu: DESTINATIONS_SUBMENU, type: "mega" },
+  {
+    label: "Destinations",
+    href: "/destinations/kenya",
+    submenu: DESTINATIONS_SUBMENU,
+    type: "mega",
+  },
   { label: "Our Safaris", href: "/tours", submenu: null, type: null },
   { label: "About Us", href: "/about", submenu: null, type: null },
   { label: "Contact Us", href: "/contact", submenu: null, type: null },

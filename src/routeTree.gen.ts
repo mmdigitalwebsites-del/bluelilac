@@ -23,6 +23,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToursIndexRouteImport } from './routes/tours.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ToursSlugRouteImport } from './routes/tours.$slug'
+import { Route as DestinationsZanzibarRouteImport } from './routes/destinations_.zanzibar'
+import { Route as DestinationsUgandaRouteImport } from './routes/destinations_.uganda'
+import { Route as DestinationsTanzaniaRouteImport } from './routes/destinations_.tanzania'
+import { Route as DestinationsRwandaRouteImport } from './routes/destinations_.rwanda'
+import { Route as DestinationsKenyaRouteImport } from './routes/destinations_.kenya'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const WeddingAnniversariesRoute = WeddingAnniversariesRouteImport.update({
@@ -95,6 +100,31 @@ const ToursSlugRoute = ToursSlugRouteImport.update({
   path: '/tours/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DestinationsZanzibarRoute = DestinationsZanzibarRouteImport.update({
+  id: '/destinations_/zanzibar',
+  path: '/destinations/zanzibar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsUgandaRoute = DestinationsUgandaRouteImport.update({
+  id: '/destinations_/uganda',
+  path: '/destinations/uganda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsTanzaniaRoute = DestinationsTanzaniaRouteImport.update({
+  id: '/destinations_/tanzania',
+  path: '/destinations/tanzania',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsRwandaRoute = DestinationsRwandaRouteImport.update({
+  id: '/destinations_/rwanda',
+  path: '/destinations/rwanda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsKenyaRoute = DestinationsKenyaRouteImport.update({
+  id: '/destinations_/kenya',
+  path: '/destinations/kenya',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -114,6 +144,11 @@ export interface FileRoutesByFullPath {
   '/ultra-luxury': typeof UltraLuxuryRoute
   '/wedding-anniversaries': typeof WeddingAnniversariesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/destinations/kenya': typeof DestinationsKenyaRoute
+  '/destinations/rwanda': typeof DestinationsRwandaRoute
+  '/destinations/tanzania': typeof DestinationsTanzaniaRoute
+  '/destinations/uganda': typeof DestinationsUgandaRoute
+  '/destinations/zanzibar': typeof DestinationsZanzibarRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/tours/': typeof ToursIndexRoute
@@ -131,6 +166,11 @@ export interface FileRoutesByTo {
   '/ultra-luxury': typeof UltraLuxuryRoute
   '/wedding-anniversaries': typeof WeddingAnniversariesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/destinations/kenya': typeof DestinationsKenyaRoute
+  '/destinations/rwanda': typeof DestinationsRwandaRoute
+  '/destinations/tanzania': typeof DestinationsTanzaniaRoute
+  '/destinations/uganda': typeof DestinationsUgandaRoute
+  '/destinations/zanzibar': typeof DestinationsZanzibarRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/blog': typeof BlogIndexRoute
   '/tours': typeof ToursIndexRoute
@@ -149,6 +189,11 @@ export interface FileRoutesById {
   '/ultra-luxury': typeof UltraLuxuryRoute
   '/wedding-anniversaries': typeof WeddingAnniversariesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/destinations_/kenya': typeof DestinationsKenyaRoute
+  '/destinations_/rwanda': typeof DestinationsRwandaRoute
+  '/destinations_/tanzania': typeof DestinationsTanzaniaRoute
+  '/destinations_/uganda': typeof DestinationsUgandaRoute
+  '/destinations_/zanzibar': typeof DestinationsZanzibarRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/tours/': typeof ToursIndexRoute
@@ -168,6 +213,11 @@ export interface FileRouteTypes {
     | '/ultra-luxury'
     | '/wedding-anniversaries'
     | '/blog/$slug'
+    | '/destinations/kenya'
+    | '/destinations/rwanda'
+    | '/destinations/tanzania'
+    | '/destinations/uganda'
+    | '/destinations/zanzibar'
     | '/tours/$slug'
     | '/blog/'
     | '/tours/'
@@ -185,6 +235,11 @@ export interface FileRouteTypes {
     | '/ultra-luxury'
     | '/wedding-anniversaries'
     | '/blog/$slug'
+    | '/destinations/kenya'
+    | '/destinations/rwanda'
+    | '/destinations/tanzania'
+    | '/destinations/uganda'
+    | '/destinations/zanzibar'
     | '/tours/$slug'
     | '/blog'
     | '/tours'
@@ -202,6 +257,11 @@ export interface FileRouteTypes {
     | '/ultra-luxury'
     | '/wedding-anniversaries'
     | '/blog/$slug'
+    | '/destinations_/kenya'
+    | '/destinations_/rwanda'
+    | '/destinations_/tanzania'
+    | '/destinations_/uganda'
+    | '/destinations_/zanzibar'
     | '/tours/$slug'
     | '/blog/'
     | '/tours/'
@@ -220,6 +280,11 @@ export interface RootRouteChildren {
   UltraLuxuryRoute: typeof UltraLuxuryRoute
   WeddingAnniversariesRoute: typeof WeddingAnniversariesRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  DestinationsKenyaRoute: typeof DestinationsKenyaRoute
+  DestinationsRwandaRoute: typeof DestinationsRwandaRoute
+  DestinationsTanzaniaRoute: typeof DestinationsTanzaniaRoute
+  DestinationsUgandaRoute: typeof DestinationsUgandaRoute
+  DestinationsZanzibarRoute: typeof DestinationsZanzibarRoute
   ToursSlugRoute: typeof ToursSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ToursIndexRoute: typeof ToursIndexRoute
@@ -325,6 +390,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToursSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/destinations_/zanzibar': {
+      id: '/destinations_/zanzibar'
+      path: '/destinations/zanzibar'
+      fullPath: '/destinations/zanzibar'
+      preLoaderRoute: typeof DestinationsZanzibarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations_/uganda': {
+      id: '/destinations_/uganda'
+      path: '/destinations/uganda'
+      fullPath: '/destinations/uganda'
+      preLoaderRoute: typeof DestinationsUgandaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations_/tanzania': {
+      id: '/destinations_/tanzania'
+      path: '/destinations/tanzania'
+      fullPath: '/destinations/tanzania'
+      preLoaderRoute: typeof DestinationsTanzaniaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations_/rwanda': {
+      id: '/destinations_/rwanda'
+      path: '/destinations/rwanda'
+      fullPath: '/destinations/rwanda'
+      preLoaderRoute: typeof DestinationsRwandaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations_/kenya': {
+      id: '/destinations_/kenya'
+      path: '/destinations/kenya'
+      fullPath: '/destinations/kenya'
+      preLoaderRoute: typeof DestinationsKenyaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
@@ -348,6 +448,11 @@ const rootRouteChildren: RootRouteChildren = {
   UltraLuxuryRoute: UltraLuxuryRoute,
   WeddingAnniversariesRoute: WeddingAnniversariesRoute,
   BlogSlugRoute: BlogSlugRoute,
+  DestinationsKenyaRoute: DestinationsKenyaRoute,
+  DestinationsRwandaRoute: DestinationsRwandaRoute,
+  DestinationsTanzaniaRoute: DestinationsTanzaniaRoute,
+  DestinationsUgandaRoute: DestinationsUgandaRoute,
+  DestinationsZanzibarRoute: DestinationsZanzibarRoute,
   ToursSlugRoute: ToursSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   ToursIndexRoute: ToursIndexRoute,

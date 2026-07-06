@@ -15,7 +15,14 @@ import heroSafari from "@/assets/img.jpg";
 import tourSerengeti from "@/assets/tour-serengeti.jpg";
 import tourLodge from "@/assets/understars.png";
 import tourGorilla from "@/assets/buffalo.png";
-import ctaBalloon from "@/assets/hotballon.png";
+import ctaBalloon from "@/assets/romance2.jpg";
+import on from "@/assets/volcano.jpg";
+import drive from "@/assets/game-drives-2.jpg";
+import driveC from "@/assets/luxury3.jpg";
+import travel from "@/assets/home6.jpg";
+import serengeti from "@/assets/blt 2.jpg";
+import tour from "@/assets/blt 3.jpg";
+import tor from "@/assets/experience.jpg";
 import SiteFooter from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/about")({
@@ -191,21 +198,25 @@ const VALUES = [
     icon: Compass,
     title: "Tailor-made by experts",
     body: "Every Blue Lilac journey is bespoke — built around your pace, interests and dream sightings.",
+    img: on,
   },
   {
     icon: ShieldCheck,
     title: "Trusted on the ground",
     body: "Licensed guides, private 4x4 vehicles, and 24/7 support from arrival to departure.",
+    img: drive,
   },
   {
     icon: Heart,
     title: "Hand-picked stays",
     body: "From intimate tented camps to luxury lodges — only the places we'd send our own family.",
+    img: driveC,
   },
   {
     icon: Leaf,
     title: "Travel that gives back",
     body: "We partner with community-owned conservancies that protect wildlife and uplift local communities.",
+    img: travel,
   },
 ];
 
@@ -225,13 +236,23 @@ function Values() {
           {VALUES.map((v) => (
             <div
               key={v.title}
-              className="rounded-3xl bg-card p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-3xl transition hover:-translate-y-1"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <v.icon className="h-6 w-6" />
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={v.img}
+                  alt={v.title}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
               </div>
-              <h3 className="mt-6 font-display text-xl">{v.title}</h3>
-              <p className="mt-3 text-sm text-black">{v.body}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-md">
+                  <v.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 font-display text-xl text-white">{v.title}</h3>
+                <p className="mt-2 text-sm text-white/85">{v.body}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -248,8 +269,10 @@ function Stats() {
     { k: "4.9★", v: "Average guest rating" },
   ];
   return (
-    <section className="bg-foreground py-20 text-background">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-10 px-6 md:grid-cols-4 md:px-10">
+    <section className="relative overflow-hidden py-20 text-background">
+      <img src={on} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0 bg-foreground/40" />
+      <div className="relative mx-auto grid max-w-7xl grid-cols-2 gap-10 px-6 md:grid-cols-4 md:px-10">
         {stats.map((s) => (
           <div key={s.v}>
             <div className="font-display text-4xl md:text-5xl">{s.k}</div>
@@ -262,6 +285,24 @@ function Stats() {
 }
 
 function Team() {
+  const roles = [
+    {
+      role: "Safari designers",
+      body: "Plan your itinerary to match your dates, pace and interests.",
+      img: serengeti,
+    },
+    {
+      role: "Driver-guides",
+      body: "KPSGA-certified guides with a lifetime in the parks.",
+      img: tour,
+    },
+    {
+      role: "On-trip support",
+      body: "A real human on WhatsApp, 24/7, from arrival to departure.",
+      img: tor,
+    },
+  ];
+
   return (
     <section className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
@@ -282,20 +323,22 @@ function Team() {
           simply show up and be in awe.
         </p>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              role: "Safari designers",
-              body: "Plan your itinerary to match your dates, pace and interests.",
-            },
-            { role: "Driver-guides", body: "KPSGA-certified guides with a lifetime in the parks." },
-            {
-              role: "On-trip support",
-              body: "A real human on WhatsApp, 24/7, from arrival to departure.",
-            },
-          ].map((t) => (
-            <div key={t.role} className="rounded-3xl border border-border bg-card p-8">
-              <h3 className="font-display text-2xl">{t.role}</h3>
-              <p className="mt-3 text-sm text-black">{t.body}</p>
+          {roles.map((t) => (
+            <div
+              key={t.role}
+              className="group relative min-h-[280px] overflow-hidden rounded-3xl border border-border p-8 transition hover:-translate-y-1"
+            >
+              <img
+                src={t.img}
+                alt={t.role}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15" />
+              <div className="relative flex h-full flex-col justify-end">
+                <h3 className="font-display text-2xl text-white">{t.role}</h3>
+                <p className="mt-3 text-sm text-white/85">{t.body}</p>
+              </div>
             </div>
           ))}
         </div>
