@@ -170,7 +170,7 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <Hero />
-      {/* <Trust /> */}
+      <Trust />
       <WhyUs />
       <VideoSection />
       <FeaturedTours />
