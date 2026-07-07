@@ -18,7 +18,7 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import tourSerengeti from "@/assets/tour-serengeti.jpg";
@@ -29,7 +29,18 @@ import tourRwanda from "@/assets/giraffes.jpg";
 import buffalo from "@/assets/buffalo.png";
 import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach.png";
-import balloon from "@/assets/background.png";
+import balloon from "@/assets/romance2.jpg";
+import maasaiMara from "@/assets/wilderbeast.png";
+import homepage from "@/assets/home.jpg";
+import homepageOne from "@/assets/homepage8.jpg";
+import homepageTwo from "@/assets/homepage5.jpg";
+import homepageThree from "@/assets/home2.jpg";
+import homepageFour from "@/assets/home3.jpg";
+import homepageFive from "@/assets/home6.jpg";
+import homepageSix from "@/assets/home7.jpg";
+import homepageSeven from "@/assets/homepage1.jpg";
+import homepageEight from "@/assets/home2.jpg";
+import homepageNine from "@/assets/homepage4.jpg";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/")({
@@ -58,13 +69,19 @@ const tours = [
     country: "Kenya · Tanzania",
     days: "13 Days",
     price: "$4,250",
+    slug: "13-days-kenya-tanzania-safari",
+    description:
+      "The complete East African circuit — Masai Mara, Amboseli, Ngorongoro Crater and the Serengeti, tracking the Big Five across two countries.",
   },
   {
     img: buffalo,
     title: "7 Days Tanzania Signature Safari",
     country: "Tanzania",
-    days: "5 Days",
+    days: "7 Days",
     price: "$3,950",
+    slug: "7-days-tanzania-signature-safari",
+    description:
+      "Tarangire's baobabs, tree-climbing lions at Lake Manyara, and the Serengeti's endless plains, finishing on the Ngorongoro Crater floor.",
   },
   {
     img: underStars,
@@ -72,6 +89,9 @@ const tours = [
     country: "Tanzania",
     days: "7 Days",
     price: "$3,600",
+    slug: "5-days-tanzania-classic-safari",
+    description:
+      "Tanzania's most iconic wildlife circuit in five unhurried days — Serengeti predators and a Ngorongoro Crater descent, perfect for first-time safari travellers.",
   },
   {
     img: tourBeach,
@@ -79,8 +99,33 @@ const tours = [
     country: "Tanzania · Zanzibar",
     days: "10 Days",
     price: "$3,950",
+    slug: "10-days-bush-and-beach-kenya",
+    description:
+      "Kenya's classic wildlife parks paired with the white sand and warm waters of Diani Beach — why choose between safari and the ocean?",
+  },
+  {
+    img: tourKenya,
+    title: "7 Days Kenya Classic Safari",
+    country: "Kenya",
+    days: "7 Days",
+    price: "$2,450",
+    slug: "7-days-kenya-classic-safari",
+    description:
+      "The classic week-long Kenyan safari — Amboseli's elephants under Kilimanjaro, Nakuru's flamingos, and the Big Five of the Maasai Mara.",
+  },
+  {
+    img: maasaiMara,
+    title: "3 Day Masai Mara at Governor's Camp",
+    country: "Kenya",
+    days: "3 Days",
+    price: "$1,850",
+    slug: "3-day-masai-mara-governors-camp",
+    description:
+      "A premium Mara experience based at the legendary Governor's Camp on the Mara River, with an optional sunrise balloon safari over the plains.",
   },
 ];
+
+const heroSlides = [homepage, homepageOne, homepageTwo, homepageThree, homepageFour];
 
 const socials = [
   { Icon: Facebook, href: "https://www.facebook.com/bluelilactours/", title: "Facebook" },
@@ -147,13 +192,13 @@ function Header() {
           href="#"
           className="flex items-center font-display text-2xl font-semibold text-white md:text-3xl"
         >
-          Bluelilac
+          Blue Lilac
         </a>
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {[
             { label: "Home", href: "#" },
-            { label: "Explore", href: "/destinations" },
-            { label: "Trips", href: "/tours" },
+            { label: "Destinations", href: "/destinations" },
+            { label: "Tours", href: "/tours" },
             { label: "About Us", href: "/about" },
             { label: "Contact Us", href: "/contact" },
             { label: "Explore Our Tours", href: "/tours" },
@@ -188,23 +233,28 @@ function Header() {
 }
 
 function Hero() {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlide((s) => (s + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative h-screen min-h-[720px] w-full overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
-        <iframe
-          src="https://www.youtube.com/embed/t6JDLYZxHzM?autoplay=1&mute=1&loop=1&playlist=t6JDLYZxHzM&controls=0&rel=0&playsinline=1"
-          title="Hero video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{
-            width: "177.78vh",
-            height: "100vh",
-            minWidth: "100vw",
-            minHeight: "56.25vw",
-            border: 0,
-          }}
-        />
+        {heroSlides.map((img, i) => (
+          <img
+            key={img}
+            src={img}
+            alt=""
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+              i === slide ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/60" />
 
@@ -254,44 +304,62 @@ function Hero() {
   );
 }
 
-// function Trust() {
-//   return (
-//     <section className="border-b border-border bg-background py-10">
-//       <div className="mx-auto max-w-7xl px-6 md:px-10">
-//         <p className="text-center text-xs uppercase tracking-[0.25em] text-muted-foreground">
-//           Trusted by global travelers · Featured in
-//         </p>
-//         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 font-display text-2xl text-muted-foreground/70">
-//           <span>Condé Nast</span>
-//           <span>National Geographic</span>
-//           <span>Travel + Leisure</span>
-//           <span>Lonely Planet</span>
-//           <span>AFAR</span>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
+function Trust() {
+  const recognitions = [
+    {
+      title: "Kenya Association of Tour Operators",
+      subtitle: "Kenya's premier tourism trade association",
+    },
+    {
+      title: "Tourism Regulatory Authority",
+      subtitle: "Regulates tourism-related activities",
+    },
+    { title: "Trip Advisor", subtitle: "World's largest review platform" },
+    {
+      title: "Safari Bookings",
+      subtitle: "Largest online marketplace for planning African safaris",
+    },
+  ];
+
+  return (
+    <section className="border-y border-border bg-background py-8">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <p className="text-center text-[11px] font-light uppercase tracking-[0.35em] text-muted-foreground">
+          Recognised by
+        </p>
+
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+          {recognitions.map((r) => (
+            <div key={r.title + r.subtitle} className="text-center">
+              <p className="font-display text-base text-primary/80 md:text-lg">{r.title}</p>
+              <p className="mt-0.5 text-xs italic text-muted-foreground">· {r.subtitle}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function WhyUs() {
   const items = [
     {
-      icon: Compass,
+      img: homepageFive,
       title: "Crafted by locals",
       text: "Every itinerary is shaped by guides who grew up tracking these landscapes.",
     },
     {
-      icon: Shield,
+      img: homepageSix,
       title: "Safety first",
       text: "Vetted vehicles, certified guides, 24/7 ground support on every journey.",
     },
     {
-      icon: Heart,
+      img: homepageSeven,
       title: "Conservation-led",
       text: "A share of every booking funds community and wildlife initiatives.",
     },
     {
-      icon: Award,
+      img: homepageEight,
       title: "Award-winning",
       text: "Recognized by travel publications for excellence in East African safari design.",
     },
@@ -299,17 +367,28 @@ function WhyUs() {
   return (
     <section id="about" className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-primary">Why Blue Lilac</p>
-            <h2 className="mt-4 font-display text-4xl leading-tight md:text-5xl lg:text-6xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-primary mt-6">Why Blue lilac</p>
+            <h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl lg:text-5xl">
               Journeys that connect you deeply with Africa.
             </h2>
             <p className="mt-6 max-w-lg text-black">
-              Blue Lilac Tours is a premier East African safari specialist creating unforgettable
-              wildlife and luxury travel experiences across Kenya, Tanzania, Uganda and Rwanda —
-              from the vast plains of the Maasai Mara to the white beaches of Zanzibar.
+              Blue lilac Tours is a premier East African safari specialist creating unforgettable
+              wildlife and luxury travel experiences across Kenya, Tanzania, Uganda, and Rwanda.
+              From the vast plains of the Maasai Mara to the white beaches of Zanzibar, we design
+              journeys that connect you deeply with Africa.
             </p>
+            <p className="mt-4 max-w-lg text-black">
+              Every itinerary is hand-crafted by guides who grew up in these landscapes, paired with
+              private 4x4 game drives, boutique camps and tented suites under the stars.
+            </p>
+            <Link
+              to="/about"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-foreground"
+            >
+              See our story <ArrowRight className="h-4 w-4" />
+            </Link>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="mailto:info@bluelilactours.com"
@@ -326,16 +405,22 @@ function WhyUs() {
             </div>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {items.map(({ icon: Icon, title, text }) => (
+            {items.map(({ img, title, text }) => (
               <div
                 key={title}
-                className="rounded-3xl border border-border bg-card p-6 transition hover:border-primary/40 hover:shadow-sm"
+                className="group relative min-h-[280px] overflow-hidden rounded-3xl border border-border p-6 transition hover:border-primary/40 hover:shadow-sm"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <Icon className="h-6 w-6" />
+                <img
+                  src={img}
+                  alt={title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+                <div className="relative flex h-full flex-col justify-end gap-2">
+                  <h3 className="font-bold text-2xl text-white">{title}</h3>
+                  <p className="mt-2 text-sm text-white/90">{text}</p>
                 </div>
-                <h3 className="mt-5 font-display text-2xl">{title}</h3>
-                <p className="mt-2 text-sm text-black">{text}</p>
               </div>
             ))}
           </div>
@@ -347,12 +432,12 @@ function WhyUs() {
 
 function FeaturedTours() {
   return (
-    <section id="tours" className="bg-secondary/50 py-24 md:py-32">
+    <section id="tours" className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-primary">Hand-picked</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
+            <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl">
               Our best-selling tours
             </h2>
           </div>
@@ -364,40 +449,56 @@ function FeaturedTours() {
           </a>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {tours.map((t) => (
-            <article
-              key={t.title}
-              className="group overflow-hidden rounded-3xl bg-card transition hover:-translate-y-1"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={t.img}
-                  alt={t.title}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-                <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium backdrop-blur-md">
-                  {t.country}
-                </span>
-              </div>
-              <div className="p-5">
-                <div className="flex items-center gap-1 text-primary">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                  ))}
-                  <span className="ml-1 text-xs text-black">(24)</span>
-                </div>
-                <h3 className="mt-2 font-display text-xl leading-snug text-black">{t.title}</h3>
-                <div className="mt-4 flex items-center justify-between border-t border-border pt-4 text-sm">
-                  <span className="text-black">{t.days}</span>
-                  <span className="font-display text-lg text-primary">{t.price}</span>
-                </div>
-              </div>
-            </article>
-          ))}
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {tours.map((t) => {
+            const [dayNumber, ...dayRest] = t.days.split(" ");
+            return (
+              <article
+                key={t.title}
+                className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              >
+                <a href={`/tours/${t.slug}`} className="block">
+                  <div className="relative h-56 overflow-hidden sm:h-64 md:h-72 lg:h-80">
+                    <img
+                      src={t.img}
+                      alt={t.title}
+                      loading="lazy"
+                      width={1024}
+                      height={768}
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                    <span className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-primary/50 py-1.5 pl-1.5 pr-4 text-background backdrop-blur-md">
+                      <span className="flex h-4 w-6 items-center justify-center text-sm font-semibold">
+                        {dayNumber}
+                      </span>
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-background/80">
+                        {dayRest.join(" ") || "Days"}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-display text-lg uppercase tracking-wide text-primary">
+                      {t.title}
+                    </h3>
+                    <p className="mt-1.5 text-[11px] uppercase tracking-wide text-black/80">
+                      {t.country}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-black/90">{t.description}</p>
+
+                    <div className="mt-5 flex items-end justify-between border-t border-border pt-4">
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-black/80">From</p>
+                        <p className="font-display text-xl text-foreground">{t.price}</p>
+                      </div>
+                      <span className="inline-flex items-center gap-1 rounded-full border border-primary/40 px-4 py-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
+                        View safari
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -410,7 +511,7 @@ function Destinations() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Where we go</p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl">
             Four countries. One continent of wonder.
           </h2>
         </div>
@@ -482,21 +583,103 @@ function CtaBalloon() {
 }
 
 function Testimonials() {
+  const reviews = [
+    {
+      name: "Marco",
+      country: "🇳🇱 Netherlands",
+      stars: 4,
+      tour: "Lake Nakuru & Lake Naivasha Tour",
+      date: "May 10, 2026",
+      text: "I can really recommend Blue Lilac Tours. We were picked up in Nairobi and went on a tour to Lake Nakuru and Lake Naivasha. It was great to have a personal guide and a car, they were available during the whole period. Great gamedrive, sightseeing and biking tour.",
+    },
+    {
+      name: "Chaida",
+      country: "🇸🇳 Senegal",
+      stars: 5,
+      tour: "East Africa Safari",
+      date: "Apr 6, 2026",
+      text: "I had an amazing experience with Blue Lilac Tours and Travel. The service was 100% excellent from start to finish. The team was very attentive, responsive, and always ready to help with anything we needed. Everything was well organized, and I felt safe and well taken care of throughout the trip. I highly recommend this agency to anyone looking for a smooth, enjoyable, and memorable safari experience.",
+    },
+    {
+      name: "Melanie R",
+      country: "🇺🇸 United States",
+      stars: 5,
+      tour: "6 Night / 7 Day Private Safari",
+      date: "Feb 22, 2026",
+      text: "We just returned from a 6 night / 7 day private safari with Blue Lilac Tours, and the entire experience exceeded our expectations from start to finish. From the very first email, Edna was responsive, professional, and so easy to work with. Our guide Boniface was knowledgeable, warm, and truly exceptional at spotting wildlife. He went the extra mile to help us track down the Big Five.",
+    },
+    {
+      name: "HANYONG LEE",
+      country: "🇰🇷 South Korea",
+      stars: 5,
+      tour: "Kenya Safari",
+      date: "Feb 19, 2026",
+      text: "Blue Lilac Tours and Travel is a reliable, well-organized tour operator that provides professional service, smooth coordination, and a warm, customer-focused travel experience from start to finish.",
+    },
+  ];
+
   return (
-    <section className="bg-secondary/50 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.25em] text-primary">Traveler stories</p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
-            Memories worth keeping.
-          </h2>
+    <section
+      className="relative bg-cover bg-center bg-fixed py-24 md:py-32"
+      style={{ backgroundImage: `url(${homepageNine})` }}
+    >
+      <div className="absolute inset-0 bg-background/10" />
+      <div className="relative mx-auto max-w-9xl px-6 md:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-white">Traveler stories</p>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl text-primary">
+              Our Happy Traveller
+            </h2>
+          </div>
+          <a
+            href="https://www.safaribookings.com/p6340"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary"
+          >
+            Read all reviews <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
-        <div className="mt-14">
-          <script src="https://elfsightcdn.com/platform.js" async></script>
-          <div
-            className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66"
-            data-elfsight-app-lazy
-          />
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {reviews.map((r) => (
+            <figure
+              key={r.name}
+              className="flex flex-col rounded-3xl border border-border bg-card p-8 shadow-sm"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex gap-1 text-primary">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`h-4 w-4 ${i < r.stars ? "fill-current" : "opacity-30"}`}
+                    />
+                  ))}
+                </div>
+                <span className="text-xs text-black/50">{r.date}</span>
+              </div>
+              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-black">
+                "{r.text}"
+              </blockquote>
+              <figcaption className="mt-6 border-t border-border pt-4">
+                <div className="font-medium text-black">{r.name}</div>
+                <div className="text-xs text-black/60">{r.country}</div>
+                <div className="mt-1 text-xs text-primary">{r.tour}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href="https://www.safaribookings.com/p6340"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition hover:bg-primary hover:text-primary-foreground"
+          >
+            Read all 16 reviews on SafariBookings <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
@@ -513,7 +696,7 @@ function VideoSection() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Watch the journey</p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="mt-4 font-display text-4xl md:text-4xl lg:text-5xl">
             See East Africa in motion.
           </h2>
         </div>
@@ -536,15 +719,20 @@ function VideoSection() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-background py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
+    <section
+      id="faq"
+      className="relative bg-cover bg-center bg-fixed py-24 md:py-32"
+      style={{ backgroundImage: `url(${homepageNine})` }}
+    >
+      <div className="absolute inset-0 bg-background/10" />
+      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-primary">FAQ</p>
-            <h2 className="mt-4 font-display text-4xl leading-tight md:text-5xl lg:text-6xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-white">FAQ</p>
+            <h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl lg:text-5xl text-primary">
               Enjoy Our Best Quality Tour &amp; Experience
             </h2>
-            <p className="mt-6 max-w-md text-black">
+            <p className="mt-6 max-w-md text-white">
               Everything you wanted to know before stepping into the wild. Still curious? Reach out
               — we love a good travel question.
             </p>
@@ -601,12 +789,17 @@ function Faq() {
 
 function Blog() {
   return (
-    <section id="blog" className="bg-secondary/50 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
+    <section
+      id="blog"
+      className="relative bg-cover bg-center bg-fixed py-24 md:py-32"
+      style={{ backgroundImage: `url(${homepageNine})` }}
+    >
+      <div className="absolute inset-0 bg-background/10" />
+      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.25em] text-primary">From the journal</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl">
+            <p className="text-xs uppercase tracking-[0.25em] text-white">From the journal</p>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl text-primary">
               Read Our Latest Travel Blog &amp; Tips Here
             </h2>
           </div>

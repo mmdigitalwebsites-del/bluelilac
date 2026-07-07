@@ -106,16 +106,95 @@ function BlogPostPage() {
           <p className="font-display text-xl font-bold leading-relaxed text-orange-700 md:text-2xl">
             {post.excerpt}
           </p>
-          <div className="mt-10 xl:text-md space-y-6 text-base leading-relaxed text-black md:text-lg">
+          <div className="mt-10 space-y-6 text-base leading-relaxed text-black md:text-lg">
             {post.content.map((paragraph: string, i: number) => (
               <p key={i}>{paragraph}</p>
             ))}
           </div>
 
+          {post.stats && (
+            <div className="mt-14 grid grid-cols-2 gap-4 rounded-3xl bg-primary/5 p-8 md:grid-cols-4">
+              {post.stats.map((s) => (
+                <div key={s.label} className="text-center">
+                  <div className="font-display text-3xl font-semibold text-primary">{s.value}</div>
+                  <div className="mt-1 text-xs text-black/70">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {post.quote && (
+            <blockquote className="mt-14 border-l-4 border-primary pl-6">
+              <p className="font-display text-xl italic leading-relaxed text-black">
+                {post.quote.text}
+              </p>
+              <footer className="mt-3 text-sm text-black/60">— {post.quote.author}</footer>
+            </blockquote>
+          )}
+
+          {post.experiences && (
+            <div className="mt-14">
+              <h2 className="font-display text-3xl md:text-4xl">Most Extraordinary Experiences</h2>
+              <div className="mt-8 space-y-6">
+                {post.experiences.map((e) => (
+                  <div
+                    key={e.number}
+                    className="flex gap-6 rounded-2xl border border-border bg-card p-6"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-lg font-semibold text-primary-foreground">
+                      {e.number}
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl">{e.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-black">{e.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="mt-14 rounded-3xl bg-primary/10 p-8 text-center">
+            <h2 className="font-display text-2xl md:text-3xl">Plan Your Safari With Us</h2>
+            <p className="mt-3 text-sm text-black">
+              Tell us your dates and interests — we will design a private safari built around them.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
+              <a
+                href="https://wa.me/254715405641"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-green-700"
+              >
+                WhatsApp Us
+              </a>
+              <a
+                href="tel:+254715405641"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition hover:bg-secondary"
+              >
+                <Phone className="h-4 w-4" /> +254 715 405641
+              </a>
+            </div>
+          </div>
+
+          {post.faqs && (
+            <div className="mt-14">
+              <h2 className="font-display text-3xl md:text-4xl">Frequently Asked Questions</h2>
+              <div className="mt-8 space-y-4">
+                {post.faqs.map((f) => (
+                  <div key={f.q} className="rounded-2xl border border-border bg-card p-6">
+                    <h3 className="font-display text-lg">{f.q}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-black">{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="mt-14 rounded-3xl border border-border bg-secondary/40 p-8 md:p-10">
             <h2 className="font-display text-2xl md:text-3xl">Ready to plan your trip?</h2>
             <p className="mt-3 text-sm text-black md:text-base">
-              Tell us your dates and interests — we'll design a private safari built around them.
+              Tell us your dates and interests — we will design a private safari built around them.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a

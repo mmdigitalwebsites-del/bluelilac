@@ -15,6 +15,10 @@ import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import heroSafari from "@/assets/experience.jpg";
 import tourLodge from "@/assets/understars.png";
+import lodge from "@/assets/kenya.png";
+import tours from "@/assets/safari.png";
+import call from "@/assets/blt 17.jpg";
+import hero from "@/assets/rwanda1.jpg";
 import SiteFooter from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/contact")({
@@ -57,13 +61,13 @@ function TopBar() {
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
         <a href="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
-          Bluelilac
+          Blue Lilac
         </a>
         <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
           {[
             { label: "Home", href: "/" },
             { label: "Explore", href: "/destinations" },
-            { label: "Trips", href: "/tours" },
+            { label: "Tours", href: "/tours" },
             { label: "About Us", href: "/about" },
             { label: "Contact Us", href: "/contact" },
             { label: "Explore Our Tours", href: "/tours" },
@@ -130,27 +134,30 @@ const CONTACT_DETAILS = [
     title: "Call us",
     lines: ["+254 715 405641", "+254 719 234041"],
     action: { label: "Call now", href: "tel:+254715405641" },
+    img: call,
   },
   {
     icon: Mail,
     title: "Email us",
     lines: ["info@bluelilactours.com", "bookings@bluelilactours.com"],
     action: { label: "Send email", href: "mailto:info@bluelilactours.com" },
+    img: tourLodge,
   },
   {
     icon: MapPin,
     title: "Visit us",
     lines: ["Rosslyn Square Mall", "Redhill Road, Nairobi, Kenya"],
     action: { label: "Get directions", href: "https://maps.app.goo.gl/apxoEcNJwKD7K1ECA" },
+    img: lodge,
   },
   {
     icon: Clock,
     title: "Office hours",
     lines: ["Mon – Fri: 8:00 AM – 6:00 PM", "Sat – Sun: 9:00 AM – 4:00 PM"],
     action: null,
+    img: tours,
   },
 ];
-
 function ContactCards() {
   return (
     <section className="bg-background py-24">
@@ -167,27 +174,36 @@ function ContactCards() {
           {CONTACT_DETAILS.map((c) => (
             <div
               key={c.title}
-              className="rounded-3xl bg-card p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              className="group relative min-h-[280px] overflow-hidden rounded-3xl p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#A40A09]/10 text-[#A40A09]">
-                <c.icon className="h-6 w-6" />
+              <img
+                src={c.img}
+                alt={c.title}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15" />
+              <div className="relative flex h-full flex-col justify-end">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-md">
+                  <c.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-6 font-display text-xl text-white">{c.title}</h3>
+                <div className="mt-3 space-y-1 text-sm text-white/85">
+                  {c.lines.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
+                {c.action && (
+                  <a
+                    href={c.action.href}
+                    target={c.action.href.startsWith("http") ? "_blank" : undefined}
+                    rel={c.action.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-white transition hover:text-[#D0E0FF] hover:underline"
+                  >
+                    {c.action.label} <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                )}
               </div>
-              <h3 className="mt-6 font-display text-xl text-[#A40A09]">{c.title}</h3>
-              <div className="mt-3 space-y-1 text-sm text-black">
-                {c.lines.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
-              </div>
-              {c.action && (
-                <a
-                  href={c.action.href}
-                  target={c.action.href.startsWith("http") ? "_blank" : undefined}
-                  rel={c.action.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-[#A40A09] transition hover:text-[#0C5DFF] hover:underline"
-                >
-                  {c.action.label} <ArrowRight className="h-3.5 w-3.5" />
-                </a>
-              )}
             </div>
           ))}
         </div>
@@ -408,6 +424,27 @@ function ContactFormSection() {
 }
 
 function Location() {
+  const infoCards = [
+    {
+      icon: Globe,
+      title: "Based in Nairobi",
+      body: "At the heart of East Africa, with teams on the ground in Kenya, Tanzania, Uganda and Rwanda.",
+      img: tours,
+    },
+    {
+      icon: MessageCircle,
+      title: "WhatsApp Support",
+      body: "Message us anytime on WhatsApp for quick questions, itinerary tweaks or last-minute bookings.",
+      img: tourLodge,
+    },
+    {
+      icon: Phone,
+      title: "24/7 On-Trip Support",
+      body: "A dedicated support line for every traveller, from the moment you land to your departure.",
+      img: heroSafari,
+    },
+  ];
+
   return (
     <section className="bg-background py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
@@ -433,30 +470,25 @@ function Location() {
           />
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
-          <div className="rounded-2xl bg-card p-6 text-center shadow-sm">
-            <Globe className="mx-auto h-6 w-6 text-primary" />
-            <h4 className="mt-4 font-display text-lg">Based in Nairobi</h4>
-            <p className="mt-2 text-sm text-black">
-              At the heart of East Africa, with teams on the ground in Kenya, Tanzania, Uganda and
-              Rwanda.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-card p-6 text-center shadow-sm">
-            <MessageCircle className="mx-auto h-6 w-6 text-primary" />
-            <h4 className="mt-4 font-display text-lg">WhatsApp Support</h4>
-            <p className="mt-2 text-sm text-black">
-              Message us anytime on WhatsApp for quick questions, itinerary tweaks or last-minute
-              bookings.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-card p-6 text-center shadow-sm">
-            <Phone className="mx-auto h-6 w-6 text-primary" />
-            <h4 className="mt-4 font-display text-lg">24/7 On-Trip Support</h4>
-            <p className="mt-2 text-sm text-black">
-              A dedicated support line for every traveller, from the moment you land to your
-              departure.
-            </p>
-          </div>
+          {infoCards.map((c) => (
+            <div
+              key={c.title}
+              className="group relative min-h-[220px] overflow-hidden rounded-2xl p-6 text-center shadow-sm transition hover:-translate-y-1"
+            >
+              <img
+                src={c.img}
+                alt={c.title}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
+              <div className="relative flex h-full flex-col items-center justify-center">
+                <c.icon className="mx-auto h-6 w-6 text-white" />
+                <h4 className="mt-4 font-display text-lg text-white">{c.title}</h4>
+                <p className="mt-2 text-sm text-white/85">{c.body}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -484,8 +516,10 @@ function QuickHelp() {
   ];
 
   return (
-    <section className="py-24" style={{ backgroundColor: "#e5f2fe" }}>
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
+    <section className="relative overflow-hidden py-24">
+      <img src={hero} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0" style={{ backgroundColor: "#e5f2fe", opacity: 0.35 }} />
+      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.25em] text-[#0C5DFF]">Quick help</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl text-foreground">
@@ -494,7 +528,7 @@ function QuickHelp() {
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {items.map((item) => (
-            <div key={item.q} className="rounded-2xl border border-[#0C5DFF]/15 bg-white/70 p-6">
+            <div key={item.q} className="rounded-2xl border border-[#0C5DFF]/15 bg-white/90 p-6">
               <h4 className="font-display text-lg text-foreground">{item.q}</h4>
               <p className="mt-3 text-sm text-black/80">{item.a}</p>
             </div>

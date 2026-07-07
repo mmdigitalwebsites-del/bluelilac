@@ -9,20 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WeddingAnniversariesRouteImport } from './routes/wedding-anniversaries'
+import { Route as UltraLuxuryRouteImport } from './routes/ultra-luxury'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RomanticHoneymoonRouteImport } from './routes/romantic-honeymoon'
+import { Route as LuxurySafarisRouteImport } from './routes/luxury-safaris'
 import { Route as ExploreOurToursRouteImport } from './routes/explore-our-tours'
 import { Route as DestinationsRouteImport } from './routes/destinations'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BirdWatchersRouteImport } from './routes/bird-watchers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToursIndexRouteImport } from './routes/tours.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ToursSlugRouteImport } from './routes/tours.$slug'
+import { Route as DestinationsZanzibarRouteImport } from './routes/destinations_.zanzibar'
+import { Route as DestinationsUgandaRouteImport } from './routes/destinations_.uganda'
+import { Route as DestinationsTanzaniaRouteImport } from './routes/destinations_.tanzania'
+import { Route as DestinationsRwandaRouteImport } from './routes/destinations_.rwanda'
+import { Route as DestinationsKenyaRouteImport } from './routes/destinations_.kenya'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const WeddingAnniversariesRoute = WeddingAnniversariesRouteImport.update({
+  id: '/wedding-anniversaries',
+  path: '/wedding-anniversaries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UltraLuxuryRoute = UltraLuxuryRouteImport.update({
+  id: '/ultra-luxury',
+  path: '/ultra-luxury',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RomanticHoneymoonRoute = RomanticHoneymoonRouteImport.update({
+  id: '/romantic-honeymoon',
+  path: '/romantic-honeymoon',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LuxurySafarisRoute = LuxurySafarisRouteImport.update({
+  id: '/luxury-safaris',
+  path: '/luxury-safaris',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExploreOurToursRoute = ExploreOurToursRouteImport.update({
@@ -38,6 +68,11 @@ const DestinationsRoute = DestinationsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BirdWatchersRoute = BirdWatchersRouteImport.update({
+  id: '/bird-watchers',
+  path: '/bird-watchers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -65,6 +100,31 @@ const ToursSlugRoute = ToursSlugRouteImport.update({
   path: '/tours/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DestinationsZanzibarRoute = DestinationsZanzibarRouteImport.update({
+  id: '/destinations_/zanzibar',
+  path: '/destinations/zanzibar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsUgandaRoute = DestinationsUgandaRouteImport.update({
+  id: '/destinations_/uganda',
+  path: '/destinations/uganda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsTanzaniaRoute = DestinationsTanzaniaRouteImport.update({
+  id: '/destinations_/tanzania',
+  path: '/destinations/tanzania',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsRwandaRoute = DestinationsRwandaRouteImport.update({
+  id: '/destinations_/rwanda',
+  path: '/destinations/rwanda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsKenyaRoute = DestinationsKenyaRouteImport.update({
+  id: '/destinations_/kenya',
+  path: '/destinations/kenya',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -74,11 +134,21 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bird-watchers': typeof BirdWatchersRoute
   '/contact': typeof ContactRoute
   '/destinations': typeof DestinationsRoute
   '/explore-our-tours': typeof ExploreOurToursRoute
+  '/luxury-safaris': typeof LuxurySafarisRoute
+  '/romantic-honeymoon': typeof RomanticHoneymoonRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ultra-luxury': typeof UltraLuxuryRoute
+  '/wedding-anniversaries': typeof WeddingAnniversariesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/destinations/kenya': typeof DestinationsKenyaRoute
+  '/destinations/rwanda': typeof DestinationsRwandaRoute
+  '/destinations/tanzania': typeof DestinationsTanzaniaRoute
+  '/destinations/uganda': typeof DestinationsUgandaRoute
+  '/destinations/zanzibar': typeof DestinationsZanzibarRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/tours/': typeof ToursIndexRoute
@@ -86,11 +156,21 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bird-watchers': typeof BirdWatchersRoute
   '/contact': typeof ContactRoute
   '/destinations': typeof DestinationsRoute
   '/explore-our-tours': typeof ExploreOurToursRoute
+  '/luxury-safaris': typeof LuxurySafarisRoute
+  '/romantic-honeymoon': typeof RomanticHoneymoonRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ultra-luxury': typeof UltraLuxuryRoute
+  '/wedding-anniversaries': typeof WeddingAnniversariesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/destinations/kenya': typeof DestinationsKenyaRoute
+  '/destinations/rwanda': typeof DestinationsRwandaRoute
+  '/destinations/tanzania': typeof DestinationsTanzaniaRoute
+  '/destinations/uganda': typeof DestinationsUgandaRoute
+  '/destinations/zanzibar': typeof DestinationsZanzibarRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/blog': typeof BlogIndexRoute
   '/tours': typeof ToursIndexRoute
@@ -99,11 +179,21 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bird-watchers': typeof BirdWatchersRoute
   '/contact': typeof ContactRoute
   '/destinations': typeof DestinationsRoute
   '/explore-our-tours': typeof ExploreOurToursRoute
+  '/luxury-safaris': typeof LuxurySafarisRoute
+  '/romantic-honeymoon': typeof RomanticHoneymoonRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ultra-luxury': typeof UltraLuxuryRoute
+  '/wedding-anniversaries': typeof WeddingAnniversariesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/destinations_/kenya': typeof DestinationsKenyaRoute
+  '/destinations_/rwanda': typeof DestinationsRwandaRoute
+  '/destinations_/tanzania': typeof DestinationsTanzaniaRoute
+  '/destinations_/uganda': typeof DestinationsUgandaRoute
+  '/destinations_/zanzibar': typeof DestinationsZanzibarRoute
   '/tours/$slug': typeof ToursSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/tours/': typeof ToursIndexRoute
@@ -113,11 +203,21 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/bird-watchers'
     | '/contact'
     | '/destinations'
     | '/explore-our-tours'
+    | '/luxury-safaris'
+    | '/romantic-honeymoon'
     | '/sitemap.xml'
+    | '/ultra-luxury'
+    | '/wedding-anniversaries'
     | '/blog/$slug'
+    | '/destinations/kenya'
+    | '/destinations/rwanda'
+    | '/destinations/tanzania'
+    | '/destinations/uganda'
+    | '/destinations/zanzibar'
     | '/tours/$slug'
     | '/blog/'
     | '/tours/'
@@ -125,11 +225,21 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/bird-watchers'
     | '/contact'
     | '/destinations'
     | '/explore-our-tours'
+    | '/luxury-safaris'
+    | '/romantic-honeymoon'
     | '/sitemap.xml'
+    | '/ultra-luxury'
+    | '/wedding-anniversaries'
     | '/blog/$slug'
+    | '/destinations/kenya'
+    | '/destinations/rwanda'
+    | '/destinations/tanzania'
+    | '/destinations/uganda'
+    | '/destinations/zanzibar'
     | '/tours/$slug'
     | '/blog'
     | '/tours'
@@ -137,11 +247,21 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/bird-watchers'
     | '/contact'
     | '/destinations'
     | '/explore-our-tours'
+    | '/luxury-safaris'
+    | '/romantic-honeymoon'
     | '/sitemap.xml'
+    | '/ultra-luxury'
+    | '/wedding-anniversaries'
     | '/blog/$slug'
+    | '/destinations_/kenya'
+    | '/destinations_/rwanda'
+    | '/destinations_/tanzania'
+    | '/destinations_/uganda'
+    | '/destinations_/zanzibar'
     | '/tours/$slug'
     | '/blog/'
     | '/tours/'
@@ -150,11 +270,21 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BirdWatchersRoute: typeof BirdWatchersRoute
   ContactRoute: typeof ContactRoute
   DestinationsRoute: typeof DestinationsRoute
   ExploreOurToursRoute: typeof ExploreOurToursRoute
+  LuxurySafarisRoute: typeof LuxurySafarisRoute
+  RomanticHoneymoonRoute: typeof RomanticHoneymoonRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  UltraLuxuryRoute: typeof UltraLuxuryRoute
+  WeddingAnniversariesRoute: typeof WeddingAnniversariesRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  DestinationsKenyaRoute: typeof DestinationsKenyaRoute
+  DestinationsRwandaRoute: typeof DestinationsRwandaRoute
+  DestinationsTanzaniaRoute: typeof DestinationsTanzaniaRoute
+  DestinationsUgandaRoute: typeof DestinationsUgandaRoute
+  DestinationsZanzibarRoute: typeof DestinationsZanzibarRoute
   ToursSlugRoute: typeof ToursSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ToursIndexRoute: typeof ToursIndexRoute
@@ -162,11 +292,39 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wedding-anniversaries': {
+      id: '/wedding-anniversaries'
+      path: '/wedding-anniversaries'
+      fullPath: '/wedding-anniversaries'
+      preLoaderRoute: typeof WeddingAnniversariesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ultra-luxury': {
+      id: '/ultra-luxury'
+      path: '/ultra-luxury'
+      fullPath: '/ultra-luxury'
+      preLoaderRoute: typeof UltraLuxuryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/romantic-honeymoon': {
+      id: '/romantic-honeymoon'
+      path: '/romantic-honeymoon'
+      fullPath: '/romantic-honeymoon'
+      preLoaderRoute: typeof RomanticHoneymoonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/luxury-safaris': {
+      id: '/luxury-safaris'
+      path: '/luxury-safaris'
+      fullPath: '/luxury-safaris'
+      preLoaderRoute: typeof LuxurySafarisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/explore-our-tours': {
@@ -188,6 +346,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bird-watchers': {
+      id: '/bird-watchers'
+      path: '/bird-watchers'
+      fullPath: '/bird-watchers'
+      preLoaderRoute: typeof BirdWatchersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -225,6 +390,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToursSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/destinations_/zanzibar': {
+      id: '/destinations_/zanzibar'
+      path: '/destinations/zanzibar'
+      fullPath: '/destinations/zanzibar'
+      preLoaderRoute: typeof DestinationsZanzibarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations_/uganda': {
+      id: '/destinations_/uganda'
+      path: '/destinations/uganda'
+      fullPath: '/destinations/uganda'
+      preLoaderRoute: typeof DestinationsUgandaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations_/tanzania': {
+      id: '/destinations_/tanzania'
+      path: '/destinations/tanzania'
+      fullPath: '/destinations/tanzania'
+      preLoaderRoute: typeof DestinationsTanzaniaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations_/rwanda': {
+      id: '/destinations_/rwanda'
+      path: '/destinations/rwanda'
+      fullPath: '/destinations/rwanda'
+      preLoaderRoute: typeof DestinationsRwandaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations_/kenya': {
+      id: '/destinations_/kenya'
+      path: '/destinations/kenya'
+      fullPath: '/destinations/kenya'
+      preLoaderRoute: typeof DestinationsKenyaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
@@ -238,11 +438,21 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BirdWatchersRoute: BirdWatchersRoute,
   ContactRoute: ContactRoute,
   DestinationsRoute: DestinationsRoute,
   ExploreOurToursRoute: ExploreOurToursRoute,
+  LuxurySafarisRoute: LuxurySafarisRoute,
+  RomanticHoneymoonRoute: RomanticHoneymoonRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  UltraLuxuryRoute: UltraLuxuryRoute,
+  WeddingAnniversariesRoute: WeddingAnniversariesRoute,
   BlogSlugRoute: BlogSlugRoute,
+  DestinationsKenyaRoute: DestinationsKenyaRoute,
+  DestinationsRwandaRoute: DestinationsRwandaRoute,
+  DestinationsTanzaniaRoute: DestinationsTanzaniaRoute,
+  DestinationsUgandaRoute: DestinationsUgandaRoute,
+  DestinationsZanzibarRoute: DestinationsZanzibarRoute,
   ToursSlugRoute: ToursSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   ToursIndexRoute: ToursIndexRoute,

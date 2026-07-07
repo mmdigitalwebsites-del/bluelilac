@@ -9,16 +9,20 @@ const SOCIALS = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-[#030464] text-black">
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
         <div className="grid gap-12 md:grid-cols-4 lg:grid-cols-5">
           <div className="md:col-span-2">
-            <img src={logo} alt="Bluelilac Tours" className="h-52 w-auto brightness-0 invert mt-[-16%]" />
-            <p className="mt-4 max-w-sm text-sm text-background/70">
+            <img
+              src={logo}
+              alt="Bluelilac Tours"
+              className="h-60 w-auto mt-[-16%] brightness-0 invert"
+            />
+            <p className="mt-[-10%] max-w-sm text-sm text-[#B0C4DE]">
               East African safari specialists crafting unforgettable wildlife and luxury travel
               experiences.
             </p>
-            <div className="mt-6 space-y-2 text-sm text-background/80">
+            <div className="mt-6 space-y-2 text-sm text-[#B0C4DE]">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" /> info@bluelilactours.com
               </div>
@@ -40,25 +44,25 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="font-display text-lg">Explore</h4>
-            <ul className="mt-4 space-y-2 text-sm text-background/70">
+            <h4 className="font-display text-xl font-bold text-[#B0C4DE]">Explore</h4>
+            <ul className="mt-4 space-y-2 text-sm text-[#B0C4DE]">
               <li>
-                <a href="/tours" className="hover:text-background">
-                  Trips
+                <a href="/tours" className="hover:text-white">
+                  Tours
                 </a>
               </li>
               <li>
-                <a href="/destinations" className="hover:text-background">
+                <a href="/destinations" className="hover:text-white">
                   Destinations
                 </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-background">
+                <a href="/about" className="hover:text-white">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/contact" className="hover:text-background">
+                <a href="/contact" className="hover:text-white">
                   Contact Us
                 </a>
               </li>
@@ -66,15 +70,15 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="font-display text-lg">Connect</h4>
-            <ul className="mt-4 space-y-3 text-sm text-background/70">
+            <h4 className="font-display text-xl font-bold text-[#B0C4DE]">Connect</h4>
+            <ul className="mt-4 space-y-3 text-sm text-[#B0C4DE]">
               {SOCIALS.map(({ label, href, Icon }) => (
                 <li key={label}>
                   <a
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:text-background"
+                    className="flex items-center gap-2 hover:text-white"
                   >
                     <Icon className="h-4 w-4" />
                     {label}
@@ -85,24 +89,24 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="font-display text-lg">Newsletter</h4>
-            <p className="mt-4 text-sm text-background/70">
+            <h4 className="font-display text-xl font-bold text-[#B0C4DE]">Newsletter</h4>
+            <p className="mt-4 text-sm text-[#B0C4DE]">
               Field notes from East Africa, twice a month.
             </p>
-            <form className="mt-4 flex overflow-hidden rounded-full border border-background/20">
+            <form className="mt-4 flex overflow-hidden rounded-full border border-primary">
               <input
                 type="email"
                 placeholder="Your email"
-                className="w-full bg-transparent px-4 py-3 text-sm placeholder:text-background/50 focus:outline-none"
+                className="w-full bg-transparent px-4 py-3 text-sm placeholder:text-[#B0C4DE] focus:outline-none"
               />
-              <button className="bg-primary px-5 text-sm font-medium text-primary-foreground hover:opacity-90">
+              <button className="bg-primary px-5 text-sm font-medium text-white hover:opacity-90">
                 Join
               </button>
             </form>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-background/10 pt-8 text-xs text-background/60 sm:flex-row sm:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-background/10 pt-8 text-xs text-[#B0C4DE] sm:flex-row sm:items-center">
           <span>© {new Date().getFullYear()} Blue Lilac Tours. All rights reserved.</span>
           <span>Made with care in Nairobi.</span>
         </div>
