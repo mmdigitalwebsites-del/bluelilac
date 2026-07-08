@@ -6,7 +6,7 @@ import hero from "@/assets/romance.jpg";
 import img from "@/assets/romance2.jpg";
 import romance from "@/assets/romance1.jpg";
 import romanceOne from "@/assets/romance3.jpg";
-import romanceTwo from "@/assets/romance4.jpg";
+import romanceTwo from "@/assets/ultra3.jpg";
 
 const honeymoonSlugs = [
   "3-day-masai-mara-governors-camp",
@@ -56,20 +56,20 @@ export const Route = createFileRoute("/romantic-honeymoon")({
       highlights={[
         {
           icon: Heart,
-          title: "Just-for-two moments",
-          body: "Private bush dinners, candlelit baths and surprise rose petals on turn-down.",
+          title: "Romantic inclusions",
+          body: "Celebrate with curated touches designed for couples, from beautifully prepared suites to intimate evenings.",
           img: romance,
         },
         {
           icon: Wine,
-          title: "Premium wine & dine",
-          body: "Sommelier-curated wine pairings and private picnics on a quiet stretch of sand.",
+          title: "Gourmet dining",
+          body: "Enjoy exceptional cuisine, premium wines, and memorable dining throughout your stay.",
           img: romanceOne,
         },
         {
           icon: Bed,
-          title: "Bush-to-beach romance",
-          body: "Tented suites under the stars in the bush, then an ocean-front villa to close the trip.",
+          title: "Handpicked accommodation",
+          body: "A seamless blend of luxury safari lodges and elegant beachfront retreats for an unforgettable honeymoon.",
           img: romanceTwo,
         },
       ]}

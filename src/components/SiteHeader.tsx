@@ -87,15 +87,15 @@ const NAV = [
     submenu: DESTINATIONS_SUBMENU,
     type: "mega",
   },
-  { label: "Our Safaris", href: "/tours", submenu: null, type: null },
-  { label: "About Us", href: "/about", submenu: null, type: null },
-  { label: "Contact Us", href: "/contact", submenu: null, type: null },
   {
     label: "Curated Experiences",
     href: "/explore-our-tours",
     submenu: TOUR_SUBMENU,
     type: "mega",
   },
+  { label: "Our Safaris", href: "/tours", submenu: null, type: null },
+  { label: "About Us", href: "/about", submenu: null, type: null },
+  { label: "Contact Us", href: "/contact", submenu: null, type: null },
 ] as const;
 
 export function SiteHeader() {

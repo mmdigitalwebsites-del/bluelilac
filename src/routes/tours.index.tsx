@@ -13,10 +13,12 @@ import {
   Mail,
   MapPin,
   Phone,
+  Users,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import background from "@/assets/destinations.png";
+import back from "@/assets/home2.jpg";
 import { TOURS } from "@/data/tours";
 
 export const Route = createFileRoute("/tours/")({
@@ -177,29 +179,45 @@ function ToursPage() {
                   </div>
 
                   <div className="p-5">
-                    <h3 className="font-display text-xl font-semibold text-primary hover:text-secondary-foreground">
-                      {t.title}
-                    </h3>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-widest text-muted-foreground">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                       {t.destination}
                     </p>
-                    <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-foreground">
-                      {summary}
+                    <h3 className="mt-1.5 font-display text-xl font-semibold leading-snug text-[#A40A09]">
+                      {t.title}
+                    </h3>
+                    <div className="mt-2 flex flex-wrap items-center gap-1 text-[11px] text-muted-foreground">
+                      <MapPin className="h-3 w-3 shrink-0" />
+                      <span>{summary}</span>
+                    </div>
+                    <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                      {Array.isArray(t.overview) ? t.overview[0] : ""}
                     </p>
-                    <div className="mt-5 border-t border-border pt-4 flex items-center justify-between">
+                    <div className="my-3 flex items-center gap-4 border-y border-border py-2.5 text-xs text-muted-foreground">
+                      <span className="inline-flex items-center gap-1.5">
+                        <Clock className="h-3.5 w-3.5" /> {t.duration ?? `${t.durationDays} days`}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <Users className="h-3.5 w-3.5" /> {t.group ?? "0–15"}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between">
                       <div>
-                        <span className="text-xs uppercase tracking-widest text-muted-foreground">
-                          From
+                        <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                          from
                         </span>
                         <div className="font-display text-2xl font-semibold text-foreground">
                           ${Number(t.price).toLocaleString()}
+                          <span className="text-sm font-normal text-muted-foreground">
+                            {" "}
+                            /person
+                          </span>
                         </div>
                       </div>
                       <a
                         href={`/tours/${t.slug}`}
-                        className="inline-flex items-center gap-2 rounded-full bg-[#0C5DFF]/90 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-white transition hover:bg-primary/80"
+                        className="inline-flex items-center gap-1.5 rounded-full bg-secondary-foreground px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#8a0807]"
                       >
-                        View Safari
+                        View Trip <ArrowRight className="h-3 w-3" />
                       </a>
                     </div>
                   </div>
@@ -290,13 +308,13 @@ function Hero({
   setMaxPrice: (v: number) => void;
 }) {
   return (
-    <section className="relative flex min-h-[680px] items-center overflow-hidden pb-24 pt-28">
+    <section className="relative flex min-h-[890px] items-center overflow-hidden pb-24 pt-28">
       <div className="absolute inset-0">
         <img src={background} alt="" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
+      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 mt-10">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/90">
           Our Safaris
         </p>
@@ -374,11 +392,7 @@ function Hero({
 function CtaPlan() {
   return (
     <section className="relative overflow-hidden py-24">
-      <img
-        src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1800&q=80"
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+      <img src={back} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-black/55" />
 
       <div className="relative mx-auto max-w-3xl px-4 text-center text-white sm:px-6">

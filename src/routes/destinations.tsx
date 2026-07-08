@@ -597,7 +597,7 @@ function TopBar() {
 
 function Hero({ query, setQuery }: { query: string; setQuery: (v: string) => void }) {
   return (
-    <section className="relative flex h-[72vh] min-h-[540px] w-full items-center overflow-hidden">
+    <section className="relative flex h-[90vh] min-h-[540px] w-full items-center overflow-hidden">
       <img src={heroSafari} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/70" />
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
