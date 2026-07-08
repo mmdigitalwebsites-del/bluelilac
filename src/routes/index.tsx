@@ -17,6 +17,7 @@ import {
   Facebook,
   Instagram,
   Twitter,
+  ShieldCheck,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -307,17 +308,28 @@ function Hero() {
 function Trust() {
   const recognitions = [
     {
+      abbr: "KATO",
       title: "Kenya Association of Tour Operators",
-      subtitle: "Kenya's premier tourism trade association",
+      color: "#1B5E20",
+      Icon: Award,
     },
     {
+      abbr: "TRA",
       title: "Tourism Regulatory Authority",
-      subtitle: "Regulates tourism-related activities",
+      color: "#1A237E",
+      Icon: ShieldCheck,
     },
-    { title: "Trip Advisor", subtitle: "World's largest review platform" },
     {
-      title: "Safari Bookings",
-      subtitle: "Largest online marketplace for planning African safaris",
+      abbr: "TA",
+      title: "TripAdvisor",
+      color: "#00AA6C",
+      Icon: Star,
+    },
+    {
+      abbr: "SB",
+      title: "SafariBookings",
+      color: "#E65100",
+      Icon: Compass,
     },
   ];
 
@@ -327,12 +339,14 @@ function Trust() {
         <p className="text-center text-[11px] font-light uppercase tracking-[0.35em] text-muted-foreground">
           Recognised by
         </p>
-
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-6 md:gap-10">
           {recognitions.map((r) => (
-            <div key={r.title + r.subtitle} className="text-center">
-              <p className="font-display text-base text-primary/80 md:text-lg">{r.title}</p>
-              <p className="mt-0.5 text-xs italic text-muted-foreground">· {r.subtitle}</p>
+            <div key={r.abbr} className="flex items-center gap-2">
+              <r.Icon
+                className="h-4 w-4 shrink-0 md:h-[1em] md:w-[1em]"
+                style={{ color: r.color }}
+              />
+              <p className="font-display text-sm text-foreground md:text-base">{r.title}</p>
             </div>
           ))}
         </div>

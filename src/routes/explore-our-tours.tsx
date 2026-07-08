@@ -155,7 +155,7 @@ function ExploreOurToursPage() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative flex h-[70vh] min-h-[520px] w-full items-center overflow-hidden">
+      <section className="relative flex h-[90vh] min-h-[520px] w-full items-center overflow-hidden">
         <img
           src={heroImg}
           alt="Safari landscape"

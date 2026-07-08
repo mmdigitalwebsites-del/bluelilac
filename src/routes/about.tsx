@@ -111,7 +111,7 @@ function TopBar() {
 
 function Hero() {
   return (
-    <section className="relative flex h-[70vh] min-h-[520px] w-full items-center overflow-hidden">
+    <section className="relative flex h-[90vh] min-h-[520px] w-full items-center overflow-hidden">
       <img
         src={heroSafari}
         alt="Sunset over the East African savannah"

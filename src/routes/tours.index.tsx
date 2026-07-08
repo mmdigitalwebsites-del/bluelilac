@@ -1,21 +1,24 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
+  Calendar,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Clock,
-  Users,
-  MapPin,
-  Search,
-  Phone,
-  Mail,
-  Menu,
-  Star,
+  Grid3x3,
   Heart,
+  List,
+  Mail,
+  MapPin,
+  Phone,
+  Users,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import background from "@/assets/destinations.png";
-import bird from "@/assets/bird3.jpg";
+import back from "@/assets/home2.jpg";
 import { TOURS } from "@/data/tours";
 
 export const Route = createFileRoute("/tours/")({
@@ -32,421 +35,354 @@ export const Route = createFileRoute("/tours/")({
         property: "og:description",
         content: "Browse curated East African safaris — Kenya, Tanzania, Uganda, Rwanda & beyond.",
       },
+      { property: "og:url", content: "/tours" },
     ],
+    links: [{ rel: "canonical", href: "/tours" }],
   }),
   component: ToursPage,
 });
 
-const FILTERS = ["All", "Kenya", "Tanzania", "Zanzibar", "Singapore", "South Africa"] as const;
-type Filter = (typeof FILTERS)[number];
-
-const TYPE_OPTIONS = ["Daily tour", "Group tour", "Package tour", "Private tour"] as const;
-const DURATION_OPTIONS = [
-  { label: "1–3 days", min: 1, max: 3 },
-  { label: "4–7 days", min: 4, max: 7 },
-  { label: "8–12 days", min: 8, max: 12 },
-  { label: "13+ days", min: 13, max: 999 },
-] as const;
-
+const DESTINATIONS = ["All destinations", "Kenya", "Tanzania", "Zanzibar", "Uganda", "Rwanda"];
 const PAGE_SIZE = 6;
 
 function ToursPage() {
-  const [filter, setFilter] = useState<Filter>("All");
-  const [query, setQuery] = useState("");
+  const [destination, setDestination] = useState("All destinations");
+  const [date, setDate] = useState("");
   const [maxPrice, setMaxPrice] = useState(5000);
-  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-  const [selectedDurations, setSelectedDurations] = useState<string[]>([]);
+  const [sortBy, setSortBy] = useState<"price" | "name">("price");
+  const [view, setView] = useState<"grid" | "list">("grid");
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
   const [page, setPage] = useState(1);
 
-  const toggleFavorite = (title: string) => {
+  const toggleFavorite = (title: string) =>
     setFavorites((prev) => {
       const next = new Set(prev);
-      if (next.has(title)) next.delete(title);
-      else next.add(title);
+      next.has(title) ? next.delete(title) : next.add(title);
       return next;
     });
-  };
-
-  const toggleType = (t: string) =>
-    setSelectedTypes((p) => (p.includes(t) ? p.filter((x) => x !== t) : [...p, t]));
-  const toggleDuration = (t: string) =>
-    setSelectedDurations((p) => (p.includes(t) ? p.filter((x) => x !== t) : [...p, t]));
 
   const list = useMemo(() => {
-    return TOURS.filter((t) => {
-      const matchesFilter =
-        filter === "All" || t.destination.toLowerCase().includes(filter.toLowerCase());
-      const q = query.trim().toLowerCase();
-      const matchesQuery =
-        !q || t.title.toLowerCase().includes(q) || t.highlights.toLowerCase().includes(q);
-      const matchesPrice = t.price <= maxPrice;
-      const matchesType = selectedTypes.length === 0 || selectedTypes.includes(t.type);
-      const matchesDuration =
-        selectedDurations.length === 0 ||
-        selectedDurations.some((label) => {
-          const d = DURATION_OPTIONS.find((x) => x.label === label);
-          return d && t.durationDays >= d.min && t.durationDays <= d.max;
-        });
-      return matchesFilter && matchesQuery && matchesPrice && matchesType && matchesDuration;
+    const filtered = TOURS.filter((t: any) => {
+      const matchesDest =
+        destination === "All destinations" ||
+        String(t.destination).toLowerCase().includes(destination.toLowerCase());
+      const matchesPrice = Number(t.price) <= maxPrice;
+      return matchesDest && matchesPrice;
     });
-  }, [filter, query, maxPrice, selectedTypes, selectedDurations]);
+    return [...filtered].sort((a: any, b: any) =>
+      sortBy === "price" ? a.price - b.price : String(a.title).localeCompare(String(b.title)),
+    );
+  }, [destination, maxPrice, sortBy]);
 
   const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
   const paged = list.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
-  // Reset to page 1 whenever filters change
   useEffect(() => {
     setPage(1);
-  }, [filter, query, maxPrice, selectedTypes, selectedDurations]);
+  }, [destination, maxPrice, sortBy]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <Hero query={query} setQuery={setQuery} />
 
-      <section className="bg-background py-16 md:py-24">
-        <div className="mx-auto max-w-[1440px] px-6 md:px-10">
-          <div className="grid gap-10 lg:grid-cols-[300px_1fr]">
-            {/* Sidebar Filters */}
-            <aside className="space-y-8">
-              <FilterBlock title="Price range">
-                <div className="space-y-4">
-                  <input
-                    type="range"
-                    min={500}
-                    max={5000}
-                    step={50}
-                    value={maxPrice}
-                    onChange={(e) => setMaxPrice(Number(e.target.value))}
-                    className="w-full accent-primary"
-                  />
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <label className="text-xs text-black/60">Min. price</label>
-                      <div className="mt-1 rounded-lg border border-border bg-background px-3 py-2 text-sm text-black">
-                        $ 0
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-xs text-black/60">Max. price</label>
-                      <div className="mt-1 rounded-lg border border-border bg-background px-3 py-2 text-sm text-black">
-                        $ {maxPrice.toLocaleString()}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </FilterBlock>
+      <Hero
+        destination={destination}
+        setDestination={setDestination}
+        date={date}
+        setDate={setDate}
+        maxPrice={maxPrice}
+        setMaxPrice={setMaxPrice}
+      />
 
-              <FilterBlock title="Types">
-                <div className="space-y-3">
-                  {TYPE_OPTIONS.map((t) => (
-                    <CheckRow
-                      key={t}
-                      label={t}
-                      checked={selectedTypes.includes(t)}
-                      onChange={() => toggleType(t)}
-                    />
-                  ))}
-                </div>
-              </FilterBlock>
-
-              <FilterBlock title="Destination">
-                <div className="space-y-3">
-                  {FILTERS.map((f) => (
-                    <button
-                      key={f}
-                      type="button"
-                      onClick={() => setFilter(f)}
-                      className={`block w-full rounded-lg px-3 py-2 text-left text-sm transition ${
-                        filter === f
-                          ? "bg-primary text-primary-foreground hover:bg-[#0C5DFF]"
-                          : "text-black hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
-                      }`}
-                    >
-                      {f}
-                    </button>
-                  ))}
-                </div>
-              </FilterBlock>
-
-              <FilterBlock title="Durations">
-                <div className="space-y-3">
-                  {DURATION_OPTIONS.map((d) => (
-                    <CheckRow
-                      key={d.label}
-                      label={d.label}
-                      checked={selectedDurations.includes(d.label)}
-                      onChange={() => toggleDuration(d.label)}
-                    />
-                  ))}
-                </div>
-              </FilterBlock>
-            </aside>
-
-            {/* Results */}
-            <div>
-              <div className="flex flex-wrap items-end justify-between gap-6">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.25em] text-primary">All journeys</p>
-                  <h2 className="mt-4 font-display text-4xl md:text-5xl">
-                    {list.length} {list.length === 1 ? "tour" : "tours"} found
-                  </h2>
-                </div>
-                {favorites.size > 0 && (
-                  <span className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm text-foreground">
-                    <Heart className="h-4 w-4 fill-primary text-primary" /> {favorites.size} saved
-                  </span>
-                )}
-              </div>
-
-              <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {paged.map((t) => {
-                  const fav = favorites.has(t.title);
-                  return (
-                    <article
-                      key={t.title}
-                      className="group w-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-                    >
-                      <div className="relative aspect-[4/3] overflow-hidden">
-                        <img
-                          src={t.img}
-                          alt={t.title}
-                          loading="lazy"
-                          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                        />
-                        <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium backdrop-blur-md">
-                          {t.destination}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => toggleFavorite(t.title)}
-                          aria-label={fav ? "Remove from favourites" : "Add to favourites"}
-                          className="absolute right-4 top-2 flex h-9 w-9 items-center justify-center rounded-full bg-white/70 backdrop-blur-md transition hover:bg-white/80"
-                        >
-                          <Heart
-                            className={`h-6 w-5 transition ${fav ? "fill-primary text-primary" : "text-secondary-foreground"}`}
-                          />
-                        </button>
-                      </div>
-                      <div className="p-5">
-                        <h3 className="mt-2 font-bold text-lg uppercase tracking-wide text-primary">
-                          <Link
-                            to="/tours/$slug"
-                            params={{ slug: t.slug }}
-                            className="hover:text-secondary-foreground transition"
-                          >
-                            {t.title}
-                          </Link>
-                        </h3>
-                        <p className="mt-1.5 flex items-start gap-1.5 text-[11px] uppercase tracking-wide text-black/70">
-                          <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
-                          {t.highlights}
-                        </p>
-                        <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-black/80">
-                          {t.overview[0]}
-                        </p>
-
-                        <div className="mt-5 flex flex-wrap items-center gap-4 border-t border-border pt-4 text-xs uppercase tracking-wide text-black/70">
-                          <span className="inline-flex items-center gap-1.5">
-                            <Clock className="h-3.5 w-3.5" /> {t.duration}
-                          </span>
-                          <span className="inline-flex items-center gap-1.5">
-                            <Users className="h-3.5 w-3.5" /> {t.group}
-                          </span>
-                        </div>
-                        <div className="mt-4 flex items-baseline gap-1">
-                          <span className="text-xs text-black/90">from</span>
-                          <span className="font-display text-2xl text-foreground">
-                            ${t.price.toLocaleString()}
-                          </span>
-                          <span className="text-xs text-black/90">/person</span>
-                        </div>
-                        <a
-                          href="mailto:info@bluelilactours.com?subject=Tour%20enquiry"
-                          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-secondary-foreground/80 px-5 py-3 text-xs font-medium uppercase tracking-[0.15em] text-secondary-foreground transition group-hover:bg-secondary-foreground group-hover:text-white"
-                        >
-                          Enquire now <ArrowRight className="h-4 w-4" />
-                        </a>
-                      </div>
-                    </article>
-                  );
-                })}
-              </div>
-
-              {list.length === 0 && (
-                <div className="mt-16 rounded-3xl border border-dashed border-border bg-card p-12 text-center">
-                  <p className="font-display text-2xl">No tours match your search</p>
-                  <p className="mt-2 text-sm text-black">
-                    Try a different destination or clear the filters.
-                  </p>
-                </div>
-              )}
-
-              {totalPages > 1 && (
-                <nav
-                  className="mt-12 flex items-center justify-center gap-2"
-                  aria-label="Pagination"
-                >
-                  <button
-                    type="button"
-                    onClick={() => setPage((p) => Math.max(1, p - 1))}
-                    disabled={currentPage === 1}
-                    className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-40"
-                  >
-                    Previous
-                  </button>
-                  {Array.from({ length: totalPages }).map((_, i) => {
-                    const n = i + 1;
-                    const active = n === currentPage;
-                    return (
-                      <button
-                        key={n}
-                        type="button"
-                        onClick={() => setPage(n)}
-                        aria-current={active ? "page" : undefined}
-                        className={`h-10 w-10 rounded-full text-sm font-medium transition ${
-                          active
-                            ? "bg-primary text-primary-foreground"
-                            : "border border-border bg-background text-foreground hover:bg-secondary"
-                        }`}
-                      >
-                        {n}
-                      </button>
-                    );
-                  })}
-                  <button
-                    type="button"
-                    onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                    disabled={currentPage === totalPages}
-                    className="rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-40"
-                  >
-                    Next
-                  </button>
-                </nav>
-              )}
-            </div>
+      {/* Toolbar: sort + view toggle */}
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+          <div className="flex items-center gap-6 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            <button
+              onClick={() => setSortBy("price")}
+              className={`inline-flex items-center gap-1 transition hover:text-[#0C5DFF] ${
+                sortBy === "price" ? "text-[#0C5DFF]" : ""
+              }`}
+            >
+              Price <ChevronDown className="h-3.5 w-3.5" />
+            </button>
+            <button
+              onClick={() => setSortBy("name")}
+              className={`inline-flex items-center gap-1 transition hover:text-[#0C5DFF] ${
+                sortBy === "name" ? "text-[#0C5DFF]" : ""
+              }`}
+            >
+              Name <ChevronDown className="h-3.5 w-3.5" />
+            </button>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setView("list")}
+              aria-label="List view"
+              className={`flex h-9 w-9 items-center justify-center rounded-md border transition ${
+                view === "list"
+                  ? "border-[#0C5DFF] text-[#0C5DFF]"
+                  : "border-border text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <List className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => setView("grid")}
+              aria-label="Grid view"
+              className={`flex h-9 w-9 items-center justify-center rounded-md border transition ${
+                view === "grid"
+                  ? "border-[#0C5DFF] text-[#0C5DFF]"
+                  : "border-border text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Grid3x3 className="h-4 w-4" />
+            </button>
           </div>
         </div>
       </section>
 
+      {/* Results grid */}
+      <section className="bg-background py-12">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div
+            className={
+              view === "grid" ? "grid gap-6 sm:grid-cols-2 lg:grid-cols-3" : "flex flex-col gap-6"
+            }
+          >
+            {paged.map((t: any) => {
+              const fav = favorites.has(t.title);
+              const image = t.image ?? t.img;
+              const summary =
+                t.highlights ?? (Array.isArray(t.overview) ? t.overview[0] : (t.summary ?? ""));
+              const categoryLabel = (t.type ?? t.destination ?? "Safari").toString().toUpperCase();
+              return (
+                <article
+                  key={t.title}
+                  className="group overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-15px_rgba(15,23,42,0.25)] transition hover:shadow-[0_20px_40px_-15px_rgba(12,93,255,0.35)]"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img
+                      src={image}
+                      alt={t.title}
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <button
+                      onClick={() => toggleFavorite(t.title)}
+                      aria-label={fav ? "Remove favourite" : "Add favourite"}
+                      className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#0C5DFF] text-white shadow-md transition hover:scale-110"
+                    >
+                      <Heart className={`h-4 w-4 ${fav ? "fill-white" : ""}`} />
+                    </button>
+                  </div>
+
+                  <div className="p-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                      {t.destination}
+                    </p>
+                    <h3 className="mt-1.5 font-display text-xl font-semibold leading-snug text-[#A40A09]">
+                      {t.title}
+                    </h3>
+                    <div className="mt-2 flex flex-wrap items-center gap-1 text-[11px] text-muted-foreground">
+                      <MapPin className="h-3 w-3 shrink-0" />
+                      <span>{summary}</span>
+                    </div>
+                    <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                      {Array.isArray(t.overview) ? t.overview[0] : ""}
+                    </p>
+                    <div className="my-3 flex items-center gap-4 border-y border-border py-2.5 text-xs text-muted-foreground">
+                      <span className="inline-flex items-center gap-1.5">
+                        <Clock className="h-3.5 w-3.5" /> {t.duration ?? `${t.durationDays} days`}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <Users className="h-3.5 w-3.5" /> {t.group ?? "0–15"}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                          from
+                        </span>
+                        <div className="font-display text-2xl font-semibold text-foreground">
+                          ${Number(t.price).toLocaleString()}
+                          <span className="text-sm font-normal text-muted-foreground">
+                            {" "}
+                            /person
+                          </span>
+                        </div>
+                      </div>
+                      <a
+                        href={`/tours/${t.slug}`}
+                        className="inline-flex items-center gap-1.5 rounded-full bg-secondary-foreground px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition hover:bg-[#8a0807]"
+                      >
+                        View Trip <ArrowRight className="h-3 w-3" />
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          {list.length === 0 && (
+            <div className="rounded-2xl border border-dashed border-border bg-white p-12 text-center">
+              <h3 className="text-lg font-semibold text-foreground">No tours match your search</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Try a different destination or raise your max price.
+              </p>
+            </div>
+          )}
+
+          {totalPages > 1 && (
+            <nav aria-label="Pagination" className="mt-12 flex items-center justify-center gap-2">
+              <button
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                aria-label="Previous page"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-foreground shadow-sm transition hover:border-[#0C5DFF] hover:text-[#0C5DFF] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-border disabled:hover:text-foreground"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+
+              {Array.from({ length: totalPages }).map((_, i) => {
+                const n = i + 1;
+                const active = n === currentPage;
+                return (
+                  <button
+                    key={n}
+                    onClick={() => setPage(n)}
+                    aria-current={active ? "page" : undefined}
+                    className={`h-10 min-w-10 rounded-full px-3 text-sm font-semibold transition ${
+                      active
+                        ? "bg-[#0C5DFF] text-white shadow-[0_8px_20px_-8px_rgba(12,93,255,0.7)]"
+                        : "border border-border bg-white text-foreground hover:border-[#0C5DFF] hover:text-[#0C5DFF]"
+                    }`}
+                  >
+                    {n}
+                  </button>
+                );
+              })}
+
+              <button
+                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+                aria-label="Next page"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-foreground shadow-sm transition hover:border-[#0C5DFF] hover:text-[#0C5DFF] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-border disabled:hover:text-foreground"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            </nav>
+          )}
+
+          {list.length > 0 && (
+            <p className="mt-4 text-center text-xs text-muted-foreground">
+              Page {currentPage} of {totalPages} · {list.length}{" "}
+              {list.length === 1 ? "tour" : "tours"}
+            </p>
+          )}
+        </div>
+      </section>
+
       <CtaPlan />
-      <Footer />
+
+      <SiteFooter />
     </div>
   );
 }
 
-function FilterBlock({ title, children }: { title: string; children: ReactNode }) {
-  return (
-    <div className="rounded-2xl border border-border bg-white p-5">
-      <h3 className="font-display text-lg text-foreground">{title}</h3>
-      <div className="mt-4">{children}</div>
-    </div>
-  );
-}
-
-function CheckRow({
-  label,
-  checked,
-  onChange,
+function Hero({
+  destination,
+  setDestination,
+  date,
+  setDate,
+  maxPrice,
+  setMaxPrice,
 }: {
-  label: string;
-  checked: boolean;
-  onChange: () => void;
+  destination: string;
+  setDestination: (v: string) => void;
+  date: string;
+  setDate: (v: string) => void;
+  maxPrice: number;
+  setMaxPrice: (v: number) => void;
 }) {
   return (
-    <label className="flex cursor-pointer items-center gap-3 text-sm text-black">
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={onChange}
-        className="h-4 w-4 rounded border-border accent-primary"
-      />
-      {label}
-    </label>
-  );
-}
-
-function TopBar() {
-  return (
-    <header className="absolute top-0 left-0 right-0 z-30">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <a href="/" className="font-display text-2xl font-semibold text-white md:text-3xl">
-          Blue Lilac
-        </a>
-        <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
-          {[
-            { label: "Home", href: "/" },
-            { label: "Explore", href: "/destinations" },
-            { label: "Tours", href: "/tours" },
-            { label: "About Us", href: "/about" },
-            { label: "Contact Us", href: "/contact" },
-            { label: "Explore Our Tours", href: "/tours" },
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                item.label === "Tours"
-                  ? "bg-white text-foreground"
-                  : "text-white/90 hover:bg-white/10"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-        <a
-          href="tel:+254715405641"
-          className="hidden h-12 w-12 items-center justify-center rounded-full bg-white text-foreground shadow-lg transition hover:scale-105 lg:flex"
-          aria-label="Call us"
-        >
-          <Phone className="h-5 w-5" />
-        </a>
-        <button
-          className="rounded-full bg-white/10 p-2 text-white backdrop-blur-md lg:hidden"
-          aria-label="Menu"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
+    <section className="relative flex min-h-[890px] items-center overflow-hidden pb-24 pt-28">
+      <div className="absolute inset-0">
+        <img src={background} alt="" className="h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50" />
       </div>
-    </header>
-  );
-}
 
-function Hero({ query, setQuery }: { query: string; setQuery: (v: string) => void }) {
-  return (
-    <section className="relative flex h-[70vh] min-h-[520px] w-full items-center overflow-hidden">
-      <img src={background} alt="" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
-        <span className="mb-6 mt-32 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
-          25 curated journeys
-        </span>
-        <h1 className="max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl">
-          Tours &amp; Safaris
-        </h1>
-        <p className="mt-6 max-w-xl text-lg text-white/85">
-          From the Masai Mara to the white sands of Zanzibar — pick the journey that calls you.
+      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 mt-10">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/90">
+          Our Safaris
         </p>
-        <div className="mt-10 flex max-w-2xl items-center gap-2 rounded-full bg-white/95 p-2 shadow-2xl backdrop-blur-md">
-          <div className="flex flex-1 items-center gap-2 pl-4">
-            <Search className="h-5 w-5 text-muted-foreground" />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search destinations, parks, experiences…"
-              className="w-full bg-transparent py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
-            />
+        <h1 className="mt-3 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+          Discover East Africa's Wild Beauty
+        </h1>
+        <p className="mt-4 max-w-xl text-base text-white/85">
+          Curated East African safaris — pick the destination, dates and budget that suit you.
+        </p>
+
+        <div className="mt-10 rounded-2xl bg-white p-4 shadow-[0_25px_50px_-20px_rgba(0,0,0,0.35)] sm:p-6">
+          <div className="grid gap-4 sm:grid-cols-3">
+            <label className="block">
+              <span className="mb-2 block text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                Select your destination
+              </span>
+              <div className="flex items-center gap-2 rounded-lg border border-border px-3 py-2.5">
+                <MapPin className="h-4 w-4 text-[#0C5DFF]" />
+                <select
+                  value={destination}
+                  onChange={(e) => setDestination(e.target.value)}
+                  className="w-full bg-transparent text-sm text-foreground focus:outline-none"
+                >
+                  {DESTINATIONS.map((d) => (
+                    <option key={d}>{d}</option>
+                  ))}
+                </select>
+              </div>
+            </label>
+
+            <label className="block">
+              <span className="mb-2 block text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                Select your date
+              </span>
+              <div className="flex items-center gap-2 rounded-lg border border-border px-3 py-2.5">
+                <Calendar className="h-4 w-4 text-[#0C5DFF]" />
+                <input
+                  type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className="w-full bg-transparent text-sm text-foreground focus:outline-none"
+                />
+              </div>
+            </label>
+
+            <div>
+              <div className="mb-2 flex items-center justify-between">
+                <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                  Max price
+                </span>
+                <span className="text-sm font-semibold text-foreground">
+                  ${maxPrice.toLocaleString()}
+                </span>
+              </div>
+              <input
+                type="range"
+                min={100}
+                max={5000}
+                step={50}
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(Number(e.target.value))}
+                className="mt-3 w-full accent-[#0C5DFF]"
+              />
+              <label className="mt-2 flex items-center gap-2 text-[11px] text-muted-foreground">
+                <input type="checkbox" className="accent-[#0C5DFF]" /> Use only promotions
+              </label>
+            </div>
           </div>
-          <button
-            type="button"
-            className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:bg-[#0C5DFF]"
-          >
-            Search
-          </button>
         </div>
       </div>
     </section>
@@ -455,24 +391,26 @@ function Hero({ query, setQuery }: { query: string; setQuery: (v: string) => voi
 
 function CtaPlan() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-28">
-      <img src={bird} alt="balloon" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-black/70" />
-      <div className="relative mx-auto max-w-5xl px-6 text-center md:px-10">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary">
+    <section className="relative overflow-hidden py-24">
+      <img src={back} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0 bg-black/55" />
+
+      <div className="relative mx-auto max-w-3xl px-4 text-center text-white sm:px-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
           Can't find what you're looking for?
         </p>
-        <h2 className="mt-4 font-display text-4xl text-white md:text-5xl">
+        <h2 className="mt-3 text-3xl font-bold sm:text-4xl lg:text-5xl">
           Let's design a private safari just for you.
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-white/80">
+        <p className="mt-4 text-base text-white/85">
           Every Blue Lilac itinerary is bespoke. Share your dates, interests and budget — we'll
           craft something only yours.
         </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
             href="mailto:info@bluelilactours.com"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition hover:bg-[#A40A09] hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full bg-primary/80 px-6 py-3 text-sm font-medium text-white transition hover:bg-secondary-foreground/80"
           >
             <Mail className="h-4 w-4" /> info@bluelilactours.com
           </a>
@@ -486,8 +424,4 @@ function CtaPlan() {
       </div>
     </section>
   );
-}
-
-function Footer() {
-  return <SiteFooter />;
 }

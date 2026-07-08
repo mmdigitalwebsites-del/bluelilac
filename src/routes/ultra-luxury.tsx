@@ -56,20 +56,20 @@ export const Route = createFileRoute("/ultra-luxury")({
       highlights={[
         {
           icon: Gem,
-          title: "Rarest access",
-          body: "Private conservancies, limited-permit encounters and areas closed to standard safari traffic.",
+          title: "Exclusive access",
+          body: "Stay in exceptional private conservancies and exclusive locations reserved for a more intimate safari experience.",
           img: ultra,
         },
         {
           icon: Plane,
-          title: "Fly between camps",
-          body: "Light-aircraft transfers replace long road drives, so every hour goes to the bush, not the highway.",
+          title: "Seamless travel",
+          body: "Enjoy convenient light-aircraft transfers between luxury camps, maximizing your time in comfort throughout your journey.",
           img: ultraOne,
         },
         {
           icon: UtensilsCrossed,
-          title: "Private chef & cellar",
-          body: "A dedicated chef, butler and curated wine cellar reserved for your party alone.",
+          title: "Personalized service",
+          body: "Experience dedicated butler service, private dining, and a carefully curated selection of premium wines during your stay.",
           img: ultraTwo,
         },
       ]}

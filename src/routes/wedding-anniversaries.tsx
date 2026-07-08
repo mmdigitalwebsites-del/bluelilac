@@ -55,20 +55,20 @@ export const Route = createFileRoute("/wedding-anniversaries")({
       highlights={[
         {
           icon: Cake,
-          title: "A celebration built in",
-          body: "A surprise dinner setup, cake and card arranged with your camp on the night that matters.",
+          title: "Thoughtful celebrations",
+          body: "Your special occasion is marked with elegant touches, including a beautifully prepared dinner setting and celebratory surprises.",
           img: hero,
         },
         {
           icon: Wine,
-          title: "Toast at golden hour",
-          body: "A private sundowner toast overlooking the plains, just the two of you and your guide close by.",
+          title: "Romantic dining",
+          body: "Exceptional cuisine, premium wines, and intimate dining experiences create unforgettable moments together.",
           img: wedding,
         },
         {
           icon: Waves,
-          title: "Finish on the beach",
-          body: "A closing beach escape to unwind together after the excitement of the bush.",
+          title: "Safari & seaside stays",
+          body: "Experience the perfect balance of luxury with handpicked safari lodges and a relaxing beachfront retreat.",
           img: weddingOne,
         },
       ]}
