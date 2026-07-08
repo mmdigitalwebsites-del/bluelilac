@@ -12,9 +12,9 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import heroSafari from "@/assets/img.jpg";
-import tourSerengeti from "@/assets/tour-serengeti.jpg";
-import tourLodge from "@/assets/understars.png";
-import tourGorilla from "@/assets/buffalo.png";
+import tourSerengeti from "@/assets/ultra3.jpg";
+import tourLodge from "@/assets/spicefarm.jpg";
+import tourGorilla from "@/assets/tanzania.jpg";
 import ctaBalloon from "@/assets/romance2.jpg";
 import on from "@/assets/volcano.jpg";
 import drive from "@/assets/game-drives-2.jpg";

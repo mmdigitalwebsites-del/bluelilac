@@ -14,13 +14,13 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
-import heroImg from "@/assets/shortsafari2.png";
+import heroImg from "@/assets/uganda1.jpg";
 import ctaBalloon from "@/assets/hotballon.png";
 import safari from "@/assets/blt 12.jpg";
 import tanzania from "@/assets/giraffes.jpg";
 import tourUganda from "@/assets/forest.png";
 import underStars from "@/assets/understars.png";
-import tourBeach from "@/assets/beach.png";
+import tourBeach from "@/assets/home5.jpg";
 
 export const Route = createFileRoute("/explore-our-tours")({
   head: () => ({
@@ -204,27 +204,39 @@ function ExploreOurToursPage() {
                 icon: Compass,
                 title: "Local expertise",
                 body: "Born-and-raised guides with decades of safari craft.",
+                img: safari,
               },
               {
                 icon: ShieldCheck,
                 title: "Fully bonded",
                 body: "Licensed, insured and 24/7 on-trip support.",
+                img: tanzania,
               },
               {
                 icon: Sparkles,
                 title: "Tailor-made",
                 body: "Every itinerary is shaped around your dates and pace.",
+                img: tourUganda,
               },
             ].map((b) => (
               <div
                 key={b.title}
-                className="rounded-3xl border border-border bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                className="group relative min-h-[280px] overflow-hidden rounded-3xl border border-border p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[#A40A09]/10 text-[#A40A09]">
-                  <b.icon className="h-6 w-6" />
+                <img
+                  src={b.img}
+                  alt={b.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15" />
+                <div className="relative flex h-full flex-col justify-end">
+                  <div className="grid h-12 w-12 place-items-center rounded-2xl bg-white/15 text-white backdrop-blur-md">
+                    <b.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 font-display text-xl text-white">{b.title}</h3>
+                  <p className="mt-2 text-sm text-white/85">{b.body}</p>
                 </div>
-                <h3 className="mt-5 font-display text-xl text-[#A40A09]">{b.title}</h3>
-                <p className="mt-2 text-sm text-black/70">{b.body}</p>
               </div>
             ))}
           </div>
@@ -340,7 +352,7 @@ function ExploreOurToursPage() {
               to="/tours"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-6 py-3 text-sm font-medium text-foreground transition hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
             >
-              See all 25+ trips <ArrowRight className="h-4 w-4" />
+              See all 14 trips <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

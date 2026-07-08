@@ -48,7 +48,12 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2 text-sm text-[#B0C4DE]">
               <li>
                 <a href="/tours" className="hover:text-white">
-                  Tours
+                  Our Safaris
+                </a>
+              </li>
+              <li>
+                <a href="/explore-our-tours   " className="hover:text-white">
+                  Curated Experience
                 </a>
               </li>
               <li>
