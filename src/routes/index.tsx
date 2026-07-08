@@ -3,30 +3,23 @@ import {
   ArrowRight,
   Phone,
   Mail,
-  MapPin,
   Star,
-  Compass,
-  Shield,
-  Heart,
-  Award,
   Menu,
-  Play,
   Plus,
   Calendar,
   User,
   Facebook,
   Instagram,
   Twitter,
-  ShieldCheck,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import tourSerengeti from "@/assets/tour-serengeti.jpg";
 import tourKenya from "@/assets/kenya.png";
-import tourTanzania from "@/assets/blt 18.jpg";
-import tourUganda from "@/assets/blt 2.jpg";
-import tourRwanda from "@/assets/giraffes.jpg";
+import tourTanzania from "@/assets/tanzania.jpg";
+import tourUganda from "@/assets/gorrila.jpg";
+import tourRwanda from "@/assets/rwanda.jpg";
 import buffalo from "@/assets/buffalo.png";
 import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach.png";
@@ -42,6 +35,10 @@ import homepageSix from "@/assets/home7.jpg";
 import homepageSeven from "@/assets/homepage1.jpg";
 import homepageEight from "@/assets/home2.jpg";
 import homepageNine from "@/assets/homepage4.jpg";
+import trip from "@/assets/tripadvisor-icon.webp";
+import kato from "@/assets/kato.jpg";
+import tra from "@/assets/tra logo.png";
+import safari from "@/assets/sb logo.png";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/")({
@@ -310,26 +307,22 @@ function Trust() {
     {
       abbr: "KATO",
       title: "Kenya Association of Tour Operators",
-      color: "#1B5E20",
-      Icon: Award,
+      logo: kato,
     },
     {
       abbr: "TRA",
       title: "Tourism Regulatory Authority",
-      color: "#1A237E",
-      Icon: ShieldCheck,
+      logo: tra,
     },
     {
       abbr: "TA",
       title: "TripAdvisor",
-      color: "#00AA6C",
-      Icon: Star,
+      logo: trip,
     },
     {
       abbr: "SB",
       title: "SafariBookings",
-      color: "#E65100",
-      Icon: Compass,
+      logo: safari,
     },
   ];
 
@@ -342,9 +335,10 @@ function Trust() {
         <div className="mt-3 flex flex-wrap items-center justify-center gap-6 md:gap-10">
           {recognitions.map((r) => (
             <div key={r.abbr} className="flex items-center gap-2">
-              <r.Icon
-                className="h-4 w-4 shrink-0 md:h-[1em] md:w-[1em]"
-                style={{ color: r.color }}
+              <img
+                src={r.logo}
+                alt={r.title}
+                className="h-12 w-12 shrink-0 object-contain md:h-16 md:w-16"
               />
               <p className="font-display text-sm text-foreground md:text-base">{r.title}</p>
             </div>
@@ -694,6 +688,17 @@ function Testimonials() {
           >
             Read all 16 reviews on SafariBookings <ArrowRight className="h-4 w-4" />
           </a>
+        </div>
+
+        {/* Google Reviews */}
+        <div className="mt-6 pt-6">
+          <div className="mt-3">
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div
+              className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66"
+              data-elfsight-app-lazy
+            />
+          </div>
         </div>
       </div>
     </section>
