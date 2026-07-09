@@ -35,6 +35,11 @@ import homepageSix from "@/assets/home7.jpg";
 import homepageSeven from "@/assets/homepage1.jpg";
 import homepageEight from "@/assets/home2.jpg";
 import homepageNine from "@/assets/homepage4.jpg";
+import hero from "@/assets/Luxury5.webp";
+import hero1 from "@/assets/romantic.jpg";
+import hero2 from "@/assets/ultralux.jpg";
+import hero3 from "@/assets/honeymoon.jpg";
+import hero4 from "@/assets/bird5.jpg";
 import trip from "@/assets/tripadvisor-icon.webp";
 import kato from "@/assets/kato.jpg";
 import tra from "@/assets/tra logo.png";
@@ -123,7 +128,18 @@ const tours = [
   },
 ];
 
-const heroSlides = [homepage, homepageOne, homepageTwo, homepageThree, homepageFour];
+const heroSlides = [
+  homepage,
+  hero1,
+  homepageOne,
+  hero4,
+  homepageTwo,
+  hero3,
+  homepageThree,
+  hero2,
+  homepageFour,
+  hero,
+];
 
 const socials = [
   { Icon: Facebook, href: "https://www.facebook.com/bluelilactours/", title: "Facebook" },
@@ -644,7 +660,7 @@ function Testimonials() {
             href="https://www.safaribookings.com/p6340"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary"
+            className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-primary"
           >
             Read all reviews <ArrowRight className="h-4 w-4" />
           </a>

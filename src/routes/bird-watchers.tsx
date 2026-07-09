@@ -5,7 +5,8 @@ import { getTour } from "@/data/tours";
 import hero from "@/assets/bird5.jpg";
 import img from "@/assets/bird4.jpg";
 import bird from "@/assets/game-drive.jpg";
-import bird2 from "@/assets/bird3.jpg";
+import bird1 from "@/assets/bird3.jpg";
+import bird2 from "@/assets/bird6.jpg";
 
 const birdingSlugs = [
   "lake-nakuru-day-tour-from-nairobi",
@@ -63,7 +64,7 @@ export const Route = createFileRoute("/bird-watchers")({
           icon: Feather,
           title: "1,000+ species",
           body: "Routes built for endemics — shoebill, Hartlaub's turaco, grey-crowned crane and more.",
-          img: hero,
+          img: bird1,
         },
         {
           icon: TreeDeciduous,

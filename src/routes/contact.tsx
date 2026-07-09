@@ -231,7 +231,7 @@ function ContactFormSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("https://formspree.io/f/mdarkgvy", {
+    await fetch("https://formspree.io/f/mlgyyzra", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),

@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Cake, Wine, Waves } from "lucide-react";
 import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
-import hero from "@/assets/shortsafari.png";
-import img from "@/assets/home6.jpg";
+import hero from "@/assets/honeymoon.jpg";
+import img from "@/assets/wedding.jpg";
 import wedding from "@/assets/homepage3.jpg";
 import weddingOne from "@/assets/beach.jpg";
 
@@ -73,32 +73,53 @@ export const Route = createFileRoute("/wedding-anniversaries")({
         },
       ]}
       inclusions={[
-        "A celebration dinner and cake arranged on your anniversary night",
-        "A private toast at sunset with your guide",
-        "Premium lodge and tented camp upgrades where available",
-        "A beach extension day with a private sunset cruise",
-        "All park fees, meals and a dedicated guide throughout",
+        "2 nights accommodation in Nairobi on bed and breakfast",
+        "3 nights accommodation in Meru on full board",
+        "Domestic scheduled flights to and from Meru",
+        "All airport pick up and drop off in Nairobi and Meru",
+        "Shared game drives in 4x4 Land Cruisers",
+        "One night game drive during your stay",
+        "Guided walking safari with a professional guide",
+        "Fishing — hand line, catch and release, with guide",
+        "Bush sundowner",
+        "Dinner at Carnivore Restaurant",
+        "All taxes",
+      ]}
+      exclusions={[
+        "Extra meals and drinks",
+        "International flights",
+        "Any other item not mentioned above",
       ]}
       itinerary={[
         {
           day: "Day 1",
-          title: "Nairobi welcome",
-          body: "Arrival, a relaxed dinner, and a toast to the years already shared before the safari begins.",
+          title: "Arrival in Nairobi",
+          body: "Met and assisted by our airport representatives on arrival. Transfer to Hemingways Hotel for overnight.",
         },
         {
-          day: "Day 2–5",
-          title: "Grand Kenya–Tanzania circuit",
-          body: "The Mara, the Serengeti and the Ngorongoro Crater, with a surprise anniversary dinner arranged partway through.",
+          day: "Day 2",
+          title: "Nairobi – Meru National Park",
+          body: "Transfer to Wilson Airport for your flight to Meru National Park. Check in at Elsa's Kopje, enjoy lunch and head out for an afternoon game drive. Dinner and overnight at the camp.",
         },
         {
-          day: "Day 6–7",
-          title: "Fancy lodge finale",
-          body: "A stay at a premier property such as Salt Lick Lodge, with floodlit waterhole views from your room.",
+          day: "Day 3",
+          title: "Full Day Meru — Walk & Night Drive",
+          body: "Breakfast followed by a morning game drive. Return to camp for lunch then embark on a 2-hour guided walking safari. In the evening, enjoy a thrilling night game drive. Dinner and overnight at camp.",
         },
         {
-          day: "Day 8",
-          title: "Beach celebration day",
-          body: "A private Zanzibar day out — Stone Town, a spice tour, sunset on the beach and a seafood BBQ to toast the trip's end.",
+          day: "Day 4",
+          title: "Game Drive, Fishing & Sundowner",
+          body: "Morning game drive after breakfast, then lunch at camp. In the afternoon, enjoy a guided hand-line catch-and-release fishing experience on the river, followed by a bush sundowner as the sun sets over Meru. Dinner and overnight at camp.",
+        },
+        {
+          day: "Day 5",
+          title: "Meru – Nairobi City",
+          body: "Fly back to Nairobi then enjoy an afternoon of shopping and a city tour. End the evening with a sumptuous dinner at the legendary Carnivore Restaurant. Overnight at Hemingways Hotel.",
+        },
+        {
+          day: "Day 6",
+          title: "Departure",
+          body: "After breakfast, check out and transfer to the airport for your flight back home.",
         },
       ]}
     />

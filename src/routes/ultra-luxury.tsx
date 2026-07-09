@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Gem, Plane, UtensilsCrossed } from "lucide-react";
 import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
-import hero from "@/assets/ultra1.jpg";
-import img from "@/assets/homepage2.jpg";
+import hero from "@/assets/ultralux.jpg";
+import img from "@/assets/lux2.jpg";
 import ultra from "@/assets/ultra2.jpg";
 import ultraOne from "@/assets/ultra3.jpg";
-import ultraTwo from "@/assets/ultra.jpg";
+import ultraTwo from "@/assets/lux.jpg";
 
 const ultraLuxurySlugs = [
   "13-days-kenya-tanzania-safari",
@@ -74,37 +74,57 @@ export const Route = createFileRoute("/ultra-luxury")({
         },
       ]}
       inclusions={[
-        "Private light-aircraft transfers between every destination",
-        "The most exclusive camps and private-use conservancies in East Africa",
-        "A dedicated chef, butler and vehicle for your party alone",
-        "Rare experiences — private rhino tracking, night drives, off-limits conservancies",
-        "24/7 concierge and a dedicated trip designer from first call to farewell",
+        "2 nights accommodation in Nairobi on Bed & Breakfast",
+        "3 nights accommodation in Loisaba on full board",
+        "Domestic scheduled flights to and from Loisaba",
+        "All airport pick up and drop off in Nairobi and Loisaba",
+        "Shared game drives in 4x4 land cruisers",
+        "One night game drive during your stay",
+        "Guided walking safari with a professional guide",
+        "2-hour guided horse or camel back safari",
+        "Bush sundowner",
+        "Bush breakfast or bush lunch",
+        "Dinner at Carnivore Restaurant",
+        "Anti-poaching sniffer dogs experience",
+        "E-bikes (4 hrs max)",
+        "Mountain biking, escorted (4 hrs max)",
+        "All taxes",
+      ]}
+      exclusions={[
+        "Extra meals and drinks",
+        "International flights",
+        "Any other item not mentioned above",
       ]}
       itinerary={[
         {
           day: "Day 1",
-          title: "Private arrival, Nairobi",
-          body: "Met planeside and driven straight to a private Nairobi residence for an unhurried first night.",
+          title: "Arrival in Nairobi",
+          body: "Met and assisted by our airport representatives on arrival, then transferred to Hemingways Hotel for an overnight stay.",
         },
         {
-          day: "Day 2–4",
-          title: "Masai Mara, by air",
-          body: "A light-aircraft transfer into a private conservancy, exclusive-use camp, and off-the-clock game drives no shared vehicle can access.",
+          day: "Day 2",
+          title: "Fly to Loisaba Conservancy",
+          body: "Transfer to Wilson Airport for your flight to Loisaba Conservancy. Check in, enjoy lunch, then an afternoon game drive. Dinner and overnight at Loisaba Tented Camp.",
         },
         {
-          day: "Day 5–7",
-          title: "Serengeti mobile luxury camp",
-          body: "A private mobile camp repositioned with the migration, complete with a dedicated chef and your own dining tent.",
+          day: "Day 3",
+          title: "Game drive, guided walk & night drive",
+          body: "Breakfast followed by a morning game drive. Return to camp for lunch, then a 2-hour guided walk. In the evening, embark on a night game drive. Dinner and overnight at the camp.",
         },
         {
-          day: "Day 8–9",
-          title: "Ngorongoro Crater rim",
-          body: "An exclusive crater-rim lodge, a private descent into the crater floor, and uninterrupted views at sunset.",
+          day: "Day 4",
+          title: "Horseback safari, bush lunch & sundowner",
+          body: "Breakfast followed by a 2-hour guided horse or camel-back safari. Bush lunch, then an afternoon game drive, capped with an evening sundowner. Dinner and overnight at the camp.",
         },
         {
-          day: "Day 10",
-          title: "Private charter departure",
-          body: "A final morning drive, then a private charter flight home — no queues, no transfers, no compromises.",
+          day: "Day 5",
+          title: "Fly back to Nairobi & Carnivore dinner",
+          body: "Transfer to the airstrip for your flight back to Nairobi. Enjoy shopping and a city tour in the afternoon, followed by a sumptuous dinner at the Carnivore Restaurant. Drop-off at Hemingways Hotel for overnight.",
+        },
+        {
+          day: "Day 6",
+          title: "Departure",
+          body: "After breakfast, check out and transfer to the airport for your flight back home.",
         },
       ]}
     />
