@@ -113,7 +113,17 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-background/10 pt-8 text-xs text-[#B0C4DE] sm:flex-row sm:items-center">
           <span>© {new Date().getFullYear()} Blue Lilac Tours. All rights reserved.</span>
-          <span>Made with care in Nairobi.</span>
+          <span>
+            Made with care in Nairobi by{" "}
+            <a
+              href="https://mmdigitalmarketingkenya.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-[#B0C4DE]/40 underline-offset-2 hover:text-white"
+            >
+              MM Digital Marketing Agency
+            </a>
+          </span>
         </div>
       </div>
     </footer>

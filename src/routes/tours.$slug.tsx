@@ -479,7 +479,7 @@ function BookingCard({ tour }: { tour: any }) {
           <button
             type="button"
             onClick={async () => {
-              await fetch("https://formspree.io/f/mdarkgvy", {
+              await fetch("https://formspree.io/f/mlgyyzra", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -505,7 +505,7 @@ function BookingCard({ tour }: { tour: any }) {
           onSubmit={async (e) => {
             e.preventDefault();
             const fd = new FormData(e.currentTarget);
-            await fetch("https://formspree.io/f/mdarkgvy", {
+            await fetch("https://formspree.io/f/mlgyyzra", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({

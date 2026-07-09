@@ -9,6 +9,7 @@ import {
   Phone,
   Sparkles,
   Users,
+  X,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -31,6 +32,7 @@ export type SafariCategoryPageProps = {
   ctaImg: string;
   highlights: { icon: LucideIcon; title: string; body: string }[];
   inclusions: string[];
+  exclusions?: string[];
   itinerary: { day: string; title: string; body: string }[];
   trips?: SafariTripCard[];
   exploreHref?: string;
@@ -45,6 +47,7 @@ export function SafariCategoryPage({
   ctaImg,
   highlights,
   inclusions,
+  exclusions = [],
   itinerary,
   trips = [],
   exploreHref = "/tours",
@@ -254,6 +257,25 @@ export function SafariCategoryPage({
                   </li>
                 ))}
               </ul>
+
+              {exclusions.length > 0 && (
+                <div className="mt-10">
+                  <p className="text-xs uppercase tracking-[0.25em] text-[#D0E0FF]">Not included</p>
+                  <h2 className="mt-4 font-display text-3xl text-white md:text-4xl">
+                    Good to know before you go.
+                  </h2>
+                  <ul className="mt-8 space-y-3">
+                    {exclusions.map((line) => (
+                      <li key={line} className="flex items-start gap-3 text-sm text-white/90">
+                        <span className="mt-0.5 grid h-6 w-6 place-items-center rounded-full bg-white/20 text-white">
+                          <X className="h-3.5 w-3.5" />
+                        </span>
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-[#D0E0FF]">Sample rhythm</p>

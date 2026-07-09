@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
-import hero from "@/assets/luxury.jpg";
-import img from "@/assets/luxury2.jpg";
+import hero from "@/assets/Luxury5.webp";
+import img from "@/assets/luxury.jpg";
 import luxury from "@/assets/luxury4.jpg";
 import luxuryOne from "@/assets/luxury3.jpg";
 import luxuryTwo from "@/assets/homepage9.jpg";
@@ -73,32 +73,48 @@ export const Route = createFileRoute("/luxury-safaris")({
         },
       ]}
       inclusions={[
-        "Private 4x4 Land Cruiser with guaranteed window seat",
-        "Award-winning silver/gold-rated lodges and tented camps",
-        "All park & conservancy fees, internal flights where appropriate",
-        "Sundowners, bush breakfasts and a dedicated host throughout",
-        "24/7 concierge support and travel insurance assistance",
+        "Return airport transfers in Nairobi",
+        "Return flights to Maasai Mara and Malindi",
+        "Full-board accommodation in Maasai Mara with selected drinks included",
+        "Half-board accommodation in Watamu",
+        "Two shared game drives daily in Maasai Mara",
+        "One night game drive in the conservancy",
+        "Unlimited game drives in Maasai Mara",
+        "One bush breakfast in Maasai Mara (weather permitting)",
+        "Maasai Mara conservancy fees, park fees and reserve fund fees",
+        "All applicable government taxes and levies",
       ]}
+      exclusions={["International flights", "Personal items", "Extra meals and drinks"]}
       itinerary={[
         {
           day: "Day 1",
-          title: "Nairobi arrival, in style",
-          body: "Met on the tarmac by your personal safari host and driven straight to Hemingways Nairobi. Champagne on arrival, a quiet first night, no rush to the bush yet.",
+          title: "Arrival in Nairobi",
+          body: "Met at JKIA by our representative and transferred to Hemingways Nairobi. Spend the remainder of the day at leisure enjoying the hotel's facilities. Overnight on a bed and breakfast basis.",
         },
         {
-          day: "Day 2–4",
-          title: "Fly in to a private Masai Mara conservancy",
-          body: "A scheduled flight replaces the long road transfer. Settle into a riverside tented suite at Governor's Camp with a private butler, then walking safaris, night drives off-limits to standard park vehicles, and a sunrise hot-air balloon with a champagne breakfast on landing.",
+          day: "Day 2",
+          title: "Nairobi – Maasai Mara",
+          body: "After breakfast, fly from Wilson Airport to the Maasai Mara. Met by your safari guide and transferred to your luxury tented camp in a private conservancy. Lunch, time to settle in, then an afternoon shared game drive in search of elephants, lions, cheetahs and giraffes.",
         },
         {
-          day: "Day 5–7",
-          title: "Serengeti, under private canvas",
-          body: "Cross to Tanzania into a mobile tented camp repositioned with the migrating herds — your own dining tent, hot bucket showers under the stars, and a dedicated guide who moves camp to keep the game drives short and the sightings close.",
+          day: "Day 3",
+          title: "Full Day Maasai Mara Safari",
+          body: "Two shared game drives through the Mara ecosystem. During July to October you may witness the wildebeest migration. A bush breakfast in the wilderness (weather permitting) and a thrilling night game drive within the conservancy to spot nocturnal wildlife.",
         },
         {
-          day: "Day 8",
-          title: "A slow, quiet farewell",
-          body: "One final unhurried game drive at first light, a bush breakfast with the vehicle parked and engine off, then a private charter flight back to Nairobi in time for your onward connection.",
+          day: "Day 4",
+          title: "Maasai Mara – Watamu Coast",
+          body: "After breakfast, fly back to Nairobi and connect to Malindi. Transferred to Hemingways Watamu on the pristine white sandy beaches of the Kenyan coast. Dinner and overnight on a half-board basis.",
+        },
+        {
+          day: "Day 5–6",
+          title: "Watamu Beach Leisure",
+          body: "Two full days at leisure in Watamu. Swim in the Indian Ocean, relax by the beach, or arrange optional activities — snorkelling, diving, dolphin watching, deep-sea fishing or a visit to Watamu Marine National Park.",
+        },
+        {
+          day: "Day 7",
+          title: "Watamu – Nairobi – Departure",
+          body: "After breakfast, transfer to Malindi Airport for your flight to Nairobi and connect with your international departure, bringing your Luxury Bush & Beach experience to a close.",
         },
       ]}
     />

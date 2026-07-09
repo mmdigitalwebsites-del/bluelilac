@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Heart, Wine, Bed } from "lucide-react";
 import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
-import hero from "@/assets/romance.jpg";
-import img from "@/assets/romance2.jpg";
+import hero from "@/assets/romantic.jpg";
+import img from "@/assets/romance.jpg";
 import romance from "@/assets/romance1.jpg";
 import romanceOne from "@/assets/romance3.jpg";
 import romanceTwo from "@/assets/ultra3.jpg";
@@ -74,32 +74,47 @@ export const Route = createFileRoute("/romantic-honeymoon")({
         },
       ]}
       inclusions={[
-        "Honeymoon suite upgrades at every property",
-        "Champagne on arrival and one couples' spa treatment",
-        "Private 4x4 with experienced safari guide",
-        "Hot-air balloon flight over the Masai Mara",
-        "A private beach day with a sunset dhow cruise",
+        "1 night accommodation in Nairobi",
+        "2 nights accommodation in Samburu",
+        "1 night accommodation in Ol Pejeta",
+        "Meals on full board basis",
+        "Return airport transfers",
+        "Transport in a private 4x4 Land Cruiser",
+        "Service of a professional safari guide",
+        "Park entrance fees",
+        "Unlimited game drives",
+        "A celebratory private sundowner experience at Samburu",
+        "Complimentary 30-minute spa treatment at Samburu",
+        "À la carte dining experience at Ol Pejeta",
+        "Special room décor arrangement at Ol Pejeta",
+        "One premium complimentary bottle of wine at each hotel",
       ]}
+      exclusions={["International flights", "Personal items"]}
       itinerary={[
         {
           day: "Day 1",
-          title: "Nairobi rendezvous",
-          body: "A boutique hotel, a slow candlelit dinner, and your first night together as newlyweds in Africa.",
+          title: "Arrival in Nairobi",
+          body: "Warmly welcomed at JKIA and transferred to your hotel. Spend the rest of the day at leisure, relaxing or exploring the city at your own pace as you prepare for your romantic safari adventure.",
         },
         {
-          day: "Day 2–4",
-          title: "Masai Mara romance",
-          body: "A private riverside suite at Governor's Camp, sundowners on a kopje just for two, and a sunrise balloon flight ending in a bush breakfast.",
+          day: "Day 2",
+          title: "Nairobi – Samburu National Reserve",
+          body: "After breakfast, depart in a private 4x4 Land Cruiser northward through Kenya's highlands to Samburu. Afternoon game drive to spot the Samburu Special Five — Grevy's zebra, reticulated giraffe, Somali ostrich, Beisa oryx and gerenuk. As the sun sets, enjoy a private celebratory sundowner created just for the two of you, followed by a complimentary 30-minute spa treatment.",
         },
         {
-          day: "Day 5–8",
-          title: "Barefoot beach escape",
-          body: "An ocean-front villa, a dhow sunset cruise, and long unhurried beach days to close the honeymoon.",
+          day: "Day 3",
+          title: "Full Day Samburu National Reserve",
+          body: "A full day of unlimited game drives along the Ewaso Nyiro River, tracking elephants, lions, leopards, cheetahs and rare bird species. Relax at the lodge between drives and immerse yourselves in the beauty and tranquility of northern Kenya.",
         },
         {
-          day: "Day 9",
-          title: "Soft return",
-          body: "One last sunrise swim, then an unhurried transfer home — as Mr. & Mrs.",
+          day: "Day 4",
+          title: "Samburu – Ol Pejeta Conservancy",
+          body: "After breakfast, travel to Ol Pejeta Conservancy — home to the Big Five and the last northern white rhinos on Earth. Your room will be dressed with a special romantic décor arrangement. In the evening, savour an exclusive à la carte dining experience and a complimentary bottle of premium wine.",
+        },
+        {
+          day: "Day 5",
+          title: "Ol Pejeta – Nairobi – Departure",
+          body: "After breakfast, enjoy a final morning at leisure or an optional early game drive before the scenic drive back to Nairobi. Transfer to JKIA for your departure — the end of your unforgettable honeymoon safari.",
         },
       ]}
     />
