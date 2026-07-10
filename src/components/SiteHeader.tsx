@@ -3,8 +3,8 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import luxurySafari from "@/assets/Luxury5.webp";
-import honeymoonSafari from "@/assets/romantic.jpg";
-import weddingSafari from "@/assets/honeymoon.jpg";
+import honeymoonSafari from "@/assets/romance.jpeg";
+import weddingSafari from "@/assets/honeymoon.jpeg";
 import birdWatchers from "@/assets/bird5.jpg";
 import ultraLuxury from "@/assets/ultralux.jpg";
 import ken from "@/assets/kenya1.jpg";
@@ -116,7 +116,7 @@ export function SiteHeader() {
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
 
   return (
-    <header className="absolute top-8 left-0 right-0 z-30">
+    <header className="fixed top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 pt-4 md:px-6">
         <div
           className={`flex h-[60px] items-center justify-between gap-4 rounded-full border backdrop-blur-3xl shadow-lg px-4 py-1 md:px-6 transition-colors duration-300 ${
@@ -149,9 +149,9 @@ export function SiteHeader() {
                   to={item.href}
                   className={`inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition ${
                     isActive(item.href)
-                      ? "bg-white text-foreground"
+                      ? "bg-white text-primary"
                       : scrolled
-                        ? "text-foreground hover:bg-black/5"
+                        ? "text-secondary-forgroung hover:bg-black/5"
                         : "text-white/90 hover:bg-white/10"
                   }`}
                 >

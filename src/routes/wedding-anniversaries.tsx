@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Cake, Wine, Waves } from "lucide-react";
 import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
-import hero from "@/assets/honeymoon.jpg";
+import hero from "@/assets/honeymoon.jpeg";
 import img from "@/assets/wedding.jpg";
 import wedding from "@/assets/homepage3.jpg";
 import weddingOne from "@/assets/beach.jpg";

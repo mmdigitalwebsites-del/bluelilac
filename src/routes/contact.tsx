@@ -231,10 +231,14 @@ function ContactFormSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("https://formspree.io/f/mlgyyzra", {
+    await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: "f29a0e08-014d-4419-9320-a8b1c659c347",
+        subject: "New enquiry from Blue Lilac website",
+        ...form,
+      }),
     });
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
