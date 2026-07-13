@@ -378,9 +378,9 @@ function Hero({
                 onChange={(e) => setMaxPrice(Number(e.target.value))}
                 className="mt-3 w-full accent-[#0C5DFF]"
               />
-              <label className="mt-2 flex items-center gap-2 text-[11px] text-muted-foreground">
+              {/* <label className="mt-2 flex items-center gap-2 text-[11px] text-muted-foreground">
                 <input type="checkbox" className="accent-[#0C5DFF]" /> Use only promotions
-              </label>
+              </label> */}
             </div>
           </div>
         </div>

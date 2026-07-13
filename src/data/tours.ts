@@ -13,6 +13,7 @@ import buffalo from "@/assets/buffalo.png";
 import meru from "@/assets/luxury2.jpg";
 import liosaba from "@/assets/home7.jpg";
 import beach from "@/assets/home5.jpg";
+import mara from "@/assets/governer.jpeg";
 import honeymoon from "@/assets/homepage4.jpg";
 
 export type ItineraryDay = {
@@ -1013,7 +1014,7 @@ export const TOURS: Tour[] = [
     durationDays: 3,
     group: "0–7",
     type: "Private tour",
-    img: maasaiMara,
+    img: mara,
     highlights: "Governor's Camp · Riverside luxury · Big Five",
     price: 1850,
     rating: 5,
