@@ -393,6 +393,8 @@ function BookingCard({ tour }: { tour: any }) {
   const [children, setChildren] = useState(0);
   const [infants, setInfants] = useState(0);
   const [booked, setBooked] = useState(false);
+  const [bookingError, setBookingError] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [enquirySent, setEnquirySent] = useState(false);
 
   const Counter = ({
@@ -478,25 +480,48 @@ function BookingCard({ tour }: { tour: any }) {
           </div>
           <button
             type="button"
+            disabled={submitting}
             onClick={async () => {
-              await fetch("https://formspree.io/f/mlgyyzra", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  formType: "Booking",
-                  tour: tour.title,
-                  date,
-                  adults,
-                  children,
-                  infants,
-                }),
-              });
-              setBooked(true);
-              setTimeout(() => setBooked(false), 5000);
+              setSubmitting(true);
+              setBookingError(false);
+              try {
+                const res = await fetch("https://api.web3forms.com/submit", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json", Accept: "application/json" },
+                  body: JSON.stringify({
+                    access_key: "f29a0e08-014d-4419-9320-a8b1c659c347",
+                    subject: `New booking request — ${tour.title}`,
+                    formType: "Booking",
+                    tour: tour.title,
+                    date,
+                    adults,
+                    children,
+                    infants,
+                  }),
+                });
+                const data = await res.json();
+                if (data.success) {
+                  setBooked(true);
+                  setTimeout(() => setBooked(false), 5000);
+                } else {
+                  setBookingError(true);
+                }
+              } catch (err) {
+                setBookingError(true);
+              } finally {
+                setSubmitting(false);
+              }
             }}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90 disabled:opacity-60"
           >
-            {booked ? "Request sent!" : "Book now"} <ArrowRight className="h-4 w-4" />
+            {submitting
+              ? "Sending..."
+              : booked
+                ? "Request sent!"
+                : bookingError
+                  ? "Something went wrong — try again"
+                  : "Book now"}
+            <ArrowRight className="h-4 w-4" />
           </button>
         </div>
       ) : (
@@ -505,16 +530,18 @@ function BookingCard({ tour }: { tour: any }) {
           onSubmit={async (e) => {
             e.preventDefault();
             const fd = new FormData(e.currentTarget);
-            await fetch("https://formspree.io/f/mlgyyzra", {
+            await fetch("https://api.web3forms.com/submit", {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
+              headers: { "Content-Type": "application/json", Accept: "application/json" },
               body: JSON.stringify({
-                formType: "Enquiry",
+                access_key: "f29a0e08-014d-4419-9320-a8b1c659c347",
+                subject: `New booking request — ${tour.title}`,
+                formType: "Booking",
                 tour: tour.title,
-                name: fd.get("name"),
-                email: fd.get("email"),
-                phone: fd.get("phone"),
-                message: fd.get("message"),
+                date,
+                adults,
+                children,
+                infants,
               }),
             });
             setEnquirySent(true);

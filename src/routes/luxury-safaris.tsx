@@ -12,8 +12,9 @@ import luxuryTwo from "@/assets/homepage9.jpg";
 // transfers, small groups, and top-of-catalogue pricing.
 const luxurySlugs = [
   "3-day-masai-mara-governors-camp",
-  "13-days-kenya-tanzania-safari",
-  "10-days-ultimate-kenya-explorer",
+  "7-days-luxury-bush-beach-hemingways",
+  "6-days-loisaba-conservancy",
+  "6-days-nairobi-meru-experience",
 ];
 
 const luxuryTrips = luxurySlugs

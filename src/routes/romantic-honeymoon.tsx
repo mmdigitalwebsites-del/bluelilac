@@ -2,17 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Heart, Wine, Bed } from "lucide-react";
 import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
-import hero from "@/assets/romantic.jpg";
-import img from "@/assets/romance.jpg";
+import hero from "@/assets/romance.jpeg";
+import img from "@/assets/moon.jpg";
 import romance from "@/assets/romance1.jpg";
 import romanceOne from "@/assets/romance3.jpg";
 import romanceTwo from "@/assets/ultra3.jpg";
 
-const honeymoonSlugs = [
-  "3-day-masai-mara-governors-camp",
-  "10-days-bush-and-beach-kenya",
-  "zanzibar-full-day-private-tour",
-];
+const honeymoonSlugs = ["5-days-honeymoon-nairobi-samburu-ol-pejeta"];
 
 const honeymoonTrips = honeymoonSlugs
   .map((slug) => getTour(slug))
