@@ -40,6 +40,9 @@ import hero1 from "@/assets/romantic.jpg";
 import hero2 from "@/assets/ultralux.jpg";
 import hero3 from "@/assets/honeymoon.jpg";
 import hero4 from "@/assets/bird5.jpg";
+import hero5 from "@/assets/moon.jpg";
+import hero6 from "@/assets/wedding.jpg";
+import hero7 from "@/assets/honeymon.jpg";
 import trip from "@/assets/tripadvisor-icon.webp";
 import kato from "@/assets/kato.jpg";
 import tra from "@/assets/tra logo.png";
@@ -139,6 +142,9 @@ const heroSlides = [
   hero2,
   homepageFour,
   hero,
+  hero5,
+  hero6,
+  hero7,
 ];
 
 const socials = [

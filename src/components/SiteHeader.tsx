@@ -4,7 +4,7 @@ import { Menu, Phone, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import luxurySafari from "@/assets/Luxury5.webp";
 import honeymoonSafari from "@/assets/romance.jpeg";
-import weddingSafari from "@/assets/honeymoon.jpeg";
+import weddingSafari from "@/assets/honeymon.jpg";
 import birdWatchers from "@/assets/bird5.jpg";
 import ultraLuxury from "@/assets/ultralux.jpg";
 import ken from "@/assets/kenya1.jpg";
