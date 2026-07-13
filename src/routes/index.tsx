@@ -399,12 +399,12 @@ function WhyUs() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-primary mt-6">Why Blue lilac</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-primary mt-6">Why Blue Lilac</p>
             <h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl lg:text-5xl">
               Journeys that connect you deeply with Africa.
             </h2>
             <p className="mt-6 max-w-lg text-black">
-              Blue lilac Tours is a premier East African safari specialist creating unforgettable
+              Blue Lilac Tours is a premier East African safari specialist creating unforgettable
               wildlife and luxury travel experiences across Kenya, Tanzania, Uganda, and Rwanda.
               From the vast plains of the Maasai Mara to the white beaches of Zanzibar, we design
               journeys that connect you deeply with Africa.

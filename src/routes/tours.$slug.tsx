@@ -392,10 +392,16 @@ function BookingCard({ tour }: { tour: any }) {
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
   const [infants, setInfants] = useState(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [booked, setBooked] = useState(false);
-  const [bookingError, setBookingError] = useState(false);
+  const [bookingValidationError, setBookingValidationError] = useState(false);
+  const [bookingNetworkError, setBookingNetworkError] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [enquirySent, setEnquirySent] = useState(false);
+  const [enquiryError, setEnquiryError] = useState(false);
+  const [enquirySubmitting, setEnquirySubmitting] = useState(false);
 
   const Counter = ({
     label,
@@ -461,6 +467,42 @@ function BookingCard({ tour }: { tour: any }) {
       {tab === "book" ? (
         <div className="p-6 space-y-4">
           <div>
+            <label className="text-xs text-muted-foreground">Full name</label>
+            <input
+              type="text"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+              className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
+            />
+          </div>
+
+          <div>
+            <label className="text-xs text-muted-foreground">Email address</label>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
+            />
+          </div>
+
+          <div>
+            <label className="text-xs text-muted-foreground">Phone number</label>
+            <input
+              type="tel"
+              required
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="+254 734 567 890"
+              className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
+            />
+          </div>
+
+          <div>
             <label className="text-xs text-muted-foreground">Select date</label>
             <div className="mt-1 flex items-center gap-2 rounded-lg border px-3 py-2">
               <CalendarDays className="h-4 w-4 text-muted-foreground" />
@@ -478,12 +520,30 @@ function BookingCard({ tour }: { tour: any }) {
             <Counter label="Children" sub="Age 2–12" value={children} setValue={setChildren} />
             <Counter label="Infants" sub="Under 2" value={infants} setValue={setInfants} />
           </div>
+
+          {bookingValidationError && (
+            <p className="text-xs text-red-500">
+              Please fill in your name, email and phone number before booking.
+            </p>
+          )}
+          {bookingNetworkError && (
+            <p className="text-xs text-red-500">
+              Something went wrong sending your request — please try again.
+            </p>
+          )}
+
           <button
             type="button"
             disabled={submitting}
             onClick={async () => {
+              if (!name || !email || !phone) {
+                setBookingValidationError(true);
+                setBookingNetworkError(false);
+                return;
+              }
+              setBookingValidationError(false);
+              setBookingNetworkError(false);
               setSubmitting(true);
-              setBookingError(false);
               try {
                 const res = await fetch("https://api.web3forms.com/submit", {
                   method: "POST",
@@ -493,6 +553,9 @@ function BookingCard({ tour }: { tour: any }) {
                     subject: `New booking request — ${tour.title}`,
                     formType: "Booking",
                     tour: tour.title,
+                    name,
+                    email,
+                    phone,
                     date,
                     adults,
                     children,
@@ -504,23 +567,17 @@ function BookingCard({ tour }: { tour: any }) {
                   setBooked(true);
                   setTimeout(() => setBooked(false), 5000);
                 } else {
-                  setBookingError(true);
+                  setBookingNetworkError(true);
                 }
               } catch (err) {
-                setBookingError(true);
+                setBookingNetworkError(true);
               } finally {
                 setSubmitting(false);
               }
             }}
             className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90 disabled:opacity-60"
           >
-            {submitting
-              ? "Sending..."
-              : booked
-                ? "Request sent!"
-                : bookingError
-                  ? "Something went wrong — try again"
-                  : "Book now"}
+            {submitting ? "Sending..." : booked ? "Request sent!" : "Book now"}
             <ArrowRight className="h-4 w-4" />
           </button>
         </div>
@@ -530,22 +587,36 @@ function BookingCard({ tour }: { tour: any }) {
           onSubmit={async (e) => {
             e.preventDefault();
             const fd = new FormData(e.currentTarget);
-            await fetch("https://api.web3forms.com/submit", {
-              method: "POST",
-              headers: { "Content-Type": "application/json", Accept: "application/json" },
-              body: JSON.stringify({
-                access_key: "f29a0e08-014d-4419-9320-a8b1c659c347",
-                subject: `New booking request — ${tour.title}`,
-                formType: "Booking",
-                tour: tour.title,
-                date,
-                adults,
-                children,
-                infants,
-              }),
-            });
-            setEnquirySent(true);
-            setTimeout(() => setEnquirySent(false), 5000);
+            setEnquirySubmitting(true);
+            setEnquiryError(false);
+            try {
+              const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({
+                  access_key: "f29a0e08-014d-4419-9320-a8b1c659c347",
+                  subject: `New enquiry — ${tour.title}`,
+                  formType: "Enquiry",
+                  tour: tour.title,
+                  name: fd.get("name"),
+                  email: fd.get("email"),
+                  phone: fd.get("phone"),
+                  message: fd.get("message"),
+                }),
+              });
+              const data = await res.json();
+              if (data.success) {
+                setEnquirySent(true);
+                (e.target as HTMLFormElement).reset();
+                setTimeout(() => setEnquirySent(false), 5000);
+              } else {
+                setEnquiryError(true);
+              }
+            } catch (err) {
+              setEnquiryError(true);
+            } finally {
+              setEnquirySubmitting(false);
+            }
           }}
         >
           <input
@@ -573,11 +644,20 @@ function BookingCard({ tour }: { tour: any }) {
             placeholder="Tell us about your trip..."
             className="w-full rounded-lg border px-3 py-2 text-sm"
           />
+
+          {enquiryError && (
+            <p className="text-xs text-red-500">
+              Something went wrong sending your enquiry — please try again.
+            </p>
+          )}
+
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90"
+            disabled={enquirySubmitting}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition hover:opacity-90 disabled:opacity-60"
           >
-            <Mail className="h-4 w-4" /> {enquirySent ? "Sent!" : "Send enquiry"}
+            <Mail className="h-4 w-4" />
+            {enquirySubmitting ? "Sending..." : enquirySent ? "Sent!" : "Send enquiry"}
           </button>
         </form>
       )}

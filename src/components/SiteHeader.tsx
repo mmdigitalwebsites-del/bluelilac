@@ -275,7 +275,7 @@ export function SiteHeader() {
                         className={`flex w-full items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium transition ${
                           isActive(item.href)
                             ? "bg-[#FFFFFF] text-[#0C5DFF]"
-                            : "text-foreground hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
+                            : "text-white hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
                         }`}
                       >
                         {item.label}
@@ -331,7 +331,7 @@ export function SiteHeader() {
                       className={`block rounded-2xl px-4 py-3 text-sm font-medium transition ${
                         isActive(item.href)
                           ? "bg-[#D0E0FF] text-[#0C5DFF]"
-                          : "text-foreground hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
+                          : "text-white hover:bg-[#D0E0FF] hover:text-[#0C5DFF]"
                       }`}
                     >
                       {item.label}
