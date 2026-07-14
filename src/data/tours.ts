@@ -1,20 +1,20 @@
 import naivasha from "@/assets/blt 7.jpg";
 import tsavo from "@/assets/blt 16.jpg";
-import olpejeta from "@/assets/rhino.jpg";
+import olpejeta from "@/assets/saf.jpeg";
 import samburu from "@/assets/tour-serengeti.jpg";
-import diani from "@/assets/beach.png";
+import diani from "@/assets/bush.jpeg";
 import nairobi from "@/assets/blt 15.jpg";
-import comparison from "@/assets/blt 3.jpg";
 import maasaiMara from "@/assets/home.jpg";
 import kenyaSafari from "@/assets/kenya.png";
 import tourKenya from "@/assets/kenya.png";
 import underStars from "@/assets/understars.png";
-import buffalo from "@/assets/buffalo.png";
-import meru from "@/assets/luxury2.jpg";
-import liosaba from "@/assets/home7.jpg";
-import beach from "@/assets/home5.jpg";
+import buffalo from "@/assets/ultimate.jpeg";
+import meru from "@/assets/nsafari.jpeg";
+import liosaba from "@/assets/nairobisafari.jpeg";
+import beach from "@/assets/bush.jpeg";
 import mara from "@/assets/governer.jpeg";
-import honeymoon from "@/assets/homepage4.jpg";
+import honeymoon from "@/assets/moons.jpeg";
+import tsafari from "@/assets/tsafari.jpeg";
 
 export type ItineraryDay = {
   day: string;
@@ -86,7 +86,7 @@ export const TOURS: Tour[] = [
     durationDays: 13,
     group: "0–15",
     type: "Package tour",
-    img: comparison,
+    img: tsafari,
     highlights: "Nairobi · Masai Mara · Naivasha · Amboseli · Arusha · Ngorongoro · Serengeti",
     price: 4850,
     rating: 5,
