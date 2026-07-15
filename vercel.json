@@ -1,7 +1,7 @@
 {
   "redirects": [
     { "source": "/about-us", "destination": "/about", "permanent": true },
-    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/contact-us", "destination": "/explore-our-tours", "permanent": true },
     { "source": "/home-01", "destination": "/", "permanent": true },
     { "source": "/home-05", "destination": "/tours", "permanent": true },
     { "source": "/indulgence-luxury-tours", "destination": "/destinations", "permanent": true },
