@@ -94,6 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Bluelilac Tours" },
       { property: "og:title", content: "Bluelilac Tours — East Africa Safari Specialists" },
+      { name: "google-site-verification", content: "TLHQnvfPp0baph5XpgvUXZk5XNboJ53mg-tdb0csfJY" },
       {
         property: "og:description",
         content:
@@ -106,8 +107,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "twitter:description",
         content: "Private safaris across Kenya, Tanzania, Uganda, Rwanda & Zanzibar.",
       },
-      { property: "og:image", content: "https://bluelilac-i6ko.vercel.app/og-image.jpg" },
-      { name: "twitter:image", content: "https://bluelilac-i6ko.vercel.app/og-image.jpg" },
+      { property: "og:image", content: "https://www.bluelilactours.com/og-image.jpg" },
+      { name: "twitter:image", content: "https://www.bluelilactours.com/og-image.jpg" },
     ],
     links: [
       {
@@ -134,7 +135,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Bluelilac Tours",
           description:
             "East Africa safari specialists offering private tours across Kenya, Tanzania, Uganda, Rwanda and Zanzibar.",
-          url: "/",
+          url: "https://www.bluelilactours.com/",
           telephone: "+254715405641",
           email: "info@bluelilactours.com",
           priceRange: "$$$",
