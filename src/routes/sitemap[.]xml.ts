@@ -4,7 +4,7 @@ import { TOURS } from "@/data/tours";
 import { BLOG_POSTS } from "@/data/blog";
 
 // TODO: replace with your project URL once a custom domain is connected.
-const BASE_URL = "";
+const BASE_URL = "https://bluelilactours.com";
 
 interface SitemapEntry {
   path: string;
