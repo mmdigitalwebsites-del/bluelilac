@@ -4,7 +4,29 @@
     { "source": "/contact-us", "destination": "/contact", "permanent": true },
     { "source": "/home-01", "destination": "/", "permanent": true },
     { "source": "/home-05", "destination": "/tours", "permanent": true },
-    { "source": "/indulgence-luxury-tours", "destination": "/destinations", "permanent": true },
-    { "source": "/togo_booking", "destination": "/explore-our-tours", "permanent": true }
+    { "source": "/home-06", "destination": "/", "permanent": true },
+    { "source": "/home-07", "destination": "/", "permanent": true },
+    { "source": "/home-09", "destination": "/", "permanent": true },
+    { "source": "/home-safri-africa", "destination": "/", "permanent": true },
+    { "source": "/safaris", "destination": "/tours", "permanent": true },
+    { "source": "/destination", "destination": "/destinations", "permanent": true },
+    { "source": "/gallery", "destination": "/destinations", "permanent": true },
+    { "source": "/faqs", "destination": "/", "permanent": true },
+    { "source": "/meet-our-team", "destination": "/about", "permanent": true },
+    { "source": "/togo_booking", "destination": "/contact", "permanent": true },
+    { "source": "/indulgence-luxury-tours", "destination": "/luxury-safaris", "permanent": true },
+
+    { "source": "/shop", "destination": "/tours", "permanent": true },
+    { "source": "/cart", "destination": "/tours", "permanent": true },
+    { "source": "/checkout-2", "destination": "/tours", "permanent": true },
+    { "source": "/my-account", "destination": "/contact", "permanent": true },
+    { "source": "/sign-in", "destination": "/contact", "permanent": true },
+    { "source": "/sign-up", "destination": "/contact", "permanent": true },
+    { "source": "/forgot-password", "destination": "/contact", "permanent": true },
+
+    { "source": "/product/:path*", "destination": "/tours", "permanent": true },
+    { "source": "/product-category/:path*", "destination": "/tours", "permanent": true },
+    { "source": "/category/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/cat_destination/:path*", "destination": "/destinations", "permanent": true }
   ]
 }
