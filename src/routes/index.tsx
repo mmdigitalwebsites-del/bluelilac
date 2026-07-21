@@ -403,19 +403,19 @@ function WhyUs() {
             <h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl lg:text-5xl">
               Journeys that connect you deeply with Africa.
             </h2>
-            <p className="mt-6 max-w-lg text-black font-bold">
+            <p className="mt-6 max-w-lg text-black">
               Blue Lilac Tours is a premier East African safari specialist creating unforgettable
               wildlife and luxury travel experiences across Kenya, Tanzania, Uganda, and Rwanda.
               From the vast plains of the Maasai Mara to the white beaches of Zanzibar, we design
               journeys that connect you deeply with Africa.
             </p>
-            <p className="mt-4 max-w-lg text-black font-bold">
+            <p className="mt-4 max-w-lg text-black">
               Every itinerary is hand-crafted by guides who grew up in these landscapes, paired with
               private 4x4 game drives, boutique camps and tented suites under the stars. We offer
               curated experiences that resonate around one's special moments including romantic
               honeymoon safaris, wedding anniversaries, proposals, birthdays and family safaris.
             </p>
-            <p className="mt-4 max-w-lg text-black font-bold">
+            <p className="mt-4 max-w-lg text-black">
               In addition to our classic wildlife and luxury travel experiences, Blue Lilac Tours
               specializes in custom safaris built entirely around your personal hobbies and
               interests. Whether you are an avid photographer chasing the perfect light, a birding
