@@ -399,7 +399,7 @@ function WhyUs() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-primary mt-6">Why Blue Lilac</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-primary mt-3">Why Blue Lilac</p>
             <h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl lg:text-5xl">
               Journeys that connect you deeply with Africa.
             </h2>
@@ -409,9 +409,18 @@ function WhyUs() {
               From the vast plains of the Maasai Mara to the white beaches of Zanzibar, we design
               journeys that connect you deeply with Africa.
             </p>
-            <p className="mt-4 max-w-lg text-black">
+            <p className="mt-4 max-w-lg text-black font-bold">
               Every itinerary is hand-crafted by guides who grew up in these landscapes, paired with
-              private 4x4 game drives, boutique camps and tented suites under the stars.
+              private 4x4 game drives, boutique camps and tented suites under the stars. We offer
+              curated experiences that resonate around one's special moments including romantic
+              honeymoon safaris, wedding anniversaries, proposals, birthdays and family safaris.
+            </p>
+            <p className="mt-4 max-w-lg text-black font-bold">
+              In addition to our classic wildlife and luxury travel experiences, Blue Lilac Tours
+              specializes in custom safaris built entirely around your personal hobbies and
+              interests. Whether you are an avid photographer chasing the perfect light, a birding
+              enthusiast, a culture lover, or seeking wellness in nature, we curate itineraries
+              tailored to what you love most.
             </p>
             <Link
               to="/about"
