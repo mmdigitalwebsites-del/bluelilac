@@ -4,7 +4,8 @@ import { TOURS } from "@/data/tours";
 import { BLOG_POSTS } from "@/data/blog";
 
 // TODO: replace with your project URL once a custom domain is connected.
-const BASE_URL = "https://bluelilactours.com";
+// NOTE: confirm whether your canonical domain is "www.bluelilactours.com" or "bluelilactours.com"
+const BASE_URL = "https://www.bluelilactours.com";
 
 interface SitemapEntry {
   path: string;
@@ -19,8 +20,18 @@ export const Route = createFileRoute("/sitemap.xml")({
         const staticEntries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/destinations", changefreq: "weekly", priority: "0.9" },
+          { path: "/destinations/kenya", changefreq: "weekly", priority: "0.8" },
+          { path: "/destinations/tanzania", changefreq: "weekly", priority: "0.8" },
+          { path: "/destinations/uganda", changefreq: "weekly", priority: "0.8" },
+          { path: "/destinations/rwanda", changefreq: "weekly", priority: "0.8" },
+          { path: "/destinations/zanzibar", changefreq: "weekly", priority: "0.8" },
           { path: "/tours", changefreq: "weekly", priority: "0.9" },
           { path: "/explore-our-tours", changefreq: "weekly", priority: "0.8" },
+          { path: "/luxury-safaris", changefreq: "weekly", priority: "0.8" },
+          { path: "/ultra-luxury", changefreq: "weekly", priority: "0.8" },
+          { path: "/romantic-honeymoon", changefreq: "weekly", priority: "0.8" },
+          { path: "/wedding-anniversaries", changefreq: "weekly", priority: "0.7" },
+          { path: "/bird-watchers", changefreq: "weekly", priority: "0.7" },
           { path: "/about", changefreq: "monthly", priority: "0.6" },
           { path: "/contact", changefreq: "monthly", priority: "0.6" },
           { path: "/blog", changefreq: "weekly", priority: "0.8" },
