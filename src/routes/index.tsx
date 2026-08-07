@@ -855,7 +855,7 @@ function Blog() {
           </div>
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary"
+            className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-primary"
           >
             View all posts <ArrowRight className="h-4 w-4" />
           </Link>
