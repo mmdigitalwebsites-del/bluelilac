@@ -203,7 +203,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/bird-watchers' 
+    | '/bird-watchers'
     | '/contact'
     | '/destinations'
     | '/explore-our-tours'
