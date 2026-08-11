@@ -858,7 +858,7 @@ function Blog() {
   return (
     <section
       id="blog"
-      className="relative bg-cover bg-center bg-fixed py-16 md:py-20"
+      className="relative bg-cover bg-center bg-fixed py-10 md:py-12"
       style={{ backgroundImage: `url(${homepageNine})` }}
     >
       <div className="absolute inset-0 bg-background/10" />
