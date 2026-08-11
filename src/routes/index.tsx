@@ -12,7 +12,7 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import tourSerengeti from "@/assets/tour-serengeti.jpg";
@@ -43,10 +43,11 @@ import hero4 from "@/assets/bird5.jpg";
 import hero5 from "@/assets/moon.jpg";
 import hero6 from "@/assets/wedding.jpg";
 import hero7 from "@/assets/honeymon.jpg";
-import trip from "@/assets/tripadvisor-icon.webp";
+import trip from "@/assets/tripadvisor.png";
 import kato from "@/assets/kato.jpg";
 import tra from "@/assets/tra logo.png";
 import safari from "@/assets/sb logo.png";
+import atta from "@/assets/atta-logo.png";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/")({
@@ -254,32 +255,45 @@ function Header() {
 
 function Hero() {
   const [slide, setSlide] = useState(0);
+  // Only slides that have actually been shown get mounted into the DOM.
+  const [mounted, setMounted] = useState<number[]>([0]);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSlide((s) => (s + 1) % heroSlides.length);
+      setSlide((s) => {
+        const next = (s + 1) % heroSlides.length;
+        setMounted((m) => (m.includes(next) ? m : [...m, next]));
+        return next;
+      });
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="relative h-screen min-h-[720px] w-full overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        {heroSlides.map((img, i) => (
-          <img
-            key={img}
-            src={img}
-            alt=""
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-              i === slide ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
+      <div className="absolute inset-0 overflow-hidden bg-black">
+        {heroSlides.map((img, i) =>
+          mounted.includes(i) ? (
+            <img
+              key={img}
+              src={img}
+              alt=""
+              width={1920}
+              height={1080}
+              decoding="async"
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : "low"}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                i === slide ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ) : null,
+        )}
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/60" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 md:px-10">
-        <span className="mb-6 mt-32 xl:mt-0 md:mt-0 lg:mt-36 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
+        <span className="mb-6 mt-24 xl:mt-0 md:mt-0 lg:mt-28 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm text-white backdrop-blur-md">
           Feel The Experience
         </span>
         <h1 className="max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl lg:text-[5.5rem]">
@@ -326,27 +340,30 @@ function Hero() {
 
 function Trust() {
   const recognitions = [
+    { abbr: "ATTA", title: "African Travel & Tourism Association", logo: atta },
     {
       abbr: "KATO",
       title: "Kenya Association of Tour Operators",
       logo: kato,
+      className: "h-32 md:h-36 lg:h-40",
     },
     {
       abbr: "TRA",
       title: "Tourism Regulatory Authority",
       logo: tra,
+      className: "h-11 md:h-14 lg:h-16",
     },
-    {
-      abbr: "TA",
-      title: "TripAdvisor",
-      logo: trip,
-    },
+    { abbr: "TA", title: "TripAdvisor", logo: trip, className: "h-20 md:h-24 lg:h-28" },
     {
       abbr: "SB",
       title: "SafariBookings",
       logo: safari,
+      className: "h-20 md:h-24 lg:h-28",
     },
   ];
+
+  // Duplicate the list so the marquee loops seamlessly
+  const marqueeItems = [...recognitions, ...recognitions];
 
   return (
     <section className="border-y border-border bg-background py-8">
@@ -354,17 +371,21 @@ function Trust() {
         <p className="text-center text-[11px] font-light uppercase tracking-[0.35em] text-muted-foreground">
           Recognised by
         </p>
-        <div className="mt-3 flex flex-wrap items-center justify-center gap-6 md:gap-10">
-          {recognitions.map((r) => (
-            <div key={r.abbr} className="flex items-center gap-2">
+
+        <div className="mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex w-max animate-marquee items-center gap-16 md:gap-24">
+            {marqueeItems.map((r, i) => (
               <img
+                key={`${r.abbr}-${i}`}
                 src={r.logo}
                 alt={r.title}
-                className="h-12 w-12 shrink-0 object-contain md:h-16 md:w-16"
+                title={r.title}
+                className={`w-auto shrink-0 object-contain ${
+                  r.className ?? "h-24 md:h-32 lg:h-36"
+                }`}
               />
-              <p className="font-display text-sm text-foreground md:text-base">{r.title}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -395,7 +416,7 @@ function WhyUs() {
     },
   ];
   return (
-    <section id="about" className="bg-background py-24 md:py-32">
+    <section id="about" className="bg-background py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <div>
@@ -471,7 +492,7 @@ function WhyUs() {
 
 function FeaturedTours() {
   return (
-    <section id="tours" className="bg-background py-24 md:py-32">
+    <section id="tours" className="bg-background py-10 md:py-12">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
@@ -546,7 +567,7 @@ function FeaturedTours() {
 
 function Destinations() {
   return (
-    <section id="destinations" className="bg-background py-24 md:py-32">
+    <section id="destinations" className="bg-background py-10 md:py-12">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Where we go</p>
@@ -596,7 +617,7 @@ function CtaBalloon() {
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-      <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 py-28 md:px-10 md:py-40">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 py-16 md:px-10 md:py-24">
         <span className="rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-white backdrop-blur-md">
           Limited dates
         </span>
@@ -659,7 +680,7 @@ function Testimonials() {
 
   return (
     <section
-      className="relative bg-cover bg-center bg-fixed py-24 md:py-32"
+      className="relative bg-cover bg-center bg-fixed py-16 md:py-20"
       style={{ backgroundImage: `url(${homepageNine})` }}
     >
       <div className="absolute inset-0 bg-background/10" />
@@ -721,14 +742,10 @@ function Testimonials() {
           </a>
         </div>
 
-        {/* Google Reviews */}
+        {/* Google Reviews — script injected only when scrolled near */}
         <div className="mt-6 pt-6">
           <div className="mt-3">
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div
-              className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66"
-              data-elfsight-app-lazy
-            />
+            <ElfsightReviews />
           </div>
         </div>
       </div>
@@ -742,7 +759,7 @@ function Footer() {
 
 function VideoSection() {
   return (
-    <section className="bg-background py-24 md:py-32">
+    <section className="bg-background py-10 md:py-12">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.25em] text-primary">Watch the journey</p>
@@ -771,7 +788,7 @@ function Faq() {
   return (
     <section
       id="faq"
-      className="relative bg-cover bg-center bg-fixed py-24 md:py-32"
+      className="relative bg-cover bg-center bg-fixed py-16 md:py-20"
       style={{ backgroundImage: `url(${homepageNine})` }}
     >
       <div className="absolute inset-0 bg-background/10" />
@@ -841,7 +858,7 @@ function Blog() {
   return (
     <section
       id="blog"
-      className="relative bg-cover bg-center bg-fixed py-24 md:py-32"
+      className="relative bg-cover bg-center bg-fixed py-16 md:py-20"
       style={{ backgroundImage: `url(${homepageNine})` }}
     >
       <div className="absolute inset-0 bg-background/10" />
@@ -910,4 +927,42 @@ function Blog() {
 
 function _Footer() {
   return <SiteFooter />;
+}
+
+function ElfsightReviews() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || load) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setLoad(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [load]);
+
+  useEffect(() => {
+    if (!load) return;
+    if (document.querySelector('script[src="https://elfsightcdn.com/platform.js"]')) return;
+    const s = document.createElement("script");
+    s.src = "https://elfsightcdn.com/platform.js";
+    s.async = true;
+    document.body.appendChild(s);
+  }, [load]);
+
+  return (
+    <div ref={ref} className="min-h-[200px]">
+      {load && (
+        <div className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66" data-elfsight-app-lazy />
+      )}
+    </div>
+  );
 }
