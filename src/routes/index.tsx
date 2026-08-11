@@ -743,11 +743,11 @@ function Testimonials() {
         </div>
 
         {/* Google Reviews — script injected only when scrolled near */}
-        <div className="mt-6 pt-6">
+        {/* <div className="mt-6 pt-6">
           <div className="mt-3">
             <ElfsightReviews />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -788,7 +788,7 @@ function Faq() {
   return (
     <section
       id="faq"
-      className="relative bg-cover bg-center bg-fixed py-16 md:py-20"
+      className="relative bg-cover bg-center bg-fixed py-10 md:py-12"
       style={{ backgroundImage: `url(${homepageNine})` }}
     >
       <div className="absolute inset-0 bg-background/10" />
