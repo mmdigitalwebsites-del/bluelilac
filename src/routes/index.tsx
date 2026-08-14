@@ -642,8 +642,119 @@ function CtaBalloon() {
   );
 }
 
+// function Testimonials() {
+//   const reviews = [
+//     {
+//       name: "Marco",
+//       country: "🇳🇱 Netherlands",
+//       stars: 4,
+//       tour: "Lake Nakuru & Lake Naivasha Tour",
+//       date: "May 10, 2026",
+//       text: "I can really recommend Blue Lilac Tours. We were picked up in Nairobi and went on a tour to Lake Nakuru and Lake Naivasha. It was great to have a personal guide and a car, they were available during the whole period. Great gamedrive, sightseeing and biking tour.",
+//     },
+//     {
+//       name: "Chaida",
+//       country: "🇸🇳 Senegal",
+//       stars: 5,
+//       tour: "East Africa Safari",
+//       date: "Apr 6, 2026",
+//       text: "I had an amazing experience with Blue Lilac Tours and Travel. The service was 100% excellent from start to finish. The team was very attentive, responsive, and always ready to help with anything we needed. Everything was well organized, and I felt safe and well taken care of throughout the trip. I highly recommend this agency to anyone looking for a smooth, enjoyable, and memorable safari experience.",
+//     },
+//     {
+//       name: "Melanie R",
+//       country: "🇺🇸 United States",
+//       stars: 5,
+//       tour: "6 Night / 7 Day Private Safari",
+//       date: "Feb 22, 2026",
+//       text: "We just returned from a 6 night / 7 day private safari with Blue Lilac Tours, and the entire experience exceeded our expectations from start to finish. From the very first email, Edna was responsive, professional, and so easy to work with. Our guide Boniface was knowledgeable, warm, and truly exceptional at spotting wildlife. He went the extra mile to help us track down the Big Five.",
+//     },
+//     {
+//       name: "HANYONG LEE",
+//       country: "🇰🇷 South Korea",
+//       stars: 5,
+//       tour: "Kenya Safari",
+//       date: "Feb 19, 2026",
+//       text: "Blue Lilac Tours and Travel is a reliable, well-organized tour operator that provides professional service, smooth coordination, and a warm, customer-focused travel experience from start to finish.",
+//     },
+//   ];
+
+//   return (
+//     <section
+//       className="relative bg-cover bg-center bg-fixed py-16 md:py-20"
+//       style={{ backgroundImage: `url(${homepageNine})` }}
+//     >
+//       <div className="absolute inset-0 bg-background/10" />
+//       <div className="relative mx-auto max-w-9xl px-6 md:px-10">
+//         <div className="flex flex-wrap items-end justify-between gap-6">
+//           <div className="max-w-2xl">
+//             <p className="text-xs uppercase tracking-[0.25em] text-white">Traveler stories</p>
+//             <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl text-primary">
+//               Our Happy Traveller
+//             </h2>
+//           </div>
+//           <a
+//             href="https://www.safaribookings.com/p6340"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-primary"
+//           >
+//             Read all reviews <ArrowRight className="h-4 w-4" />
+//           </a>
+//         </div>
+
+//         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+//           {reviews.map((r) => (
+//             <figure
+//               key={r.name}
+//               className="flex flex-col rounded-3xl border border-border bg-card p-8 shadow-sm"
+//             >
+//               <div className="flex items-center justify-between">
+//                 <div className="flex gap-1 text-primary">
+//                   {Array.from({ length: 5 }).map((_, i) => (
+//                     <Star
+//                       key={i}
+//                       className={`h-4 w-4 ${i < r.stars ? "fill-current" : "opacity-30"}`}
+//                     />
+//                   ))}
+//                 </div>
+//                 <span className="text-xs text-black/50">{r.date}</span>
+//               </div>
+//               <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-black">
+//                 "{r.text}"
+//               </blockquote>
+//               <figcaption className="mt-6 border-t border-border pt-4">
+//                 <div className="font-medium text-black">{r.name}</div>
+//                 <div className="text-xs text-black/60">{r.country}</div>
+//                 <div className="mt-1 text-xs text-primary">{r.tour}</div>
+//               </figcaption>
+//             </figure>
+//           ))}
+//         </div>
+
+//         <div className="mt-10 text-center">
+//           <a
+//             href="https://www.safaribookings.com/p6340"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition hover:bg-primary hover:text-primary-foreground"
+//           >
+//             Read all 16 reviews on SafariBookings <ArrowRight className="h-4 w-4" />
+//           </a>
+//         </div>
+
+//         {/* Google Reviews — script injected only when scrolled near */}
+//         {/* <div className="mt-6 pt-6">
+//           <div className="mt-3">
+//             <ElfsightReviews />
+//           </div>
+//         </div> */}
+//       </div>
+//     </section>
+//   );
+// }
+
 function Testimonials() {
-  const reviews = [
+  const safariBookingsReviews = [
     {
       name: "Marco",
       country: "🇳🇱 Netherlands",
@@ -678,6 +789,159 @@ function Testimonials() {
     },
   ];
 
+  const googleReviews = [
+    {
+      name: "Andrew King",
+      stars: 5,
+      tour: "Nairobi National Park Safari",
+      date: "Aug 11, 2026",
+      text: "Our safari with Blue Lilac Tours and Travel was memorable. Our guide, Boniface, made every game drive exciting with his knowledge and great sense of humor. I recall watching a group of giraffes up close. Boniface shared fascinating facts, including that giraffes have the same number of neck vertebrae as humans, just seven, but each can be over 25 cm long. It is also interesting that the long tongues of giraffes help them reach thorny acacia leaves. Boniface knew exactly where to take us for the best views and patiently waited while we enjoyed the moment. Everything was well organized, from the drives to the accommodation. Blue Lilac gave us an authentic and memorable taste of East Africa. Highly recommended.",
+    },
+    {
+      name: "Ariya Otieno",
+      stars: 5,
+      tour: "Lake Nakuru National Park Safari",
+      date: "Aug 11, 2026",
+      text: "Blue Lilac Tours and Travel gave my family those moments you wish you could bottle and take home. Glenn, our driver, took us through Lake Nakuru National Park, where we came across rhinos in the wild. The kids went from excited whispers to sitting quietly with their eyes glued to the animals, intent on not missing any sight. Glenn handled the moment perfectly, keeping a respectful distance and giving us time to watch without rushing us along. What I appreciated most was how relaxed the whole experience felt. No pressure, no chasing sightings, just a beautifully paced family adventure.",
+    },
+    {
+      name: "Martin Oloo",
+      stars: 5,
+      tour: "10-Day Group Safari",
+      date: "Aug 10, 2026",
+      text: "I recently joined a 10-day group tour with Blue Lilac Tours and Travel, and it was honestly a memorable experience. The trip was well organized, and travelling as a group made the whole experience even more enjoyable. One of the biggest highlights was visiting Tsavo East National Park. The wildlife experience was incredible, especially getting to see elephants in their natural habitat. A special thank you to Faith, our tour consultant, for keeping everything well coordinated throughout the trip. Our tour guides, Boniface and Glenn, were also very friendly, helpful, and knowledgeable, making the safari comfortable and enjoyable. I would definitely recommend Blue Lilac Tours and Travel to anyone looking for a memorable wildlife and safari experience in Kenya.",
+    },
+    {
+      name: "Hellen Long",
+      stars: 5,
+      tour: "Lake Naivasha & Tsavo East",
+      date: "Aug 8, 2026",
+      text: "My experience with Blue Lilac Tours and Travel was honestly a great one. The trip to Lake Naivasha was beautiful, especially getting to see the flamingoes and the amazing scenery around the lake. We also visited Tsavo East National Park, and that was another incredible part of the trip. A big thank you to Edna, our tour consultant, for making the arrangements smooth and keeping everything well organized. Our tour guides, Boniface and Glenn, were also fantastic and made the trip enjoyable from start to finish. I would definitely recommend them to anyone looking to explore Kenya.",
+    },
+    {
+      name: "Angeline Wanja",
+      stars: 5,
+      tour: "Nairobi National Park & Giraffe Centre",
+      date: "Jul 2026",
+      text: "We booked a full-day tour with Blue Lilac to Nairobi National Park and the Giraffe Centre, and it exceeded every expectation. At Nairobi National Park, our guide was incredibly knowledgeable — we spotted giraffes, zebras, and even a rhino, all with the city skyline in the background. The Giraffe Centre was the perfect follow-up; hand-feeding the Rothschild giraffes up close was a highlight for the whole family. What stood out most was how attentive and professional the team was throughout. Highly recommend Blue Lilac for a well-run, memorable safari experience!",
+    },
+    {
+      name: "Isaac Biggedi",
+      stars: 5,
+      tour: "Weekend Safari Getaway",
+      date: "Jul 2026",
+      text: "I joined this trip saying it was just a weekend getaway. It was therapy disguised as a vacation. The vibes were 10/10 and the people turned into family before the trip was over. It was just laugh after laugh, good food, and great memories. Book that trip — life is not just a job. (Translated from Swahili)",
+    },
+    {
+      name: "mlread22",
+      stars: 5,
+      tour: "6 Night / 7 Day Private Safari",
+      date: "Mar 2026",
+      text: "We just returned from a 6 night / 7 day private safari with Blue Lilac Tours, and the entire experience exceeded our expectations from start to finish. Edna was responsive, professional, and so easy to work with, and helped us craft an itinerary that was perfect for us. Once on safari, we were in the capable hands of our guide and driver, Boniface, who was knowledgeable, warm, and truly exceptional at spotting wildlife. Before booking, I received a quote from a 'luxury' safari company that was nearly twice the price, including two of the same lodges on our itinerary. We felt we received an exceptional, high-quality experience without paying an inflated premium simply for a label.",
+    },
+    {
+      name: "Cherono Chepkwony",
+      stars: 5,
+      tour: "Zanzibar Getaway",
+      date: "Jul 2026",
+      text: "Such an amazing team you have at Blue Lilac. We enjoyed our stay in Zanzibar thanks to your planning. All the best!",
+    },
+    {
+      name: "LuxeLoop Concierge",
+      stars: 5,
+      tour: "Nairobi National Park Safari",
+      date: "Jul 2026",
+      text: "Our experience exploring Nairobi National Park, the only park in the world situated within a city, was epic — an amazing itinerary from their tour consultants and a friendly, knowledgeable guide who ensured we saw all the Big 5 animals within the park. If you're visiting Kenya from outside, just reach out to them and they will help.",
+    },
+    {
+      name: "Kariuki Kamau",
+      stars: 5,
+      tour: "Private Safari",
+      date: "Jul 2026",
+      text: "I loved how we were handled professionally throughout our itinerary.",
+    },
+    {
+      name: "Kevin Okoth",
+      stars: 5,
+      tour: "Safari",
+      date: "Dec 2025",
+      text: "Amazing services offered from the staffs.",
+    },
+    {
+      name: "Wayne Mugaditsi",
+      stars: 5,
+      tour: "Safari",
+      date: "Aug 2025",
+      text: "Obviously a five star review — the best travel agency right now in Kenya. Great customer care, fun destinations. A year of wonders without numbers.",
+    },
+    {
+      name: "Monari Eugine",
+      stars: 5,
+      tour: "Safari",
+      date: "Aug 2025",
+      text: "We took so many pictures. It was a fantastic lifetime moment. I highly recommend this company — well organized and highly professional.",
+    },
+    {
+      name: "Esther Muasya",
+      stars: 5,
+      tour: "Nairobi National Park Safari",
+      date: "Aug 2024",
+      text: "I had the best experience ever going to the Nairobi National Park with Blue Lilac Tours & Travel. The team was especially informative — I even got to know that we have the special five in addition to the Big Five. The driver maneuvered the trails with ease and expertise, and there were snacks on board to keep our sugar levels okay. I can't wait for my next adventure — indeed my best travel partner!",
+    },
+    {
+      name: "William Mwendia",
+      stars: 5,
+      tour: "Safari",
+      date: "Aug 2024",
+      text: "Nice place to be, enjoy your African safaris and explore the world's exciting places with Blue Lilac Tours and Travel.",
+    },
+    {
+      name: "Hilda Vuhasio",
+      stars: 5,
+      tour: "Nairobi National Park Safari",
+      date: "Aug 2023",
+      text: "Had an amazing experience visiting the Nairobi National Park courtesy of Blue Lilac Travels! Highly recommend and commend you guys on the good job.",
+    },
+    {
+      name: "Vallary Kandie",
+      stars: 5,
+      tour: "Safari",
+      date: "Aug 2023",
+      text: "It was an amazing experience, their services were top notch. The tour guide was so good, making the experience unforgettable. I will definitely do it again.",
+    },
+    {
+      name: "Edward Kinyanjui",
+      stars: 5,
+      tour: "Mombasa Trip",
+      date: "Aug 2023",
+      text: "Awesome experience with Blue Lilac Travels on my Mombasa trip.",
+    },
+    {
+      name: "Andrew Oyileh",
+      stars: 5,
+      tour: "Safari",
+      date: "Aug 2023",
+      text: "It was nothing less of a beautiful experience.",
+    },
+    {
+      name: "Wilfred Mwangi",
+      stars: 5,
+      tour: "Safari",
+      date: "Aug 2023",
+      text: "We had a wonderful experience with Blue Lilac. The team was very attentive to detail and their services were top notch. Looking forward to future expeditions with them.",
+    },
+    {
+      name: "Jenifer Musyoka",
+      stars: 5,
+      tour: "Safari",
+      date: "Aug 2023",
+      text: "Loved your services. No inconveniences.",
+    },
+  ];
+
+  // Duplicate so the Google marquee loops seamlessly
+  const marqueeGoogleReviews = [...googleReviews, ...googleReviews];
+
   return (
     <section
       className="relative bg-cover bg-center bg-fixed py-16 md:py-20"
@@ -685,6 +949,7 @@ function Testimonials() {
     >
       <div className="absolute inset-0 bg-background/10" />
       <div className="relative mx-auto max-w-9xl px-6 md:px-10">
+        {/* SafariBookings reviews — original grid layout, unchanged */}
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.25em] text-white">Traveler stories</p>
@@ -703,7 +968,7 @@ function Testimonials() {
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {reviews.map((r) => (
+          {safariBookingsReviews.map((r) => (
             <figure
               key={r.name}
               className="flex flex-col rounded-3xl border border-border bg-card p-8 shadow-sm"
@@ -742,12 +1007,50 @@ function Testimonials() {
           </a>
         </div>
 
-        {/* Google Reviews — script injected only when scrolled near */}
-        {/* <div className="mt-6 pt-6">
-          <div className="mt-3">
-            <ElfsightReviews />
+        {/* Google Reviews — separate section, sliding marquee */}
+        <div className="mt-20 border-t border-white/20 pt-16">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.25em] text-white">More reviews</p>
+            <h3 className="mt-4 font-display text-2xl md:text-3xl text-primary">
+              What Travellers Say On Google
+            </h3>
           </div>
-        </div> */}
+
+          <div className="mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+            <div className="flex w-max animate-marquee-slow items-stretch gap-6">
+              {marqueeGoogleReviews.map((r, i) => (
+                <figure
+                  key={`${r.name}-${i}`}
+                  className="flex w-[320px] shrink-0 flex-col rounded-3xl border border-border bg-card p-8 shadow-sm md:w-[360px]"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-1 text-primary">
+                      {Array.from({ length: 5 }).map((_, si) => (
+                        <Star
+                          key={si}
+                          className={`h-4 w-4 ${si < r.stars ? "fill-current" : "opacity-30"}`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-xs text-black/50">{r.date}</span>
+                  </div>
+                  <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-black">
+                    "{r.text}"
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                      {r.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="font-medium text-black">{r.name}</div>
+                      {r.tour && <div className="mt-0.5 text-xs text-primary">{r.tour}</div>}
+                    </div>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -929,40 +1232,40 @@ function _Footer() {
   return <SiteFooter />;
 }
 
-function ElfsightReviews() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [load, setLoad] = useState(false);
+// function ElfsightReviews() {
+//   const ref = useRef<HTMLDivElement>(null);
+//   const [load, setLoad] = useState(false);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || load) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          setLoad(true);
-          io.disconnect();
-        }
-      },
-      { rootMargin: "300px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [load]);
+//   useEffect(() => {
+//     const el = ref.current;
+//     if (!el || load) return;
+//     const io = new IntersectionObserver(
+//       (entries) => {
+//         if (entries.some((e) => e.isIntersecting)) {
+//           setLoad(true);
+//           io.disconnect();
+//         }
+//       },
+//       { rootMargin: "300px" },
+//     );
+//     io.observe(el);
+//     return () => io.disconnect();
+//   }, [load]);
 
-  useEffect(() => {
-    if (!load) return;
-    if (document.querySelector('script[src="https://elfsightcdn.com/platform.js"]')) return;
-    const s = document.createElement("script");
-    s.src = "https://elfsightcdn.com/platform.js";
-    s.async = true;
-    document.body.appendChild(s);
-  }, [load]);
+//   useEffect(() => {
+//     if (!load) return;
+//     if (document.querySelector('script[src="https://elfsightcdn.com/platform.js"]')) return;
+//     const s = document.createElement("script");
+//     s.src = "https://elfsightcdn.com/platform.js";
+//     s.async = true;
+//     document.body.appendChild(s);
+//   }, [load]);
 
-  return (
-    <div ref={ref} className="min-h-[200px]">
-      {load && (
-        <div className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66" data-elfsight-app-lazy />
-      )}
-    </div>
-  );
-}
+//   return (
+//     <div ref={ref} className="min-h-[200px]">
+//       {load && (
+//         <div className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66" data-elfsight-app-lazy />
+//       )}
+//     </div>
+//   );
+// }
