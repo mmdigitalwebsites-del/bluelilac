@@ -1008,7 +1008,7 @@ function Testimonials() {
         </div>
 
         {/* Google Reviews — separate section, sliding marquee */}
-        <div className="mt-20 border-t border-white/20 pt-16">
+        {/* <div className="mt-20 border-t border-white/20 pt-16">
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.25em] text-white">More reviews</p>
             <h3 className="mt-4 font-display text-2xl md:text-3xl text-primary">
@@ -1050,7 +1050,7 @@ function Testimonials() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
