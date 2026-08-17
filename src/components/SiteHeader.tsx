@@ -12,6 +12,7 @@ import tanz from "@/assets/tanzania.jpg";
 import rwanda from "@/assets/rwanda.jpg";
 import uganda from "@/assets/uganda.jpg";
 import zanzibar from "@/assets/zanzibar.jpg";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const TOUR_SUBMENU = [
   {
@@ -119,7 +120,7 @@ export function SiteHeader() {
     <header className="fixed top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 pt-4 md:px-6">
         <div
-          className={`flex h-[60px] items-center justify-between gap-4 rounded-full border backdrop-blur-3xl shadow-lg px-4 py-1 md:px-6 transition-colors duration-300 ${
+          className={`flex h-[60px] items-center justify-between gap-2 rounded-full border backdrop-blur-3xl shadow-lg px-4 py-1 md:px-6 transition-colors duration-300 ${
             scrolled ? "border-white/40 bg-white/70" : "border-white/20 bg-white/10"
           }`}
         >
@@ -236,22 +237,30 @@ export function SiteHeader() {
               </div>
             ))}
           </nav>
-          <a
-            href="tel:+254715405641"
-            className="hidden h-12 w-12 items-center justify-center rounded-full bg-white text-foreground shadow-lg transition hover:scale-105 hover:bg-[#D0E0FF] hover:text-[#0C5DFF] lg:flex"
-            aria-label="Call us"
-          >
-            <Phone className="h-5 w-5" />
-          </a>
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="rounded-full bg-white/10 p-2 text-white lg:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-          >
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Right-hand cluster: language selector, call button, mobile menu toggle.
+              Lives inside the same header pill as everything else, so it scrolls,
+              aligns, and stacks with the rest of the header at every breakpoint
+              instead of floating independently on top of it. */}
+          <div className="flex shrink-0 items-center gap-2">
+            <LanguageSwitcher />
+
+            <a
+              href="tel:+254715405641"
+              className="hidden h-12 w-12 items-center justify-center rounded-full bg-white text-foreground shadow-lg transition hover:scale-105 hover:bg-[#D0E0FF] hover:text-[#0C5DFF] lg:flex"
+              aria-label="Call us"
+            >
+              <Phone className="h-5 w-5" />
+            </a>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="rounded-full bg-white/10 p-2 text-white lg:hidden"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+            >
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
