@@ -6,7 +6,7 @@ import tanzOne from "@/assets/shortsafari.png";
 import tanzTwo from "@/assets/safari2.png";
 import tanzThree from "@/assets/crater.png";
 import tanzFour from "@/assets/lake.jpg";
-import tanzFive from "@/assets/arusha.png";
+import tanzFive from "@/assets/arusha.webp";
 import tanzSix from "@/assets/luxury2.jpg";
 import tanz from "@/assets/shortsafari2.png";
 

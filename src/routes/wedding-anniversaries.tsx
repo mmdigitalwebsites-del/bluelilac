@@ -5,7 +5,7 @@ import { getTour } from "@/data/tours";
 import hero from "@/assets/honeymon.jpg";
 import img from "@/assets/wedding.jpg";
 import wedding from "@/assets/homepage3.jpg";
-import weddingOne from "@/assets/beach.jpg";
+import weddingOne from "@/assets/beach.webp";
 
 const anniversarySlugs = [
   "13-days-kenya-tanzania-safari",

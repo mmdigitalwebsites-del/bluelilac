@@ -4,7 +4,6 @@ import {
   Phone,
   Mail,
   Star,
-  Menu,
   Plus,
   Calendar,
   User,
@@ -22,7 +21,7 @@ import tourUganda from "@/assets/gorrila.jpg";
 import tourRwanda from "@/assets/rwanda.jpg";
 import buffalo from "@/assets/buffalo.png";
 import underStars from "@/assets/understars.png";
-import tourBeach from "@/assets/beach.png";
+import tourBeach from "@/assets/beach (1).webp";
 import balloon from "@/assets/romance2.jpg";
 import maasaiMara from "@/assets/wilderbeast.png";
 import homepage from "@/assets/home.jpg";
@@ -39,7 +38,7 @@ import hero from "@/assets/Luxury5.webp";
 import hero1 from "@/assets/romantic.jpg";
 import hero2 from "@/assets/ultralux.jpg";
 import hero3 from "@/assets/honeymoon.jpg";
-import hero4 from "@/assets/bird5.jpg";
+import hero4 from "@/assets/bird5.webp";
 import hero5 from "@/assets/moon.jpg";
 import hero6 from "@/assets/wedding.jpg";
 import hero7 from "@/assets/honeymon.jpg";
@@ -47,7 +46,7 @@ import trip from "@/assets/tripadvisor.png";
 import kato from "@/assets/kato.jpg";
 import tra from "@/assets/tra logo.png";
 import safari from "@/assets/sb logo.png";
-import atta from "@/assets/atta-logo.png";
+import atta from "@/assets/atta-logo.webp";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/")({
@@ -202,54 +201,6 @@ function Index() {
       <Blog />
       <Footer />
     </div>
-  );
-}
-
-function Header() {
-  return (
-    <header className="absolute top-0 left-0 right-0 z-30">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <a
-          href="#"
-          className="flex items-center font-display text-2xl font-semibold text-white md:text-3xl"
-        >
-          Blue Lilac
-        </a>
-        <nav className="hidden items-center gap-1 rounded-full bg-white/10 px-2 py-2 backdrop-blur-md lg:flex">
-          {[
-            { label: "Home", href: "#" },
-            { label: "Destinations", href: "/destinations" },
-            { label: "Tours", href: "/tours" },
-            { label: "About Us", href: "/about" },
-            { label: "Contact Us", href: "/contact" },
-            { label: "Explore Our Tours", href: "/tours" },
-          ].map((item, i) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                i === 0 ? "bg-white text-foreground" : "text-white/90 hover:bg-white/10"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-        <a
-          href="tel:+254715405641"
-          className="hidden h-12 w-12 items-center justify-center rounded-full bg-white text-foreground shadow-lg transition hover:scale-105 lg:flex"
-          aria-label="Call us"
-        >
-          <Phone className="h-5 w-5" />
-        </a>
-        <button
-          className="rounded-full bg-white/10 p-2 text-white backdrop-blur-md lg:hidden"
-          aria-label="Menu"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
-      </div>
-    </header>
   );
 }
 
@@ -641,117 +592,6 @@ function CtaBalloon() {
     </section>
   );
 }
-
-// function Testimonials() {
-//   const reviews = [
-//     {
-//       name: "Marco",
-//       country: "🇳🇱 Netherlands",
-//       stars: 4,
-//       tour: "Lake Nakuru & Lake Naivasha Tour",
-//       date: "May 10, 2026",
-//       text: "I can really recommend Blue Lilac Tours. We were picked up in Nairobi and went on a tour to Lake Nakuru and Lake Naivasha. It was great to have a personal guide and a car, they were available during the whole period. Great gamedrive, sightseeing and biking tour.",
-//     },
-//     {
-//       name: "Chaida",
-//       country: "🇸🇳 Senegal",
-//       stars: 5,
-//       tour: "East Africa Safari",
-//       date: "Apr 6, 2026",
-//       text: "I had an amazing experience with Blue Lilac Tours and Travel. The service was 100% excellent from start to finish. The team was very attentive, responsive, and always ready to help with anything we needed. Everything was well organized, and I felt safe and well taken care of throughout the trip. I highly recommend this agency to anyone looking for a smooth, enjoyable, and memorable safari experience.",
-//     },
-//     {
-//       name: "Melanie R",
-//       country: "🇺🇸 United States",
-//       stars: 5,
-//       tour: "6 Night / 7 Day Private Safari",
-//       date: "Feb 22, 2026",
-//       text: "We just returned from a 6 night / 7 day private safari with Blue Lilac Tours, and the entire experience exceeded our expectations from start to finish. From the very first email, Edna was responsive, professional, and so easy to work with. Our guide Boniface was knowledgeable, warm, and truly exceptional at spotting wildlife. He went the extra mile to help us track down the Big Five.",
-//     },
-//     {
-//       name: "HANYONG LEE",
-//       country: "🇰🇷 South Korea",
-//       stars: 5,
-//       tour: "Kenya Safari",
-//       date: "Feb 19, 2026",
-//       text: "Blue Lilac Tours and Travel is a reliable, well-organized tour operator that provides professional service, smooth coordination, and a warm, customer-focused travel experience from start to finish.",
-//     },
-//   ];
-
-//   return (
-//     <section
-//       className="relative bg-cover bg-center bg-fixed py-16 md:py-20"
-//       style={{ backgroundImage: `url(${homepageNine})` }}
-//     >
-//       <div className="absolute inset-0 bg-background/10" />
-//       <div className="relative mx-auto max-w-9xl px-6 md:px-10">
-//         <div className="flex flex-wrap items-end justify-between gap-6">
-//           <div className="max-w-2xl">
-//             <p className="text-xs uppercase tracking-[0.25em] text-white">Traveler stories</p>
-//             <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl text-primary">
-//               Our Happy Traveller
-//             </h2>
-//           </div>
-//           <a
-//             href="https://www.safaribookings.com/p6340"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-primary"
-//           >
-//             Read all reviews <ArrowRight className="h-4 w-4" />
-//           </a>
-//         </div>
-
-//         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-//           {reviews.map((r) => (
-//             <figure
-//               key={r.name}
-//               className="flex flex-col rounded-3xl border border-border bg-card p-8 shadow-sm"
-//             >
-//               <div className="flex items-center justify-between">
-//                 <div className="flex gap-1 text-primary">
-//                   {Array.from({ length: 5 }).map((_, i) => (
-//                     <Star
-//                       key={i}
-//                       className={`h-4 w-4 ${i < r.stars ? "fill-current" : "opacity-30"}`}
-//                     />
-//                   ))}
-//                 </div>
-//                 <span className="text-xs text-black/50">{r.date}</span>
-//               </div>
-//               <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-black">
-//                 "{r.text}"
-//               </blockquote>
-//               <figcaption className="mt-6 border-t border-border pt-4">
-//                 <div className="font-medium text-black">{r.name}</div>
-//                 <div className="text-xs text-black/60">{r.country}</div>
-//                 <div className="mt-1 text-xs text-primary">{r.tour}</div>
-//               </figcaption>
-//             </figure>
-//           ))}
-//         </div>
-
-//         <div className="mt-10 text-center">
-//           <a
-//             href="https://www.safaribookings.com/p6340"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition hover:bg-primary hover:text-primary-foreground"
-//           >
-//             Read all 16 reviews on SafariBookings <ArrowRight className="h-4 w-4" />
-//           </a>
-//         </div>
-
-//         {/* Google Reviews — script injected only when scrolled near */}
-//         {/* <div className="mt-6 pt-6">
-//           <div className="mt-3">
-//             <ElfsightReviews />
-//           </div>
-//         </div> */}
-//       </div>
-//     </section>
-//   );
-// }
 
 function Testimonials() {
   const safariBookingsReviews = [
@@ -1231,41 +1071,3 @@ function Blog() {
 function _Footer() {
   return <SiteFooter />;
 }
-
-// function ElfsightReviews() {
-//   const ref = useRef<HTMLDivElement>(null);
-//   const [load, setLoad] = useState(false);
-
-//   useEffect(() => {
-//     const el = ref.current;
-//     if (!el || load) return;
-//     const io = new IntersectionObserver(
-//       (entries) => {
-//         if (entries.some((e) => e.isIntersecting)) {
-//           setLoad(true);
-//           io.disconnect();
-//         }
-//       },
-//       { rootMargin: "300px" },
-//     );
-//     io.observe(el);
-//     return () => io.disconnect();
-//   }, [load]);
-
-//   useEffect(() => {
-//     if (!load) return;
-//     if (document.querySelector('script[src="https://elfsightcdn.com/platform.js"]')) return;
-//     const s = document.createElement("script");
-//     s.src = "https://elfsightcdn.com/platform.js";
-//     s.async = true;
-//     document.body.appendChild(s);
-//   }, [load]);
-
-//   return (
-//     <div ref={ref} className="min-h-[200px]">
-//       {load && (
-//         <div className="elfsight-app-b76e6c60-5394-4b10-8f9a-6bb82f10ea66" data-elfsight-app-lazy />
-//       )}
-//     </div>
-//   );
-// }
