@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Binoculars, Feather, TreeDeciduous } from "lucide-react";
 import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
-import hero from "@/assets/bird5.jpg";
-import img from "@/assets/bird4.jpg";
+import hero from "@/assets/bird5.webp";
+import img from "@/assets/bird4.webp";
 import bird from "@/assets/game-drive.jpg";
-import bird1 from "@/assets/bird3.jpg";
-import bird2 from "@/assets/bird6.jpg";
+import bird1 from "@/assets/bird3.webp";
+import bird2 from "@/assets/bird6.webp";
 
 const birdingSlugs = [
   "lake-nakuru-day-tour-from-nairobi",

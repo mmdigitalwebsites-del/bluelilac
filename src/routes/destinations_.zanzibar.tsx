@@ -4,7 +4,7 @@ import zanzibar from "@/assets/zanzibar.jpg";
 import safari from "@/assets/home4.jpg";
 import zOne from "@/assets/home5.jpg";
 import zTwo from "@/assets/homepage1.jpg";
-import zThree from "@/assets/beach.jpg";
+import zThree from "@/assets/beach.webp";
 import zFour from "@/assets/stonetown.png";
 import zFive from "@/assets/diving.jpg";
 import zSix from "@/assets/naivasha.jpg";

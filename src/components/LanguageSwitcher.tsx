@@ -94,6 +94,35 @@ function currentLangFromCookie(): string {
   return parts[2] || "en";
 }
 
+// Loading Google's translate widget script pulls down and executes a
+// meaningful chunk of third-party JS. Most first-time visitors are viewing
+// the site in English and never touch the switcher, so there is no reason to
+// pay that cost on every page load. This helper is idempotent (guarded by
+// SCRIPT_ID) and is called either immediately — if the visitor already has a
+// saved non-English preference, so returning visitors still see their
+// translated page exactly as before — or on-demand, the first time the
+// switcher is opened.
+function loadTranslateScript() {
+  if (typeof document === "undefined") return;
+  if (document.getElementById(SCRIPT_ID)) return;
+
+  (window as unknown as Record<string, unknown>)["googleTranslateElementInit"] = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const g = (window as unknown as { google?: any }).google;
+    if (!g?.translate?.TranslateElement) return;
+    new g.translate.TranslateElement(
+      { pageLanguage: "en", autoDisplay: false },
+      "google_translate_element",
+    );
+  };
+
+  const script = document.createElement("script");
+  script.id = SCRIPT_ID;
+  script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+  script.async = true;
+  document.body.appendChild(script);
+}
+
 export function LanguageSwitcher({ className = "" }: { className?: string }) {
   const [open, setOpen] = useState(false);
   const [lang, setLang] = useState("en");
@@ -101,27 +130,15 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
 
-  // Load the translation engine once, client-side only.
+  // Load the translation engine once, client-side only — immediately if a
+  // saved non-English preference exists, otherwise deferred until the
+  // switcher is actually opened (see loadTranslateScript above).
   useEffect(() => {
-    setLang(currentLangFromCookie());
-
-    if (document.getElementById(SCRIPT_ID)) return;
-
-    (window as unknown as Record<string, unknown>)["googleTranslateElementInit"] = () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const g = (window as unknown as { google?: any }).google;
-      if (!g?.translate?.TranslateElement) return;
-      new g.translate.TranslateElement(
-        { pageLanguage: "en", autoDisplay: false },
-        "google_translate_element",
-      );
-    };
-
-    const script = document.createElement("script");
-    script.id = SCRIPT_ID;
-    script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    script.async = true;
-    document.body.appendChild(script);
+    const initial = currentLangFromCookie();
+    setLang(initial);
+    if (initial !== "en") {
+      loadTranslateScript();
+    }
   }, []);
 
   // Close on outside click / Escape.
@@ -187,11 +204,14 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
 
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          if (!open) loadTranslateScript();
+          setOpen((v) => !v);
+        }}
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Select language"
-        className="notranslate inline-flex h-10 items-center gap-2 rounded-full pl-1.5 pr-3 text-[#070661] shadow-md transition hover:bg-white"
+        className="notranslate inline-flex h-10 items-center gap-2 rounded-full bg-[#030464] pl-1.5 pr-3 text-white shadow-md transition hover:bg-[#030464]/50"
       >
         <span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white ring-2 ring-white/70">
           <img src={flagUrl(active.country)} alt="" className="h-full w-full object-cover" />

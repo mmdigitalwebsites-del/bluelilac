@@ -20,8 +20,8 @@ import on from "@/assets/volcano.jpg";
 import drive from "@/assets/game-drives-2.jpg";
 import driveC from "@/assets/luxury3.jpg";
 import travel from "@/assets/home6.jpg";
-import serengeti from "@/assets/blt 2.jpg";
-import tour from "@/assets/blt 3.jpg";
+import serengeti from "@/assets/blt 2.webp";
+import tour from "@/assets/blt 3.webp";
 import tor from "@/assets/experience.jpg";
 import SiteFooter from "@/components/SiteFooter";
 
