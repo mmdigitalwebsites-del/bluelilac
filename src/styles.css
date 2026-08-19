@@ -170,7 +170,18 @@
   animation: marquee 25s linear infinite;
 }
 
-.animate-marquee:hover {
+.animate-marquee-slow {
+  animation: marquee 60s linear infinite;
+}
+
+.animate-marquee-medium {
+  animation: marquee 15s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-slow:hover,
+.animate-marquee-normal:hover,
+.animate-marquee-medium:hover {
   animation-play-state: paused;
 }
 

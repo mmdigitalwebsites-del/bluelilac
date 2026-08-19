@@ -4,7 +4,7 @@ import tanzania from "@/assets/tanzania.jpg";
 import safari from "@/assets/tour-serengeti.jpg";
 import tanzOne from "@/assets/shortsafari.png";
 import tanzTwo from "@/assets/safari2.png";
-import tanzThree from "@/assets/crater.png";
+import tanzThree from "@/assets/crater.webp";
 import tanzFour from "@/assets/lake.jpg";
 import tanzFive from "@/assets/arusha.webp";
 import tanzSix from "@/assets/luxury2.jpg";
