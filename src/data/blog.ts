@@ -1,12 +1,12 @@
-import naivasha from "@/assets/blt 7.jpg";
-import tsavo from "@/assets/blt 16.jpg";
+import naivasha from "@/assets/blt 7.webp";
+import tsavo from "@/assets/blt 16.webp";
 import olpejeta from "@/assets/rhino.jpg";
 import samburu from "@/assets/tour-serengeti.jpg";
 import diani from "@/assets/beach (1).webp";
-import nairobi from "@/assets/blt 15.jpg";
+import nairobi from "@/assets/blt 15.webp";
 import travel from "@/assets/view.jpg";
 import guide from "@/assets/game-drive.jpg";
-import wildlife from "@/assets/blt 8.jpg";
+import wildlife from "@/assets/blt 8.webp";
 import comparison from "@/assets/blt 3.webp";
 import maasaiMara from "@/assets/wilderbeast.png";
 import kenyaSafari from "@/assets/kenya.png";

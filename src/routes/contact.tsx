@@ -17,7 +17,7 @@ import heroSafari from "@/assets/experience.jpg";
 import tourLodge from "@/assets/naivasha.jpg";
 import lodge from "@/assets/kenya.png";
 import tours from "@/assets/safari.png";
-import call from "@/assets/blt 17.jpg";
+import call from "@/assets/blt 17.webp";
 import hero from "@/assets/rwanda1.jpg";
 import SiteFooter from "@/components/SiteFooter";
 

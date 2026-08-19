@@ -19,7 +19,7 @@ import tourKenya from "@/assets/kenya.png";
 import tourTanzania from "@/assets/tanzania.jpg";
 import tourUganda from "@/assets/gorrila.jpg";
 import tourRwanda from "@/assets/rwanda.jpg";
-import buffalo from "@/assets/buffalo.png";
+import buffalo from "@/assets/buffalo.webp";
 import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach (1).webp";
 import balloon from "@/assets/romance2.jpg";
@@ -779,7 +779,8 @@ function Testimonials() {
     },
   ];
 
-  // Duplicate so the Google marquee loops seamlessly
+  // Duplicate so the marquee loops seamlessly — identical technique to the
+  // "Recognised by" logo strip.
   const marqueeGoogleReviews = [...googleReviews, ...googleReviews];
 
   return (
@@ -841,56 +842,69 @@ function Testimonials() {
             href="https://www.safaribookings.com/p6340"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition hover:bg-primary hover:text-primary-foreground"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition hover:bg-primary hover:text-primary-foreground"
           >
             Read all 16 reviews on SafariBookings <ArrowRight className="h-4 w-4" />
           </a>
         </div>
 
-        {/* Google Reviews — separate section, sliding marquee */}
-        {/* <div className="mt-20 border-t border-white/20 pt-16">
-          <div className="text-center">
+        {/* Google Reviews — auto-scrolling marquee, styled to match the
+            "What Our Clients Are Saying" reference: quote text, then an
+            avatar + name + role row underneath, no stars or date shown. */}
+        <div className="mt-10 pt-10">
+          <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs uppercase tracking-[0.25em] text-white">More reviews</p>
-            <h3 className="mt-4 font-display text-2xl md:text-3xl text-primary">
-              What Travellers Say On Google
+            <h3 className="mt-4 font-display text-3xl md:text-4xl text-primary">
+              What Our Clients Are Saying
             </h3>
+            <p className="mt-4 text-sm text-white/80">
+              Real stories from travellers who explored East Africa with Blue Lilac Tours.
+            </p>
           </div>
 
-          <div className="mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
-            <div className="flex w-max animate-marquee-slow items-stretch gap-6">
+          <div className="mt-12 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+            <div className="flex w-max animate-marquee-slow items-stretch gap-4 md:gap-6">
               {marqueeGoogleReviews.map((r, i) => (
                 <figure
                   key={`${r.name}-${i}`}
-                  className="flex w-[320px] shrink-0 flex-col rounded-3xl border border-border bg-card p-8 shadow-sm md:w-[360px]"
+                  className="flex h-72 w-[260px] shrink-0 flex-col rounded-3xl bg-card p-6 shadow-sm sm:w-[320px] md:w-[400px] md:p-8 lg:w-[460px]"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-1 text-primary">
-                      {Array.from({ length: 5 }).map((_, si) => (
-                        <Star
-                          key={si}
-                          className={`h-4 w-4 ${si < r.stars ? "fill-current" : "opacity-30"}`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-xs text-black/50">{r.date}</span>
-                  </div>
-                  <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-black">
-                    "{r.text}"
+                  <blockquote className="line-clamp-5 flex-1 text-sm leading-relaxed text-black/90">
+                    {r.text}
                   </blockquote>
-                  <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                  <div className="mt-4 flex gap-1">
+                    {Array.from({ length: 5 }).map((_, si) => (
+                      <Star
+                        key={si}
+                        className={`h-4 w-4 text-[#FBBC04] ${si < r.stars ? "fill-current" : "opacity-30"}`}
+                      />
+                    ))}
+                  </div>
+                  <figcaption className="mt-4 flex shrink-0 items-center gap-3 border-t border-border pt-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-base font-semibold text-primary">
                       {r.name.charAt(0)}
                     </div>
                     <div>
                       <div className="font-medium text-black">{r.name}</div>
-                      {r.tour && <div className="mt-0.5 text-xs text-primary">{r.tour}</div>}
+                      {r.tour && <div className="mt-0.5 text-xs text-black/60">{r.tour}</div>}
                     </div>
                   </figcaption>
                 </figure>
               ))}
             </div>
           </div>
-        </div> */}
+
+          <div className="mt-10 text-center">
+            <a
+              href="https://g.page/r/CU7mfFq0YTw0EAE/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition hover:bg-primary hover:text-primary-foreground"
+            >
+              Read all our reviews <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
