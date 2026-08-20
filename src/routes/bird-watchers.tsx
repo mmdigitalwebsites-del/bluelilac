@@ -4,7 +4,7 @@ import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
 import hero from "@/assets/bird5.webp";
 import img from "@/assets/bird4.webp";
-import bird from "@/assets/game-drive.jpg";
+import bird from "@/assets/game-drive.webp";
 import bird1 from "@/assets/bird3.webp";
 import bird2 from "@/assets/bird6.webp";
 

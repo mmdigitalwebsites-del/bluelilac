@@ -12,7 +12,7 @@ import buffalo from "@/assets/ultimate.jpeg";
 import meru from "@/assets/nsafari.jpeg";
 import liosaba from "@/assets/nairobisafari.jpeg";
 import beach from "@/assets/bush.webp";
-import mara from "@/assets/governer.jpeg";
+import mara from "@/assets/governer.webp";
 import honeymoon from "@/assets/moons.jpeg";
 import tsafari from "@/assets/tsafari.jpeg";
 

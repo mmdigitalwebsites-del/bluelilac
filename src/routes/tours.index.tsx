@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import background from "@/assets/destinations.png";
+import background from "@/assets/destinations.webp";
 import back from "@/assets/home2.jpg";
 import { TOURS } from "@/data/tours";
 

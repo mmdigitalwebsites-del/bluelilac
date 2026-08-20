@@ -12,7 +12,7 @@ import kenSeven from "@/assets/rhino.jpg";
 import kenEight from "@/assets/home3.jpg";
 import kenNine from "@/assets/homepage2.jpg";
 import kenTen from "@/assets/nairobi.jpg";
-import kenT from "@/assets/eastafrica.png";
+import kenT from "@/assets/eastafrica.webp";
 
 const KENYA_TRIPS: Trip[] = [
   {

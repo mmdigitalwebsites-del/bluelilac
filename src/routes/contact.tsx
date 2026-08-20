@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
-import heroSafari from "@/assets/experience.jpg";
+import heroSafari from "@/assets/experience.webp";
 import tourLodge from "@/assets/naivasha.jpg";
 import lodge from "@/assets/kenya.png";
 import tours from "@/assets/safari.png";
