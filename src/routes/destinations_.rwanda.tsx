@@ -6,7 +6,7 @@ import rOne from "@/assets/rwanda1.jpg";
 import rTwo from "@/assets/homepage9.jpg";
 import rThree from "@/assets/volcano.jpg";
 import rFour from "@/assets/kigali.jpg";
-import rFive from "@/assets/forest.png";
+import rFive from "@/assets/forest.webp";
 import rSix from "@/assets/lake.jpg";
 import rSeven from "@/assets/kenya.png";
 

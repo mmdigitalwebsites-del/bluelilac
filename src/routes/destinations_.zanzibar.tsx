@@ -6,7 +6,7 @@ import zOne from "@/assets/home5.jpg";
 import zTwo from "@/assets/homepage1.jpg";
 import zThree from "@/assets/beach.webp";
 import zFour from "@/assets/stonetown.png";
-import zFive from "@/assets/diving.jpg";
+import zFive from "@/assets/diving.webp";
 import zSix from "@/assets/naivasha.jpg";
 import zSeven from "@/assets/tours.png";
 import zEight from "@/assets/spicefarm.jpg";
