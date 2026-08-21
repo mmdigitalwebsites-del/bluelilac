@@ -4,7 +4,7 @@ import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
 import hero from "@/assets/honeymon.jpg";
 import img from "@/assets/wedding.jpg";
-import wedding from "@/assets/homepage3.jpg";
+import wedding from "@/assets/homepage3.webp";
 import weddingOne from "@/assets/beach.webp";
 
 const anniversarySlugs = [

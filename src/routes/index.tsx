@@ -24,15 +24,15 @@ import underStars from "@/assets/understars.png";
 import tourBeach from "@/assets/beach (1).webp";
 import balloon from "@/assets/romance2.jpg";
 import maasaiMara from "@/assets/wilderbeast.png";
-import homepage from "@/assets/home.jpg";
+import homepage from "@/assets/home.webp";
 import homepageOne from "@/assets/homepage8.jpg";
 import homepageTwo from "@/assets/homepage5.jpg";
-import homepageThree from "@/assets/home2.jpg";
-import homepageFour from "@/assets/home3.jpg";
-import homepageFive from "@/assets/home6.jpg";
-import homepageSix from "@/assets/home7.jpg";
-import homepageSeven from "@/assets/homepage1.jpg";
-import homepageEight from "@/assets/home2.jpg";
+import homepageThree from "@/assets/home2.webp";
+import homepageFour from "@/assets/home3.webp";
+import homepageFive from "@/assets/home6.webp";
+import homepageSix from "@/assets/home7.webp";
+import homepageSeven from "@/assets/homepage1.webp";
+import homepageEight from "@/assets/home2.webp";
 import homepageNine from "@/assets/homepage4.jpg";
 import hero from "@/assets/Luxury5.webp";
 import hero1 from "@/assets/romantic.jpg";
@@ -594,6 +594,31 @@ function CtaBalloon() {
   );
 }
 
+// The standard multi-color Google "G" mark, used to indicate these reviews
+// are sourced from Google — same icon Google's own review/sign-in widgets use.
+function GoogleLogo({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" className={className} aria-hidden="true">
+      <path
+        fill="#EA4335"
+        d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+      />
+      <path
+        fill="#4285F4"
+        d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+      />
+      <path
+        fill="#34A853"
+        d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+      />
+    </svg>
+  );
+}
+
 function Testimonials() {
   const safariBookingsReviews = [
     {
@@ -703,7 +728,7 @@ function Testimonials() {
         {/* Google Reviews — auto-scrolling marquee, styled to match the
             "What Our Clients Are Saying" reference: quote text, then stars,
             then an avatar + name + role row underneath. */}
-        <div className="mt-10 pt-8">
+        <div className="mt-12 pt-10">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs uppercase tracking-[0.25em] text-white">More reviews</p>
             <h3 className="mt-4 font-display text-3xl md:text-4xl text-primary">
@@ -719,8 +744,11 @@ function Testimonials() {
               {marqueeGoogleReviews.map((r, i) => (
                 <figure
                   key={`${r.name}-${i}`}
-                  className="flex h-72 w-[260px] shrink-0 flex-col rounded-3xl bg-card p-6 shadow-sm sm:w-[320px] md:w-[400px] md:p-8 lg:w-[460px]"
+                  className="relative flex h-72 w-[260px] shrink-0 flex-col rounded-3xl bg-card p-6 shadow-sm sm:w-[320px] md:w-[400px] md:p-8 lg:w-[460px]"
                 >
+                  <div className="absolute right-4 top-4 h-5 w-5">
+                    <GoogleLogo className="h-full w-full" />
+                  </div>
                   <blockquote className="line-clamp-5 flex-1 text-sm leading-relaxed text-black/90">
                     {r.text}
                   </blockquote>

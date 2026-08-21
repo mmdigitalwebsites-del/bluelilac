@@ -11,6 +11,34 @@ export type GoogleReview = {
 // needs to be updated in one place.
 export const GOOGLE_REVIEWS: GoogleReview[] = [
   {
+    name: "Jenarius Kamau",
+    stars: 5,
+    tour: "Mount Kenya Weekend Getaway",
+    date: "Aug 16, 2026",
+    text: "I reached out to Blue Lilac Tours and Travel last minute for a weekend getaway to Mount Kenya, and Victor made it happen when other agencies told me it was impossible. He found us a beautiful lodge, arranged all the transport, and even suggested a hiking route I hadn't considered. Boniface was our guide for the trip, and his expertise on the mountain trails and local flora made the hike both safe and memorable. The whole team clearly cares about delivering quality experiences. Blue Lilac is now my first call for any trip.",
+  },
+  {
+    name: "Njambi Chege",
+    stars: 5,
+    tour: "Diani & Watamu Coastal Tour",
+    date: "Aug 16, 2026",
+    text: "My family and I just returned from a 7-day coastal tour to Diani and Watamu organized by Blue Lilac Tours and Travel, and I have nothing but praise for the experience. Faith was our tour consultant, and she went above and beyond to accommodate my elderly parents' needs, including arranging accessible accommodations and flexible schedules. Our guide Glenn was friendly, punctual, and full of fascinating stories about the Swahili coast. The transfers were seamless, the hotels exceeded expectations, and the whole trip felt truly personalized. Highly recommend.",
+  },
+  {
+    name: "Naomi Mutua",
+    stars: 5,
+    tour: "Masai Mara & Lake Nakuru Safari",
+    date: "Aug 16, 2026",
+    text: "I booked a 5-day Masai Mara and Lake Nakuru safari with Blue Lilac Tours and Travel, and Edna from their team made the entire planning process effortless. She was patient, responsive, and tailored the itinerary perfectly to fit our budget and schedule. Our guide Boniface was absolutely incredible, his knowledge of wildlife and the park routes meant we saw the Big Five by day three. The vehicle was comfortable, the lodges were well-chosen, and every detail was handled professionally. I wouldn't hesitate to book with them again.",
+  },
+  {
+    name: "Lilian Peter",
+    stars: 5,
+    tour: "Kenya Wildlife Safari",
+    date: "Aug 14, 2026",
+    text: "What stood out to me most about my trip with Blue Lilac Tours and Travel was how well the entire experience came together. It wasn't just about visiting different places; it was about enjoying the journey, meeting people, and getting a closer look at the incredible wildlife Kenya has to offer. We had some amazing wildlife encounters, including lions, elephants, giraffes, zebras, hippos, and a variety of bird species. Each sighting brought its own excitement, especially when you get to watch these animals behaving naturally in their surroundings. The service was also impressive. The transport arrangements, accommodation coordination, timing, and communication were handled efficiently, which made the trip feel comfortable and stress-free. Victor was very helpful in making sure everything was properly arranged before and during the tour. I'd also give credit to Glenn, who was a great companion throughout the journey. His knowledge of the wildlife and the places we visited added a lot to the experience. All in all, it was a trip filled with great moments, unexpected wildlife sightings, and plenty of stories to take home. Blue Lilac Tours and Travel definitely made the experience worthwhile, and I'd be happy to travel with them again.",
+  },
+  {
     name: "Andrew King",
     stars: 5,
     tour: "Nairobi National Park Safari",

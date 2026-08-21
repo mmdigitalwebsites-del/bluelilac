@@ -4,7 +4,7 @@ import olpejeta from "@/assets/saf.jpeg";
 import samburu from "@/assets/tour-serengeti.jpg";
 import diani from "@/assets/bush.webp";
 import nairobi from "@/assets/blt 15.webp";
-import maasaiMara from "@/assets/home.jpg";
+import maasaiMara from "@/assets/home.webp";
 import kenyaSafari from "@/assets/kenya.png";
 import tourKenya from "@/assets/kenya.png";
 import underStars from "@/assets/understars.png";
