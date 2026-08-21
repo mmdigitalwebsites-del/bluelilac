@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CountryPage, type Trip } from "@/components/CountryPage";
 import zanzibar from "@/assets/zanzibar.jpg";
-import safari from "@/assets/home4.jpg";
-import zOne from "@/assets/home5.jpg";
-import zTwo from "@/assets/homepage1.jpg";
+import safari from "@/assets/home4.webp";
+import zOne from "@/assets/home5.webp";
+import zTwo from "@/assets/homepage1.webp";
 import zThree from "@/assets/beach.webp";
 import zFour from "@/assets/stonetown.png";
 import zFive from "@/assets/diving.webp";

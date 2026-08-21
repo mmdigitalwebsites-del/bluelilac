@@ -20,7 +20,7 @@ import safari from "@/assets/blt 12.webp";
 import tanzania from "@/assets/giraffes.webp";
 import tourUganda from "@/assets/forest.webp";
 import underStars from "@/assets/understars.png";
-import tourBeach from "@/assets/home5.jpg";
+import tourBeach from "@/assets/home5.webp";
 
 export const Route = createFileRoute("/explore-our-tours")({
   head: () => ({

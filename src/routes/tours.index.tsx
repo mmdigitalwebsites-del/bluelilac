@@ -18,7 +18,7 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import background from "@/assets/destinations.webp";
-import back from "@/assets/home2.jpg";
+import back from "@/assets/home2.webp";
 import { TOURS } from "@/data/tours";
 
 export const Route = createFileRoute("/tours/")({

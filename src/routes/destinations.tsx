@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { ArrowRight, MapPin, Phone, Mail, Menu, Search, Compass, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroSafari from "@/assets/home3.jpg";
+import heroSafari from "@/assets/home3.webp";
 import ctaBalloon from "@/assets/cta-balloon.webp";
 import maasaiMara from "@/assets/wilderbeast.png";
 import amboseli from "@/assets/blt 13.webp";
@@ -12,7 +12,7 @@ import naivasha from "@/assets/naivasha.jpg";
 import samburu from "@/assets/tour-serengeti.jpg";
 import olpejeta from "@/assets/rhino.jpg";
 import tsavo from "@/assets/blt 16.webp";
-import diani from "@/assets/home4.jpg";
+import diani from "@/assets/home4.webp";
 import nairobi from "@/assets/blt 15.webp";
 import serengeti from "@/assets/blt 18.webp";
 import crator from "@/assets/crater.webp";
@@ -26,7 +26,7 @@ import tourVolcano from "@/assets/blt 2.webp";
 import kigali from "@/assets/blt 6.webp";
 import stoneTown from "@/assets/stonetown.png";
 import stone from "@/assets/kenya.png";
-import town from "@/assets/homepage3.jpg";
+import town from "@/assets/homepage3.webp";
 import ston from "@/assets/shortsafari.png";
 
 export const Route = createFileRoute("/destinations")({
