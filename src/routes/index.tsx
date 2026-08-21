@@ -728,7 +728,7 @@ function Testimonials() {
         {/* Google Reviews — auto-scrolling marquee, styled to match the
             "What Our Clients Are Saying" reference: quote text, then stars,
             then an avatar + name + role row underneath. */}
-        <div className="mt-20 border-t border-white/20 pt-16">
+        <div className="mt-12 pt-10">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs uppercase tracking-[0.25em] text-white">More reviews</p>
             <h3 className="mt-4 font-display text-3xl md:text-4xl text-primary">
