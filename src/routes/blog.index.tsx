@@ -86,6 +86,7 @@ function BlogIndex() {
                   <Link
                     to="/blog/$slug"
                     params={{ slug: p.slug }}
+                    aria-label={`Read more: ${p.title}`}
                     className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary"
                   >
                     Read more <ArrowRight className="h-4 w-4" />
