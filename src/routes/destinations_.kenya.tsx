@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CountryPage, type Trip } from "@/components/CountryPage";
-import ken from "@/assets/kenya1.jpg";
+import ken from "@/assets/kenya1.webp";
 import safari from "@/assets/safari.png";
 import kenOne from "@/assets/home7.webp";
 import kenTwo from "@/assets/naivasha.jpg";
 import kenThree from "@/assets/home.webp";
-import kenFour from "@/assets/homepage6.jpg";
+import kenFour from "@/assets/homepage6.webp";
 import kenFive from "@/assets/nakuru.jpg";
 import kenSix from "@/assets/luxury2.jpg";
 import kenSeven from "@/assets/rhino.jpg";

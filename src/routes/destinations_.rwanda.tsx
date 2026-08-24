@@ -3,7 +3,7 @@ import { CountryPage, type Trip } from "@/components/CountryPage";
 import rwanda from "@/assets/rwanda.jpg";
 import safari from "@/assets/rwanda2.jpg";
 import rOne from "@/assets/rwanda1.jpg";
-import rTwo from "@/assets/homepage9.jpg";
+import rTwo from "@/assets/homepage9.webp";
 import rThree from "@/assets/volcano.jpg";
 import rFour from "@/assets/kigali.jpg";
 import rFive from "@/assets/forest.webp";
