@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import heroImg from "@/assets/uganda1.jpg";
-import ctaBalloon from "@/assets/hotballon.png";
+import ctaBalloon from "@/assets/hotballon.webp";
 import safari from "@/assets/blt 12.webp";
 import tanzania from "@/assets/giraffes.webp";
 import tourUganda from "@/assets/forest.webp";

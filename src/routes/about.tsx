@@ -12,7 +12,7 @@ import {
   Star,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
-import heroSafari from "@/assets/img.jpg";
+import heroSafari from "@/assets/img.webp";
 import tourSerengeti from "@/assets/ultra3.jpg";
 import tourLodge from "@/assets/spicefarm.jpg";
 import tourGorilla from "@/assets/tanzania.jpg";

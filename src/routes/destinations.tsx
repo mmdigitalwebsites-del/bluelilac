@@ -16,7 +16,7 @@ import diani from "@/assets/home4.webp";
 import nairobi from "@/assets/blt 15.webp";
 import serengeti from "@/assets/blt 18.webp";
 import crator from "@/assets/crater.webp";
-import tourPark from "@/assets/homepage9.jpg";
+import tourPark from "@/assets/homepage9.webp";
 import tourLake from "@/assets/lake.png";
 import arusha from "@/assets/arusha.webp";
 import tourForest from "@/assets/gorrila.webp";

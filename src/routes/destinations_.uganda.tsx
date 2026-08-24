@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CountryPage, type Trip } from "@/components/CountryPage";
 import uganda from "@/assets/uganda.jpg";
-import safari from "@/assets/impala.jpg";
+import safari from "@/assets/impala.webp";
 import ugandaOne from "@/assets/uganda1.jpg";
 import ugandaTwo from "@/assets/gorrila.webp";
 import ugandaThree from "@/assets/forest.webp";
