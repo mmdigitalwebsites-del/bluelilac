@@ -3,10 +3,10 @@ import { Gem, Plane, UtensilsCrossed } from "lucide-react";
 import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
 import hero from "@/assets/ultralux.jpg";
-import img from "@/assets/lux2.jpg";
+import img from "@/assets/lux2.webp";
 import ultra from "@/assets/ultra2.jpg";
 import ultraOne from "@/assets/ultra3.jpg";
-import ultraTwo from "@/assets/lux.jpg";
+import ultraTwo from "@/assets/lux.webp";
 
 const ultraLuxurySlugs = [
   "13-days-kenya-tanzania-safari",

@@ -5,9 +5,9 @@ import safari from "@/assets/tour-serengeti.jpg";
 import tanzOne from "@/assets/shortsafari.png";
 import tanzTwo from "@/assets/safari2.png";
 import tanzThree from "@/assets/crater.webp";
-import tanzFour from "@/assets/lake.jpg";
+import tanzFour from "@/assets/lake.webp";
 import tanzFive from "@/assets/arusha.webp";
-import tanzSix from "@/assets/luxury2.jpg";
+import tanzSix from "@/assets/luxury2.webp";
 import tanz from "@/assets/shortsafari2.png";
 
 const TANZANIA_TRIPS: Trip[] = [

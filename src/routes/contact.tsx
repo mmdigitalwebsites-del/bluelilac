@@ -15,7 +15,7 @@ import { useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import heroSafari from "@/assets/experience.webp";
 import tourLodge from "@/assets/naivasha.jpg";
-import lodge from "@/assets/kenya.png";
+import lodge from "@/assets/kenya.webp";
 import tours from "@/assets/safari.png";
 import call from "@/assets/blt 17.webp";
 import hero from "@/assets/rwanda1.jpg";

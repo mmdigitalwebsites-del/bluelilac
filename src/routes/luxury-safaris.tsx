@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
 import hero from "@/assets/Luxury5.webp";
-import img from "@/assets/luxury.jpg";
+import img from "@/assets/luxury.webp";
 import luxury from "@/assets/luxury4.jpg";
-import luxuryOne from "@/assets/luxury3.jpg";
+import luxuryOne from "@/assets/luxury3.webp";
 import luxuryTwo from "@/assets/homepage9.webp";
 
 // Curated by hand, not by `type` field alone — these are the trips that

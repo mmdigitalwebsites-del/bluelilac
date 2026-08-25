@@ -9,7 +9,7 @@ import guide from "@/assets/game-drive.webp";
 import wildlife from "@/assets/blt 8.webp";
 import comparison from "@/assets/blt 3.webp";
 import maasaiMara from "@/assets/wilderbeast.png";
-import kenyaSafari from "@/assets/kenya.png";
+import kenyaSafari from "@/assets/kenya.webp";
 
 export type BlogPost = {
   slug: string;
