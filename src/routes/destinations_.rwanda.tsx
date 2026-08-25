@@ -5,10 +5,10 @@ import safari from "@/assets/rwanda2.jpg";
 import rOne from "@/assets/rwanda1.jpg";
 import rTwo from "@/assets/homepage9.webp";
 import rThree from "@/assets/volcano.jpg";
-import rFour from "@/assets/kigali.jpg";
+import rFour from "@/assets/kigali.webp";
 import rFive from "@/assets/forest.webp";
-import rSix from "@/assets/lake.jpg";
-import rSeven from "@/assets/kenya.png";
+import rSix from "@/assets/lake.webp";
+import rSeven from "@/assets/kenya.webp";
 
 const RWANDA_TRIPS: Trip[] = [
   {

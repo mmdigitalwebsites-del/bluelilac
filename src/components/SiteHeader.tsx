@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, X, ChevronDown } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 import luxurySafari from "@/assets/Luxury5.webp";
 import honeymoonSafari from "@/assets/romance.jpeg";
 import weddingSafari from "@/assets/honeymon.webp";

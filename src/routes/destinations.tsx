@@ -17,7 +17,7 @@ import nairobi from "@/assets/blt 15.webp";
 import serengeti from "@/assets/blt 18.webp";
 import crator from "@/assets/crater.webp";
 import tourPark from "@/assets/homepage9.webp";
-import tourLake from "@/assets/lake.png";
+import tourLake from "@/assets/lake1.webp";
 import arusha from "@/assets/arusha.webp";
 import tourForest from "@/assets/gorrila.webp";
 import tourElizabeth from "@/assets/queen.png";
@@ -25,7 +25,7 @@ import tourBunyonyi from "@/assets/blt 16.webp";
 import tourVolcano from "@/assets/blt 2.webp";
 import kigali from "@/assets/blt 6.webp";
 import stoneTown from "@/assets/stonetown.png";
-import stone from "@/assets/kenya.png";
+import stone from "@/assets/kenya.webp";
 import town from "@/assets/homepage3.webp";
 import ston from "@/assets/shortsafari.png";
 

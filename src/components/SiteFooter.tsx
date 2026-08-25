@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const SOCIALS = [
   { label: "Facebook", href: "https://www.facebook.com/bluelilactours/", Icon: Facebook },

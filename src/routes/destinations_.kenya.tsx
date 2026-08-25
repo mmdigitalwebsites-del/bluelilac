@@ -7,7 +7,7 @@ import kenTwo from "@/assets/naivasha.jpg";
 import kenThree from "@/assets/home.webp";
 import kenFour from "@/assets/homepage6.webp";
 import kenFive from "@/assets/nakuru.jpg";
-import kenSix from "@/assets/luxury2.jpg";
+import kenSix from "@/assets/luxury2.webp";
 import kenSeven from "@/assets/rhino.jpg";
 import kenEight from "@/assets/home3.webp";
 import kenNine from "@/assets/homepage2.webp";

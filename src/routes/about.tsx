@@ -19,7 +19,7 @@ import tourGorilla from "@/assets/tanzania.jpg";
 import ctaBalloon from "@/assets/romance2.jpg";
 import on from "@/assets/volcano.jpg";
 import drive from "@/assets/game-drives-2.webp";
-import driveC from "@/assets/luxury3.jpg";
+import driveC from "@/assets/luxury3.webp";
 import travel from "@/assets/home6.webp";
 import serengeti from "@/assets/blt 2.webp";
 import tour from "@/assets/blt 3.webp";
