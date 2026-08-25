@@ -807,7 +807,7 @@ function VideoSection() {
 
         <div className="relative mx-auto mt-14 aspect-video w-full max-w-5xl overflow-hidden rounded-3xl border border-border bg-secondary shadow-lg">
           <iframe
-            src="https://www.youtube.com/embed/mbqCXpmo15A"
+            src="https://www.youtube-nocookie.com/embed/mbqCXpmo15A"
             title="East Africa Safari — Bluelilac Tours"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
