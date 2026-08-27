@@ -9,11 +9,11 @@ import kenyaSafari from "@/assets/kenya.webp";
 import tourKenya from "@/assets/kenya.webp";
 import underStars from "@/assets/understars.png";
 import buffalo from "@/assets/ultimate.jpeg";
-import meru from "@/assets/nsafari.jpeg";
-import liosaba from "@/assets/nairobisafari.jpeg";
+import meru from "@/assets/nsafari.webp";
+import liosaba from "@/assets/nairobisafari.webp";
 import beach from "@/assets/bush.webp";
 import mara from "@/assets/governer.webp";
-import honeymoon from "@/assets/moons.jpeg";
+import honeymoon from "@/assets/moons.webp";
 import tsafari from "@/assets/tsafari.jpeg";
 
 export type ItineraryDay = {

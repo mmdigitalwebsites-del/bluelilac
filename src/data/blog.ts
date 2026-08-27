@@ -1,6 +1,6 @@
 import naivasha from "@/assets/blt 7.webp";
 import tsavo from "@/assets/blt 16.webp";
-import olpejeta from "@/assets/rhino.jpg";
+import olpejeta from "@/assets/rhino.webp";
 import samburu from "@/assets/tour-serengeti.jpg";
 import diani from "@/assets/beach (1).webp";
 import nairobi from "@/assets/blt 15.webp";

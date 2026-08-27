@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import cta from "@/assets/queen.png";
+import cta from "@/assets/queen.webp";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const Route = createFileRoute("/blog/")({
