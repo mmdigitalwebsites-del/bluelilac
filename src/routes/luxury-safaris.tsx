@@ -3,7 +3,7 @@ import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
 import hero from "@/assets/Luxury5.webp";
 import img from "@/assets/luxury.webp";
-import luxury from "@/assets/luxury4.jpg";
+import luxury from "@/assets/luxury4.webp";
 import luxuryOne from "@/assets/luxury3.webp";
 import luxuryTwo from "@/assets/homepage9.webp";
 

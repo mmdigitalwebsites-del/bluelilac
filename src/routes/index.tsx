@@ -39,7 +39,7 @@ import hero1 from "@/assets/romantic.jpg";
 import hero2 from "@/assets/ultralux.jpg";
 import hero3 from "@/assets/honeymoon.webp";
 import hero4 from "@/assets/bird5.webp";
-import hero5 from "@/assets/moon.jpg";
+import hero5 from "@/assets/moon.webp";
 import hero6 from "@/assets/wedding.jpg";
 import hero7 from "@/assets/honeymon.webp";
 import trip from "@/assets/tripadvisor.png";

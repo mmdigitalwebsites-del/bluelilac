@@ -3,15 +3,15 @@ import { CountryPage, type Trip } from "@/components/CountryPage";
 import ken from "@/assets/kenya1.webp";
 import safari from "@/assets/safari.png";
 import kenOne from "@/assets/home7.webp";
-import kenTwo from "@/assets/naivasha.jpg";
+import kenTwo from "@/assets/naivasha.webp";
 import kenThree from "@/assets/home.webp";
 import kenFour from "@/assets/homepage6.webp";
-import kenFive from "@/assets/nakuru.jpg";
+import kenFive from "@/assets/nakuru.webp";
 import kenSix from "@/assets/luxury2.webp";
-import kenSeven from "@/assets/rhino.jpg";
+import kenSeven from "@/assets/rhino.webp";
 import kenEight from "@/assets/home3.webp";
 import kenNine from "@/assets/homepage2.webp";
-import kenTen from "@/assets/nairobi.jpg";
+import kenTen from "@/assets/nairobi.webp";
 import kenT from "@/assets/eastafrica.webp";
 
 const KENYA_TRIPS: Trip[] = [

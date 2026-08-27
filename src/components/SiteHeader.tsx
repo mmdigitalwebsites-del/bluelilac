@@ -3,7 +3,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import luxurySafari from "@/assets/Luxury5.webp";
-import honeymoonSafari from "@/assets/romance.jpeg";
+import honeymoonSafari from "@/assets/romance.webp";
 import weddingSafari from "@/assets/honeymon.webp";
 import birdWatchers from "@/assets/bird5.webp";
 import ultraLuxury from "@/assets/ultralux.jpg";
