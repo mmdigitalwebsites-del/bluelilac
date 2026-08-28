@@ -1515,6 +1515,318 @@ export const TOURS: Tour[] = [
       },
     ],
   },
+  {
+    slug: "7-days-ultra-luxury-kenya-safari",
+    title: "7-Day Ultra Luxury Kenyan Safari",
+    destination: "Kenya",
+    duration: "7 Days",
+    durationDays: 7,
+    group: "0–15",
+    type: "Private tour",
+    // TODO: placeholder image reused from Naivasha stops elsewhere — swap
+    // for a dedicated PAX Manor / Loldia House / Angama Mara photo.
+    img: naivasha,
+    highlights: "Nairobi · Lake Naivasha · Masai Mara · Private Jet · Balloon Safari",
+    price: 16850,
+    rating: 5,
+    reviews: 0,
+    overview: [
+      "A seven-day ultra-luxury journey from Nairobi's boutique PAX Manor to the tranquil shores of Lake Naivasha at Loldia House, concluding with a private jet transfer to the iconic Maasai Mara for game drives, a guided walking safari and a dawn hot-air balloon safari from Angama Mara.",
+      "Price from USD 16,850 per adult sharing.",
+    ],
+    included: [
+      "Full board accommodation at Loldia House and Angama Mara",
+      "Boat rides on Lake Naivasha and guided nature walks",
+      "Custom-built 4WD transfers and game drives at Loldia House",
+      "All guided safaris into the Mara Triangle at Angama Mara",
+      "Guided walking safaris on the Oloololo Escarpment",
+      "All meals and drinks at Angama Mara (excluding French Champagne & reserve wines)",
+      "Laundry service and WiFi",
+      "Private jet transfer from Naivasha to the Maasai Mara",
+      "Emergency medical evacuation insurance",
+      "VAT and all applicable levies",
+    ],
+    excluded: [
+      "International flights",
+      "Tips and gratuities",
+      "Visa fees",
+      "Optional activities not mentioned above",
+      "Personal expenses",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Arrival in Nairobi — Overnight at PAX Manor",
+        bullets: [
+          "Arrival at Jomo Kenyatta International Airport and transfer to PAX Manor in Muthaiga.",
+          "Afternoon and evening at leisure enjoying the manor's luxurious suites and fine dining.",
+        ],
+        stay: "PAX Manor Muthaiga",
+      },
+      {
+        day: "Day 2",
+        title: "Nairobi → Lake Naivasha (Loldia House)",
+        bullets: [
+          "Scenic descent into the Great Rift Valley (approx. 2–2.5 hours).",
+          "Arrival at Loldia House for a warm welcome and outdoor lunch.",
+          "Afternoon options: boat ride on Lake Naivasha, guided nature walk, a Crescent Island walking safari, or a gentle game drive.",
+          "Sundowners on the lake followed by candlelit dinner.",
+        ],
+        stay: "Loldia House",
+      },
+      {
+        day: "Day 3",
+        title: "Full-Day Safari to Lake Nakuru National Park",
+        bullets: [
+          "Relaxed breakfast overlooking the water before departing for Lake Nakuru National Park (1.5–2 hours each way).",
+          "Game viewing among rhino, lion, buffalo herds and rich birdlife, with a picnic lunch inside the park.",
+          "Return to Loldia House in the afternoon.",
+        ],
+        stay: "Loldia House",
+      },
+      {
+        day: "Day 4",
+        title: "Private Jet to Maasai Mara (Angama Mara)",
+        bullets: [
+          "Private jet transfer from Naivasha to Kichwa Tembo Airstrip (approx. 45 min–1 hour).",
+          "Welcome by the Angama team and a short transfer to the lodge.",
+          "Lunch with escarpment views, followed by your first afternoon game drive in the Mara Triangle.",
+        ],
+        stay: "Angama Mara",
+      },
+      {
+        day: "Day 5",
+        title: "Full Day in Maasai Mara + Hot Air Balloon Safari",
+        bullets: [
+          "Pre-dawn hot air balloon safari with a champagne bush breakfast on landing.",
+          "Full-day game drive across the Mara Triangle with a picnic lunch.",
+        ],
+        stay: "Angama Mara",
+      },
+      {
+        day: "Day 6",
+        title: "Full Day in Maasai Mara",
+        bullets: [
+          "Choice of an early morning game drive or a guided walking safari along the Oloololo Escarpment.",
+          "Lunch and relaxation time at the lodge.",
+          "Afternoon game drive or a cultural visit to a local Maasai village.",
+          "Sundowners and dinner overlooking the savannah.",
+        ],
+        stay: "Angama Mara",
+      },
+      {
+        day: "Day 7",
+        title: "Maasai Mara → Nairobi — Departure",
+        bullets: [
+          "Relaxed breakfast, with the option of an early morning game drive.",
+          "Transfer to Kichwa Tembo Airstrip for your private flight to Nairobi.",
+          "Onward transfer to Jomo Kenyatta International Airport for your departure.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "8-days-kenya-ultimate-luxury-fly-in-safari",
+    title: "8 Days / 7 Nights Kenya Ultimate Luxury Fly-in Safari",
+    destination: "Kenya",
+    duration: "8 Days",
+    durationDays: 8,
+    group: "0–15",
+    type: "Private tour",
+    // TODO: placeholder image — swap for a dedicated Hemingways / Angama
+    // Amboseli / Mara Plains / Governors' Mugie photo.
+    img: buffalo,
+    highlights: "Nairobi · Amboseli · Maasai Mara · Laikipia · Scheduled Flights",
+    price: 14750,
+    rating: 5,
+    reviews: 0,
+    overview: [
+      "Kenya's finest luxury safari destinations connected by seamless scheduled flights — from Hemingways Nairobi to the elephant herds of Amboseli, the predator-rich Olare Motorogi Conservancy in the Maasai Mara, and the working-ranch conservation experience of Governors' Mugie in Laikipia.",
+      "Validity: October and December departures only (excluding the festive season). From USD 14,750 per person.",
+    ],
+    included: [
+      "Meet and greet services upon arrival",
+      "Airport transfers in Nairobi",
+      "Scheduled return flights from Nairobi Wilson Airport to all destinations",
+      "Guided walking safaris in Kimana Sanctuary",
+      "Laundry service, WiFi, all on-property guest experiences and scheduled airstrip transfers",
+      "Emergency medical evacuation insurance",
+      "All national park and conservancy conservation fees",
+      "Full board accommodation including breakfast, lunch and dinner",
+      "Soft drinks, beers, house wines and non-premium spirits (apart from Angama)",
+      "Bed and breakfast meals in Nairobi",
+      "Transportation in custom-built 4WD safari vehicles",
+      "Two extended excursions daily within Mugie Ranch and surrounding areas",
+      "All government taxes and VAT where applicable",
+    ],
+    excluded: [
+      "International flights",
+      "Premium wines and French Champagne where excluded",
+      "Optional activities not mentioned above",
+      "Gratuities and tips",
+      "Personal expenses",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Arrival in Nairobi — Welcome to Kenya",
+        bullets: [
+          "Warm welcome at JKIA after immigration and customs, then transfer to Hemingways Nairobi in Karen.",
+          "Afternoon at leisure — swimming pool, landscaped gardens or an optional spa treatment.",
+        ],
+        stay: "Hemingways Nairobi",
+      },
+      {
+        day: "Day 2",
+        title: "Fly to Amboseli National Park (Angama Amboseli)",
+        bullets: [
+          "Scheduled flight from Wilson Airport to Kimana Airfield, with aerial views over the Great Rift Valley.",
+          "Transfer to the lodge with your first game-viewing en route.",
+          "Lunch overlooking the wilderness, then an afternoon game drive through Amboseli — famous for its enormous elephant herds.",
+          "Sundowners, dinner and overnight at the lodge.",
+        ],
+        stay: "Angama Amboseli",
+      },
+      {
+        day: "Day 3",
+        title: "Discover Amboseli National Park",
+        bullets: [
+          "Early sunrise safari with Mount Kilimanjaro at its clearest.",
+          "Leisurely breakfast, then a choice of signature experiences: private Kimana Sanctuary safaris, guided walking safaris, photography or birdwatching.",
+          "Afternoon exploration of another section of the park, followed by sunset drinks and a gourmet dinner.",
+        ],
+        stay: "Angama Amboseli",
+      },
+      {
+        day: "Day 4",
+        title: "Fly to the Maasai Mara (Mara Plains Camp)",
+        bullets: [
+          "Scheduled flight to Olare Motorogi Airstrip in the Maasai Mara.",
+          "Transfer to camp through the exclusive Olare Motorogi Conservancy.",
+          "Afternoon game drive — renowned for outstanding lion, leopard and cheetah sightings.",
+        ],
+        stay: "Mara Plains Camp",
+      },
+      {
+        day: "Day 5",
+        title: "Full Day Exploring the Maasai Mara",
+        bullets: [
+          "Early morning safari during peak predator activity and golden light.",
+          "Full-day safari into the Maasai Mara National Reserve, with a picnic lunch in the bush.",
+          "Chance to witness the Great Migration river crossings (approx. July–October).",
+        ],
+        stay: "Mara Plains Camp",
+      },
+      {
+        day: "Day 6",
+        title: "Fly to Laikipia (Governors' Mugie)",
+        bullets: [
+          "Scheduled flight north to Mugie Airstrip in the Laikipia region.",
+          "Transfer through the scenic Mugie Conservancy, where wildlife coexists with a working cattle ranch.",
+          "Afternoon wildlife excursion in search of elephants, giraffes, Grevy's zebras, lions and leopards.",
+          "Sundowners overlooking the conservancy.",
+        ],
+        stay: "Governors' Mugie",
+      },
+      {
+        day: "Day 7",
+        title: "Experience Mugie Conservancy",
+        bullets: [
+          "Choice of guided activities: wildlife drives, lion tracking with conservation teams, guided bush walks, canoeing, electric bike safaris, bush breakfasts and sundowners.",
+          "Optional visits to the anti-poaching unit, resident giraffe Tala, and community conservation initiatives.",
+          "Final safari evening dinner under the African stars.",
+        ],
+        stay: "Governors' Mugie",
+      },
+      {
+        day: "Day 8",
+        title: "Fly Back to Nairobi — Departure",
+        bullets: [
+          "Leisurely breakfast before transferring to Mugie Airstrip for your scheduled flight back to Wilson Airport, Nairobi.",
+          "Onward transfer to Jomo Kenyatta International Airport for your international departure.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "4-days-royal-zebra-river-lodge-maasai-mara",
+    title: "4 Days Royal Zebra River Lodge Fly-in Safari",
+    destination: "Kenya",
+    duration: "4 Days",
+    durationDays: 4,
+    group: "0–15",
+    type: "Private tour",
+    // TODO: placeholder image reused from Governor's Camp — swap for a
+    // dedicated Zebra Royal River Lodge photo.
+    img: mara,
+    highlights: "Maasai Mara · Fly-in Safari · Bush Dining · Maasai Village Visit",
+    // TODO: no rate was provided in the source itinerary (pay-2-stay-3
+    // offer, price on request). Replace 0 with the actual per-person rate
+    // once confirmed — this will otherwise render as "$0" wherever price
+    // is formatted on the site.
+    price: 1200,
+    rating: 5,
+    reviews: 0,
+    overview: [
+      "A four-day fly-in safari based at Zebra Royal River Lodge in the Maasai Mara, pairing classic game drives with a guided walking safari, a Maasai village visit, a private-vehicle sundowner and a memorable bush dinner under the stars — part of a pay-2-stay-3 offer.",
+    ],
+    included: [
+      "Scheduled return flights between Nairobi and the Maasai Mara",
+      "Private customized open 4x4 safari vehicle with a dedicated guide",
+      "Full board accommodation (lunch & dinner Day 1, full board thereafter)",
+      "Bubbly Bush Breakfast and Bush Dinner experiences",
+      "Guided walking safari with naturalist guides",
+      "Complimentary massage",
+      "Unlimited premium alcoholic and non-alcoholic beverages",
+      "Complimentary laundry services and WiFi",
+    ],
+    excluded: DEFAULT_EXCLUDED,
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Nairobi → Maasai Mara National Reserve",
+        bullets: [
+          "Morning transfer to Wilson Airport for your scheduled flight to Ol Kiombo Airstrip in the Maasai Mara.",
+          "Game drive en route to Zebra Royal River Lodge, followed by check-in and lunch.",
+          "First afternoon game drive in a private open 4x4 safari vehicle.",
+          "Sundowner experience in the bush before dinner, with private butler service throughout your stay.",
+        ],
+        stay: "Zebra Royal River Lodge",
+      },
+      {
+        day: "Day 2",
+        title: "Safari Adventures & Exclusive Lodge Experiences",
+        bullets: [
+          "Bubbly Bush Breakfast in a scenic Mara location, followed by a morning game drive.",
+          "Guided walking safari with naturalist guides.",
+          "Complimentary massage after lunch, then a late-afternoon game drive.",
+          "Optional Night Game Drive in the Lemek or Ripoi Conservancy for guests on the Game Package.",
+          "Unlimited premium alcoholic and non-alcoholic beverages throughout the day.",
+        ],
+        stay: "Zebra Royal River Lodge",
+      },
+      {
+        day: "Day 3",
+        title: "Culture, Wildlife & Bush Dining",
+        bullets: [
+          "Morning game drive exploring different areas of the Mara.",
+          "Visit to a Maasai village to learn about local traditions and culture.",
+          "Afternoon game drive followed by a Bush Dinner under the African sky.",
+          "Complimentary laundry services and WiFi throughout your stay.",
+        ],
+        stay: "Zebra Royal River Lodge",
+      },
+      {
+        day: "Day 4",
+        title: "Maasai Mara → Nairobi",
+        bullets: [
+          "Leisurely breakfast before check-out.",
+          "Final game drive en route to Ol Kiombo Airstrip.",
+          "Scheduled return flight to Nairobi.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getTour(slug: string) {

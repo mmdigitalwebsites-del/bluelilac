@@ -15,6 +15,7 @@ const luxurySlugs = [
   "7-days-luxury-bush-beach-hemingways",
   "6-days-loisaba-conservancy",
   "6-days-nairobi-meru-experience",
+  "4-days-royal-zebra-river-lodge-maasai-mara",
 ];
 
 const luxuryTrips = luxurySlugs
