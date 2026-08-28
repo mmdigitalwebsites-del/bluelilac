@@ -1758,7 +1758,7 @@ export const TOURS: Tour[] = [
     type: "Private tour",
     // TODO: placeholder image reused from Governor's Camp — swap for a
     // dedicated Zebra Royal River Lodge photo.
-    img: mara,
+    img: maasaiMara,
     highlights: "Maasai Mara · Fly-in Safari · Bush Dining · Maasai Village Visit",
     // TODO: no rate was provided in the source itinerary (pay-2-stay-3
     // offer, price on request). Replace 0 with the actual per-person rate
