@@ -12,6 +12,8 @@ const ultraLuxurySlugs = [
   "13-days-kenya-tanzania-safari",
   "10-days-bush-and-beach-kenya",
   "9-days-northern-frontier-classic-kenya",
+  "8-days-kenya-ultimate-luxury-fly-in-safari",
+  "7-days-ultra-luxury-kenya-safari",
 ];
 
 const ultraLuxuryTrips = ultraLuxurySlugs
