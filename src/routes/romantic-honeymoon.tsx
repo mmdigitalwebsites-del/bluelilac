@@ -4,8 +4,8 @@ import { SafariCategoryPage } from "@/components/SafariCategoryPage";
 import { getTour } from "@/data/tours";
 import hero from "@/assets/romance.webp";
 import img from "@/assets/moon.webp";
-import romance from "@/assets/romance1.jpg";
-import romanceOne from "@/assets/romance3.jpg";
+import romance from "@/assets/romance1.webp";
+import romanceOne from "@/assets/romance3.webp";
 import romanceTwo from "@/assets/ultra3.jpg";
 
 const honeymoonSlugs = ["5-days-honeymoon-nairobi-samburu-ol-pejeta"];

@@ -16,9 +16,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import heroSafari from "@/assets/experience.webp";
 import tourLodge from "@/assets/naivasha.webp";
 import lodge from "@/assets/kenya.webp";
-import tours from "@/assets/safari.png";
+import tours from "@/assets/safari.webp";
 import call from "@/assets/blt 17.webp";
-import hero from "@/assets/rwanda1.jpg";
+import hero from "@/assets/rwanda1.webp";
 import SiteFooter from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/contact")({
