@@ -7,7 +7,7 @@ import ugandaTwo from "@/assets/gorrila.webp";
 import ugandaThree from "@/assets/forest.webp";
 import ugandaFour from "@/assets/queen.webp";
 import ugandaFive from "@/assets/lake.webp";
-import ugandaSix from "@/assets/romance4.jpg";
+import ugandaSix from "@/assets/romance4.webp";
 
 const UGANDA_TRIPS: Trip[] = [
   {

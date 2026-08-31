@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CountryPage, type Trip } from "@/components/CountryPage";
 import ken from "@/assets/kenya1.webp";
-import safari from "@/assets/safari.png";
+import safari from "@/assets/safari.webp";
 import kenOne from "@/assets/home7.webp";
 import kenTwo from "@/assets/naivasha.webp";
 import kenThree from "@/assets/home.webp";

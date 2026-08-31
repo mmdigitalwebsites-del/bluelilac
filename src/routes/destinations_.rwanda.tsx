@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CountryPage, type Trip } from "@/components/CountryPage";
-import rwanda from "@/assets/rwanda.jpg";
-import safari from "@/assets/rwanda2.jpg";
-import rOne from "@/assets/rwanda1.jpg";
+import rwanda from "@/assets/rwanda.webp";
+import safari from "@/assets/rwanda2.webp";
+import rOne from "@/assets/rwanda1.webp";
 import rTwo from "@/assets/homepage9.webp";
 import rThree from "@/assets/volcano.jpg";
 import rFour from "@/assets/kigali.webp";

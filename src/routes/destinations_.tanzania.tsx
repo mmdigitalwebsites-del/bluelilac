@@ -3,7 +3,7 @@ import { CountryPage, type Trip } from "@/components/CountryPage";
 import tanzania from "@/assets/tanzania.jpg";
 import safari from "@/assets/tour-serengeti.jpg";
 import tanzOne from "@/assets/shortsafari.png";
-import tanzTwo from "@/assets/safari2.png";
+import tanzTwo from "@/assets/safari2.webp";
 import tanzThree from "@/assets/crater.webp";
 import tanzFour from "@/assets/lake.webp";
 import tanzFive from "@/assets/arusha.webp";
