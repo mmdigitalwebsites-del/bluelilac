@@ -5,11 +5,11 @@ import safari from "@/assets/home4.webp";
 import zOne from "@/assets/home5.webp";
 import zTwo from "@/assets/homepage1.webp";
 import zThree from "@/assets/beach.webp";
-import zFour from "@/assets/stonetown.png";
+import zFour from "@/assets/stonetown.webp";
 import zFive from "@/assets/diving.webp";
 import zSix from "@/assets/naivasha.webp";
-import zSeven from "@/assets/tours.png";
-import zEight from "@/assets/spicefarm.jpg";
+import zSeven from "@/assets/tours.webp";
+import zEight from "@/assets/spicefarm.webp";
 
 const ZANZIBAR_TRIPS: Trip[] = [
   {

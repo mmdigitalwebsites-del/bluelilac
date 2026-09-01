@@ -9,7 +9,7 @@ import maasaiMara from "@/assets/wilderbeast.png";
 import amboseli from "@/assets/blt 13.webp";
 import nakuru from "@/assets/blt 7.webp";
 import naivasha from "@/assets/naivasha.webp";
-import samburu from "@/assets/tour-serengeti.jpg";
+import samburu from "@/assets/tour-serengeti.webp";
 import olpejeta from "@/assets/rhino.webp";
 import tsavo from "@/assets/blt 16.webp";
 import diani from "@/assets/home4.webp";
@@ -24,10 +24,10 @@ import tourElizabeth from "@/assets/queen.webp";
 import tourBunyonyi from "@/assets/blt 16.webp";
 import tourVolcano from "@/assets/blt 2.webp";
 import kigali from "@/assets/blt 6.webp";
-import stoneTown from "@/assets/stonetown.png";
+import stoneTown from "@/assets/stonetown.webp";
 import stone from "@/assets/kenya.webp";
 import town from "@/assets/homepage3.webp";
-import ston from "@/assets/shortsafari.png";
+import ston from "@/assets/shortsafari.webp";
 
 export const Route = createFileRoute("/destinations")({
   head: () => ({
