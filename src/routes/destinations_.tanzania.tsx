@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CountryPage, type Trip } from "@/components/CountryPage";
-import tanzania from "@/assets/tanzania.jpg";
-import safari from "@/assets/tour-serengeti.jpg";
-import tanzOne from "@/assets/shortsafari.png";
+import tanzania from "@/assets/tanzania.webp";
+import safari from "@/assets/tour-serengeti.webp";
+import tanzOne from "@/assets/shortsafari.webp";
 import tanzTwo from "@/assets/safari2.webp";
 import tanzThree from "@/assets/crater.webp";
 import tanzFour from "@/assets/lake.webp";
 import tanzFive from "@/assets/arusha.webp";
 import tanzSix from "@/assets/luxury2.webp";
-import tanz from "@/assets/shortsafari2.png";
+import tanz from "@/assets/shortsafari2.webp";
 
 const TANZANIA_TRIPS: Trip[] = [
   {

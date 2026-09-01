@@ -8,7 +8,7 @@ import weddingSafari from "@/assets/honeymon.webp";
 import birdWatchers from "@/assets/bird5.webp";
 import ultraLuxury from "@/assets/ultralux.jpg";
 import ken from "@/assets/kenya1.webp";
-import tanz from "@/assets/tanzania.jpg";
+import tanz from "@/assets/tanzania.webp";
 import rwanda from "@/assets/rwanda.webp";
 import uganda from "@/assets/uganda.jpg";
 import zanzibar from "@/assets/zanzibar.jpg";

@@ -14,8 +14,8 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import heroSafari from "@/assets/img.webp";
 import tourSerengeti from "@/assets/ultra3.jpg";
-import tourLodge from "@/assets/spicefarm.jpg";
-import tourGorilla from "@/assets/tanzania.jpg";
+import tourLodge from "@/assets/spicefarm.webp";
+import tourGorilla from "@/assets/tanzania.webp";
 import ctaBalloon from "@/assets/romance2.webp";
 import on from "@/assets/volcano.jpg";
 import drive from "@/assets/game-drives-2.webp";
